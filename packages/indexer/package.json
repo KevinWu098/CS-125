@@ -17,5 +17,8 @@
       "eslint --fix --max-warnings=0"
     ]
   },
-  "prettier": "@packages/prettier-config"
+  "prettier": "@packages/prettier-config",
+  "dependencies": {
+    "@packages/types": "workspace:*"
+  }
 }
