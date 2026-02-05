@@ -59,4 +59,4 @@ export type RestaurantSchema = {
     lastUpdatedISO: string;
     url: string;
   };
-}
+};
