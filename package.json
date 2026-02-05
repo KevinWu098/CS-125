@@ -1,0 +1,30 @@
+{
+  "scripts": {
+    "format": "pnpm -r format --log-level error",
+    "lint": "pnpm -r lint",
+    "lint-staged": "pnpm -r --workspace-concurrency=1 exec lint-staged",
+    "prepare": "husky",
+    "tscheck": "pnpm -r --parallel tscheck"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write"
+    ]
+  },
+  "prettier": "@packages/prettier-config",
+  "devDependencies": {
+    "@packages/eslint-config": "workspace:*",
+    "@packages/prettier-config": "workspace:*",
+    "@packages/typescript-config": "workspace:*",
+    "@types/node": "25.1.0",
+    "eslint": "9.39.2",
+    "husky": "9.1.7",
+    "lint-staged": "16.2.7",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": "24",
+    "pnpm": "10"
+  }
+}
