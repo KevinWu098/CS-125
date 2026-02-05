@@ -1,0 +1,5 @@
+{
+  "extends": "@packages/typescript-config",
+  "include": ["**/*.ts", "**/*.mts"],
+  "exclude": ["node_modules"]
+}
