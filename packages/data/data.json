@@ -1,1 +1,1298 @@
-[]
+[
+  {
+    "id": "bistango",
+    "name": "Bistango",
+    "description": "Bistango Restaurant offers artful New American cuisine in the Atrium Building in Irvine, California. We boast an extensive bar and a Wine Spectator award winning wine list. The ambiance is further enriched each season by revolving modern art displays and nightly live entertainment.",
+    "cuisine": [
+      "New American"
+    ],
+    "priceTier": "$$$$",
+    "location": {
+      "address": "19100 Von Karman Avenue",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.67072735227594,
+      "lng": -117.85753670447507
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "tue",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "wed",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "thu",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "fri",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "sat",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "sun",
+        "open": "00:00",
+        "close": "00:00"
+      }
+    ],
+    "menu": [
+      {
+        "id": "soup-of-the-day",
+        "name": "Soup of the Day",
+        "description": "Chef\u2019s daily selection featuring seasonal ingredients.",
+        "priceUSD": 15.0,
+        "category": "Appetizer"
+      },
+      {
+        "id": "burrata-cheese",
+        "name": "Burrata Cheese",
+        "description": "Tomato & Strawberry Jam, crostini, micro mint, basil oil and aged balsamic.",
+        "priceUSD": 26.0,
+        "category": "Appetizer"
+      },
+      {
+        "id": "penne-pasta",
+        "name": "Penne Pasta",
+        "description": "Achiote marinated chicken breast with asparagus, tomatoes, red onions, basil and a little cream.",
+        "priceUSD": 29.0,
+        "category": "Entr\u00e9e"
+      }
+    ],
+    "dataSource": {
+      "name": "Bistango official website",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://www.bistango.com/"
+    }
+  },
+  {
+    "id": "houstons",
+    "name": "Houston's",
+    "description": "Traditional American steakhouse offering sushi, fresh seafood and a relaxed dining experience.",
+    "cuisine": [
+      "American",
+      "Steakhouse",
+      "Sushi"
+    ],
+    "priceTier": "$$$$",
+    "location": {
+      "address": "2991 Michelson Dr",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6736731,
+      "lng": -117.8460352
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "11:00",
+        "close": "21:00"
+      },
+      {
+        "day": "tue",
+        "open": "11:00",
+        "close": "21:00"
+      },
+      {
+        "day": "wed",
+        "open": "11:00",
+        "close": "21:00"
+      },
+      {
+        "day": "thu",
+        "open": "11:00",
+        "close": "21:00"
+      },
+      {
+        "day": "fri",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "sat",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "sun",
+        "open": "11:00",
+        "close": "21:00"
+      }
+    ],
+    "menu": [
+      {
+        "id": "rotisserie-chicken",
+        "name": "Rotisserie Chicken",
+        "description": "Roasted chicken with mashed potatoes and jus.",
+        "priceUSD": 22.0,
+        "category": "Entr\u00e9e"
+      },
+      {
+        "id": "hawaiian-rib-eye",
+        "name": "Hawaiian Rib eye",
+        "description": "Soy ginger marinated rib eye steak.",
+        "priceUSD": 37.0,
+        "category": "Entr\u00e9e"
+      },
+      {
+        "id": "cheeseburger",
+        "name": "Cheeseburger",
+        "description": "House ground burger with cheese, lettuce, tomato and onion.",
+        "priceUSD": 17.0,
+        "category": "Sandwich"
+      }
+    ],
+    "dataSource": {
+      "name": "Houston's menu PDF",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://menuweb.menu/HoustonsIrvine_Menu.pdf"
+    }
+  },
+  {
+    "id": "il-fornaio",
+    "name": "Il Fornaio",
+    "description": "Italian trattoria known for house baked breads and authentic regional dishes.",
+    "cuisine": [
+      "Italian"
+    ],
+    "priceTier": "$$$",
+    "location": {
+      "address": "18051 Von Karman Avenue",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6797403,
+      "lng": -117.8527727
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "tue",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "wed",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "thu",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "fri",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "sat",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "sun",
+        "open": "17:00",
+        "close": "21:00"
+      }
+    ],
+    "menu": [
+      {
+        "id": "calamaretti-fritti",
+        "name": "Calamaretti Fritti",
+        "description": "Crispy fried baby squid served with marinara sauce.",
+        "priceUSD": 22.0,
+        "category": "Appetizer"
+      },
+      {
+        "id": "rigatoni-alla-vodka",
+        "name": "Rigatoni alla Vodka",
+        "description": "Rigatoni pasta in a tomato cream vodka sauce.",
+        "priceUSD": 23.0,
+        "category": "Pasta"
+      },
+      {
+        "id": "insalata-regina",
+        "name": "Insalata Regina",
+        "description": "Mixed greens with seasonal fruit and honey balsamic dressing.",
+        "priceUSD": 15.0,
+        "category": "Salad"
+      }
+    ],
+    "dataSource": {
+      "name": "Il Fornaio menu",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://www.ilfornaio.com/"
+    }
+  },
+  {
+    "id": "hironori",
+    "name": "HiroNori Craft Ramen",
+    "description": "Craft ramen spot with house made noodles, broth and sauces.",
+    "cuisine": [
+      "Japanese",
+      "Ramen"
+    ],
+    "priceTier": "$$",
+    "location": {
+      "address": "2222 Michelson Drive #234",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6764661,
+      "lng": -117.8558209
+    },
+    "hours": null,
+    "menu": [
+      {
+        "id": "tonkotsu-ramen",
+        "name": "Tonkotsu Ramen",
+        "description": "Rich pork broth with noodles, chashu, egg and toppings.",
+        "category": "Ramen"
+      },
+      {
+        "id": "shoyu-ramen",
+        "name": "Shoyu Ramen",
+        "description": "Soy sauce based broth with noodles and pork.",
+        "category": "Ramen"
+      },
+      {
+        "id": "vegan-ramen",
+        "name": "Vegan Ramen",
+        "description": "Vegetable broth with noodles and assorted vegetables.",
+        "category": "Ramen",
+        "tags": [
+          "Vegan"
+        ]
+      }
+    ],
+    "dataSource": {
+      "name": "HiroNori location page",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://www.hironoricraftramen.com/"
+    }
+  },
+  {
+    "id": "cha-chas-latin-kitchen",
+    "name": "Cha Cha's Latin Kitchen",
+    "description": "Award winning Latin restaurant serving contemporary Mexican dishes with fresh, seasonal ingredients.",
+    "cuisine": [
+      "Mexican",
+      "Latin"
+    ],
+    "priceTier": "$$$",
+    "location": {
+      "address": "13126 Jamboree Rd",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92602",
+      "lat": 33.723139,
+      "lng": -117.789453
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "11:30",
+        "close": "21:30"
+      },
+      {
+        "day": "tue",
+        "open": "11:30",
+        "close": "21:30"
+      },
+      {
+        "day": "wed",
+        "open": "11:30",
+        "close": "21:30"
+      },
+      {
+        "day": "thu",
+        "open": "11:30",
+        "close": "21:30"
+      },
+      {
+        "day": "fri",
+        "open": "11:30",
+        "close": "22:30"
+      },
+      {
+        "day": "sat",
+        "open": "11:30",
+        "close": "22:30"
+      },
+      {
+        "day": "sun",
+        "open": "10:30",
+        "close": "21:30"
+      }
+    ],
+    "menu": [
+      {
+        "id": "fresh-guacamole",
+        "name": "Fresh Guacamole",
+        "description": "House made guacamole with fresh avocado and lime.",
+        "priceUSD": 11.0,
+        "category": "Appetizer"
+      },
+      {
+        "id": "ceviche-sampler",
+        "name": "Ceviche Sampler",
+        "description": "Trio of seafood ceviches served with chips.",
+        "priceUSD": 17.0,
+        "category": "Appetizer"
+      },
+      {
+        "id": "chicken-flautas",
+        "name": "Chicken Flautas",
+        "description": "Crispy rolled tortillas stuffed with chicken and served with salsa.",
+        "priceUSD": 15.0,
+        "category": "Entr\u00e9e"
+      }
+    ],
+    "dataSource": {
+      "name": "Cha Cha's menu page",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://www.chachaslatinkitchen.com/"
+    }
+  },
+  {
+    "id": "blaze-fast-fired-pizza",
+    "name": "Blaze Fast-Fire'd Pizza",
+    "description": "Blaze Fast Fire'd Pizza serves artisanal pizzas and salads custom built on the line at freakishly fast speeds and affordable prices.",
+    "cuisine": [
+      "Pizza",
+      "Fast Casual"
+    ],
+    "priceTier": "$",
+    "location": {
+      "address": "4255 Campus Dr #A120",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6497,
+      "lng": -117.8429
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "tue",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "wed",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "thu",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "fri",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "sat",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "sun",
+        "open": "11:00",
+        "close": "22:00"
+      }
+    ],
+    "menu": [
+      {
+        "id": "build-your-own-pizza",
+        "name": "Build Your Own Pizza",
+        "description": "11 inch pizza with choice of sauce, cheese and unlimited toppings.",
+        "priceUSD": 16.49,
+        "category": "Pizza"
+      },
+      {
+        "id": "meat-eater",
+        "name": "Meat Eater Pizza",
+        "description": "Pepperoni, crumbled meatballs, red sauce, mozzarella and oregano.",
+        "priceUSD": 17.49,
+        "category": "Pizza"
+      },
+      {
+        "id": "veggie-out",
+        "name": "Veg Out Pizza",
+        "description": "Mushrooms, red onions, green bell peppers, mozzarella and red sauce.",
+        "priceUSD": 16.99,
+        "category": "Pizza"
+      }
+    ],
+    "dataSource": {
+      "name": "University Center Directory",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://www.irvinecompanyretail.com/centers/irvine/university-center/blaze-fast-fired-pizza/"
+    }
+  },
+  {
+    "id": "blue-bowl-superfoods",
+    "name": "Blue Bowl Superfoods",
+    "description": "The Original Create Your Own Superfood Bowl: tasty, healthy meals served in to go bowls where customers build personalized bowls from a range of superfoods and toppings.",
+    "cuisine": [
+      "Superfood",
+      "Healthy"
+    ],
+    "priceTier": "$",
+    "location": {
+      "address": "4255 Campus Dr #A104",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6496,
+      "lng": -117.8428
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "08:00",
+        "close": "18:00"
+      },
+      {
+        "day": "tue",
+        "open": "08:00",
+        "close": "18:00"
+      },
+      {
+        "day": "wed",
+        "open": "08:00",
+        "close": "18:00"
+      },
+      {
+        "day": "thu",
+        "open": "08:00",
+        "close": "18:00"
+      },
+      {
+        "day": "fri",
+        "open": "08:00",
+        "close": "18:00"
+      },
+      {
+        "day": "sat",
+        "open": "08:00",
+        "close": "18:00"
+      },
+      {
+        "day": "sun",
+        "open": "08:00",
+        "close": "18:00"
+      }
+    ],
+    "menu": [
+      {
+        "id": "blue-coconut-acai-bowl",
+        "name": "Blue Coconut Acai Bowl",
+        "description": "Acai base topped with blue coconut shavings, fresh fruit and granola.",
+        "priceUSD": 13.0,
+        "category": "Bowl"
+      },
+      {
+        "id": "huckleberry-smoothie",
+        "name": "Huckleberry Smoothie",
+        "description": "Smoothie made with huckleberries, banana and almond milk.",
+        "priceUSD": 8.0,
+        "category": "Smoothie"
+      },
+      {
+        "id": "chia-pudding",
+        "name": "Chia Pudding",
+        "description": "Chia pudding topped with fresh berries and honey.",
+        "priceUSD": 6.5,
+        "category": "Dessert"
+      }
+    ],
+    "dataSource": {
+      "name": "University Center Directory",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://www.irvinecompanyretail.com/centers/irvine/university-center/blue-bowl-superfoods/"
+    }
+  },
+  {
+    "id": "breakfast-republic",
+    "name": "Breakfast Republic",
+    "description": "Breakfast Republic serves creative twists on American breakfast classics such as Oreo Pancakes, Shrimp & Grits and S'mores French Toast.",
+    "cuisine": [
+      "Breakfast",
+      "Brunch"
+    ],
+    "priceTier": "$$",
+    "location": {
+      "address": "4213 Campus Dr #P166B",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6506,
+      "lng": -117.8422
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "07:00",
+        "close": "15:00"
+      },
+      {
+        "day": "tue",
+        "open": "07:00",
+        "close": "15:00"
+      },
+      {
+        "day": "wed",
+        "open": "07:00",
+        "close": "15:00"
+      },
+      {
+        "day": "thu",
+        "open": "07:00",
+        "close": "15:00"
+      },
+      {
+        "day": "fri",
+        "open": "07:00",
+        "close": "15:00"
+      },
+      {
+        "day": "sat",
+        "open": "07:00",
+        "close": "15:00"
+      },
+      {
+        "day": "sun",
+        "open": "07:00",
+        "close": "15:00"
+      }
+    ],
+    "menu": [
+      {
+        "id": "oreo-pancakes",
+        "name": "Oreo Pancakes",
+        "description": "Buttermilk pancakes stuffed with Oreo cookie pieces and drizzled with cream.",
+        "priceUSD": 14.0,
+        "category": "Breakfast"
+      },
+      {
+        "id": "shrimp-and-grits",
+        "name": "Shrimp & Grits",
+        "description": "Shrimp saut\u00e9ed with smoked bacon served over cheesy grits.",
+        "priceUSD": 17.0,
+        "category": "Entr\u00e9e"
+      },
+      {
+        "id": "smores-french-toast",
+        "name": "S'mores French Toast",
+        "description": "French toast layered with chocolate and marshmallow, topped with graham cracker crumbs.",
+        "priceUSD": 15.0,
+        "category": "Breakfast"
+      }
+    ],
+    "dataSource": {
+      "name": "University Center Directory",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://www.irvinecompanyretail.com/centers/irvine/university-center/breakfast-republic/"
+    }
+  },
+  {
+    "id": "california-gogi-grill",
+    "name": "California Gogi Grill",
+    "description": "Fast casual Korean fusion BBQ offering creative spins on traditional Korean BBQ using fresh ingredients at an affordable price.",
+    "cuisine": [
+      "Korean",
+      "Fusion"
+    ],
+    "priceTier": "$",
+    "location": {
+      "address": "4237 Campus Dr #B157",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6503,
+      "lng": -117.8425
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "10:30",
+        "close": "21:30"
+      },
+      {
+        "day": "tue",
+        "open": "10:30",
+        "close": "21:30"
+      },
+      {
+        "day": "wed",
+        "open": "10:30",
+        "close": "21:30"
+      },
+      {
+        "day": "thu",
+        "open": "10:30",
+        "close": "21:30"
+      },
+      {
+        "day": "fri",
+        "open": "10:30",
+        "close": "21:30"
+      },
+      {
+        "day": "sat",
+        "open": "10:30",
+        "close": "21:30"
+      },
+      {
+        "day": "sun",
+        "open": "10:30",
+        "close": "21:30"
+      }
+    ],
+    "menu": [
+      {
+        "id": "stacked-bowl",
+        "name": "Stacked Bowl",
+        "description": "Layered bowl with rice, vegetables and choice of protein.",
+        "priceUSD": 14.45,
+        "category": "Bowl"
+      },
+      {
+        "id": "bibimbap",
+        "name": "Bibimbap",
+        "description": "Traditional Korean mixed rice bowl with vegetables and beef.",
+        "priceUSD": 11.45,
+        "category": "Bowl"
+      },
+      {
+        "id": "bento",
+        "name": "Bento Box",
+        "description": "Box with rice, side dishes and choice of protein.",
+        "priceUSD": 10.45,
+        "category": "Combo"
+      }
+    ],
+    "dataSource": {
+      "name": "California Gogi Official Site",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://californiagogi.com"
+    }
+  },
+  {
+    "id": "cha-for-tea",
+    "name": "CHA for Tea",
+    "description": "Serving a variety of tea and boba drinks, as well as crispy chicken, noodle dishes and other Asian specialties.",
+    "cuisine": [
+      "Tea",
+      "Bubble Tea"
+    ],
+    "priceTier": "$",
+    "location": {
+      "address": "4187 Campus Dr #M173",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.651,
+      "lng": -117.8428
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "tue",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "wed",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "thu",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "fri",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "sat",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "sun",
+        "open": "11:00",
+        "close": "23:00"
+      }
+    ],
+    "menu": [
+      {
+        "id": "mango-green-tea",
+        "name": "Mango Green Tea",
+        "description": "Freshly brewed green tea with mango flavor and tapioca pearls.",
+        "priceUSD": 5.5,
+        "category": "Drink"
+      },
+      {
+        "id": "royal-milk-tea",
+        "name": "Royal Milk Tea",
+        "description": "Creamy milk tea with black tea base and brown sugar boba.",
+        "priceUSD": 5.5,
+        "category": "Drink"
+      },
+      {
+        "id": "crispy-chicken",
+        "name": "Crispy Chicken",
+        "description": "Seasoned fried chicken pieces served with rice.",
+        "priceUSD": 9.0,
+        "category": "Entr\u00e9e"
+      }
+    ],
+    "dataSource": {
+      "name": "CHA for Tea Official Site",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://chafortea.com"
+    }
+  },
+  {
+    "id": "chick-fil-a",
+    "name": "Chick-fil-A",
+    "description": "Quick service chain specializing in chicken sandwiches and nuggets with Southern hospitality.",
+    "cuisine": [
+      "Fast Food",
+      "Chicken"
+    ],
+    "priceTier": "$",
+    "location": {
+      "address": "4127 Campus Dr",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6517,
+      "lng": -117.8429
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "06:30",
+        "close": "22:00"
+      },
+      {
+        "day": "tue",
+        "open": "06:30",
+        "close": "22:00"
+      },
+      {
+        "day": "wed",
+        "open": "06:30",
+        "close": "22:00"
+      },
+      {
+        "day": "thu",
+        "open": "06:30",
+        "close": "22:00"
+      },
+      {
+        "day": "fri",
+        "open": "06:30",
+        "close": "22:00"
+      },
+      {
+        "day": "sat",
+        "open": "06:30",
+        "close": "22:00"
+      },
+      {
+        "day": "sun",
+        "open": "00:00",
+        "close": "00:00"
+      }
+    ],
+    "menu": [
+      {
+        "id": "chicken-sandwich",
+        "name": "Chick fil A Chicken Sandwich",
+        "description": "Boneless breast of chicken served on a toasted buttered bun with pickles.",
+        "priceUSD": 7.0,
+        "category": "Sandwich"
+      },
+      {
+        "id": "nuggets",
+        "name": "Chick fil A Nuggets",
+        "description": "Bite sized pieces of chicken breast, seasoned and breaded.",
+        "priceUSD": 7.09,
+        "category": "Entr\u00e9e"
+      },
+      {
+        "id": "waffle-fries",
+        "name": "Waffle Potato Fries",
+        "description": "Waffle shaped fried potatoes seasoned with sea salt.",
+        "priceUSD": 3.39,
+        "category": "Side"
+      }
+    ],
+    "dataSource": {
+      "name": "Chick fil A Menu PDF",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://menuweb.menu/Chick-fil-A_Menu.pdf"
+    }
+  },
+  {
+    "id": "tender-greens",
+    "name": "Tender Greens",
+    "description": "Tender Greens is a casual restaurant serving salads, plates and bowls with sustainably sourced ingredients.",
+    "cuisine": [
+      "American",
+      "Salads",
+      "Bowls",
+      "Healthy"
+    ],
+    "priceTier": "$$",
+    "location": {
+      "address": "4237 Campus Dr Suite B165",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6503,
+      "lng": -117.8425
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "10:30",
+        "close": "21:00"
+      },
+      {
+        "day": "tue",
+        "open": "10:30",
+        "close": "21:00"
+      },
+      {
+        "day": "wed",
+        "open": "10:30",
+        "close": "21:00"
+      },
+      {
+        "day": "thu",
+        "open": "10:30",
+        "close": "21:00"
+      },
+      {
+        "day": "fri",
+        "open": "10:30",
+        "close": "21:00"
+      },
+      {
+        "day": "sat",
+        "open": "10:30",
+        "close": "21:00"
+      },
+      {
+        "day": "sun",
+        "open": "10:30",
+        "close": "21:00"
+      }
+    ],
+    "menu": [
+      {
+        "id": "salt-pepper-chicken",
+        "name": "Salt & Pepper Chicken Plate",
+        "description": "Grilled chicken with garlic & herb seasoning, served with greens and a side.",
+        "priceUSD": 14.5,
+        "category": "Plate"
+      },
+      {
+        "id": "chipotle-bbq-chicken-salad",
+        "name": "Chipotle BBQ Chicken Salad",
+        "description": "Salad with chipotle BBQ chicken, avocado, queso fresco, tortilla strips and romaine.",
+        "priceUSD": 13.5,
+        "category": "Salad"
+      },
+      {
+        "id": "falafel-plate",
+        "name": "Falafel Plate",
+        "description": "Five handmade falafel rounds with greens, a side and pita.",
+        "priceUSD": 12.0,
+        "category": "Plate"
+      }
+    ],
+    "dataSource": {
+      "name": "Tender Greens Site",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://www.tendergreens.com/locations/uc-irvine"
+    }
+  },
+  {
+    "id": "luna-grill",
+    "name": "Luna Grill",
+    "description": "Luna Grill serves fresh Mediterranean cuisine including kabobs, gourmet salads, hummus and falafel in a fast casual setting.",
+    "cuisine": [
+      "Mediterranean",
+      "Middle Eastern",
+      "Fast Casual"
+    ],
+    "priceTier": "$$",
+    "location": {
+      "address": "4143 Campus Dr No. C195",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6527,
+      "lng": -117.842
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "11:00",
+        "close": "20:30"
+      },
+      {
+        "day": "tue",
+        "open": "11:00",
+        "close": "20:30"
+      },
+      {
+        "day": "wed",
+        "open": "11:00",
+        "close": "20:30"
+      },
+      {
+        "day": "thu",
+        "open": "11:00",
+        "close": "20:30"
+      },
+      {
+        "day": "fri",
+        "open": "11:00",
+        "close": "20:30"
+      },
+      {
+        "day": "sat",
+        "open": "11:00",
+        "close": "20:30"
+      },
+      {
+        "day": "sun",
+        "open": "11:00",
+        "close": "20:30"
+      }
+    ],
+    "menu": [
+      {
+        "id": "garlic-bonfire-shrimp",
+        "name": "Garlic Bonfire Shrimp Plate",
+        "description": "Grilled shrimp with lemon and parsley, served with pita, sauce and two sides.",
+        "priceUSD": 16.0,
+        "category": "Plate"
+      },
+      {
+        "id": "falafel-plate",
+        "name": "Falafel Plate",
+        "description": "Five falafel rounds served with rice, salad and pita.",
+        "priceUSD": 12.0,
+        "category": "Plate"
+      },
+      {
+        "id": "chicken-kabob",
+        "name": "Chicken Kabob Plate",
+        "description": "Pieces of grilled chicken served with rice, salad and pita.",
+        "priceUSD": 14.0,
+        "category": "Plate"
+      }
+    ],
+    "dataSource": {
+      "name": "Luna Grill Site",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://lunagrill.com/menu"
+    }
+  },
+  {
+    "id": "le-diplomate-cafe",
+    "name": "Le Diplomate Cafe",
+    "description": "Cafe offering sandwiches on fresh baked bread along with salads, Mediterranean dishes and Vietnamese specialties.",
+    "cuisine": [
+      "Cafe",
+      "Sandwiches"
+    ],
+    "priceTier": "$",
+    "location": {
+      "address": "4237 Campus Dr Ste B161",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6503,
+      "lng": -117.8425
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "tue",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "wed",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "thu",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "fri",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "sat",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "sun",
+        "open": "09:00",
+        "close": "20:00"
+      }
+    ],
+    "menu": [
+      {
+        "id": "chicken-garlic",
+        "name": "Chicken Garlic Sandwich",
+        "description": "Signature hot sandwich with chicken and garlic sauce on soft baguette.",
+        "priceUSD": 10.5,
+        "category": "Sandwich"
+      },
+      {
+        "id": "chicken-dijon",
+        "name": "Chicken Dijon Sandwich",
+        "description": "Hot sandwich with chicken, Dijon mustard and Swiss cheese.",
+        "priceUSD": 12.0,
+        "category": "Sandwich"
+      },
+      {
+        "id": "teriyaki-chicken-garlic",
+        "name": "Teriyaki Chicken Garlic Sandwich",
+        "description": "Sandwich with teriyaki chicken, garlic sauce and vegetables.",
+        "priceUSD": 11.5,
+        "category": "Sandwich"
+      }
+    ],
+    "dataSource": {
+      "name": "Le Diplomate Menu",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://le-diplomate-cafe.restaurants-world.net/menu"
+    }
+  },
+  {
+    "id": "mendocino-farms",
+    "name": "Mendocino Farms",
+    "description": "Mendocino Farms is a fast casual eatery focused on farm to table sandwiches and salads made with sustainably sourced ingredients.",
+    "cuisine": [
+      "Sandwiches",
+      "Salads",
+      "Farm-to-table"
+    ],
+    "priceTier": "$$",
+    "location": {
+      "address": "4175 Campus Dr Suite M176",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.651,
+      "lng": -117.8428
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "10:00",
+        "close": "21:00"
+      },
+      {
+        "day": "tue",
+        "open": "10:00",
+        "close": "21:00"
+      },
+      {
+        "day": "wed",
+        "open": "10:00",
+        "close": "21:00"
+      },
+      {
+        "day": "thu",
+        "open": "10:00",
+        "close": "21:00"
+      },
+      {
+        "day": "fri",
+        "open": "10:00",
+        "close": "21:00"
+      },
+      {
+        "day": "sat",
+        "open": "10:00",
+        "close": "21:00"
+      },
+      {
+        "day": "sun",
+        "open": "10:00",
+        "close": "21:00"
+      }
+    ],
+    "menu": [
+      {
+        "id": "not-so-fried-chicken",
+        "name": "\u201cNot So Fried\u201d Chicken Sandwich",
+        "description": "Chicken sandwich with Mendo\u2019s krispies, mustard pickle slaw, tomatoes and herb aioli on ciabatta.",
+        "priceUSD": 14.5,
+        "category": "Sandwich"
+      },
+      {
+        "id": "farm-club",
+        "name": "The Farm Club",
+        "description": "Roasted turkey, smashed avocado, bacon, tomato, pickled red onions and herb aioli on whole wheat.",
+        "priceUSD": 14.0,
+        "category": "Sandwich"
+      },
+      {
+        "id": "peruvian-steak",
+        "name": "Peruvian Steak Sandwich",
+        "description": "Seared steak with aji amarillo sauce, melted Oaxacan cheese, tomatoes and arugula on a toasted roll.",
+        "priceUSD": 16.0,
+        "category": "Sandwich"
+      }
+    ],
+    "dataSource": {
+      "name": "Mendocino Farms Menu",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://www.mendocinofarms.com/menus/"
+    }
+  },
+  {
+    "id": "eureka",
+    "name": "Eureka!",
+    "description": "Eureka! offers contemporary American fare, craft beers and small batch whiskeys in a modern yet rustic setting.",
+    "cuisine": [
+      "American",
+      "Burgers",
+      "Bar"
+    ],
+    "priceTier": "$$",
+    "location": {
+      "address": "4143 Campus Dr",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6527,
+      "lng": -117.842
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "11:00",
+        "close": "24:00"
+      },
+      {
+        "day": "tue",
+        "open": "11:00",
+        "close": "24:00"
+      },
+      {
+        "day": "wed",
+        "open": "11:00",
+        "close": "24:00"
+      },
+      {
+        "day": "thu",
+        "open": "11:00",
+        "close": "24:00"
+      },
+      {
+        "day": "fri",
+        "open": "11:00",
+        "close": "24:00"
+      },
+      {
+        "day": "sat",
+        "open": "11:00",
+        "close": "24:00"
+      },
+      {
+        "day": "sun",
+        "open": "11:00",
+        "close": "24:00"
+      }
+    ],
+    "menu": [
+      {
+        "id": "truffle-cheese-fries",
+        "name": "Truffle Cheese Fries",
+        "description": "Fries tossed with truffle salt, parmesan and white truffle cheese sauce.",
+        "priceUSD": 10.0,
+        "category": "Shareable"
+      },
+      {
+        "id": "american-burger",
+        "name": "Eureka! American Burger",
+        "description": "Burger with American Swiss cheese, grilled red onion, lettuce, pickles, tomato and special sauce.",
+        "priceUSD": 13.0,
+        "category": "Burger"
+      },
+      {
+        "id": "ahi-poke-stack",
+        "name": "Ahi Poke Stack",
+        "description": "Ahi tuna on black rice with avocado, firecracker aioli and crispy wonton chips.",
+        "priceUSD": 15.0,
+        "category": "Shareable"
+      }
+    ],
+    "dataSource": {
+      "name": "Eureka! Menu",
+      "lastUpdatedISO": "2026-02-11T23:49:04.321865",
+      "url": "https://eurekarestaurantgroup.com/locations/irvine/menu"
+    }
+  }
+]
