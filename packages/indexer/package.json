@@ -7,7 +7,8 @@
   "types": "./src/index.ts",
   "scripts": {
     "format": "prettier --write .",
-    "lint": "eslint --fix --max-warnings=0"
+    "lint": "eslint --fix --max-warnings=0",
+    "create-index": "node --loader tsx scripts/create-index.ts"
   },
   "lint-staged": {
     "*": [
@@ -20,6 +21,7 @@
   "prettier": "@packages/prettier-config",
   "dependencies": {
     "@packages/types": "workspace:*",
-    "@packages/data": "workspace:*"
+    "@packages/data": "workspace:*",
+    "tsx": "4.20.6"
   }
 }
