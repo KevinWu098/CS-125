@@ -19,6 +19,7 @@
   },
   "prettier": "@packages/prettier-config",
   "dependencies": {
-    "@packages/types": "workspace:*"
+    "@packages/types": "workspace:*",
+    "@packages/data": "workspace:*"
   }
 }
