@@ -1,15 +1,60 @@
 [
   {
+    "id": "chipotle-mexican-grill",
+    "name": "Chipotle Mexican Grill",
+    "description": "American fast casual Mexican restaurant chain",
+    "cuisine": [
+      "mexican"
+    ],
+    "priceTier": "$",
+    "location": {
+      "address": "4255 Campus Drive",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6495695,
+      "lng": -117.8393363
+    },
+    "hours": [],
+    "menu": [
+      {
+        "id": "chicken-burrito-bowl",
+        "name": "Chicken Burrito Bowl",
+        "description": "To prep our grilled chicken, we marinate it overnight in our smoky, spicy chipotle pepper adobo, and then grill it until it's perfectly charred with a subtle caramelized flavor. And when it comes to chicken, we don't bawk around. We currently source only Responsibly Raised birds, which in the U.S. means they're fed a 100% vegetarian diet with no antibiotics, but we're always striving to raise our standards even higher.",
+        "priceUSD": 10.85,
+        "category": "Bowls"
+      },
+      {
+        "id": "steak-burrito",
+        "name": "Steak Burrito",
+        "description": "Our steak and Barbacoa always start with Responsibly Raised beef. Then, we achieve tenderness in two ways. First, we cook it sous vide, which locks in moisture by heating the beef at a precise, low temperature for a looong time. Then we marinate it overnight in our smoky, spicy chipotle pepper adobo, and finish it on the grill (for steak) or add aromatic spices like oregano, cloves, and bay leaf, braise it slowly at a low temperature until it's mouthwateringly tender, then shred it by hand (for Barbacoa). Sorry, is our beef-geek showing?",
+        "priceUSD": 11.75,
+        "category": "Burritos"
+      },
+      {
+        "id": "chips-guacamole",
+        "name": "Chips & Guacamole",
+        "description": "We use only Hass avocados because they're the creamiest, most delicious of all avocado varieties. They're dark green and bumpy on the outside and velvety smooth on the inside, with a high fat content - but the good kind (whew). Every morning we mash the avocados by hand and make batches of guac from scratch.",
+        "priceUSD": 5.95,
+        "category": "Sides"
+      }
+    ],
+    "dataSource": {
+      "name": "Overpass API + Chipotle API",
+      "lastUpdatedISO": "2026-02-12T01:22:10.698417+00:00",
+      "url": "https://overpass-api.de/api/interpreter?data=[out:json];(node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);node[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551););out body center;"
+    }
+  },
+  {
     "id": "luna-grill",
     "name": "Luna Grill",
-    "description": "Fresh Mediterranean-inspired cuisine featuring kabobs, falafel, hummus, and flame-grilled proteins.",
+    "description": "Luna Grill is a grill restaurant in Irvine.",
     "cuisine": [
-      "mediterranean",
-      "greek"
+      "grill"
     ],
     "priceTier": "$$",
     "location": {
-      "address": "4187 Campus Dr #B152",
+      "address": "4143 Campus Drive",
       "city": "Irvine",
       "state": "CA",
       "postalCode": "92612",
@@ -41,60 +86,28 @@
         "day": "fri",
         "open": "11:00",
         "close": "20:30"
-      },
-      {
-        "day": "sat",
-        "open": "11:00",
-        "close": "20:30"
-      },
-      {
-        "day": "sun",
-        "open": "11:00",
-        "close": "20:30"
       }
     ],
-    "menu": [
-      {
-        "id": "chicken-kabob-plate",
-        "name": "Chicken Kabob Plate",
-        "description": "Flame-grilled chicken kabob served with rice, hummus, and Mediterranean salad.",
-        "priceUSD": 13.49,
-        "category": "Plates"
-      },
-      {
-        "id": "falafel-wrap",
-        "name": "Falafel Wrap",
-        "description": "Crispy falafel wrapped in warm pita with tahini sauce, lettuce, and tomatoes.",
-        "priceUSD": 10.49,
-        "category": "Wraps"
-      },
-      {
-        "id": "hummus-and-pita",
-        "name": "Hummus & Pita",
-        "description": "Creamy house-made hummus served with warm pita bread.",
-        "priceUSD": 6.49,
-        "category": "Sides"
-      }
-    ],
+    "menu": [],
     "dataSource": {
       "name": "Overpass API",
-      "lastUpdatedISO": "2026-02-12T00:49:36.208637+00:00",
-      "url": "https://overpass-api.de/api/interpreter?data=[out:json];node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);out body;"
+      "lastUpdatedISO": "2026-02-12T01:22:12.206504+00:00",
+      "url": "https://overpass-api.de/api/interpreter?data=[out:json];(node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);node[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551););out body center;"
     }
   },
   {
     "id": "blaze-pizza",
     "name": "Blaze Pizza",
-    "description": "Build-your-own artisan pizzas fired in a blazing hot open-flame oven in just 180 seconds.",
+    "description": "Pizza restaurant chain in the United States",
     "cuisine": [
       "pizza"
     ],
     "priceTier": "$",
     "location": {
-      "address": "4255 Campus Dr",
+      "address": "Watson Bridge",
       "city": "Irvine",
       "state": "CA",
-      "postalCode": "92612",
+      "postalCode": "92616",
       "lat": 33.6498111,
       "lng": -117.8391137
     },
@@ -135,39 +148,17 @@
         "close": "22:00"
       }
     ],
-    "menu": [
-      {
-        "id": "build-your-own-pizza",
-        "name": "Build Your Own Pizza",
-        "description": "Choose your own sauce, cheese, and unlimited toppings on a hand-stretched 11-inch crust.",
-        "priceUSD": 9.95,
-        "category": "Pizza"
-      },
-      {
-        "id": "art-lover",
-        "name": "Art Lover",
-        "description": "Red sauce, mozzarella, ricotta, chopped garlic, fresh basil, and olive oil drizzle.",
-        "priceUSD": 9.95,
-        "category": "Pizza"
-      },
-      {
-        "id": "green-stripe",
-        "name": "Green Stripe",
-        "description": "Garlic pesto base, mozzarella, roasted chicken, chopped garlic, fresh basil, and arugula.",
-        "priceUSD": 9.95,
-        "category": "Pizza"
-      }
-    ],
+    "menu": [],
     "dataSource": {
       "name": "Overpass API",
-      "lastUpdatedISO": "2026-02-12T00:49:36.208830+00:00",
-      "url": "https://overpass-api.de/api/interpreter?data=[out:json];node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);out body;"
+      "lastUpdatedISO": "2026-02-12T01:22:16.010413+00:00",
+      "url": "https://overpass-api.de/api/interpreter?data=[out:json];(node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);node[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551););out body center;"
     }
   },
   {
     "id": "breakfast-republic",
     "name": "Breakfast Republic",
-    "description": "An all-day breakfast eatery known for creative, hearty breakfast and brunch dishes in a fun, vibrant atmosphere.",
+    "description": "Breakfast Republic is an american and breakfast restaurant in Irvine.",
     "cuisine": [
       "american",
       "breakfast"
@@ -218,116 +209,11 @@
         "close": "15:00"
       }
     ],
-    "menu": [
-      {
-        "id": "oreo-pancakes",
-        "name": "Oreo Pancakes",
-        "description": "Fluffy pancakes loaded with Oreo cookie crumbles, topped with whipped cream and chocolate drizzle.",
-        "priceUSD": 15.99,
-        "category": "Pancakes"
-      },
-      {
-        "id": "br-breakfast-burrito",
-        "name": "BR Breakfast Burrito",
-        "description": "Scrambled eggs, cheese, tater tots, and your choice of bacon or sausage wrapped in a flour tortilla.",
-        "priceUSD": 16.99,
-        "category": "Burritos"
-      },
-      {
-        "id": "chicken-and-waffles",
-        "name": "Chicken & Waffles",
-        "description": "Crispy fried chicken breast served on a golden Belgian waffle with maple syrup and hot sauce.",
-        "priceUSD": 17.99,
-        "category": "Classics"
-      }
-    ],
+    "menu": [],
     "dataSource": {
       "name": "Overpass API",
-      "lastUpdatedISO": "2026-02-12T00:49:36.209048+00:00",
-      "url": "https://overpass-api.de/api/interpreter?data=[out:json];node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);out body;"
-    }
-  },
-  {
-    "id": "chipotle-mexican-grill",
-    "name": "Chipotle Mexican Grill",
-    "description": "Build-your-own burritos, bowls, tacos, and salads made with responsibly raised ingredients and real, whole foods.",
-    "cuisine": [
-      "mexican",
-      "fast_casual"
-    ],
-    "priceTier": "$",
-    "location": {
-      "address": "4255 Campus Dr #A120",
-      "city": "Irvine",
-      "state": "CA",
-      "postalCode": "92612",
-      "lat": 33.6497,
-      "lng": -117.8395
-    },
-    "hours": [
-      {
-        "day": "mon",
-        "open": "10:45",
-        "close": "23:00"
-      },
-      {
-        "day": "tue",
-        "open": "10:45",
-        "close": "23:00"
-      },
-      {
-        "day": "wed",
-        "open": "10:45",
-        "close": "23:00"
-      },
-      {
-        "day": "thu",
-        "open": "10:45",
-        "close": "23:00"
-      },
-      {
-        "day": "fri",
-        "open": "10:45",
-        "close": "23:00"
-      },
-      {
-        "day": "sat",
-        "open": "10:45",
-        "close": "23:00"
-      },
-      {
-        "day": "sun",
-        "open": "10:45",
-        "close": "23:00"
-      }
-    ],
-    "menu": [
-      {
-        "id": "chicken-burrito-bowl",
-        "name": "Chicken Burrito Bowl",
-        "description": "We use only Hass avocados because they're the creamiest, most delicious of all avocado varieties. They're dark green and bumpy on the outside and velvety smooth on the inside, with a high fat content - but the good kind (whew). Every morning we mash the avocados by hand and make batches of guac from scratch.",
-        "priceUSD": 10.85,
-        "category": "Bowls"
-      },
-      {
-        "id": "steak-burrito",
-        "name": "Steak Burrito",
-        "description": "We use bay leaves to add a subtle depth of flavor to dishes like our beans, rice, Barbacoa, and Carnitas. We remove the leaves from our rice before serving, though we've been known to miss one here and there. So, if you happen to catch a bay leaf in your bowl and think we've somehow served you a leaf of an oak tree \"from outside\" - your words, not ours - know that it's actually the leaf of a plant called Bay Laurel. Like the unassuming bassist of a rock band, it usually fades into the background but plays an instrumental (get it?) role in your dish.",
-        "priceUSD": 11.75,
-        "category": "Burritos"
-      },
-      {
-        "id": "chips-guacamole",
-        "name": "Chips & Guacamole",
-        "description": "Condor, Blackhawk, Domino, Valentine, and Black Magic. No, that's not a group of superheroes - it's actually the delicious list of black bean varieties we serve at Chipotle. Not to be confused with the ever-popular pinto beans we also serve at Chipotle, black beans are the perfect accompaniment to chicken or steak.",
-        "priceUSD": 5.95,
-        "category": "Sides"
-      }
-    ],
-    "dataSource": {
-      "name": "Chipotle API",
-      "lastUpdatedISO": "2026-02-12T00:49:36.209179+00:00",
-      "url": "https://services.chipotle.com/menu-metadata/v1/menu-metadata/ingredients"
+      "lastUpdatedISO": "2026-02-12T01:22:16.471454+00:00",
+      "url": "https://overpass-api.de/api/interpreter?data=[out:json];(node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);node[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551););out body center;"
     }
   }
 ]

@@ -4,11 +4,11 @@ export type RestaurantSchema = {
   description?: string;
   cuisine: string[];
   priceTier?: "$" | "$$" | "$$$" | "$$$$";
-  // rating?: {
-  //   average: number;
-  //   count: number;
-  //   source?: string;
-  // };
+  rating?: {
+    average: number;
+    count: number;
+    source?: string;
+  };
   // contact?: {
   //   phone?: string;
   //   website?: string;

@@ -1,0 +1,127 @@
+1. Project Overview
+Important: This proposal is exploratory and will evolve throughout the quarter.
+You are not expected to have all details finalized.
+1.1 Project Title
+Instructions: Provide a short, descriptive title that clearly communicates what the system does. (~8–12 words)
+Example: Smart EV Charging Advisor for Residential Solar Homes
+Smart Restaurant Recommendation Platform for Health Conscious UCI Consumers
+1.2 Problem Statement
+Instructions: Describe the real-world problem your project addresses and why it matters. Focus on the user’s pain point, not the solution. (~120–150 words)
+Example: Electric vehicle owners often struggle to decide when to charge their cars in order to minimize cost, reduce grid impact, and preserve battery health. Existing charging solutions are reactive and do not account for personal habits, local energy conditions, or upcoming needs.
+Healthy eating can be difficult to maintain, and it becomes even more challenging when nutritional information is hard to find while eating out at restaurants. For UCI students, this challenge is amplified by busy, on-the-go schedules that leave little room to carefully research dining options.
+Although there are many existing restaurant locator platforms, such as review and map-based apps, they often fall short in addressing the full range of considerations students face. These tools typically prioritize popularity or proximity rather than accounting for dietary restrictions, specific nutritional goals, or individual food preferences. As a result, students are left without an efficient and reliable way to find meals that support both their health and lifestyle needs.
+1.3 Target Users
+Instructions: Describe who the intended users are and the context in which they would use this system. (~60–80 words)
+Example: Homeowners with electric vehicles who charge at home and have access to time-of-use electricity pricing.
+The intended users of our search platform are UCI Students who are looking for food options near campus which meet their dietary requirements. Users would use the system when searching for a place to eat. Recommendations based on nutritional goals would give users the ability to make healthier, more informed choices.
+2. System Concept
+2.1 High-Level System Description
+Instructions: Explain what kind of system you are building at a conceptual level. Avoid technical details. (~120–150 words)
+Example: The system is a personal, context-aware recommendation engine that advises EV owners on optimal charging times. It combines user preferences, historical charging behavior, and external context to proactively suggest actions.
+This system is a personalized restaurant and meal recommendation system that provides users with context-aware information about what food to order based on their dietary preferences, location, goals, and previous behavior. RestaurantSmart will fetch relevant menu information from local spots in order to build a database of prices, nutritional information, distances, and ratings that can provide context when suggesting meals. The user would be able to define their preferences within the application to ensure their dietary restrictions, budget, and travel radius are accounted for, while also being able to provide additional context like fitness/health goals. The system will intelligently suggest cool meals and learn users’ preferences over time, resulting in a smart meal recommendation app that offers variance without deviating from any contextual restrictions.
+2.2 User Need → System Response
+Instructions: Describe a typical interaction: what triggers the system and what it provides to the user. Important: The system may initiate recommendations without an explicit user query.  (~80–100 words)
+Example: When the user arrives home and plugs in their vehicle, the system automatically evaluates current grid conditions and recommends whether to charge immediately or delay charging until later in the night.
+When the user opens the application, the system will automatically suggest meals according to the time of day, location, and goals of the user, without the need for querying. Each suggestion will include the name of the restaurant, its location, and the specific meals, each with price, nutrition macros, and ratings. If the user wishes to provide additional context they can query the system to have it produce a better result more relevant to their mood, previous meals, daily nutritional status, and goals.
+3. Data and Information Sources
+3.1 Data Sources
+Instructions: List and briefly describe all data sources your system relies on. (~100–120 words)
+Example: User charging history, user-defined preferences, time-of-use pricing schedules, weather forecasts, and publicly available grid demand data.
+Our application will make use of both user data and publicly accessible data.
+We will use restaurant menus, dining hall menus, and associated nutritional information. Specifically, we want to access public directories of national chains (e.g. Chipotle) while leveraging the public APIs of campus providers (e.g. CampusDish).
+For users, we will use their nutrition preferences and nutritional history which they will share and/or log with the platform. This will be done through our mobile app or through API connectors with other trackers.
+The combination of up-to-date restaurant information with up-to-date user nutrition will enable our app to provide better search results.
+
+3.2 Data Collection Strategy
+Instructions: Explain how each type of data will be collected or obtained. Not everything needs to be real-time. (~80–100 words)
+Example: User preferences are entered manually, the application logs charging history, and external data is retrieved via public APIs or static datasets.
+User preferences will be primarily inputted. When possible, we would also like to leverage an API connection with a third-party application which could share information with our application.
+For fetching restaurant and meal information, we will use CRON jobs to periodically scrape restaurant information and dining hall information for up-to-date information. This will be a combination of public APIs and automated data scraping via custom scripts.
+For user data, we will primarily depend on their inputted preferences via our interface, their past record of meals consumed, and other information that is user generated. In addition, we may choose to integrate biometrics.
+4. Personal Model and Context
+4.1 Personal Model
+Instructions: Describe how the system models the user and how this affects recommendations. (~100–120 words)
+Example: The personal model captures preferred charging windows, sensitivity to cost, and typical driving patterns. These factors influence how aggressively the system delays or advances charging.
+The personal model for our project captures both the concrete nutritional needs and restrictions of the user as well as the user’s personal food preferences. This allows users to search not only for food that they need in order to hit their macros, but also lets them easily pick and prioritize their favorite foods out of those options. This is done in two ways: presets and incremental learning. Presets can be provided by the user  during onboarding (and changed at any time), allowing them to set their dietary restrictions, macro goals, and favorite food categories. Incremental learning can be used to learn what kinds of restaurants and food styles the user likes specifically in order to reorder the results for qualifying meals.
+
+4.2 Contextual Factors
+Instructions: Identify contextual signals that influence system behavior. (~80–100 words)
+Example: Time of day, electricity pricing periods, upcoming travel needs, and current battery level.
+The user’s current location as well as times of day and usage frequencies the user uses the application to find meals can be used to predict when the user might be using the app soon, allowing pre-emptive action such as prefetching information and providing push notifications of nearby recommendations and macro information. If the user syncs their Google Calendar or other scheduling app, food along the route can also be found and displayed pre-emptively, which can save the user some time.
+For instance, if the user has recently been consuming less protein, the application may prioritize protein-rich meals.
+5. Search / Recommendation Logic
+5.1 Search or Recommendation Task
+Instructions: Clearly describe what items or actions are being ranked or recommended. (~80–100 words)
+Example: Charging start times across a 24-hour window, ranked by cost, convenience, and battery impact.
+Our application ranks food options across a range of locations in order to help users identify their favorite choice suitable for their dietary goals and restrictions. These meal recommendations can be ranked by a variety of factors, including cost, macronutrient goals, distance from the user’s current (or projected/set) location, and finally, the user’s individual food preferences for eating out.
+We are primarily ranking restaurant meals, based on their nutritional information and additionally weighted by other factors like distance to restaurant and cost of meal.
+The primary inputs are restaurant data and user information, with the outputs being meals at restaurants which match the user’s preferences, past history, and present requirements.
+5.2 Matching and Ranking (Conceptual)
+Instructions: Explain, at a high level, what makes one option better than another. No algorithms required. (~80–100 words)
+Example: Options are ranked higher if they reduce cost, align with user habits, and avoid peak grid demand.
+Our app’s meal recommendations can be ranked by various factors, including cost, macros, distance, or user food preferences. In most cases, the system will combine all of these factors to provide recommendations rather than relying on a single criteria, but the user will be able to manually switch to single-criteria sort or define their own custom multi-criteria sorting logic within the application.
+For example, we intend to rank most highly meals which match the user’s nutritional goals, with additional factors like cost and distance helping to add weight and distinguish options. User inputted preferences (e.g. likes) could also be helpful.
+
+
+6. System Architecture (Conceptual)
+6.1 Major Components
+Instructions: List the main components of your system in plain language. (~5–7 bullets)
+Example: Data collection module, personal model, context processor, recommendation engine, user interface.
+User profile model for aggregating dietary preferences
+Health information integration to weigh user health data
+Search engine interface for user interaction
+Recommendation engine for searching and ranking results given user context
+Data normalization layer for aggregating scraped data
+Location based search service for calculating restaurant distances from user
+Restaurant history service for tracking previously visited locations and nutrition
+
+6.2 User Interface and Presentation
+Instructions: Describe how recommendations will be presented to the user. (~60–80 words)
+Example: A mobile dashboard displaying recommended charging times with brief explanations.
+The search engine interface will be a mobile application that presents ranked restaurant results to users with photos of food items and key nutritional information. Users will be able to browse through results and adjust search criteria as needed. Additional nutritional information for individual food items will be displayed when users click into each search result.
+
+7. Project Scope and Feasibility
+7.1 What Will Be Implemented
+Instructions: Clearly state what you realistically plan to build this quarter. (~80–100 words)
+Example: A functional prototype that generates charging recommendations using simulated data.
+We plan to build a functional web application that intelligently generates meal & restaurant suggestions to users using simulated user preference data (diet, goals, etc.) and real-world restaurant data.
+The system will learn overtime based on user behavior and enhance the overall experience due to the increase in user context. We hope to have built a prototype that can simulate what the interface would look like after a user interacts with our app for some period of time (few weeks/months).
+The application will have search results which are automatically generated based on realtime context (e.g. user location) and on sourced data from scraped information from local restaurants. The user, via the interface, can further narrow down search results with filters and additional information about their preferences.
+
+Some possible recommendations our system may provide:
+User is far from protein goal, low on budget, and currently on campus: Panda Express (teriyaki chicken and vegetables)
+User is accessing the app mid-afternoon and wants a fruit heavier diet: Jamba Juice (Strawberry banana smoothie)
+User queries for something high in carbs the night before running a 10k: North Italia (Large spaghetti bolognese dish)
+User is allergic to gluten but pasta is one of their favorite meals: Qin West Noodle (Rice noodle dish for gluten alternative)
+User is accessing the app in the morning at UCI with a high daily protein goal: Breakfast Republic (Eggs, bacon, sausage platter)
+User just opened the app at noon on Monday and has gone to Tacobell the last 4 Mondays for lunch: Tacobell (Crunchwrap supreme)
+User commonly goes to chipotle for protein intake but has queried for more meal variance: Qdoba (Chicken, beans, rice bowl)
+User queries that they want Big Wok but it is too far away: Northern Cafe (Fried Chicken & Fried Rice)
+User simply queries for protein: list of varying protein dense options nearby
+User updates their preferences to include a gluten allergy: reduced list of options that accounts for gluten-free or gluten alternative dishes from accommodating restaurants
+
+7.2 What Is Out of Scope
+Instructions: List features that are intentionally excluded or left as future work. (~50–70 words)
+Example: Direct integration with vehicle hardware or real-time utility billing systems.
+Our application will not recommend ingredients or suggestions for home cooked meals. Although these may support a user’s nutritional needs, our goal is to support the niche of busy, on-the-go students who may not have the flexibility to cook at the present. Additionally, we will scope the data to restaurants around Irvine and UC Irvine, to keep the volume of data and potential edge cases manageable.
+8. Team Plan
+8.1 Team Roles and Responsibilities
+Instructions: Describe how work is divided among team members. (~60–80 words)
+Example: One member focuses on data and modeling, another on frontend UI, and another on integration.
+Ryder will focus on building the backend interface which will bridge the sourced data and the user interface
+Andrew will focus on building the recommendation engine based on available data (scraped+user-generated)
+Uno will focus on sourcing the data via public APIs and automated scraping, additionally supporting on recommendations
+Kevin will build the frontend interface to facilitate searches, user inputted information and other preferences
+
+8.2 Anticipated Challenges
+Instructions: Identify expected challenges or risks. (~60–80 words)
+Example: Limited access to real-world charging data and balancing competing optimization goals.
+One potential challenge may be the breadth and availability of data sourced. For instance, although some restaurants may have well-documented, available information (e.g. Chipotle), others (e.g. California Gogi) may be smaller restaurants/chains which do not have as well-documented public APIs.
+An additional risk is that there may not be enough restaurant options in order to provide high-fidelity, user-specific recommendations. In this case, we may need to expand the scope of ideal users or restaurants we are considering.
+Additionally, integrating the whole end to end system may be difficult, especially if we target additional data sources like health data and biotrackers.
+
+9. Summary
+Instructions: Summarize the project in 2–3 concise sentences. (~50–60 words)
+Example: This project proposes a context-aware EV charging advisor that helps homeowners make better charging decisions by combining personal preferences with external data.
+This project aims to create a user-specific, restaurant recommendation platform centered on enabling better, more informed nutritional choices for university students. We will make use of diverse data scraping approaches and user-provided preferences to provide meal options which fit are both accessible (e.g. distance, cost) and which fit their personal needs.
+
