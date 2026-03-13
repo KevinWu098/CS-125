@@ -2,32 +2,11 @@
 firecrawl_scraper.py
 
 This script uses the Firecrawl API to automatically extract menu
-information from a handful of restaurant websites near the
-University of California, Irvine.  Unlike the previous standalone
-scraper, there is no hard‑coded menu data: everything is pulled
-dynamically from each restaurant's public menu page via Firecrawl's
-`/extract` endpoint.  The resulting data is written to a JSON
-file in a format inspired by `uci_restaurants_full.json`, with
-fields for the restaurant's name, description, cuisine, location,
-hours of operation, and a list of menu items.
+information from a handful of restaurant websites near UCI
 
-To run this script you will need a Firecrawl API key.  The easiest
-way to supply it is to set an environment variable called
-``FIRECRAWL_API_KEY`` or create a ``.env`` file in the same
-directory with a line like::
+You need .env with firecrawl api key for this. This will update data.json
 
-    FIRECRAWL_API_KEY=fc-<your-key-here>
-
-Dependencies:
-  - firecrawl-py  (``pip install firecrawl-py``)
-  - python-dotenv (``pip install python-dotenv``)
-
-Usage::
-
-    python firecrawl_scraper.py
-
-The script will output a file called ``uci_restaurants_firecrawl.json``
-containing structured menu data for all configured restaurants.
+This file was written with the assistance of generative artificial intelligence.
 """
 
 from __future__ import annotations
@@ -40,8 +19,7 @@ from typing import Any, Dict, List, Optional
 from dotenv import load_dotenv
 
 try:
-    # Firecrawl is required for this scraper.  Install via
-    # `pip install firecrawl-py` if missing.
+    # firecrawl not installed
     from firecrawl import Firecrawl
 except ImportError as exc:  # pragma: no cover
     raise SystemExit(
@@ -50,10 +28,10 @@ except ImportError as exc:  # pragma: no cover
 
 
 def slugify(value: str) -> str:
-    """Convert a string into a URL‑friendly slug.
+    """Convert a string into a URL-friendly slug.
 
-    All non‑alphanumeric characters are replaced by single hyphens and the
-    result is lower‑cased.  Leading and trailing hyphens are removed.
+    All non-alphanumeric characters are replaced by single hyphens and the
+    result is lower-cased.  Leading and trailing hyphens are removed.
     """
     slug = re.sub(r"[^a-zA-Z0-9]+", "-", value.strip().lower())
     return slug.strip("-")
@@ -81,7 +59,7 @@ def parse_price(price_str: Optional[str]) -> Optional[float]:
 def extract_restaurant_data(app: Firecrawl, url: str) -> Dict[str, Any]:
     """Use Firecrawl to extract structured restaurant data from a URL.
 
-    The returned dictionary matches the high‑level structure used in
+    The returned dictionary matches the high-level structure used in
     ``uci_restaurants_full.json``.  All fields are optional and may be
     missing or empty depending on what the extractor is able to
     discover.  This function relies on Firecrawl's ability to infer
@@ -136,7 +114,7 @@ def extract_restaurant_data(app: Firecrawl, url: str) -> Dict[str, Any]:
         "required": ["restaurantName"],
     }
 
-    # A natural‑language prompt helps steer the extraction towards our
+    # A natural-language prompt helps steer the extraction towards our
     # domain.  Without a prompt Firecrawl may still work, but a well
     # crafted prompt can improve accuracy.  Feel free to adjust the
     # wording here if Firecrawl struggles with your target sites.
