@@ -1,285 +1,1532 @@
 [
   {
-    "id": "chipotle-mexican-grill",
-    "name": "Chipotle Mexican Grill",
-    "description": "American fast casual Mexican restaurant chain",
-    "cuisine": [
-      "mexican"
-    ],
-    "priceTier": "$",
-    "location": {
-      "address": "4255 Campus Drive",
-      "city": "Irvine",
-      "state": "CA",
-      "postalCode": "92612",
-      "lat": 33.6495695,
-      "lng": -117.8393363
-    },
-    "hours": [],
-    "menu": [
-      {
-        "id": "chicken-burrito-bowl",
-        "name": "Chicken Burrito Bowl",
-        "description": "To prep our grilled chicken, we marinate it overnight in our smoky, spicy chipotle pepper adobo, and then grill it until it's perfectly charred with a subtle caramelized flavor. And when it comes to chicken, we don't bawk around. We currently source only Responsibly Raised birds, which in the U.S. means they're fed a 100% vegetarian diet with no antibiotics, but we're always striving to raise our standards even higher.",
-        "priceUSD": 10.85,
-        "category": "Bowls"
-      },
-      {
-        "id": "steak-burrito",
-        "name": "Steak Burrito",
-        "description": "Our steak and Barbacoa always start with Responsibly Raised beef. Then, we achieve tenderness in two ways. First, we cook it sous vide, which locks in moisture by heating the beef at a precise, low temperature for a looong time. Then we marinate it overnight in our smoky, spicy chipotle pepper adobo, and finish it on the grill (for steak) or add aromatic spices like oregano, cloves, and bay leaf, braise it slowly at a low temperature until it's mouthwateringly tender, then shred it by hand (for Barbacoa). Sorry, is our beef-geek showing?",
-        "priceUSD": 11.75,
-        "category": "Burritos"
-      },
-      {
-        "id": "chips-guacamole",
-        "name": "Chips & Guacamole",
-        "description": "We use only Hass avocados because they're the creamiest, most delicious of all avocado varieties. They're dark green and bumpy on the outside and velvety smooth on the inside, with a high fat content - but the good kind (whew). Every morning we mash the avocados by hand and make batches of guac from scratch.",
-        "priceUSD": 5.95,
-        "category": "Sides"
-      }
-    ],
-    "dataSource": {
-      "name": "Overpass API + Chipotle API",
-      "lastUpdatedISO": "2026-02-13T02:33:32.612792+00:00",
-      "url": "https://overpass-api.de/api/interpreter?data=[out:json];(node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);node[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551););out body center;"
-    }
-  },
-  {
     "id": "luna-grill",
     "name": "Luna Grill",
-    "description": "Luna Grill is a grill restaurant in Irvine.",
+    "description": "A Mediterranean-inspired restaurant offering a variety of grilled dishes, bowls, and shareable plates with an emphasis on freshness and quality ingredients.",
     "cuisine": [
-      "grill"
+      "Mediterranean",
+      "American",
+      "Grill"
     ],
-    "priceTier": "$$",
+    "priceTier": "Moderate",
     "location": {
-      "address": "4143 Campus Drive",
-      "city": "Irvine",
-      "state": "CA",
-      "postalCode": "92612",
-      "lat": 33.6505518,
-      "lng": -117.8390659
+      "address": "Not Provided",
+      "city": "Not Provided",
+      "state": "Not Provided",
+      "postalCode": "Not Provided",
+      "lat": 0,
+      "lng": 0
     },
     "hours": [
       {
-        "day": "mon",
-        "open": "11:00",
-        "close": "20:30"
+        "day": "Monday",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
       },
       {
-        "day": "tue",
-        "open": "11:00",
-        "close": "20:30"
+        "day": "Tuesday",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
       },
       {
-        "day": "wed",
-        "open": "11:00",
-        "close": "20:30"
+        "day": "Wednesday",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
       },
       {
-        "day": "thu",
-        "open": "11:00",
-        "close": "20:30"
+        "day": "Thursday",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
       },
       {
-        "day": "fri",
-        "open": "11:00",
-        "close": "20:30"
+        "day": "Friday",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "Sunday",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
       }
     ],
     "menu": [
       {
         "id": "garlic-bonfire-shrimp-plate",
         "name": "Garlic Bonfire Shrimp Plate",
-        "description": "Juicy, flame-grilled garlic shrimp finished with a fresh lemon and parsley drizzle.",
+        "description": "Juicy, flame-grilled garlic shrimp finished with a fresh lemon and parsley drizzle. Served with warm pita bread, choice of sauce, and two sides.",
         "priceUSD": null,
         "category": "Plates"
       },
       {
         "id": "falafel-plate",
         "name": "Falafel Plate",
-        "description": "Five rounds of handcrafted falafel",
+        "description": "Five rounds of handcrafted falafel served with salad, rice, and pita.",
         "priceUSD": null,
         "category": "Plates"
       },
       {
         "id": "chicken-kabob-koobideh-kabob-plate",
         "name": "Chicken Kabob & Koobideh Kabob Plate",
-        "description": "Thinly cut pieces of savory chicken and our seasoned minced beef kabob",
+        "description": "Thinly cut pieces of savory chicken and seasoned minced beef kabob.",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "chicken-kabob-gyro-meat-plate",
+        "name": "Chicken Kabob & Gyro Meat Plate",
+        "description": "Succulent pieces of boneless chicken tenders and hand-carved gyro meat.",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "grilled-salmon-plate",
+        "name": "Grilled Salmon Plate",
+        "description": "Sustainably raised and simply seasoned grilled salmon.",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "bistro-beef-kabob-plate",
+        "name": "Bistro Beef Kabob Plate",
+        "description": "Marinated pieces of tender beef skewered with onion and bell pepper.",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "flat-cut-chicken-kabob-plate",
+        "name": "Flat Cut Chicken Kabob Plate",
+        "description": "Thinly cut pieces of savory chicken.",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "gyro-meat-plate",
+        "name": "Gyro Meat Plate",
+        "description": "A blend of beef, lamb, and traditional near-eastern spices.",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "koobideh-kabob-plate",
+        "name": "Koobideh Kabob Plate",
+        "description": "Traditional Persian style kabob made with seasoned minced beef.",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "veggie-kabob-plate",
+        "name": "Veggie Kabob Plate",
+        "description": "Grilled marinated button mushrooms, yellow squash, onion and bell pepper served with spicy or original hummus.",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "chicken-kabob-plate",
+        "name": "Chicken Kabob Plate",
+        "description": "Succulent pieces of boneless chicken.",
         "priceUSD": null,
         "category": "Plates"
       }
     ],
-    "dataSource": {
-      "name": "Overpass API + Website (HTML menus)",
-      "lastUpdatedISO": "2026-02-13T02:33:34.837239+00:00",
-      "url": "https://overpass-api.de/api/interpreter?data=[out:json];(node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);node[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551););out body center;"
-    }
+    "dataSource": "firecrawl"
   },
   {
-    "id": "blaze-pizza",
-    "name": "Blaze Pizza",
-    "description": "Pizza restaurant chain in the United States",
+    "id": "mendocino-farms",
+    "name": "Mendocino Farms",
+    "description": "We’re committed to continuously evolving our menu so that we’re always WOW-ing our guests with new unexpected flavor combinations. Be sure to check back to discover our Chef’s latest innovations.",
     "cuisine": [
-      "pizza"
+      "American",
+      "Sandwiches",
+      "Salads"
     ],
-    "priceTier": "$",
+    "priceTier": "Moderate",
     "location": {
-      "address": "Watson Bridge",
-      "city": "Irvine",
-      "state": "CA",
-      "postalCode": "92616",
-      "lat": 33.6498111,
-      "lng": -117.8391137
+      "address": "N/A",
+      "city": "N/A",
+      "state": "N/A",
+      "postalCode": "N/A",
+      "lat": 0,
+      "lng": 0
     },
     "hours": [
       {
-        "day": "mon",
-        "open": "11:00",
-        "close": "22:00"
+        "day": "Monday",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
       },
       {
-        "day": "tue",
-        "open": "11:00",
-        "close": "22:00"
+        "day": "Tuesday",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
       },
       {
-        "day": "wed",
-        "open": "11:00",
-        "close": "22:00"
+        "day": "Wednesday",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
       },
       {
-        "day": "thu",
-        "open": "11:00",
-        "close": "22:00"
+        "day": "Thursday",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
       },
       {
-        "day": "fri",
-        "open": "11:00",
-        "close": "22:00"
+        "day": "Friday",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
       },
       {
-        "day": "sat",
-        "open": "11:00",
-        "close": "22:00"
+        "day": "Saturday",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
       },
       {
-        "day": "sun",
-        "open": "11:00",
-        "close": "22:00"
+        "day": "Sunday",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
       }
     ],
     "menu": [
+      {
+        "id": "the-seasonal-goat-with-sweet-citrus",
+        "name": "The Seasonal GOAT with Sweet Citrus",
+        "description": "chicken, goat cheese, honey roasted almonds, oranges, shaved fennel, pickled red onions, fresh mint, romaine, kale, mixed greens, farmhouse vinaigrette, hot citrus honey (710 cal)",
+        "priceUSD": null,
+        "category": "Chef's Specials"
+      },
+      {
+        "id": "smoky-bbq-brioche-sandwich",
+        "name": "Smoky BBQ Brioche Sandwich",
+        "description": "smoked pork burnt ends, BBQ sauce, rainbow carrot-apple slaw, B&B pickles, herb aioli, on cornmeal brioche (670 cal)",
+        "priceUSD": null,
+        "category": "Chef's Specials"
+      },
+      {
+        "id": "the-farmhouse-ranch-salad",
+        "name": "The Farmhouse Ranch Salad",
+        "description": "vine-ripened cherry tomatoes, cucumber, avocado, parmesan, tuscan krispies, chives, romaine, kale mixed greens, herb buttermilk ranch (470 Cal)",
+        "priceUSD": null,
+        "category": "Salads"
+      },
+      {
+        "id": "not-so-fried-chicken",
+        "name": "“Not So Fried” Chicken",
+        "description": "chicken, Mendo’s krispies, mustard pickle slaw, tomatoes, pickled red onions, herb aioli, on toasted ciabatta with a side of golden BBQ sauce or mustard remoulade (900-1020 cal)",
+        "priceUSD": null,
+        "category": "Sandwiches"
+      },
+      {
+        "id": "the-farm-club",
+        "name": "The Farm Club",
+        "description": "roasted turkey, smashed avocado, applewood smoked bacon, tomatoes, pickled red onions, mixed greens, herb aioli, on seeded honey whole wheat (760 cal)",
+        "priceUSD": null,
+        "category": "Sandwiches"
+      },
+      {
+        "id": "chicken-parm-dip",
+        "name": "Chicken Parm Dip",
+        "description": "chicken, Mendo’s krispies, melted mozzarella & parmesan, pomodoro sauce, basil, Calabrian chile aioli, on toasted sesame roll served with extra pomodoro for dipping (930-970 cal)",
+        "priceUSD": null,
+        "category": "Sandwiches"
+      },
+      {
+        "id": "crispy-chicken-tenders",
+        "name": "Crispy Chicken Tenders",
+        "description": "with a side of ketchup or vegan ranch (320 cal)",
+        "priceUSD": null,
+        "category": "Kids"
+      },
+      {
+        "id": "grilled-turkey-cheddar-sandwich",
+        "name": "Grilled Turkey & Cheddar Sandwich",
+        "description": "add herb mayo, yellow mustard, or tomato by request (540 cal)",
+        "priceUSD": null,
+        "category": "Kids"
+      },
+      {
+        "id": "guava-lemonade",
+        "name": "Guava Lemonade",
+        "description": "guava puree, lemonade, cane sugar",
+        "priceUSD": null,
+        "category": "Housemade Beverages"
+      }
+    ],
+    "dataSource": "firecrawl"
+  },
+  {
+    "id": "pizza-place",
+    "name": "Pizza Place",
+    "description": "Chef-Inspired. Always Delicious. Try out our latest Featured Favorites.",
+    "cuisine": [
+      "Italian",
+      "Pizza"
+    ],
+    "priceTier": "Affordable",
+    "location": {
+      "address": "123 Pizza St",
+      "city": "Pizza Town",
+      "state": "PT",
+      "postalCode": "12345",
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    "hours": [
+      {
+        "day": "Monday",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "Sunday",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "sweet-heat",
+        "name": "Sweet Heat",
+        "description": "NEW Limited-Time Signature Pizza! Inspired by Marvel Television’s Daredevil: Born Again, this fearless pie brings the heat with our classic dough and spicy red sauce as the foundation. It’s stacked with double pepperoni, fresh mozzarella, and fire-roasted red peppers, then finished with a drizzle of Mike’s Hot Honey for a sweet-heat punch that hits fast and lingers strong.",
+        "priceUSD": 12.99,
+        "category": "Pizza"
+      },
+      {
+        "id": "carnivore",
+        "name": "Carnivore",
+        "description": "Our Chef’s signature recipe includes a savory mix of pepperoni slices, julienned ham and crumbled meatballs. The toppings are paired with our house made tomato-based sauce, mozzarella cheese, and finished with a Balsamic drizzle. It’s a protein-packed pizza perfect for meat lovers. Limited substitutions.",
+        "priceUSD": 13.99,
+        "category": "Pizza"
+      },
+      {
+        "id": "spicy-pepperoni-pizza",
+        "name": "Spicy Pepperoni Pizza",
+        "description": "One of the most popular Signature Pizzas by far is topped with double pepperoni, jalapeño with garlic and now drizzled with Mike’s Hot Honey.",
+        "priceUSD": 10.99,
+        "category": "Pizza"
+      },
+      {
+        "id": "build-your-own-pizza-11-inch",
+        "name": "Build Your Own Pizza (11-inch)",
+        "description": "Choose any toppings.",
+        "priceUSD": 9.99,
+        "category": "Pizza"
+      },
+      {
+        "id": "pepperoni-fast-fire-d-fold",
+        "name": "Pepperoni Fast Fire'd Fold",
+        "description": "NEW Blaze Fast-Fire’d Folds are based on the concepts of Italian calzones and strombolis. The Pepperoni Fast Fire'd Fold is made with the same house-made fresh dough that is the base for our pizzas. The dough perfectly envelops a melty mix of mozzarella, ricotta, parmesan, oregano, garlic, and savory pepperoni. It is served with 2 side cups of red sauce.",
+        "priceUSD": 7.99,
+        "category": "Fast Fire'd Favorites"
+      },
+      {
+        "id": "green-goddess-chop-salad-side",
+        "name": "Green Goddess Chop Salad – Side",
+        "description": "This fresh and vibrant salad that's packed with flavor! Crisp romaine lettuce is topped with juicy tomatoes, mushrooms, black olives, shredded mozzarella, and oregano, all tossed in a creamy, Green Goddess (creamy ranch, pesto) dressing.",
+        "priceUSD": 6.99,
+        "category": "Salad"
+      },
       {
         "id": "cheesy-bread",
         "name": "Cheesy Bread",
-        "description": "Our classic dough with shredded mozzarella, oregano, olive oil drizzle, two sides of red sauce",
-        "priceUSD": 5.95,
-        "category": "Menu"
+        "description": "Our classic dough with shredded mozzarella, oregano, olive oil drizzle, two sides of red sauce.",
+        "priceUSD": 5.99,
+        "category": "Cheesy Breads"
       },
       {
-        "id": "keto-pizza",
-        "name": "Keto Pizza",
-        "description": "keto (gf) crust, spicy red sauce, mozzarella, ovalini mozzarella, bacon, cherry tomatoes, mushrooms, spinach",
-        "priceUSD": 15.15,
-        "category": "Menu"
+        "id": "s-more-pie",
+        "name": "S'more Pie",
+        "description": "Because you deserve a sweet treat. Fast fired daily.",
+        "priceUSD": 4.99,
+        "category": "Dessert"
       },
       {
-        "id": "protein-pizza",
-        "name": "Protein Pizza",
-        "description": "keto (gf) crust, red sauce, mozzarella, Italian meatballs, smoked ham, grilled chicken, black olives, green bell peppers, oregano",
-        "priceUSD": 15.15,
-        "category": "Menu"
+        "id": "coke-bottle-20-oz",
+        "name": "Coke Bottle (20 oz)",
+        "description": "Refreshing carbonated beverage in a 20 oz bottle.",
+        "priceUSD": 1.99,
+        "category": "Drinks"
       }
     ],
-    "dataSource": {
-      "name": "Overpass API + Aggregator (https://www.roostcafeandbistro.com)",
-      "lastUpdatedISO": "2026-02-13T02:33:47.395474+00:00",
-      "url": "https://overpass-api.de/api/interpreter?data=[out:json];(node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);node[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551););out body center;"
-    }
+    "dataSource": "firecrawl"
   },
   {
-    "id": "breakfast-republic",
-    "name": "Breakfast Republic",
-    "description": "Breakfast Republic is an american and breakfast restaurant in Irvine.",
+    "id": "northern-cafe",
+    "name": "Northern Cafe 颐丰园",
+    "description": "A menu for Northern Cafe (颐丰园), established 2004, featuring a variety of traditional Chinese dishes in a dining atmosphere decorated with bilingual English/Chinese labels.",
     "cuisine": [
-      "american",
-      "breakfast"
+      "Chinese"
     ],
     "priceTier": "$$",
     "location": {
-      "address": "4213 Campus Drive #P166B",
+      "address": "4175 Campus Dr",
       "city": "Irvine",
       "state": "CA",
       "postalCode": "92612",
-      "lat": 33.6504111,
-      "lng": -117.8377808
+      "lat": 33.6501705,
+      "lng": -117.8426879
     },
     "hours": [
       {
-        "day": "mon",
-        "open": "07:00",
-        "close": "15:00"
+        "day": "Monday",
+        "open": "11:00 AM",
+        "close": "9:30 PM"
       },
       {
-        "day": "tue",
-        "open": "07:00",
-        "close": "15:00"
+        "day": "Tuesday",
+        "open": "11:00 AM",
+        "close": "9:30 PM"
       },
       {
-        "day": "wed",
-        "open": "07:00",
-        "close": "15:00"
+        "day": "Wednesday",
+        "open": "11:00 AM",
+        "close": "9:30 PM"
       },
       {
-        "day": "thu",
-        "open": "07:00",
-        "close": "15:00"
+        "day": "Thursday",
+        "open": "11:00 AM",
+        "close": "9:30 PM"
       },
       {
-        "day": "fri",
-        "open": "07:00",
-        "close": "15:00"
+        "day": "Friday",
+        "open": "11:00 AM",
+        "close": "9:30 PM"
       },
       {
-        "day": "sat",
-        "open": "07:00",
-        "close": "15:00"
+        "day": "Saturday",
+        "open": "11:00 AM",
+        "close": "9:30 PM"
       },
       {
-        "day": "sun",
-        "open": "07:00",
-        "close": "15:00"
+        "day": "Sunday",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
       }
     ],
     "menu": [
       {
-        "id": "breakfast-jambalaya",
-        "name": "Breakfast Jambalaya",
-        "description": "shrimp and portuguese linguisa sausage, rice, green onion, red bell pepper, and fire roasted tomato, topped with three eggs any style",
-        "priceUSD": 20.13,
-        "category": "Menu"
+        "id": "beef-roll",
+        "name": "Beef Roll",
+        "description": "A flavorful roll filled with beef.",
+        "priceUSD": 12.99,
+        "category": "Pancake 手工饼类"
       },
       {
-        "id": "american",
-        "name": "American",
-        "description": "three eggs any style, choice of sausage or three strips of bacon, house potatoes, and your choice of bread",
-        "priceUSD": 14.38,
-        "category": "Menu"
+        "id": "scallion-pancake",
+        "name": "Scallion Pancake",
+        "description": "Crispy pancake with scallions.",
+        "priceUSD": 7.99,
+        "category": "Pancake 手工饼类"
       },
       {
-        "id": "chilaquiles",
-        "name": "Chilaquiles",
-        "description": "corn tortillas, house made red salsa, three eggs any style, queso fresco, mexican cheese, and sour cream, served with black beans and mexican rice",
-        "priceUSD": 14.95,
-        "category": "Menu"
+        "id": "fried-rice-w-chicken-shrimp-or-vegetable",
+        "name": "Fried Rice w/Chicken, Shrimp, or Vegetable",
+        "description": "Traditional fried rice with your choice of chicken, shrimp, or vegetables.",
+        "priceUSD": 12.99,
+        "category": "Fried Rice or Noodle 特色主食"
+      },
+      {
+        "id": "house-special-beef-noodle-soup",
+        "name": "House Special Beef Noodle Soup",
+        "description": "Hearty beef noodle soup with house special ingredients.",
+        "priceUSD": 14.99,
+        "category": "Noodle 家常面食"
+      },
+      {
+        "id": "juicy-pork-dumplings",
+        "name": "Juicy Pork Dumplings",
+        "description": "Delicious dumplings filled with juicy pork.",
+        "priceUSD": 12.99,
+        "category": "Handmade Dumpling 手工水饺"
+      },
+      {
+        "id": "spicy-beef-pot",
+        "name": "Spicy Beef Pot",
+        "description": "A hot pot dish with sliced beef and assorted vegetables.",
+        "priceUSD": 16.99,
+        "category": "HOT POT 招牌小火鍋"
+      },
+      {
+        "id": "hot-sour-soup",
+        "name": "Hot & Sour Soup",
+        "description": "A spicy and tangy soup that warms your soul.",
+        "priceUSD": 10.99,
+        "category": "Soup 湯品"
+      },
+      {
+        "id": "steamed-custard-buns",
+        "name": "Steamed Custard Buns",
+        "description": "Soft steamed buns filled with custard.",
+        "priceUSD": 5.99,
+        "category": "Dessert 精美甜品"
+      },
+      {
+        "id": "soda",
+        "name": "Soda",
+        "description": "Refreshing sodas available in various flavors.",
+        "priceUSD": 2.5,
+        "category": "BEVERAGES 飲品"
       }
     ],
-    "dataSource": {
-      "name": "Overpass API + Aggregator (https://www.roostcafeandbistro.com)",
-      "lastUpdatedISO": "2026-02-13T02:33:48.787099+00:00",
-      "url": "https://overpass-api.de/api/interpreter?data=[out:json];(node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);node[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551););out body center;"
-    }
+    "dataSource": "firecrawl"
+  },
+  {
+    "id": "eureka",
+    "name": "Eureka!",
+    "description": "Stay hungry. Stay thirsty.",
+    "cuisine": [
+      "American",
+      "Burgers",
+      "Craft Beer"
+    ],
+    "priceTier": "$$",
+    "location": {
+      "address": "12345 Sample St.",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92614",
+      "lat": 33.6846,
+      "lng": -117.8265
+    },
+    "hours": [
+      {
+        "day": "Monday",
+        "open": "11:00 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00 AM",
+        "close": "12:00 AM"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00 AM",
+        "close": "12:00 AM"
+      },
+      {
+        "day": "Sunday",
+        "open": "10:00 AM",
+        "close": "10:00 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "fresno-fig-burger",
+        "name": "Fresno Fig Burger",
+        "description": "A burger with bacon, arugula, and porter mustard.",
+        "priceUSD": 14.99,
+        "category": "Burgers"
+      },
+      {
+        "id": "craft-burger",
+        "name": "Craft Burger",
+        "description": "Juicy beef patty with craft toppings of your choice.",
+        "priceUSD": 12.99,
+        "category": "Burgers"
+      }
+    ],
+    "dataSource": "firecrawl"
+  },
+  {
+    "id": "silver-lake-ramen",
+    "name": "Silver Lake Ramen",
+    "description": "A restaurant specializing in a variety of ramen and Japanese cuisine, offering a diverse menu with both traditional and contemporary dishes.",
+    "cuisine": [
+      "Japanese",
+      "Ramen"
+    ],
+    "priceTier": null,
+    "location": {
+      "address": "1234 Ramen Ave",
+      "city": "Silver Lake",
+      "state": "CA",
+      "postalCode": "90026",
+      "lat": 34.0722,
+      "lng": -118.2776
+    },
+    "hours": [
+      {
+        "day": "Monday",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "Sunday",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "edamame",
+        "name": "Edamame",
+        "description": "Soy beans and truffle salt.",
+        "priceUSD": null,
+        "category": "Appetizer"
+      },
+      {
+        "id": "spicy-garlic-edamame",
+        "name": "Spicy Garlic Edamame",
+        "description": "Sauteed soybeans w/ fresh garlic, house made spicy sauce & sesame seeds.",
+        "priceUSD": null,
+        "category": "Appetizer"
+      },
+      {
+        "id": "creamy-broccolini",
+        "name": "Creamy Broccolini",
+        "description": "Broccolini with creamy sesame sauce",
+        "priceUSD": null,
+        "category": "Appetizer"
+      },
+      {
+        "id": "fried-gyoza-6pc",
+        "name": "Fried Gyoza (6pc)",
+        "description": "A Bestseller! juicy pork dumplings.",
+        "priceUSD": null,
+        "category": "Appetizer"
+      },
+      {
+        "id": "grilled-gyoza-6pc",
+        "name": "Grilled Gyoza (6pc)",
+        "description": "A Bestseller! juicy pork dumplings.",
+        "priceUSD": null,
+        "category": "Appetizer"
+      },
+      {
+        "id": "impossible-bun",
+        "name": "Impossible Bun",
+        "description": "Vegetarian. Panko fried impossible plant meat, spicy mustard, shredded cabbage and katsu sauce",
+        "priceUSD": null,
+        "category": "Bun"
+      },
+      {
+        "id": "spicy-chicken-bun",
+        "name": "Spicy Chicken Bun",
+        "description": "Spicy Chicken Karaage, ghost pepper Kimchi, green onion and teriyaki sauce",
+        "priceUSD": null,
+        "category": "Bun"
+      },
+      {
+        "id": "pork-bun",
+        "name": "Pork Bun",
+        "description": "Marinated pork belly with pickled onion, sesame Aioli and green onion.",
+        "priceUSD": null,
+        "category": "Bun"
+      },
+      {
+        "id": "crispy-chicken-karaage",
+        "name": "Crispy Chicken Karaage",
+        "description": "Japanese style fried chicken and spicy Aioli sauce.",
+        "priceUSD": null,
+        "category": "Appetizer"
+      },
+      {
+        "id": "crispy-rice-with-spicy-tuna",
+        "name": "Crispy Rice with Spicy Tuna",
+        "description": "Spicy tuna, crispy rice, avocado, Jalapeños & eel sauce. served with ginger.",
+        "priceUSD": null,
+        "category": "Appetizer"
+      },
+      {
+        "id": "chicken-karaage-bowl",
+        "name": "Chicken Karaage Bowl",
+        "description": "Japanese style fried chicken, teriyaki sauce, spicy Aioli, green onion and red ginger over rice.",
+        "priceUSD": null,
+        "category": "Bowl"
+      },
+      {
+        "id": "spicy-tuna-bowl",
+        "name": "Spicy Tuna Bowl",
+        "description": "Spicy tuna, mixed greens, fried onion, onion dressing and avocado over rice.",
+        "priceUSD": null,
+        "category": "Bowl"
+      },
+      {
+        "id": "soboro-bowl",
+        "name": "Soboro Bowl",
+        "description": "Ground chicken with scrambled egg, sesame seed, and green onion over rice.",
+        "priceUSD": null,
+        "category": "Bowl"
+      },
+      {
+        "id": "pork-bowl",
+        "name": "Pork Bowl",
+        "description": "Spicy. Pork belly, pickled onion, green onion, fried jalapeno and soft boiled egg over rice.",
+        "priceUSD": null,
+        "category": "Bowl"
+      },
+      {
+        "id": "curry-bowl",
+        "name": "Curry Bowl",
+        "description": "House made curry, mushrooms, pickled cucumbers, sesame seeds. Choice of Chicken karaage, Tofu, Impossible katsu.",
+        "priceUSD": null,
+        "category": "Bowl"
+      },
+      {
+        "id": "the-blaze-ramen",
+        "name": "The Blaze Ramen",
+        "description": "Spicy creamy pork broth, bean sprouts, spinach, green onion, seaweed, and seasoned egg. Choice of Pork, Chicken, or Tofu. (Contains Dairy)",
+        "priceUSD": null,
+        "category": "Ramen"
+      },
+      {
+        "id": "the-shoyu-ramen",
+        "name": "The Shoyu Ramen",
+        "description": "Clear chicken broth with Shoyu, bamboo shoots, spinach, green onion, seaweed and seasoned egg. Choice of Pork, Chicken, or Tofu.",
+        "priceUSD": null,
+        "category": "Ramen"
+      },
+      {
+        "id": "the-shoyu-on-fire-ramen",
+        "name": "The Shoyu on Fire Ramen",
+        "description": "Spicy clear chicken broth with Shoyu, green onion, corn, seaweed, jalapeno, micro cilantro, lime and seasoned egg. Choice of Pork, Chicken, or Tofu.",
+        "priceUSD": null,
+        "category": "Ramen"
+      },
+      {
+        "id": "the-veggie-ramen",
+        "name": "The Veggie Ramen",
+        "description": "Vegetarian. Vegetable broth with miso base, bean sprouts, corn, mushroom, tofu, broccolini, baby greens, kale, red cabbage and avocado.",
+        "priceUSD": null,
+        "category": "Ramen"
+      },
+      {
+        "id": "the-classic-ramen",
+        "name": "The Classic Ramen",
+        "description": "Creamy pork broth, bean sprouts, spinach, green onion, seaweed, black garlic oil and seasoned egg. Choice of Pork, Chicken, or Tofu. (Contains Dairy)",
+        "priceUSD": null,
+        "category": "Ramen"
+      },
+      {
+        "id": "the-garlic-truffle-ramen",
+        "name": "The Garlic Truffle Ramen",
+        "description": "A blend of creamy pork and vegetable broth, garlic, truffle oil, kale, mushrooms, black pepper, seaweed and seasoned egg. Choice of Pork, Chicken, or Tofu . Served with thick noodles. (Contains Dairy)",
+        "priceUSD": null,
+        "category": "Ramen"
+      },
+      {
+        "id": "the-spicy-veggie-ramen",
+        "name": "The Spicy Veggie Ramen",
+        "description": "Vegetarian. Vegetable stock with miso base, mixed greens, corn, tofu, mushroom, fried broccolini, avocado, bean sprouts, black pepper & chili oil",
+        "priceUSD": null,
+        "category": "Ramen"
+      }
+    ],
+    "dataSource": "firecrawl"
+  },
+  {
+    "id": "saffron-and-rose-ice-cream",
+    "name": "Saffron and Rose Ice Cream",
+    "description": "Known for their premium Persian ice cream flavors, Saffron and Rose Ice Cream combines luxurious ingredients to create unique and delicious products, featuring popular flavors and seasonal specialties.",
+    "cuisine": [
+      "Persian",
+      "Ice Cream"
+    ],
+    "priceTier": null,
+    "location": {
+      "address": "1245 Westwood Blvd",
+      "city": "Los Angeles",
+      "state": "CA",
+      "postalCode": "90024",
+      "lat": 34.0454,
+      "lng": -118.4442
+    },
+    "hours": [
+      {
+        "day": "Monday",
+        "open": "12:00 PM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00 PM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00 PM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00 PM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00 PM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00 PM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "Sunday",
+        "open": "12:00 PM",
+        "close": "10:00 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "saffron-pistachio-ice-cream",
+        "name": "Saffron Pistachio Ice Cream",
+        "description": "A blend of Golden Saffron, rosewater, and toasted pistachio. Fragrant, lightly spiced, and finished with a crunch of rich pistachio.",
+        "priceUSD": null,
+        "category": "Ice Cream"
+      },
+      {
+        "id": "faloodeh-persian-ice-cream",
+        "name": "Faloodeh Persian Ice Cream",
+        "description": "Chilled rosewater sorbet enriched with paper-thin rice noodles for a delicate crunch. Light, fresh and blissfully sweet.",
+        "priceUSD": null,
+        "category": "Ice Cream"
+      },
+      {
+        "id": "white-rose-ice-cream",
+        "name": "White Rose Ice Cream",
+        "description": "Combines floral essence of white rose with rich heavy cream for a delicate, sweet flavor.",
+        "priceUSD": null,
+        "category": "Ice Cream"
+      },
+      {
+        "id": "pink-rose-ice-cream",
+        "name": "Pink Rose Ice Cream",
+        "description": "A playful blend of rosewater and California cactus pear, capturing a creamy sweetness with a floral twist.",
+        "priceUSD": null,
+        "category": "Ice Cream"
+      },
+      {
+        "id": "almond-ice-cream",
+        "name": "Almond Ice Cream",
+        "description": "Organic whole almonds chopped and blended into a signature milk-base.",
+        "priceUSD": null,
+        "category": "Ice Cream"
+      },
+      {
+        "id": "cucumber-ice-cream",
+        "name": "Cucumber Ice Cream",
+        "description": "Persian cucumber refreshes the velvety ice cream, creating succulent flavor in every spoonful.",
+        "priceUSD": null,
+        "category": "Ice Cream"
+      },
+      {
+        "id": "taro-and-ube-ice-cream",
+        "name": "Taro and Ube Ice Cream",
+        "description": "A blend of organic Taro and Ube mixed into the signature milk-base.",
+        "priceUSD": null,
+        "category": "Ice Cream"
+      },
+      {
+        "id": "coconut-ice-cream",
+        "name": "Coconut Ice Cream",
+        "description": "Organic coconut is shaved and toasted then blended into the signature milk-base.",
+        "priceUSD": null,
+        "category": "Ice Cream"
+      },
+      {
+        "id": "green-tea-ice-cream",
+        "name": "Green Tea Ice Cream",
+        "description": "Top quality green tea blended into the signature milk-base.",
+        "priceUSD": null,
+        "category": "Ice Cream"
+      },
+      {
+        "id": "green-pistachio-ice-cream",
+        "name": "Green Pistachio Ice Cream",
+        "description": "Fresh pistachios in the signature milk-base, similar to saffron pistachio but without rosewater and saffron.",
+        "priceUSD": null,
+        "category": "Ice Cream"
+      },
+      {
+        "id": "vanilla-ice-cream",
+        "name": "Vanilla Ice Cream",
+        "description": "High quality French vanilla added to the signature milk-base.",
+        "priceUSD": null,
+        "category": "Ice Cream"
+      },
+      {
+        "id": "ginger-ice-cream",
+        "name": "Ginger Ice Cream",
+        "description": "Organic ginger is peeled and grated into the signature milk-base, creating a spicy and delicious flavor.",
+        "priceUSD": null,
+        "category": "Ice Cream"
+      }
+    ],
+    "dataSource": "firecrawl"
+  },
+  {
+    "id": "hen-house-grill",
+    "name": "Hen House Grill",
+    "description": "A restaurant offering a variety of Middle Eastern dishes, specializing in grilled chicken and family specials, served with house salad and fresh bread.",
+    "cuisine": [
+      "Middle Eastern"
+    ],
+    "priceTier": "$$",
+    "location": {
+      "address": "[Not provided]",
+      "city": "[Not provided]",
+      "state": "[Not provided]",
+      "postalCode": "[Not provided]",
+      "lat": 0,
+      "lng": 0
+    },
+    "hours": [],
+    "menu": [
+      {
+        "id": "family-special-1",
+        "name": "FAMILY special #1",
+        "description": "Combination of 2 skewers of Ground beef, 2 skewer of Ground chicken and grilled tomatoes; Served with white Basmati rice.",
+        "priceUSD": 45.97,
+        "category": "FAMILY SPECIALS"
+      },
+      {
+        "id": "family-special-2-mixed-chicken-kabobs",
+        "name": "FAMILY special #2 (Mixed Chicken Kabobs)",
+        "description": "Combination of two skewers of Ground chicken, two skewers of Boneless Chicken, and one skewer chicken tender; Serviced with grilled veggie and white Basmati rice.",
+        "priceUSD": 63.97,
+        "category": "FAMILY SPECIALS"
+      },
+      {
+        "id": "family-special-3",
+        "name": "FAMILY special #3",
+        "description": "Combination of 2 skewers of Ground beef, two skewer of Ground chicken, and two skews of boneless chicken; Served with grilled veggie and white Basmati rice.",
+        "priceUSD": 69.97,
+        "category": "FAMILY SPECIALS"
+      },
+      {
+        "id": "family-special-4-king-special",
+        "name": "FAMILY special #4 (KING special)",
+        "description": "Beef Soltani (One skewer of beef Chengeh, one skewer of Ground beef), Chicken Soltani (one skewer of chicken tender, one skewer of Ground chicken); Served with grilled veggie, tomatoes and white Basmati rice.",
+        "priceUSD": 74.97,
+        "category": "FAMILY SPECIALS"
+      },
+      {
+        "id": "whole-chicken",
+        "name": "Whole Chicken",
+        "description": "Roasted Young Chicken served with white basmati rice.",
+        "priceUSD": 21.97,
+        "category": "ROTISSERIE"
+      },
+      {
+        "id": "half-chicken",
+        "name": "Half Chicken",
+        "description": "Served with Garden salad, and Hummus.",
+        "priceUSD": 18.97,
+        "category": "ROTISSERIE"
+      },
+      {
+        "id": "three-pieces",
+        "name": "Three Pieces",
+        "description": "Mix of white and Dark meat, Served with Hummus, Garden Salad, and White Basmati Rice.",
+        "priceUSD": 17.97,
+        "category": "ROTISSERIE"
+      },
+      {
+        "id": "two-pieces",
+        "name": "Two Pieces",
+        "description": "Mix of white and Dark meat, served with hummus and Garden Salad.",
+        "priceUSD": 17.97,
+        "category": "ROTISSERIE"
+      },
+      {
+        "id": "half-chicken-and-barberry-rice",
+        "name": "Half Chicken and barberry rice",
+        "description": "Served with saffron Basmati rice & sautéed Barberries.",
+        "priceUSD": 23.97,
+        "category": "ROTISSERIE"
+      },
+      {
+        "id": "ground-chicken-chicken-koubideh",
+        "name": "GROUND Chicken (Chicken Koubideh)",
+        "description": "Two juicy strips of seasoned ground chicken, charbroiled to perfection, Served with white Basmati rice and grilled tomatoes.",
+        "priceUSD": 17.97,
+        "category": "GRILLED"
+      },
+      {
+        "id": "chicken-steak-chicken-barg",
+        "name": "CHICKEN STEAK, (chicken Barg)",
+        "description": "Marinated chicken tenders, charbroiled to perfection, Served with white Basmati rice and grilled tomatoes.",
+        "priceUSD": 21.97,
+        "category": "GRILLED"
+      },
+      {
+        "id": "combo-chicken",
+        "name": "COMBO Chicken",
+        "description": "Combination OF #6 AND #7.",
+        "priceUSD": 23.97,
+        "category": "GRILLED"
+      },
+      {
+        "id": "bonless-chicken",
+        "name": "BONLESS CHICKEN",
+        "description": "Marinated pieces of boneless chicken thigh, charbroiled to perfection, Served with grilled vegetables and white Basmati rice.",
+        "priceUSD": 20.97,
+        "category": "GRILLED"
+      },
+      {
+        "id": "chicken-on-the-bone-kabob",
+        "name": "CHICKEN ON THE BONE KABOB",
+        "description": "Seasoned pieces of whole chicken, Charbroiled to perfection; Served with grilled vegetables and white Basmati rice.",
+        "priceUSD": 22.97,
+        "category": "GRILLED"
+      },
+      {
+        "id": "ground-beef-beef-koubideh",
+        "name": "GROUND Beef (Beef Koubideh)",
+        "description": "Two juicy strips of seasoned ground beef, rolled around a skewer and charbroiled, Served with white Basmati rice and grilled tomatoes.",
+        "priceUSD": 18.97,
+        "category": "GRILLED"
+      },
+      {
+        "id": "beef-chengeh-beef-shish-kabob",
+        "name": "Beef Chengeh (Beef Shish Kabob)",
+        "description": "Succulent chunks of marinated beef Rib Eye, charbroiled, Served with grilled vegetables and white Basmati rice.",
+        "priceUSD": 27.95,
+        "category": "GRILLED"
+      },
+      {
+        "id": "combo-beef",
+        "name": "Combo Beef",
+        "description": "Combination of # 11 and #12.",
+        "priceUSD": 28.08,
+        "category": "GRILLED"
+      },
+      {
+        "id": "lamb-shish-kabob",
+        "name": "Lamb shish kabob",
+        "description": "Charbroiled Select pieces of succulent tenderloin of lamb; Served with grilled vegetable and white Basmati rice.",
+        "priceUSD": 29.97,
+        "category": "GRILLED"
+      },
+      {
+        "id": "lamb-chops-shishlik",
+        "name": "Lamb Chops (Shishlik)",
+        "description": "An all time favorite: tender lamb chops, seasoned, marinated and grilled to perfection, Served with white Basmati rice.",
+        "priceUSD": 32.97,
+        "category": "GRILLED"
+      },
+      {
+        "id": "chicken-curry-stew",
+        "name": "Chicken Curry STEW",
+        "description": "Chicken tenders, simmered with house special Curry sauce, Served with white Basmati rice.",
+        "priceUSD": 16.97,
+        "category": "STEWS"
+      },
+      {
+        "id": "gheymeh-stew",
+        "name": "Gheymeh STEW",
+        "description": "Beef chunks simmered with yellow split peas in a house special tomato sauce, topped with homemade French fries and fried onions; Served with white basmati rice.",
+        "priceUSD": 16.97,
+        "category": "STEWS"
+      },
+      {
+        "id": "gheymeh-bademjan-eggplant-stew",
+        "name": "Gheymeh Bademjan (Eggplant STEW)",
+        "description": "Fried eggplant, sautéed with chunks of beef, and onions in a special saffron tomato house sauce; Served with white Basmati rice.",
+        "priceUSD": 16.97,
+        "category": "STEWS"
+      },
+      {
+        "id": "ghormeh-sabzi-stew",
+        "name": "Ghormeh Sabzi STEW",
+        "description": "Fresh green herbs sautéed with chunks of beef, dried limes and red kidney beans; Served with white basmati rice.",
+        "priceUSD": 16.97,
+        "category": "STEWS"
+      },
+      {
+        "id": "dizi",
+        "name": "Dizi",
+        "description": "Seasoned lamb neck, slow cooked with chef’s special sauce and recipe.",
+        "priceUSD": 24.97,
+        "category": "TRADITIONAL ENTRÉE"
+      },
+      {
+        "id": "lamb-shank",
+        "name": "Lamb Shank",
+        "description": "Spring baby lamb shank, simmered with house special sauce; Served with mix of Dill and Fava beans & Basmati rice.",
+        "priceUSD": 23.97,
+        "category": "TRADITIONAL ENTRÉE"
+      },
+      {
+        "id": "kalleh-pacheh",
+        "name": "Kalleh Pacheh",
+        "description": "Friday & Saturday & Sunday ONLY.",
+        "priceUSD": 24.97,
+        "category": "TRADITIONAL ENTRÉE"
+      },
+      {
+        "id": "ground-sandwich-chicken-kabob-or-beef-kabob",
+        "name": "Ground Sandwich (chicken kabob or Beef kabob)",
+        "description": "",
+        "priceUSD": 16.97,
+        "category": "SANDWICHES"
+      },
+      {
+        "id": "beef-cutlet",
+        "name": "Beef Cutlet",
+        "description": "Ground beef patties, marinated in special house recipe.",
+        "priceUSD": 16.97,
+        "category": "SANDWICHES"
+      },
+      {
+        "id": "olovieh-chicken-potato-salad",
+        "name": "Olovieh (Chicken-potato Salad)",
+        "description": "Persian style chicken and potato salad mixed with mayonnaise and lemon juice.",
+        "priceUSD": 16.97,
+        "category": "SANDWICHES"
+      },
+      {
+        "id": "beef-sausage-sandwich",
+        "name": "Beef Sausage sandwich",
+        "description": "Charbroiled beef sausages, served with mustard, mayo and ketchup dressing, tomatoes, red onion, parsley, pickles and ice burg lettuce.",
+        "priceUSD": 16.97,
+        "category": "SANDWICHES"
+      },
+      {
+        "id": "bandari-style-beef-sausage",
+        "name": "Bandari-style beef sausage",
+        "description": "Fried beef sausages, fried onions & potatoes simmered in our special spicy sauce.",
+        "priceUSD": 17.97,
+        "category": "SANDWICHES"
+      },
+      {
+        "id": "lamb-tongue-sandwich",
+        "name": "Lamb Tongue sandwich",
+        "description": "Veal tongue simmered in our special sauce, then fried with olive oil, red onion and parsley.",
+        "priceUSD": 17.97,
+        "category": "SANDWICHES"
+      },
+      {
+        "id": "kashk-e-bademjan-eggplant-dip",
+        "name": "KASHK –E BADEMJAN (eggplant dip)",
+        "description": "A puree of fried eggplant with sautéed onions, garlic, mint, and Kashk (dried whey).",
+        "priceUSD": 14.97,
+        "category": "APPETIZERS"
+      },
+      {
+        "id": "hummus-chick-pea-and-sesame-seed-puree",
+        "name": "HUMMUS (chick-pea and sesame seed puree)",
+        "description": "A puree of garbanzo beans, garlic, Tahini, olive oil and lemon juice.",
+        "priceUSD": 9.97,
+        "category": "APPETIZERS"
+      },
+      {
+        "id": "mast-o-khiyar-yogurt-and-cucumber",
+        "name": "MAST-O KHIYAR (yogurt and cucumber)",
+        "description": "A delicious dip of chopped cucumbers mixed with yogurt and mint.",
+        "priceUSD": 9.97,
+        "category": "APPETIZERS"
+      },
+      {
+        "id": "mast-o-mooser-yogurt-and-shallots",
+        "name": "MAST-O MOOSER (yogurt and shallots)",
+        "description": "A tasty dip of chopped shallots with yogurt.",
+        "priceUSD": 9.97,
+        "category": "APPETIZERS"
+      },
+      {
+        "id": "garden-salad",
+        "name": "GARDEN SALAD",
+        "description": "Diced cucumbers, tomatoes, onions and parsley mixed with vinegar and olive oil.",
+        "priceUSD": 11.97,
+        "category": "APPETIZERS"
+      },
+      {
+        "id": "shirazi-salad",
+        "name": "SHIRAZI SALAD",
+        "description": "",
+        "priceUSD": 9.97,
+        "category": "APPETIZERS"
+      },
+      {
+        "id": "fountain-drink",
+        "name": "FOUNTAIN DRINK",
+        "description": "",
+        "priceUSD": 3.97,
+        "category": "DRINKS"
+      },
+      {
+        "id": "soft-drink-bottled",
+        "name": "SOFT DRINK (BOTTLED)",
+        "description": "Coke, Diet Coke, Sprite, and Dr. Pepper.",
+        "priceUSD": 4.97,
+        "category": "DRINKS"
+      },
+      {
+        "id": "doogh",
+        "name": "DOOGH",
+        "description": "",
+        "priceUSD": 4.07,
+        "category": "DRINKS"
+      },
+      {
+        "id": "water-bottled",
+        "name": "WATER (BOTTLED)",
+        "description": "",
+        "priceUSD": 2.08,
+        "category": "DRINKS"
+      },
+      {
+        "id": "white-basmati-rice",
+        "name": "White Basmati Rice",
+        "description": "",
+        "priceUSD": 8.97,
+        "category": "Rice Topping"
+      },
+      {
+        "id": "dill-weed-basmati-rice",
+        "name": "Dill-weed basmati rice",
+        "description": "Mix of dill weed, fava beans and basmati rice.",
+        "priceUSD": 11.97,
+        "category": "Rice Topping"
+      },
+      {
+        "id": "addas-polo",
+        "name": "Addas Polo",
+        "description": "Mixture of lentil, sautéed onion, raisins & dates, mixed with white Basmati rice.",
+        "priceUSD": 13.97,
+        "category": "Rice Topping"
+      },
+      {
+        "id": "lobia-polo",
+        "name": "Lobia Polo",
+        "description": "Green beans and ground beef, delicately flavored with cinnamon, garlic, onion, saffron and tomato sauce, mixed with white Basmati rice.",
+        "priceUSD": 13.97,
+        "category": "Rice Topping"
+      },
+      {
+        "id": "barberry-rice",
+        "name": "Barberry Rice",
+        "description": "A tantalizing combination of sour barberries and saffron, mixed with Basmati rice.",
+        "priceUSD": 14.97,
+        "category": "Rice Topping"
+      },
+      {
+        "id": "tomato-omelette",
+        "name": "Tomato Omelette",
+        "description": "",
+        "priceUSD": 13.97,
+        "category": "BREAKFAST"
+      },
+      {
+        "id": "beef-sausage-eggs",
+        "name": "Beef Sausage & Eggs",
+        "description": "",
+        "priceUSD": 13.97,
+        "category": "BREAKFAST"
+      },
+      {
+        "id": "cheese-walnuts",
+        "name": "Cheese & Walnuts",
+        "description": "Feta cheese, walnuts, tomatoes, Persian cucumbers and greens.",
+        "priceUSD": 12.97,
+        "category": "BREAKFAST"
+      },
+      {
+        "id": "two-eggs",
+        "name": "Two Eggs",
+        "description": "Two eggs served with fresh and hot bread (Taftoon/Naan), ANY STYLE.",
+        "priceUSD": 11.97,
+        "category": "BREAKFAST"
+      }
+    ],
+    "dataSource": "firecrawl"
+  },
+  {
+    "id": "tender-greens",
+    "name": "Tender Greens",
+    "description": "Start the year off on a healthy note with the Longevity Bowl. Made with slow cooked black lentils with fennel & dried pears, yellow & purple cauliflower, purple potatoes & arugula salad with pecorino cheese. It’s served with your choice of roasted maitake mushrooms or grilled salmon.",
+    "cuisine": [
+      "American",
+      "Health Food"
+    ],
+    "priceTier": "$",
+    "location": {
+      "address": "Various Locations",
+      "city": "",
+      "state": "",
+      "postalCode": "",
+      "lat": 0,
+      "lng": 0
+    },
+    "hours": [
+      {
+        "day": "Monday",
+        "open": "10:30 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:30 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:30 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:30 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "Friday",
+        "open": "10:30 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:30 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "Sunday",
+        "open": "10:30 AM",
+        "close": "9:00 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "salt-pepper-chicken",
+        "name": "Salt & Pepper Chicken",
+        "description": "garlic & herb marinade",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "chipotle-bbq-chicken",
+        "name": "Chipotle BBQ Chicken",
+        "description": "grilled with chipotle bbq",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "country-style-fried-chicken",
+        "name": "Country-Style Fried Chicken",
+        "description": "spiced buttermilk marinade; deep fried",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "falafel",
+        "name": "Falafel",
+        "description": "",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "grilled-salmon",
+        "name": "Grilled Salmon",
+        "description": "grilled medium with sea salt & herb oil",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "grilled-steak",
+        "name": "Grilled Steak",
+        "description": "garlic & herb marinade; medium rare",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "seared-tuna",
+        "name": "Seared Tuna",
+        "description": "grilled rare with sea salt & herb oil",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "grilled-shrimp",
+        "name": "Grilled Shrimp",
+        "description": "grilled w/ sea salt & herbs",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "grilled-sea-bass",
+        "name": "Grilled Sea Bass",
+        "description": "grilled w/ sea salt & herbs",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "chipotle-bbq-chicken-salad",
+        "name": "Chipotle BBQ Chicken Salad",
+        "description": "avocado, queso fresco, radish, green onions, crispy tortilla, cilantro, romaine, lime dressing",
+        "priceUSD": null,
+        "category": "Salads"
+      },
+      {
+        "id": "tuna-nicoise",
+        "name": "Tuna Nicoise",
+        "description": "cherry tomatoes, roasted fingerling potatoes, capers, french green beans, egg, black olives, baby greens, sherry vinaigrette",
+        "priceUSD": null,
+        "category": "Salads"
+      },
+      {
+        "id": "grilled-chicken-cobb",
+        "name": "Grilled Chicken Cobb",
+        "description": "blue cheese, bacon, egg, avocado, cherry tomatoes, romaine, tarragon dressing",
+        "priceUSD": null,
+        "category": "Salads"
+      },
+      {
+        "id": "mediterranean-steak",
+        "name": "Mediterranean Steak",
+        "description": "feta, cherry tomatoes, pickled cucumbers, sweet peppers, green olives, red gem lettuces, arugula, lemon vinaigrette",
+        "priceUSD": null,
+        "category": "Salads"
+      },
+      {
+        "id": "harvest-chicken",
+        "name": "Harvest Chicken",
+        "description": "Laura Chenel goat cheese, strawberries, seasonal citrus, almonds, roasted onions, herbs, baby lettuces, golden balsamic vinaigrette",
+        "priceUSD": null,
+        "category": "Salads"
+      },
+      {
+        "id": "italian-chop",
+        "name": "Italian Chop",
+        "description": "salami, mortadella, provolone, pecorino cheese, cherry tomatoes, sweet peppers, onions, herbs, pepperoncini, radicchio, red gem lettuce, roasted tomato vinaigrette",
+        "priceUSD": null,
+        "category": "Salads"
+      },
+      {
+        "id": "grilled-salmon-salad",
+        "name": "Grilled Salmon Salad",
+        "description": "miso mayo, pickled cucumber and onion, cherry tomatoes, avocado, papaya, cilantro, sesame seeds, gem lettuces, ginger dressing",
+        "priceUSD": null,
+        "category": "Salads"
+      },
+      {
+        "id": "longevity-bowl-w-braised-beans",
+        "name": "Longevity Bowl w/ Braised Beans",
+        "description": "panzanella salad with caramelized apples, seasonal squash, roasted tomato vinaigrette, and roasted Tokyo turnips, mushrooms, fingerling potatoes, olive oil labneh",
+        "priceUSD": null,
+        "category": "Bowls"
+      },
+      {
+        "id": "california-w-chipotle-bbq-chicken",
+        "name": "California w/ Chipotle BBQ Chicken",
+        "description": "roasted butternut squash salsa, cilantro lime brown rice, cabbage slaw, queso fresco, pepitas, lime crema",
+        "priceUSD": null,
+        "category": "Bowls"
+      },
+      {
+        "id": "fried-chicken-sandwich",
+        "name": "Fried Chicken Sandwich",
+        "description": "country-style fried chicken breast, cabbage slaw, pickles, spicy maple glaze, miso mayo, sesame bun",
+        "priceUSD": null,
+        "category": "Sandwiches"
+      },
+      {
+        "id": "chicken-pesto-sandwich",
+        "name": "Chicken Pesto Sandwich",
+        "description": "chicken breast, provolone, preserved tomatoes, arugula, sunflower seed pesto, aioli, grilled Larder Bakery sourdough",
+        "priceUSD": null,
+        "category": "Sandwiches"
+      },
+      {
+        "id": "salami-provolone-sandwich",
+        "name": "Salami & Provolone Sandwich",
+        "description": "salami, mortadella, provolone, sunflower seed pesto, giardiniera, aioli, grilled Larder Bakery sourdough",
+        "priceUSD": null,
+        "category": "Sandwiches"
+      },
+      {
+        "id": "tomato-mozzarella-sandwich",
+        "name": "Tomato Mozzarella Sandwich",
+        "description": "mozzarella, preserved tomatoes, arugula, sunflower seed pesto, aioli, grilled Larder Bakery sourdough",
+        "priceUSD": null,
+        "category": "Sandwiches"
+      },
+      {
+        "id": "avocado-toast",
+        "name": "Avocado Toast",
+        "description": "avocado, lemon ricotta, queso fresco, pickled fresno chili’s & onions, cilantro, grilled Larder Bakery sourdough",
+        "priceUSD": null,
+        "category": "Sandwiches"
+      },
+      {
+        "id": "tender-burger",
+        "name": "Tender Burger",
+        "description": "grilled 6oz beef patty (blend of chuck, brisket and hanger), monterey jack cheese, bistro sauce, lettuce, pickles on sesame bun",
+        "priceUSD": null,
+        "category": "Sandwiches"
+      }
+    ],
+    "dataSource": "firecrawl"
   }
 ]
