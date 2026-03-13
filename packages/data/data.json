@@ -41,7 +41,7 @@
     ],
     "dataSource": {
       "name": "Overpass API + Chipotle API",
-      "lastUpdatedISO": "2026-02-12T01:22:10.698417+00:00",
+      "lastUpdatedISO": "2026-02-13T02:33:32.612792+00:00",
       "url": "https://overpass-api.de/api/interpreter?data=[out:json];(node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);node[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551););out body center;"
     }
   },
@@ -88,10 +88,32 @@
         "close": "20:30"
       }
     ],
-    "menu": [],
+    "menu": [
+      {
+        "id": "garlic-bonfire-shrimp-plate",
+        "name": "Garlic Bonfire Shrimp Plate",
+        "description": "Juicy, flame-grilled garlic shrimp finished with a fresh lemon and parsley drizzle.",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "falafel-plate",
+        "name": "Falafel Plate",
+        "description": "Five rounds of handcrafted falafel",
+        "priceUSD": null,
+        "category": "Plates"
+      },
+      {
+        "id": "chicken-kabob-koobideh-kabob-plate",
+        "name": "Chicken Kabob & Koobideh Kabob Plate",
+        "description": "Thinly cut pieces of savory chicken and our seasoned minced beef kabob",
+        "priceUSD": null,
+        "category": "Plates"
+      }
+    ],
     "dataSource": {
-      "name": "Overpass API",
-      "lastUpdatedISO": "2026-02-12T01:22:12.206504+00:00",
+      "name": "Overpass API + Website (HTML menus)",
+      "lastUpdatedISO": "2026-02-13T02:33:34.837239+00:00",
       "url": "https://overpass-api.de/api/interpreter?data=[out:json];(node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);node[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551););out body center;"
     }
   },
@@ -148,10 +170,32 @@
         "close": "22:00"
       }
     ],
-    "menu": [],
+    "menu": [
+      {
+        "id": "cheesy-bread",
+        "name": "Cheesy Bread",
+        "description": "Our classic dough with shredded mozzarella, oregano, olive oil drizzle, two sides of red sauce",
+        "priceUSD": 5.95,
+        "category": "Menu"
+      },
+      {
+        "id": "keto-pizza",
+        "name": "Keto Pizza",
+        "description": "keto (gf) crust, spicy red sauce, mozzarella, ovalini mozzarella, bacon, cherry tomatoes, mushrooms, spinach",
+        "priceUSD": 15.15,
+        "category": "Menu"
+      },
+      {
+        "id": "protein-pizza",
+        "name": "Protein Pizza",
+        "description": "keto (gf) crust, red sauce, mozzarella, Italian meatballs, smoked ham, grilled chicken, black olives, green bell peppers, oregano",
+        "priceUSD": 15.15,
+        "category": "Menu"
+      }
+    ],
     "dataSource": {
-      "name": "Overpass API",
-      "lastUpdatedISO": "2026-02-12T01:22:16.010413+00:00",
+      "name": "Overpass API + Aggregator (https://www.roostcafeandbistro.com)",
+      "lastUpdatedISO": "2026-02-13T02:33:47.395474+00:00",
       "url": "https://overpass-api.de/api/interpreter?data=[out:json];(node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);node[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551););out body center;"
     }
   },
@@ -209,10 +253,32 @@
         "close": "15:00"
       }
     ],
-    "menu": [],
+    "menu": [
+      {
+        "id": "breakfast-jambalaya",
+        "name": "Breakfast Jambalaya",
+        "description": "shrimp and portuguese linguisa sausage, rice, green onion, red bell pepper, and fire roasted tomato, topped with three eggs any style",
+        "priceUSD": 20.13,
+        "category": "Menu"
+      },
+      {
+        "id": "american",
+        "name": "American",
+        "description": "three eggs any style, choice of sausage or three strips of bacon, house potatoes, and your choice of bread",
+        "priceUSD": 14.38,
+        "category": "Menu"
+      },
+      {
+        "id": "chilaquiles",
+        "name": "Chilaquiles",
+        "description": "corn tortillas, house made red salsa, three eggs any style, queso fresco, mexican cheese, and sour cream, served with black beans and mexican rice",
+        "priceUSD": 14.95,
+        "category": "Menu"
+      }
+    ],
     "dataSource": {
-      "name": "Overpass API",
-      "lastUpdatedISO": "2026-02-12T01:22:16.471454+00:00",
+      "name": "Overpass API + Aggregator (https://www.roostcafeandbistro.com)",
+      "lastUpdatedISO": "2026-02-13T02:33:48.787099+00:00",
       "url": "https://overpass-api.de/api/interpreter?data=[out:json];(node[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"restaurant\"](around:1000,33.643246,-117.842551);node[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551);way[\"amenity\"=\"fast_food\"](around:1000,33.643246,-117.842551););out body center;"
     }
   }
