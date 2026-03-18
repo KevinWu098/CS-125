@@ -1,0 +1,52 @@
+Extracting: Luna Grill (https://lunagrill.com/menu)
+  -> 11 menu items
+Extracting: Mendocino Farms (https://mendocinofarms.com/menus)
+  -> 13 menu items
+Extracting: Blaze Pizza (https://blazepizza.com/menu)
+  -> 22 menu items
+Extracting: Northern Cafe Irvine (https://northerncafeirvine.com/menu)
+  -> 92 menu items
+Extracting: Eureka! Irvine (https://eurekarestaurantgroup.com/eat/)
+  -> WARNING: insufficient data (name=True, menu=2 items)
+  -> Trying backup: Board & Brew (https://boardandbrew.com/menu)
+  -> 4 menu items
+Extracting: Silverlake Ramen (https://silverlakeramen.com/menu3.php)
+  -> 22 menu items
+Extracting: Saffron & Rose Persian Ice Cream (https://saffronrosepersianicecream.com/flavors)
+  -> 12 menu items
+Extracting: Yard House (https://yard-house-spectrum-center-dr.res-menu.com/menu)
+  -> 25 menu items
+Extracting: Tender Greens (https://tendergreens.com/menus)
+  -> 19 menu items
+Extracting: The Habit Burger & Grill (https://www.habitburger.com/menu)
+  -> 8 menu items
+Extracting: California Gogi Grill (https://www.californiagogi.com/)
+  -> 11 menu items
+Extracting: KY Sushi (https://ky-sushi.res-menu.com/)
+  -> 8 menu items
+Extracting: In-N-Out Burger (https://www.in-n-out.com/menu)
+  -> 6 menu items
+Extracting: Veggie Grill (https://www.veggiegrill.com/menus/)
+  -> 16 menu items
+Extracting: Wahoo's Fish Taco (https://www.wahoos.com/food-menus/)
+  -> 4 menu items
+Extracting: The Flame Broiler (https://flamebroilerusa.com/menu/81881)
+  -> 14 menu items
+Extracting: Kura Sushi (https://kurasushi.com/menu/)
+  -> 10 menu items
+Extracting: Chipotle (https://www.chipotle.com/menu)
+  -> FAILED: Payment Required: Failed to scrape. Insufficient credits to perform this request. For more credits, you can upgrade your plan at https://firecrawl.dev/pricing or try changing the request limit to a lower value. - No additional error details provided.
+  -> Trying backup: The Kebab Shop (https://thekebabshop.com/menu/)
+  -> FAILED: Payment Required: Failed to scrape. Insufficient credits to perform this request. For more credits, you can upgrade your plan at https://firecrawl.dev/pricing or try changing the request limit to a lower value. - No additional error details provided.
+  -> Trying backup: Denny's (https://www.dennys.com/food/)
+  -> FAILED: Payment Required: Failed to scrape. Insufficient credits to perform this request. For more credits, you can upgrade your plan at https://firecrawl.dev/pricing or try changing the request limit to a lower value. - No additional error details provided.
+  -> Trying backup: BJ's Restaurant & Brewhouse (https://www.bjsrestaurants.com/menu)
+  -> FAILED: Payment Required: Failed to scrape. Insufficient credits to perform this request. For more credits, you can upgrade your plan at https://firecrawl.dev/pricing or try changing the request limit to a lower value. - No additional error details provided.
+  -> No backup available; skipping slot for Chipotle
+Extracting: Panda Express (https://www.pandaexpress.com/menu)
+  -> FAILED: Payment Required: Failed to scrape. Insufficient credits to perform this request. For more credits, you can upgrade your plan at https://firecrawl.dev/pricing or try changing the request limit to a lower value. - No additional error details provided.
+  -> No backup available; skipping slot for Panda Express
+Extracting: Cucina Enoteca Irvine (https://www.urbankitchengroup.com/cucina-enoteca-irvine/menu/)
+  -> FAILED: Payment Required: Failed to scrape. Insufficient credits to perform this request. For more credits, you can upgrade your plan at https://firecrawl.dev/pricing or try changing the request limit to a lower value. - No additional error details provided.
+  -> No backup available; skipping slot for Cucina Enoteca Irvine
+Saved 17 restaurants to data.json

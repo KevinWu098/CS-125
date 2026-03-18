@@ -12,3 +12,6 @@ node_modules
 *.tsbuildinfo
 
 instructions.txt
+
+
+__pycache__
