@@ -16,6 +16,12 @@ type OpenStreetMapPanelProps = {
   maxDistanceMiles: number;
 };
 
+function hasValidCoordinates(lat: number, lng: number): boolean {
+  const inRange = Math.abs(lat) <= 90 && Math.abs(lng) <= 180;
+  const notZeroOrigin = Math.abs(lat) > 1e-9 || Math.abs(lng) > 1e-9;
+  return Number.isFinite(lat) && Number.isFinite(lng) && inRange && notZeroOrigin;
+}
+
 export function OpenStreetMapPanel({
   userLocation,
   rankedRestaurants,
@@ -86,20 +92,24 @@ export function OpenStreetMapPanel({
     markerLayerRef.current = markerLayer;
     markerLayer.clearLayers();
 
-    radiusCircleRef.current?.remove();
+    const hasDistanceFilter = maxDistanceMiles > 0;
     const radiusKm = maxDistanceMiles * KM_PER_MILE;
-    const radiusCircle = L.circle([userLocation.lat, userLocation.lng], {
-      radius: maxDistanceMiles * METERS_PER_MILE,
-      color: "#f43f5e",
-      weight: 1.5,
-      fillColor: "#f43f5e",
-      fillOpacity: 0.08,
-    }).addTo(map);
-    radiusCircleRef.current = radiusCircle;
+    radiusCircleRef.current?.remove();
+    radiusCircleRef.current = null;
+    if (hasDistanceFilter) {
+      const radiusCircle = L.circle([userLocation.lat, userLocation.lng], {
+        radius: maxDistanceMiles * METERS_PER_MILE,
+        color: "#f43f5e",
+        weight: 1.5,
+        fillColor: "#f43f5e",
+        fillOpacity: 0.08,
+      }).addTo(map);
+      radiusCircleRef.current = radiusCircle;
+    }
 
-    const visibleRestaurants = rankedRestaurants
-      .filter((entry) => entry.distanceKm <= radiusKm)
-      .slice(0, 15);
+    const visibleRestaurants = hasDistanceFilter
+      ? rankedRestaurants.filter((entry) => entry.distanceKm <= radiusKm).slice(0, 15)
+      : rankedRestaurants.slice(0, 15);
 
     const points: Array<[number, number]> = [[userLocation.lat, userLocation.lng]];
 
@@ -116,6 +126,9 @@ export function OpenStreetMapPanel({
 
     visibleRestaurants.forEach((entry, index) => {
       const { restaurant } = entry;
+      if (!hasValidCoordinates(restaurant.location.lat, restaurant.location.lng)) {
+        return;
+      }
       const markerIcon = L.divIcon({
         className: "",
         html: `<span style="display:block;height:11px;width:11px;border-radius:9999px;background:${index < 3 ? "#f43f5e" : "#334155"};border:2px solid #ffffff;"></span>`,
@@ -130,14 +143,16 @@ export function OpenStreetMapPanel({
       points.push([restaurant.location.lat, restaurant.location.lng]);
     });
 
-    const radiusBounds = L.latLng(userLocation.lat, userLocation.lng).toBounds(
-      maxDistanceMiles * METERS_PER_MILE,
-    );
     const zoomCapByRadius =
       maxDistanceMiles <= 1 ? 13 : maxDistanceMiles <= 3 ? 12 : maxDistanceMiles <= 8 ? 11 : 10;
 
-    const paddedRadiusBounds = radiusBounds.pad(0.35);
-    const combinedBounds = L.latLngBounds(points).extend(paddedRadiusBounds);
+    const combinedBounds = hasDistanceFilter
+      ? L.latLngBounds(points).extend(
+          L.latLng(userLocation.lat, userLocation.lng)
+            .toBounds(maxDistanceMiles * METERS_PER_MILE)
+            .pad(0.35),
+        )
+      : L.latLngBounds(points);
     if (combinedBounds.isValid() && mapRef.current === map) {
       try {
         map.fitBounds(combinedBounds, { padding: [52, 52], maxZoom: zoomCapByRadius });
@@ -156,7 +171,9 @@ export function OpenStreetMapPanel({
           <div>
             <p className="text-sm font-semibold text-slate-900">Nearby on OpenStreetMap</p>
             <p className="text-xs text-slate-500">
-              {`Map updates as filters change · radius ${maxDistanceMiles} mi`}
+              {maxDistanceMiles > 0
+                ? `Map updates as filters change · radius ${maxDistanceMiles} mi`
+                : "Map updates as filters change · any distance"}
             </p>
           </div>
           <Badge variant="secondary" className="bg-slate-100 text-slate-700">

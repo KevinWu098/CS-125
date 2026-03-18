@@ -1,5 +1,10 @@
 export { buildSearchIndex } from "./search/index-builder";
-export { buildIndexMeta, getIndexFilePaths, writeSearchIndexFiles } from "./search/index-files";
+export {
+  buildIndexMeta,
+  getIndexFilePaths,
+  readSearchIndexFiles,
+  writeSearchIndexFiles,
+} from "./search/index-files";
 export { normalizeText } from "./search/normalize";
 export { search } from "./search/search";
 export { tokenize } from "./search/tokenize";

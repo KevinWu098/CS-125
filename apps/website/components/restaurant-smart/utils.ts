@@ -8,6 +8,16 @@ import {
 } from "./constants";
 import type { DietaryKey, NutritionGoals, UserRecord } from "./types";
 
+const DIETARY_KEYS: DietaryKey[] = [
+  "vegan",
+  "vegetarian",
+  "glutenFree",
+  "halal",
+  "kosher",
+  "dairyFree",
+  "nutFree",
+];
+
 export function normalizeNutritionGoals(nutritionGoals?: Partial<NutritionGoals>): NutritionGoals {
   return {
     calories: nutritionGoals?.calories ?? DEFAULT_NUTRITION_GOALS.calories,
@@ -17,11 +27,27 @@ export function normalizeNutritionGoals(nutritionGoals?: Partial<NutritionGoals>
   };
 }
 
+export function normalizeDietaryRestrictions(dietaryRestrictions?: string[]): DietaryKey[] {
+  if (!Array.isArray(dietaryRestrictions)) {
+    return [];
+  }
+
+  const keys = new Set<DietaryKey>();
+  dietaryRestrictions.forEach((entry) => {
+    if (DIETARY_KEYS.includes(entry as DietaryKey)) {
+      keys.add(entry as DietaryKey);
+    }
+  });
+
+  return [...keys];
+}
+
 export function normalizeProfileRecord(profile: UserRecord): UserRecord {
   return {
     ...profile,
     ratings: profile.ratings,
     mealRatings: profile.mealRatings,
+    dietaryRestrictions: normalizeDietaryRestrictions(profile.dietaryRestrictions),
     nutritionGoals: normalizeNutritionGoals(profile.nutritionGoals),
     mealHistory: profile.mealHistory,
   };

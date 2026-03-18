@@ -34,6 +34,7 @@ type RankRestaurantsOptions = {
   sortBy: SortKey;
   userLocation: UserLocation;
   profile: UserRecord | null;
+  candidateRestaurantIds?: string[];
 };
 
 function buildCuisineSignals(profile: UserRecord | null): Record<string, number> {
@@ -87,7 +88,9 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
     selectedMealCategories,
     sortBy,
     userLocation,
+    candidateRestaurantIds,
   } = options;
+  const hasDistanceFilter = maxDistanceMiles > 0;
 
   const cuisineSignals = buildCuisineSignals(profile);
 
@@ -179,7 +182,14 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
       ? Math.max(nutritionGoals.calories - consumedNutrition.calories, 0)
       : null;
 
-  const filtered = restaurantData
+  const sourceRestaurants =
+    candidateRestaurantIds && candidateRestaurantIds.length > 0
+      ? candidateRestaurantIds
+          .map((restaurantId) => restaurantsById.get(restaurantId))
+          .filter((restaurant): restaurant is RestaurantSchema => restaurant !== undefined)
+      : restaurantData;
+
+  const filtered = sourceRestaurants
     .map<RankedRestaurant | null>((restaurant) => {
       const distanceKm = haversineDistanceKm(
         userLocation.lat,
@@ -222,7 +232,7 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
         return null;
       }
 
-      if (distanceKm > maxDistanceMiles * KM_PER_MILE) {
+      if (hasDistanceFilter && distanceKm > maxDistanceMiles * KM_PER_MILE) {
         return null;
       }
 
@@ -284,9 +294,16 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
 
           const explicitMealNormalized = (explicitMealSignal + 1) / 2;
           const mealCategoryNormalized = (mealCategorySignal + 1) / 2;
-          const { nutrition: mealNutrition } = resolveMealNutrition(meal);
+          const { nutrition: mealNutrition, estimated: nutritionEstimated } =
+            resolveMealNutrition(meal);
 
           let nutritionGoalSignal = 0.55;
+          let macroRatioSignal = 0.55;
+          let calorieSignal = 0.55;
+          let proteinGoalSignal = 0.55;
+          let proteinDensitySignal = 0.55;
+          let carbGoalSignal = 0.55;
+          let fatGoalSignal = 0.55;
           if (nutritionGoals) {
             const targetCalories = Math.max(nutritionGoals.calories, 1);
             const targetProteinCalories = Math.max(nutritionGoals.proteinG, 0) * 4;
@@ -307,40 +324,151 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
             const mealFatCalories = Math.max(mealNutrition.fatG, 0) * 9;
             const totalMealMacroCalories = mealProteinCalories + mealCarbCalories + mealFatCalories;
 
-            const mealProteinRatio =
-              totalMealMacroCalories > 0 ? mealProteinCalories / totalMealMacroCalories : 0.3;
             const mealCarbRatio =
               totalMealMacroCalories > 0 ? mealCarbCalories / totalMealMacroCalories : 0.45;
             const mealFatRatio =
               totalMealMacroCalories > 0 ? mealFatCalories / totalMealMacroCalories : 0.25;
 
-            const macroRatioDistance =
-              (Math.abs(mealProteinRatio - targetProteinRatio) +
-                Math.abs(mealCarbRatio - targetCarbRatio) +
-                Math.abs(mealFatRatio - targetFatRatio)) /
-              3;
-            const macroRatioSignal = clamp(1 - macroRatioDistance * 2.2, 0, 1);
+            const lowCarbBias = clamp((0.3 - targetCarbRatio) / 0.18, 0, 1);
+            const highProteinBias = clamp((targetProteinRatio - 0.3) / 0.2, 0, 1);
+
+            const proteinTargetPerMeal = Math.max(18, nutritionGoals.proteinG * 0.22);
+            proteinGoalSignal = clamp(mealNutrition.proteinG / proteinTargetPerMeal, 0, 1);
+
+            const proteinPer100Calories =
+              mealNutrition.calories > 0
+                ? (mealNutrition.proteinG / mealNutrition.calories) * 100
+                : 0;
+            proteinDensitySignal = clamp((proteinPer100Calories - 3.5) / 5.5, 0, 1);
+
+            const carbTargetPerMeal = Math.max(8, nutritionGoals.carbsG * 0.24);
+            const carbOver = Math.max(mealNutrition.carbsG - carbTargetPerMeal, 0);
+            const carbTolerance = Math.max(carbTargetPerMeal * (0.65 + lowCarbBias * 0.2), 10);
+            const carbAbsoluteSignal = clamp(1 - carbOver / carbTolerance, 0, 1);
+            const carbRatioOver = Math.max(mealCarbRatio - targetCarbRatio, 0);
+            const carbRatioSignal = clamp(1 - carbRatioOver / 0.2, 0, 1);
+            carbGoalSignal = clamp(carbAbsoluteSignal * 0.6 + carbRatioSignal * 0.4, 0, 1);
+
+            const fatRatioOver = Math.max(mealFatRatio - (targetFatRatio + 0.08), 0);
+            fatGoalSignal = clamp(1 - fatRatioOver / 0.35, 0, 1);
+
+            const proteinWeight = 0.36 + highProteinBias * 0.12;
+            const carbWeight = 0.28 + lowCarbBias * 0.16;
+            const fatWeight = 0.12;
+            const densityWeight = 0.16 + highProteinBias * 0.08;
+            const macroWeightTotal = proteinWeight + carbWeight + fatWeight + densityWeight;
+
+            macroRatioSignal = clamp(
+              (proteinGoalSignal * proteinWeight +
+                carbGoalSignal * carbWeight +
+                fatGoalSignal * fatWeight +
+                proteinDensitySignal * densityWeight) /
+                macroWeightTotal,
+              0,
+              1,
+            );
 
             const calorieTarget =
               remainingCalories !== null
-                ? Math.min(Math.max(remainingCalories, 200), targetCalories * 0.45)
-                : targetCalories * 0.32;
-            const calorieTolerance = Math.max(targetCalories * 0.25, 180);
-            const calorieSignal = clamp(
+                ? Math.min(Math.max(remainingCalories, 220), targetCalories * 0.38)
+                : clamp(targetCalories * 0.24, 320, 680);
+            const calorieTolerance = Math.max(targetCalories * 0.22, 160);
+            calorieSignal = clamp(
               1 - Math.abs(mealNutrition.calories - calorieTarget) / calorieTolerance,
               0,
               1,
             );
 
-            nutritionGoalSignal = macroRatioSignal * 0.55 + calorieSignal * 0.45;
+            nutritionGoalSignal = clamp(macroRatioSignal * 0.82 + calorieSignal * 0.18, 0, 1);
           }
 
           const mealScore =
-            explicitMealNormalized * 0.43 +
-            mealCategoryNormalized * 0.2 +
-            dietarySignal * 0.17 +
-            mealTextSignal * 0.08 +
-            nutritionGoalSignal * 0.12;
+            explicitMealNormalized * 0.34 +
+            mealCategoryNormalized * 0.17 +
+            dietarySignal * 0.14 +
+            mealTextSignal * 0.07 +
+            nutritionGoalSignal * 0.28;
+
+          const nutritionFitPros: string[] = [];
+          const nutritionFitCons: string[] = [];
+          const proteinCalorieShare =
+            mealNutrition.calories > 0 ? (mealNutrition.proteinG * 4) / mealNutrition.calories : 0;
+          const fatCalorieShare =
+            mealNutrition.calories > 0 ? (mealNutrition.fatG * 9) / mealNutrition.calories : 0;
+          const caloriesPerProteinGram =
+            mealNutrition.proteinG > 0
+              ? mealNutrition.calories / mealNutrition.proteinG
+              : Number.POSITIVE_INFINITY;
+
+          if (nutritionGoals) {
+            if (calorieSignal >= 0.72) {
+              nutritionFitPros.push("Calories land in range for your current goal.");
+            } else if (mealNutrition.calories > nutritionGoals.calories * 0.45) {
+              nutritionFitCons.push("Calories are high for one meal in your daily target.");
+            } else if (mealNutrition.calories < Math.max(nutritionGoals.calories * 0.14, 150)) {
+              nutritionFitCons.push("Calories may be too low for your target intake.");
+            }
+
+            if (proteinGoalSignal >= 0.74 && proteinDensitySignal >= 0.7) {
+              nutritionFitPros.push("Strong protein fit for your goal and calories.");
+            } else if (proteinGoalSignal <= 0.45 || proteinCalorieShare < 0.17) {
+              nutritionFitCons.push("Protein is low for your target.");
+            }
+
+            if (carbGoalSignal >= 0.74) {
+              nutritionFitPros.push("Carbs are in a strong range for your goal.");
+            } else if (carbGoalSignal <= 0.45) {
+              nutritionFitCons.push("Carbs are high for your goal range.");
+            }
+
+            if (macroRatioSignal >= 0.75) {
+              nutritionFitPros.push("Overall macro profile aligns well with your target.");
+            } else if (fatGoalSignal <= 0.4 || fatCalorieShare > 0.5) {
+              nutritionFitCons.push("Macro balance is less aligned with your target.");
+            }
+
+            if (
+              mealNutrition.proteinG >= Math.max(20, nutritionGoals.proteinG * 0.18) &&
+              caloriesPerProteinGram <= 28
+            ) {
+              nutritionFitPros.push("Good protein density for the calories.");
+            } else if (mealNutrition.proteinG < Math.max(14, nutritionGoals.proteinG * 0.1)) {
+              nutritionFitCons.push("Adds limited protein toward your daily goal.");
+            }
+
+            if (remainingCalories !== null && remainingCalories > 0) {
+              if (mealNutrition.calories <= remainingCalories + 120) {
+                nutritionFitPros.push("Fits your remaining calorie budget today.");
+              } else {
+                nutritionFitCons.push("Likely exceeds your remaining calories today.");
+              }
+            }
+
+            if (nutritionFitPros.length === 0 && nutritionGoalSignal >= 0.65) {
+              nutritionFitPros.push("Overall nutrition fit is solid for your goals.");
+            }
+            if (nutritionFitCons.length === 0 && nutritionGoalSignal <= 0.5) {
+              nutritionFitCons.push("Overall fit is weaker for your current goals.");
+            }
+          } else {
+            if (mealNutrition.proteinG >= 24 && caloriesPerProteinGram <= 30) {
+              nutritionFitPros.push("High protein relative to calories.");
+            }
+            if (mealNutrition.calories <= 650) {
+              nutritionFitPros.push("Moderate calorie portion.");
+            }
+
+            if (mealNutrition.calories >= 900) {
+              nutritionFitCons.push("Calorie-dense meal.");
+            }
+            if (fatCalorieShare >= 0.45) {
+              nutritionFitCons.push("Higher fat share than most meals.");
+            }
+
+            if (nutritionFitPros.length === 0) {
+              nutritionFitPros.push("Balanced option for a typical meal.");
+            }
+          }
 
           const mealReasons: string[] = [];
           if (existingMealRating) {
@@ -377,10 +505,20 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
             score: mealScore,
             reasons: mealReasons.slice(0, 2),
             userMealRating: existingMealRating || null,
+            nutrition: mealNutrition,
+            nutritionEstimated,
+            nutritionFitScore: nutritionGoalSignal,
+            nutritionFitPros: nutritionFitPros.slice(0, 3),
+            nutritionFitCons: nutritionFitCons.slice(0, 3),
           };
         })
         .filter((meal): meal is RankedMeal => meal !== null)
-        .sort((left, right) => right.score - left.score)
+        .sort((left, right) => {
+          if (nutritionGoals && right.nutritionFitScore !== left.nutritionFitScore) {
+            return right.nutritionFitScore - left.nutritionFitScore;
+          }
+          return right.score - left.score;
+        })
         .slice(0, 8);
 
       if (hasMealFilters && recommendedMeals.length === 0) {
@@ -404,11 +542,9 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
 
       const normalizedPersonalSignal = (personalSignal + 1) / 2;
       const qualitySignal = (restaurant.rating?.average || 0) / 5;
-      const distanceSignal = clamp(
-        1 - distanceKm / Math.max(maxDistanceMiles * KM_PER_MILE, 0.1),
-        0,
-        1,
-      );
+      const distanceSignal = hasDistanceFilter
+        ? clamp(1 - distanceKm / Math.max(maxDistanceMiles * KM_PER_MILE, 0.1), 0, 1)
+        : 1 / (1 + distanceKm / 3);
 
       const recommendationScore =
         qualitySignal * 0.29 +

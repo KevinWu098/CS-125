@@ -4,9 +4,14 @@ import { Flame, Star, Target, Utensils } from "lucide-react";
 import Link from "next/link";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
-import { DEFAULT_NUTRITION_GOALS } from "@/components/restaurant-smart/constants";
+import {
+  allDietary,
+  DEFAULT_NUTRITION_GOALS,
+  dietaryLabels,
+} from "@/components/restaurant-smart/constants";
 import { getRingProgress, sumMealNutrition } from "@/components/restaurant-smart/nutrition";
 import type {
+  DietaryKey,
   MealHistoryEntry,
   NutritionGoals,
   UserRecord,
@@ -15,6 +20,7 @@ import { normalizeProfileRecord, toMealKey } from "@/components/restaurant-smart
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 
 type ProfileApiResponse = {
   error?: string;
@@ -248,6 +254,8 @@ export default function ProfilePage() {
 
   const [goalDraft, setGoalDraft] = useState<NutritionGoals>(DEFAULT_NUTRITION_GOALS);
   const [isSavingGoals, setIsSavingGoals] = useState(false);
+  const [dietaryDraft, setDietaryDraft] = useState<DietaryKey[]>([]);
+  const [isSavingDietary, setIsSavingDietary] = useState(false);
   const [pendingMealRatingKey, setPendingMealRatingKey] = useState<string | null>(null);
 
   const loadOrCreateProfile = useCallback(async (requestedUserId: string) => {
@@ -277,6 +285,7 @@ export default function ProfilePage() {
       const normalizedProfile = normalizeProfileRecord(payload.user);
       setProfile(normalizedProfile);
       setGoalDraft(normalizedProfile.nutritionGoals);
+      setDietaryDraft(normalizedProfile.dietaryRestrictions);
       setStatus("ready");
       setUserIdInput(normalizedUserId);
 
@@ -374,6 +383,18 @@ export default function ProfilePage() {
       setGoalDraft(nextProfile.nutritionGoals);
     }
     setIsSavingGoals(false);
+  };
+
+  const saveDietaryRestrictions = async () => {
+    setIsSavingDietary(true);
+    const nextProfile = await updateProfile({
+      action: "setDietaryRestrictions",
+      dietaryRestrictions: dietaryDraft,
+    });
+    if (nextProfile) {
+      setDietaryDraft(nextProfile.dietaryRestrictions);
+    }
+    setIsSavingDietary(false);
   };
 
   const handleRateMeal = async (restaurantId: string, mealId: string, rating: number) => {
@@ -543,6 +564,53 @@ export default function ProfilePage() {
             </CardContent>
           </Card>
         </section>
+
+        <Card className="border-slate-200 bg-white shadow-sm">
+          <CardContent className="space-y-4 p-5">
+            <div className="flex items-center gap-2">
+              <Target className="size-4 text-emerald-600" />
+              <p className="text-sm font-semibold text-slate-900">Dietary Restrictions</p>
+            </div>
+
+            <p className="text-xs text-slate-500">
+              These restrictions now apply automatically on the Search page.
+            </p>
+
+            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+              {allDietary.map((dietary) => (
+                <label
+                  key={`profile-dietary-${dietary}`}
+                  className="flex cursor-pointer items-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-3 py-2"
+                >
+                  <Checkbox
+                    checked={dietaryDraft.includes(dietary)}
+                    onCheckedChange={(checked) => {
+                      setDietaryDraft((previous) =>
+                        checked
+                          ? [...new Set([...previous, dietary])]
+                          : previous.filter((entry) => entry !== dietary),
+                      );
+                    }}
+                  />
+                  <span className="text-sm text-slate-700">{dietaryLabels[dietary]}</span>
+                </label>
+              ))}
+            </div>
+
+            <div className="flex items-center justify-between border-t border-slate-200 pt-4">
+              <p className="text-xs text-slate-500">
+                Saved restrictions are used as hard filters during search ranking.
+              </p>
+              <Button
+                className="bg-emerald-600 text-white hover:bg-emerald-500"
+                disabled={isSavingDietary}
+                onClick={() => void saveDietaryRestrictions()}
+              >
+                {isSavingDietary ? "Saving..." : "Save dietary restrictions"}
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
 
         <Card className="border-slate-200 bg-white shadow-sm">
           <CardContent className="p-5">

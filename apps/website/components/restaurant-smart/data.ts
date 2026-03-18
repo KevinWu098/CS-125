@@ -101,6 +101,27 @@ function normalizeStringArray(values?: string[]): string[] | undefined {
   return Array.from(new Set(normalized));
 }
 
+function normalizeNumericValue(value: unknown): number | undefined {
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return value;
+  }
+
+  if (typeof value === "string") {
+    const parsed = Number.parseFloat(value.trim());
+    if (Number.isFinite(parsed)) {
+      return parsed;
+    }
+  }
+
+  return undefined;
+}
+
+function hasValidCoordinates(lat: number, lng: number): boolean {
+  const inRange = Math.abs(lat) <= 90 && Math.abs(lng) <= 180;
+  const notZeroOrigin = Math.abs(lat) > 1e-9 || Math.abs(lng) > 1e-9;
+  return inRange && notZeroOrigin;
+}
+
 function normalizeRestaurants(rawRestaurants: RawRestaurant[]): RestaurantSchema[] {
   return rawRestaurants
     .map<RestaurantSchema | null>((restaurant) => {
@@ -108,15 +129,16 @@ function normalizeRestaurants(rawRestaurants: RawRestaurant[]): RestaurantSchema
       const lat = location?.lat;
       const lng = location?.lng;
 
+      if (!restaurant.id || !restaurant.name || !Array.isArray(restaurant.cuisine) || !location) {
+        return null;
+      }
+
       if (
-        !restaurant.id ||
-        !restaurant.name ||
-        !Array.isArray(restaurant.cuisine) ||
-        !location ||
         typeof lat !== "number" ||
         typeof lng !== "number" ||
         !Number.isFinite(lat) ||
-        !Number.isFinite(lng)
+        !Number.isFinite(lng) ||
+        !hasValidCoordinates(lat, lng)
       ) {
         return null;
       }
@@ -142,29 +164,40 @@ function normalizeRestaurants(rawRestaurants: RawRestaurant[]): RestaurantSchema
           ) ?? [];
 
       const menu =
-        restaurant.menu?.map((item, itemIndex) => ({
-          id: item.id?.trim() || `${restaurant.id}-item-${itemIndex + 1}`,
-          name: item.name?.trim() || `Item ${itemIndex + 1}`,
-          description: item.description?.trim() || undefined,
-          priceUSD:
-            typeof item.priceUSD === "number" && Number.isFinite(item.priceUSD)
-              ? item.priceUSD
-              : undefined,
-          category: normalizeMealCategory(item.category),
-          tags: normalizeStringArray(item.tags),
-          allergens: normalizeStringArray(item.allergens),
-          nutrition: item.nutrition
+        restaurant.menu?.map((item, itemIndex) => {
+          const normalizedNutrition = item.nutrition
             ? {
-                calories: item.nutrition.calories,
-                proteinG: item.nutrition.proteinG,
-                carbsG: item.nutrition.carbsG,
-                fatG: item.nutrition.fatG,
-                fiberG: item.nutrition.fiberG,
-                sugarG: item.nutrition.sugarG,
-                sodiumMg: item.nutrition.sodiumMg,
+                calories: normalizeNumericValue(item.nutrition.calories),
+                proteinG: normalizeNumericValue(item.nutrition.proteinG),
+                carbsG: normalizeNumericValue(item.nutrition.carbsG),
+                fatG: normalizeNumericValue(item.nutrition.fatG),
+                fiberG: normalizeNumericValue(item.nutrition.fiberG),
+                sugarG: normalizeNumericValue(item.nutrition.sugarG),
+                sodiumMg: normalizeNumericValue(item.nutrition.sodiumMg),
               }
-            : undefined,
-        })) ?? [];
+            : undefined;
+
+          const hasNutritionValues = Boolean(
+            normalizedNutrition &&
+            Object.values(normalizedNutrition).some(
+              (value) => typeof value === "number" && Number.isFinite(value),
+            ),
+          );
+
+          return {
+            id: item.id?.trim() || `${restaurant.id}-item-${itemIndex + 1}`,
+            name: item.name?.trim() || `Item ${itemIndex + 1}`,
+            description: item.description?.trim() || undefined,
+            priceUSD:
+              typeof item.priceUSD === "number" && Number.isFinite(item.priceUSD)
+                ? item.priceUSD
+                : undefined,
+            category: normalizeMealCategory(item.category),
+            tags: normalizeStringArray(item.tags),
+            allergens: normalizeStringArray(item.allergens),
+            nutrition: hasNutritionValues ? normalizedNutrition : undefined,
+          };
+        }) ?? [];
 
       return {
         id: restaurant.id,

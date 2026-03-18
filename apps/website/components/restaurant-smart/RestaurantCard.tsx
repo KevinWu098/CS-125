@@ -1,9 +1,10 @@
-import { Clock, MapPin, Star } from "lucide-react";
+import { CircleCheckBig, CircleX, Clock, MapPin, Star } from "lucide-react";
 import React from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 import type { RankedRestaurant, UserRecord } from "./types";
 import { formatDistance, getOpenStatus } from "./utils";
@@ -62,6 +63,29 @@ function EditableStars({
       })}
     </div>
   );
+}
+
+function nutritionFitTone(score: number): string {
+  if (score >= 0.82) {
+    return "Excellent fit";
+  }
+  if (score >= 0.68) {
+    return "Good fit";
+  }
+  if (score >= 0.52) {
+    return "Moderate fit";
+  }
+  return "Low fit";
+}
+
+function nutritionFitBadgeClasses(score: number): string {
+  if (score >= 0.75) {
+    return "border-emerald-200 bg-emerald-100 text-emerald-800";
+  }
+  if (score >= 0.3) {
+    return "border-amber-200 bg-amber-100 text-amber-800";
+  }
+  return "border-rose-200 bg-rose-100 text-rose-800";
 }
 
 export function RestaurantCard({
@@ -164,27 +188,140 @@ export function RestaurantCard({
               {entry.recommendedMeals.map((recommendedMeal) => {
                 const meal = recommendedMeal.meal;
                 const isLoggingMeal = pendingLoggedMealKey === recommendedMeal.mealKey;
+                const nutritionFitPercent = Math.round(recommendedMeal.nutritionFitScore * 100);
+                const nutritionFitLabel = nutritionFitTone(recommendedMeal.nutritionFitScore);
 
                 return (
                   <div
                     key={recommendedMeal.mealKey}
                     className="w-64 shrink-0 snap-start rounded-lg border border-slate-200 bg-white p-3"
                   >
-                    <p className="truncate text-sm font-semibold text-slate-900">{meal.name}</p>
-                    <p className="mt-0.5 text-xs text-slate-500 capitalize">
-                      {meal.category || "Meal"}
-                    </p>
-                    {meal.description && (
-                      <p className="mt-1 line-clamp-2 text-xs text-slate-600">{meal.description}</p>
-                    )}
+                    <HoverCard openDelay={140} closeDelay={70}>
+                      <HoverCardTrigger asChild>
+                        <div className="cursor-help rounded-md transition hover:bg-slate-50">
+                          <div className="flex items-start justify-between gap-2">
+                            <p className="truncate text-sm font-semibold text-slate-900">
+                              {meal.name}
+                            </p>
+                            <Badge
+                              variant="secondary"
+                              className={`border text-[10px] ${nutritionFitBadgeClasses(recommendedMeal.nutritionFitScore)}`}
+                            >
+                              {nutritionFitPercent}% fit
+                            </Badge>
+                          </div>
+                          <p className="mt-0.5 text-xs text-slate-500 capitalize">
+                            {meal.category || "Meal"}
+                          </p>
+                          {meal.description && (
+                            <p className="mt-1 line-clamp-2 text-xs text-slate-600">
+                              {meal.description}
+                            </p>
+                          )}
+                        </div>
+                      </HoverCardTrigger>
+                      <HoverCardContent
+                        align="start"
+                        side="top"
+                        className="w-72 border-slate-200 bg-white/98 p-3"
+                      >
+                        <p className="text-xs font-semibold tracking-wide text-slate-700 uppercase">
+                          Nutrition Goal Fit
+                        </p>
+                        <p className="mt-1 text-sm font-semibold text-slate-900">
+                          {nutritionFitLabel} ({nutritionFitPercent}%)
+                        </p>
+
+                        <div className="mt-2 grid grid-cols-2 gap-2 text-xs text-slate-600">
+                          <p>
+                            <span className="font-semibold text-slate-900">
+                              {Math.round(recommendedMeal.nutrition.calories)}
+                            </span>{" "}
+                            kcal
+                          </p>
+                          <p>
+                            <span className="font-semibold text-slate-900">
+                              {Math.round(recommendedMeal.nutrition.proteinG)}g
+                            </span>{" "}
+                            protein
+                          </p>
+                          <p>
+                            <span className="font-semibold text-slate-900">
+                              {Math.round(recommendedMeal.nutrition.carbsG)}g
+                            </span>{" "}
+                            carbs
+                          </p>
+                          <p>
+                            <span className="font-semibold text-slate-900">
+                              {Math.round(recommendedMeal.nutrition.fatG)}g
+                            </span>{" "}
+                            fat
+                          </p>
+                        </div>
+
+                        <div className="mt-3 space-y-3">
+                          <div>
+                            <p className="text-[11px] font-semibold tracking-wide text-emerald-800 uppercase">
+                              Pros
+                            </p>
+                            {recommendedMeal.nutritionFitPros.length > 0 ? (
+                              <ul className="mt-1.5 space-y-1.5">
+                                {recommendedMeal.nutritionFitPros.map((bullet, index) => (
+                                  <li
+                                    key={`${recommendedMeal.mealKey}-fit-pro-${index}`}
+                                    className="flex items-start gap-1.5 text-xs text-emerald-800"
+                                  >
+                                    <CircleCheckBig className="mt-0.5 size-3 shrink-0" />
+                                    <span>{bullet}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p className="mt-1 text-xs text-slate-500">
+                                No standout strengths for your current goals.
+                              </p>
+                            )}
+                          </div>
+
+                          <div>
+                            <p className="text-[11px] font-semibold tracking-wide text-rose-700 uppercase">
+                              Cons
+                            </p>
+                            {recommendedMeal.nutritionFitCons.length > 0 ? (
+                              <ul className="mt-1.5 space-y-1.5">
+                                {recommendedMeal.nutritionFitCons.map((bullet, index) => (
+                                  <li
+                                    key={`${recommendedMeal.mealKey}-fit-con-${index}`}
+                                    className="flex items-start gap-1.5 text-xs text-rose-700"
+                                  >
+                                    <CircleX className="mt-0.5 size-3 shrink-0" />
+                                    <span>{bullet}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p className="mt-1 text-xs text-slate-500">
+                                No major drawbacks for your current goals.
+                              </p>
+                            )}
+                          </div>
+                        </div>
+
+                        {recommendedMeal.nutritionEstimated && (
+                          <p className="mt-2 text-[11px] text-slate-500">
+                            Nutrition values are estimated for this meal.
+                          </p>
+                        )}
+                      </HoverCardContent>
+                    </HoverCard>
+
                     <div className="mt-2 flex items-center justify-between">
                       <span className="text-xs font-medium text-slate-700">
                         {meal.priceUSD ? `$${meal.priceUSD.toFixed(2)}` : "Price varies"}
                       </span>
                       <span className="text-xs text-slate-500">
-                        {recommendedMeal.userMealRating
-                          ? `Your rating ${recommendedMeal.userMealRating}/5`
-                          : "Rate in profile"}
+                        {recommendedMeal.userMealRating &&
+                          `Your rating ${recommendedMeal.userMealRating}/5`}
                       </span>
                     </div>
 

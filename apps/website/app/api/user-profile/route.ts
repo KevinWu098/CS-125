@@ -12,6 +12,15 @@ import { normalizeNutritionGoals } from "@/components/restaurant-smart/utils";
 export const runtime = "nodejs";
 
 const MAX_MEAL_HISTORY_ITEMS = 200;
+const dietaryValues = [
+  "vegan",
+  "vegetarian",
+  "glutenFree",
+  "halal",
+  "kosher",
+  "dairyFree",
+  "nutFree",
+] as const;
 
 const requestSchema = z.object({
   userId: z
@@ -54,6 +63,7 @@ const userRecordSchema = z.object({
   loginCount: z.number().int().min(1),
   ratings: z.record(z.string(), z.number().int().min(1).max(5)).default({}),
   mealRatings: z.record(z.string(), z.number().int().min(1).max(5)).default({}),
+  dietaryRestrictions: z.array(z.enum(dietaryValues)).default([]),
   nutritionGoals: nutritionGoalsSchema.default(DEFAULT_NUTRITION_GOALS),
   mealHistory: z.array(mealHistoryEntrySchema).default([]),
 });
@@ -76,6 +86,11 @@ const setNutritionGoalsSchema = requestSchema.extend({
   nutritionGoals: nutritionGoalsSchema,
 });
 
+const setDietaryRestrictionsSchema = requestSchema.extend({
+  action: z.literal("setDietaryRestrictions"),
+  dietaryRestrictions: z.array(z.enum(dietaryValues)),
+});
+
 const logMealSchema = requestSchema.extend({
   action: z.literal("logMeal"),
   restaurantId: z.string().trim().min(1).max(120),
@@ -93,6 +108,7 @@ const actionPatchSchema = z.discriminatedUnion("action", [
   setRestaurantRatingSchema,
   setMealRatingSchema,
   setNutritionGoalsSchema,
+  setDietaryRestrictionsSchema,
   logMealSchema,
 ]);
 
@@ -223,6 +239,7 @@ export async function POST(request: Request) {
       loginCount: 1,
       ratings: {},
       mealRatings: {},
+      dietaryRestrictions: [],
       nutritionGoals: { ...DEFAULT_NUTRITION_GOALS },
       mealHistory: [],
     };
@@ -307,6 +324,10 @@ export async function PATCH(request: Request) {
         }
         case "setNutritionGoals": {
           user.nutritionGoals = normalizeNutritionGoals(parsedData.nutritionGoals);
+          break;
+        }
+        case "setDietaryRestrictions": {
+          user.dietaryRestrictions = [...new Set(parsedData.dietaryRestrictions)];
           break;
         }
         case "logMeal": {

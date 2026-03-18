@@ -38,6 +38,10 @@ export const buildSearchIndex = (restaurants: RestaurantSchema[]): SearchIndex =
   const facetIndex = createEmptyFacetIndex();
 
   for (const restaurant of restaurants) {
+    if (!hasValidLocation(restaurant.location)) {
+      continue;
+    }
+
     const document = buildSearchDocument(restaurant);
     documents[document.id] = document;
 
@@ -104,6 +108,13 @@ export const buildSearchIndex = (restaurants: RestaurantSchema[]): SearchIndex =
     tokenIndex,
     facetIndex,
   };
+};
+
+const hasValidLocation = (location: RestaurantSchema["location"]): boolean => {
+  const { lat, lng } = location;
+  const inRange = Math.abs(lat) <= 90 && Math.abs(lng) <= 180;
+  const notZeroOrigin = Math.abs(lat) > 1e-9 || Math.abs(lng) > 1e-9;
+  return Number.isFinite(lat) && Number.isFinite(lng) && inRange && notZeroOrigin;
 };
 
 const buildSearchDocument = (restaurant: RestaurantSchema): SearchDocument => {

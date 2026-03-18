@@ -52,4 +52,4 @@ export const DEFAULT_NUTRITION_GOALS = {
 
 export const KM_PER_MILE = 1.60934;
 export const METERS_PER_MILE = 1609.34;
-export const DEFAULT_MAX_DISTANCE_MILES = 5;
+export const DEFAULT_MAX_DISTANCE_MILES = 0;

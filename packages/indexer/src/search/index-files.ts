@@ -40,3 +40,27 @@ export const writeSearchIndexFiles = async (
 
   return paths;
 };
+
+export const readSearchIndexFiles = async (outputDir: string): Promise<SearchIndex> => {
+  const paths = getIndexFilePaths(outputDir);
+
+  const [documentsRaw, tokenIndexRaw, facetIndexRaw, metaRaw] = await Promise.all([
+    fs.readFile(paths.documentsPath, "utf8"),
+    fs.readFile(paths.tokenIndexPath, "utf8"),
+    fs.readFile(paths.facetIndexPath, "utf8"),
+    fs.readFile(paths.metaPath, "utf8"),
+  ]);
+
+  const documents = JSON.parse(documentsRaw) as SearchIndex["documents"];
+  const tokenIndex = JSON.parse(tokenIndexRaw) as SearchIndex["tokenIndex"];
+  const facetIndex = JSON.parse(facetIndexRaw) as SearchIndex["facetIndex"];
+  const meta = JSON.parse(metaRaw) as IndexMeta;
+
+  return {
+    version: meta.version,
+    generatedAtISO: meta.generatedAtISO,
+    documents,
+    tokenIndex,
+    facetIndex,
+  };
+};

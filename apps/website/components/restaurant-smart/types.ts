@@ -98,6 +98,7 @@ export type UserRecord = {
   loginCount: number;
   ratings: Record<string, number>;
   mealRatings: Record<string, number>;
+  dietaryRestrictions: DietaryKey[];
   nutritionGoals: NutritionGoals;
   mealHistory: MealHistoryEntry[];
 };
@@ -115,6 +116,11 @@ export type RankedMeal = {
   score: number;
   reasons: string[];
   userMealRating: number | null;
+  nutrition: MealNutrition;
+  nutritionEstimated: boolean;
+  nutritionFitScore: number;
+  nutritionFitPros: string[];
+  nutritionFitCons: string[];
 };
 
 export type RankedRestaurant = {

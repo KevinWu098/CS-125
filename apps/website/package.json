@@ -5,7 +5,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "eslint",
+    "lint": "eslint --fix",
     "start": "next start"
   },
   "prettier": "@packages/prettier-config",
@@ -13,6 +13,7 @@
     "@base-ui/react": "1.1.0",
     "@hookform/resolvers": "5.2.2",
     "@packages/data": "workspace:*",
+    "@packages/indexer": "workspace:*",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "cmdk": "1.1.1",

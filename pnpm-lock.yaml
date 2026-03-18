@@ -47,6 +47,9 @@ importers:
       '@packages/data':
         specifier: workspace:*
         version: link:../../packages/data
+      '@packages/indexer':
+        specifier: workspace:*
+        version: link:../../packages/indexer
       class-variance-authority:
         specifier: 0.7.1
         version: 0.7.1

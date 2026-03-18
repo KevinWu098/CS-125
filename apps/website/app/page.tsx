@@ -7,7 +7,6 @@ import Link from "next/link";
 import React, { useCallback, useEffect, useState } from "react";
 
 import {
-  allDietary,
   DEFAULT_LOCATION,
   DEFAULT_MAX_DISTANCE_MILES,
   dietaryLabels,
@@ -20,7 +19,6 @@ import {
 import { OpenStreetMapPanel } from "@/components/restaurant-smart/OpenStreetMapPanel";
 import { RestaurantCard } from "@/components/restaurant-smart/RestaurantCard";
 import type {
-  DietaryKey,
   RankedRestaurant,
   SortKey,
   UserLocation,
@@ -48,7 +46,6 @@ export default function SearchResultsPage() {
   const [mealSearchQuery, setMealSearchQuery] = useState("");
   const [selectedCuisines, setSelectedCuisines] = useState<string[]>([]);
   const [selectedMealCategories, setSelectedMealCategories] = useState<string[]>([]);
-  const [selectedDietary, setSelectedDietary] = useState<DietaryKey[]>([]);
   const [priceRange, setPriceRange] = useState<[number, number]>([1, 4]);
   const [maxMealPrice, setMaxMealPrice] = useState(DEFAULT_MAX_MEAL_PRICE);
   const [minRating, setMinRating] = useState(0);
@@ -167,7 +164,6 @@ export default function SearchResultsPage() {
             mealSearchQuery,
             selectedCuisines,
             selectedMealCategories,
-            selectedDietary,
             priceRange,
             minRating,
             maxDistanceMiles,
@@ -211,7 +207,6 @@ export default function SearchResultsPage() {
     profile,
     searchQuery,
     selectedCuisines,
-    selectedDietary,
     selectedMealCategories,
     sortBy,
     userLocation,
@@ -335,24 +330,25 @@ export default function SearchResultsPage() {
   const clearAllFilters = () => {
     setSelectedCuisines([]);
     setSelectedMealCategories([]);
-    setSelectedDietary([]);
     setPriceRange([1, 4]);
     setMaxMealPrice(DEFAULT_MAX_MEAL_PRICE);
     setMinRating(0);
     setMaxDistanceMiles(DEFAULT_MAX_DISTANCE_MILES);
     setSearchQuery("");
     setMealSearchQuery("");
+    setLocationError(null);
+    syncStoredLocation(DEFAULT_LOCATION);
   };
 
   const activeFilterCount =
     selectedCuisines.length +
     selectedMealCategories.length +
-    selectedDietary.length +
     (mealSearchQuery.trim() ? 1 : 0) +
     (maxMealPrice < DEFAULT_MAX_MEAL_PRICE ? 1 : 0) +
     (priceRange[0] !== 1 || priceRange[1] !== 4 ? 1 : 0) +
     (minRating > 0 ? 1 : 0) +
-    (maxDistanceMiles !== DEFAULT_MAX_DISTANCE_MILES ? 1 : 0);
+    (maxDistanceMiles !== DEFAULT_MAX_DISTANCE_MILES ? 1 : 0) +
+    (userLocation.source !== "default" ? 1 : 0);
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_#fff7ed,_#f8fafc_50%,_#f1f5f9)]">
@@ -396,7 +392,8 @@ export default function SearchResultsPage() {
               <div>
                 <p className="text-sm font-semibold text-slate-900">Filters</p>
                 <p className="text-xs text-slate-500">
-                  Top controls affect both the map and the results list below
+                  Top controls affect both the map and the results list below. Dietary restrictions
+                  are applied from your profile.
                 </p>
               </div>
               <div className="flex items-center gap-2">
@@ -443,7 +440,7 @@ export default function SearchResultsPage() {
               </div>
             </div>
 
-            <div className="grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1.2fr)_minmax(0,0.9fr)_minmax(0,0.9fr)_minmax(0,1fr)]">
+            <div className="grid gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,1fr)]">
               <fieldset>
                 <legend className="mb-2 text-xs font-semibold tracking-wide text-slate-500 uppercase">
                   Cuisine
@@ -522,29 +519,6 @@ export default function SearchResultsPage() {
                 </div>
               </fieldset>
 
-              <fieldset>
-                <legend className="mb-2 text-xs font-semibold tracking-wide text-slate-500 uppercase">
-                  Dietary
-                </legend>
-                <div className="space-y-2 pr-1">
-                  {allDietary.map((dietary) => (
-                    <label key={dietary} className="flex cursor-pointer items-center gap-2">
-                      <Checkbox
-                        checked={selectedDietary.includes(dietary)}
-                        onCheckedChange={(checked) => {
-                          setSelectedDietary(
-                            checked
-                              ? [...selectedDietary, dietary]
-                              : selectedDietary.filter((entry) => entry !== dietary),
-                          );
-                        }}
-                      />
-                      <span className="text-sm text-slate-700">{dietaryLabels[dietary]}</span>
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
-
               <div>
                 <p className="mb-2 text-xs font-semibold tracking-wide text-slate-500 uppercase">
                   Price Range
@@ -581,11 +555,13 @@ export default function SearchResultsPage() {
                 <Slider
                   value={[maxDistanceMiles]}
                   onValueChange={(value) => setMaxDistanceMiles(value[0])}
-                  min={1}
+                  min={0}
                   max={20}
                   step={1}
                 />
-                <p className="mt-2 text-sm text-slate-500">Within {maxDistanceMiles} mi</p>
+                <p className="mt-2 text-sm text-slate-500">
+                  {maxDistanceMiles > 0 ? `Within ${maxDistanceMiles} mi` : "Any distance"}
+                </p>
               </div>
 
               <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
@@ -620,15 +596,46 @@ export default function SearchResultsPage() {
                     <LocateFixed className="size-4" />
                     {isLocating ? "Locating..." : "Use current location"}
                   </Button>
+                  <Button
+                    variant="outline"
+                    className="h-9"
+                    onClick={() => {
+                      setLocationError(null);
+                      syncStoredLocation(DEFAULT_LOCATION);
+                    }}
+                  >
+                    Use campus default
+                  </Button>
                 </div>
                 <p className="mt-2 text-xs text-slate-500">Current: {userLocation.label}</p>
                 {locationError && <p className="mt-2 text-xs text-rose-600">{locationError}</p>}
               </div>
             </div>
 
+            {profile?.dietaryRestrictions && profile.dietaryRestrictions.length > 0 && (
+              <div className="rounded-md border border-slate-200 bg-slate-50 p-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="text-xs font-semibold tracking-wide text-slate-600 uppercase">
+                    Profile dietary restrictions
+                  </p>
+                  {profile.dietaryRestrictions.map((dietary) => (
+                    <Badge
+                      key={`profile-dietary-${dietary}`}
+                      variant="secondary"
+                      className="bg-slate-100 text-slate-700"
+                    >
+                      {dietaryLabels[dietary]}
+                    </Badge>
+                  ))}
+                  <Button asChild variant="ghost" size="sm" className="h-6 px-2 text-xs">
+                    <Link href="/profile">Edit in Profile</Link>
+                  </Button>
+                </div>
+              </div>
+            )}
+
             {(selectedCuisines.length > 0 ||
               selectedMealCategories.length > 0 ||
-              selectedDietary.length > 0 ||
               Boolean(mealSearchQuery.trim()) ||
               maxMealPrice < DEFAULT_MAX_MEAL_PRICE) && (
               <div className="flex flex-wrap gap-2">
@@ -656,18 +663,6 @@ export default function SearchResultsPage() {
                     }
                   >
                     Meal: {category}
-                  </Badge>
-                ))}
-                {selectedDietary.map((dietary) => (
-                  <Badge
-                    key={`active-dietary-${dietary}`}
-                    variant="secondary"
-                    className="cursor-pointer bg-slate-100 text-slate-700"
-                    onClick={() =>
-                      setSelectedDietary(selectedDietary.filter((entry) => entry !== dietary))
-                    }
-                  >
-                    {dietaryLabels[dietary]}
                   </Badge>
                 ))}
                 {mealSearchQuery.trim() && (
