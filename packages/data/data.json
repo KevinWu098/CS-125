@@ -2,12 +2,12 @@
   {
     "id": "luna-grill",
     "name": "Luna Grill",
-    "description": "Mediterranean Bowls with Grilled Chicken, Falafel, and Fresh Salads.",
+    "description": "A Mediterranean restaurant serving a variety of grilled plates, bowls, salads, and pitas, focusing on fresh and flavorful ingredients.",
     "cuisine": [
       "Mediterranean",
-      "Greek"
+      "Middle Eastern"
     ],
-    "priceTier": "varies by location",
+    "priceTier": "$$",
     "location": {
       "address": "4143 Campus Dr Suite C195",
       "city": "Irvine",
@@ -18,38 +18,38 @@
     },
     "hours": [
       {
-        "day": "Monday",
-        "open": "11:00 AM",
+        "day": "mon",
+        "open": "10:30 AM",
         "close": "9:00 PM"
       },
       {
-        "day": "Tuesday",
-        "open": "11:00 AM",
+        "day": "tue",
+        "open": "10:30 AM",
         "close": "9:00 PM"
       },
       {
-        "day": "Wednesday",
-        "open": "11:00 AM",
+        "day": "wed",
+        "open": "10:30 AM",
         "close": "9:00 PM"
       },
       {
-        "day": "Thursday",
-        "open": "11:00 AM",
+        "day": "thu",
+        "open": "10:30 AM",
         "close": "9:00 PM"
       },
       {
-        "day": "Friday",
-        "open": "11:00 AM",
+        "day": "fri",
+        "open": "10:30 AM",
         "close": "10:00 PM"
       },
       {
-        "day": "Saturday",
-        "open": "11:00 AM",
+        "day": "sat",
+        "open": "10:30 AM",
         "close": "10:00 PM"
       },
       {
-        "day": "Sunday",
-        "open": "11:00 AM",
+        "day": "sun",
+        "open": "10:30 AM",
         "close": "9:00 PM"
       }
     ],
@@ -58,363 +58,335 @@
         "id": "garlic-bonfire-shrimp-plate",
         "name": "Garlic Bonfire Shrimp Plate",
         "description": "Juicy, flame-grilled garlic shrimp finished with a fresh lemon and parsley drizzle.",
-        "priceUSD": null,
-        "category": "Plates"
+        "priceUSD": 16.99,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 580,
+          "proteinG": 38,
+          "carbsG": 52,
+          "fatG": 22,
+          "sodiumMg": 960
+        }
       },
       {
         "id": "falafel-plate",
         "name": "Falafel Plate",
         "description": "Five rounds of handcrafted falafel.",
-        "priceUSD": null,
-        "category": "Plates"
+        "priceUSD": 13.99,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 650,
+          "proteinG": 22,
+          "carbsG": 80,
+          "fatG": 28,
+          "sodiumMg": 820
+        }
       },
       {
         "id": "chicken-kabob-koobideh-kabob-plate",
         "name": "Chicken Kabob & Koobideh Kabob Plate",
         "description": "Thinly cut pieces of savory chicken and our seasoned minced beef kabob.",
-        "priceUSD": null,
-        "category": "Plates"
+        "priceUSD": 15.99,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 680,
+          "proteinG": 52,
+          "carbsG": 48,
+          "fatG": 28,
+          "sodiumMg": 1040
+        }
       },
       {
         "id": "chicken-kabob-gyro-meat-plate",
         "name": "Chicken Kabob & Gyro Meat Plate",
         "description": "Succulent pieces of boneless chicken tenders and our hand-carved gyro meat.",
-        "priceUSD": null,
-        "category": "Plates"
+        "priceUSD": 15.99,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 700,
+          "proteinG": 50,
+          "carbsG": 50,
+          "fatG": 30,
+          "sodiumMg": 1080
+        }
       },
       {
         "id": "grilled-salmon-plate",
         "name": "Grilled Salmon Plate",
         "description": "Sustainably raised and simply seasoned grilled salmon.",
-        "priceUSD": null,
-        "category": "Plates"
+        "priceUSD": 18.99,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 620,
+          "proteinG": 48,
+          "carbsG": 44,
+          "fatG": 24,
+          "sodiumMg": 880
+        }
       },
       {
         "id": "bistro-beef-kabob-plate",
         "name": "Bistro Beef Kabob Plate",
         "description": "Marinated pieces of tender beef skewered with onion and bell pepper.",
-        "priceUSD": null,
-        "category": "Plates"
+        "priceUSD": 17.99,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 720,
+          "proteinG": 54,
+          "carbsG": 46,
+          "fatG": 32,
+          "sodiumMg": 1100
+        }
       },
       {
         "id": "flat-cut-chicken-kabob-plate",
         "name": "Flat Cut Chicken Kabob Plate",
         "description": "Thinly cut pieces of savory chicken.",
-        "priceUSD": null,
-        "category": "Plates"
+        "priceUSD": 14.99,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 580,
+          "proteinG": 46,
+          "carbsG": 46,
+          "fatG": 18,
+          "sodiumMg": 920
+        }
       },
       {
         "id": "gyro-meat-plate",
         "name": "Gyro Meat Plate",
-        "description": "A blend of beef, lamb, and traditional near-eastern spices.",
-        "priceUSD": null,
-        "category": "Plates"
+        "description": "A blend of beef, lamb and traditional near-eastern spices.",
+        "priceUSD": 14.99,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 660,
+          "proteinG": 40,
+          "carbsG": 48,
+          "fatG": 30,
+          "sodiumMg": 1020
+        }
       },
       {
         "id": "koobideh-kabob-plate",
         "name": "Koobideh Kabob Plate",
         "description": "Traditional Persian style kabob made with seasoned minced beef.",
-        "priceUSD": null,
-        "category": "Plates"
+        "priceUSD": 15.99,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 640,
+          "proteinG": 46,
+          "carbsG": 46,
+          "fatG": 28,
+          "sodiumMg": 980
+        }
       },
       {
         "id": "veggie-kabob-plate",
         "name": "Veggie Kabob Plate",
-        "description": "Grilled marinated button mushrooms, yellow squash, onion, and bell pepper served with a side of spicy or original hummus.",
-        "priceUSD": null,
-        "category": "Plates"
+        "description": "Grilled marinated button mushrooms, yellow squash, onion and bell pepper served with a side of spicy or original hummus.",
+        "priceUSD": 13.99,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 520,
+          "proteinG": 18,
+          "carbsG": 62,
+          "fatG": 22,
+          "sodiumMg": 760
+        }
       },
       {
         "id": "chicken-kabob-plate",
         "name": "Chicken Kabob Plate",
         "description": "Succulent pieces of boneless chicken.",
-        "priceUSD": null,
-        "category": "Plates"
+        "priceUSD": 14.99,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 560,
+          "proteinG": 44,
+          "carbsG": 44,
+          "fatG": 18,
+          "sodiumMg": 900
+        }
       }
     ],
-    "dataSource": "firecrawl"
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://lunagrill.com/menu"
+    }
   },
   {
     "id": "mendocino-farms",
     "name": "Mendocino Farms",
-    "description": "We’re committed to continuously evolving our menu so that we’re always WOW-ing our guests with new unexpected flavor combinations.",
+    "description": "A restaurant dedicated to serving innovative, chef-inspired seasonal dishes in a relaxed and welcoming environment.",
     "cuisine": [
       "American",
-      "Sandwiches",
-      "Salads",
-      "Deli",
       "Vegan",
-      "Vegetarian"
+      "Vegetarian",
+      "Gluten-Free"
     ],
-    "priceTier": "Not Specified",
+    "priceTier": "$$",
     "location": {
-      "address": "Not specified",
-      "city": "Not specified",
-      "state": "Not specified",
-      "postalCode": "Not specified",
-      "lat": 0,
-      "lng": 0
+      "address": "4189 Campus Dr",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6494,
+      "lng": -117.8398
     },
     "hours": [
       {
-        "day": "Monday",
-        "open": "Not specified",
-        "close": "Not specified"
+        "day": "mon",
+        "open": "10:00 AM",
+        "close": "8:00 PM"
       },
       {
-        "day": "Tuesday",
-        "open": "Not specified",
-        "close": "Not specified"
+        "day": "tue",
+        "open": "10:00 AM",
+        "close": "8:00 PM"
       },
       {
-        "day": "Wednesday",
-        "open": "Not specified",
-        "close": "Not specified"
+        "day": "wed",
+        "open": "10:00 AM",
+        "close": "8:00 PM"
       },
       {
-        "day": "Thursday",
-        "open": "Not specified",
-        "close": "Not specified"
+        "day": "thu",
+        "open": "10:00 AM",
+        "close": "8:00 PM"
       },
       {
-        "day": "Friday",
-        "open": "Not specified",
-        "close": "Not specified"
+        "day": "fri",
+        "open": "10:00 AM",
+        "close": "9:00 PM"
       },
       {
-        "day": "Saturday",
-        "open": "Not specified",
-        "close": "Not specified"
+        "day": "sat",
+        "open": "10:00 AM",
+        "close": "9:00 PM"
       },
       {
-        "day": "Sunday",
-        "open": "Not specified",
-        "close": "Not specified"
+        "day": "sun",
+        "open": "10:00 AM",
+        "close": "8:00 PM"
       }
     ],
     "menu": [
       {
         "id": "the-seasonal-goat-with-sweet-citrus",
         "name": "The Seasonal GOAT with Sweet Citrus",
-        "description": "chicken, goat cheese, honey roasted almonds, oranges, shaved fennel, pickled red onions, fresh mint, romaine, kale, mixed greens, farmhouse vinaigrette, hot citrus honey",
-        "priceUSD": null,
-        "category": "Chef's Specials"
+        "description": "chicken, goat cheese, honey roasted almonds, oranges, shaved fennel, pickled red onions, fresh mint, romaine, kale, mixed greens, farmhouse vinaigrette, hot citrus honey (710 cal)",
+        "priceUSD": 16.95,
+        "category": "Chef's Specials",
+        "nutrition": {
+          "calories": 710,
+          "proteinG": 40,
+          "carbsG": 55,
+          "fatG": 33,
+          "sodiumMg": 1050
+        }
       },
       {
         "id": "smoky-bbq-brioche-sandwich",
         "name": "Smoky BBQ Brioche Sandwich",
-        "description": "smoked pork burnt ends, BBQ sauce, rainbow carrot-apple slaw, B&B pickles, herb aioli, on cornmeal brioche",
-        "priceUSD": null,
-        "category": "Chef's Specials"
+        "description": "smoked pork burnt ends, BBQ sauce, rainbow carrot-apple slaw, B&B pickles, herb aioli, on cornmeal brioche (670 cal)",
+        "priceUSD": 15.95,
+        "category": "Chef's Specials",
+        "nutrition": {
+          "calories": 670,
+          "proteinG": 38,
+          "carbsG": 62,
+          "fatG": 29,
+          "sodiumMg": 1180
+        }
       },
       {
         "id": "the-farmhouse-ranch-salad",
         "name": "The Farmhouse Ranch Salad",
-        "description": "vine-ripened cherry tomatoes, cucumber, avocado, parmesan, tuscan krispies, chives, romaine, kale mixed greens, herb buttermilk ranch",
-        "priceUSD": null,
-        "category": "Chef's Specials"
+        "description": "vine-ripened cherry tomatoes, cucumber, avocado, parmesan, tuscan krispies, chives, romaine, kale mixed greens, herb buttermilk ranch (470 Cal)",
+        "priceUSD": 14.95,
+        "category": "Salads",
+        "nutrition": {
+          "calories": 470,
+          "proteinG": 14,
+          "carbsG": 40,
+          "fatG": 30,
+          "sodiumMg": 760
+        }
       },
       {
         "id": "not-so-fried-chicken",
-        "name": "Not So Fried Chicken",
-        "description": "chicken, Mendo’s krispies, mustard pickle slaw, tomatoes, pickled red onions, herb aioli, on toasted ciabatta",
-        "priceUSD": null,
-        "category": "Sandwiches"
-      },
-      {
-        "id": "the-farm-club",
-        "name": "The Farm Club",
-        "description": "roasted turkey, smashed avocado, applewood smoked bacon, tomatoes, pickled red onions, mixed greens, herb aioli, on seeded honey whole wheat",
-        "priceUSD": null,
-        "category": "Sandwiches"
-      },
-      {
-        "id": "chicken-parm-dip",
-        "name": "Chicken Parm Dip",
-        "description": "chicken, Mendo’s krispies, melted mozzarella & parmesan, pomodoro sauce, basil, Calabrian chile aioli, on toasted sesame roll served with extra pomodoro for dipping",
-        "priceUSD": null,
-        "category": "Sandwiches"
-      },
-      {
-        "id": "chicken-pesto-caprese",
-        "name": "Chicken Pesto Caprese",
-        "description": "chicken, fresh mozzarella, marinated red peppers, basil pesto, mixed greens, balsamic, on panini-pressed ciabatta",
-        "priceUSD": null,
-        "category": "Sandwiches"
-      },
-      {
-        "id": "turkey-avo-salsa-verde",
-        "name": "Turkey Avo Salsa Verde",
-        "description": "roasted turkey, smashed avocado, melted smoked gouda, cotija, Mama Lil’s sweet hot peppers, jalapeño salsa aioli, tomatoes, shredded romaine, red onions, on panini-pressed sourdough",
-        "priceUSD": null,
-        "category": "Sandwiches"
-      },
-      {
-        "id": "peruvian-steak",
-        "name": "Peruvian Steak",
-        "description": "seared steak tossed in a spicy aji amarillo sauce, melted Oaxacan cheese, tomatoes, red onions, shredded romaine, herb aioli, on toasted potato roll",
-        "priceUSD": null,
-        "category": "Sandwiches"
-      },
-      {
-        "id": "the-happy-hippie",
-        "name": "The Happy Hippie",
-        "description": "avocado, cucumber, carrots, Kumato tomatoes, beet caviar, hummus, white cheddar, sprouts, cucumber dill ranch, vegan mayo, on toasted honey whole wheat",
-        "priceUSD": null,
-        "category": "Sandwiches"
-      },
-      {
-        "id": "prosciutto-chicken",
-        "name": "Prosciutto & Chicken",
-        "description": "chicken, Italian prosciutto, fresh mozzarella, crushed honey roasted almonds, basil pesto, balsamic glaze, tomatoes, on panini-pressed ciabatta",
-        "priceUSD": null,
-        "category": "Sandwiches"
-      },
-      {
-        "id": "chimichurri-steak-bacon",
-        "name": "Chimichurri Steak & Bacon",
-        "description": "seared steak & applewood smoked bacon, marinated red peppers, caramelized onion jam, chimichurri, shredded romaine, herb aioli, on toasted sesame roll",
-        "priceUSD": null,
-        "category": "Sandwiches"
-      },
-      {
-        "id": "vegan-banh-mi",
-        "name": "Vegan Banh Mi",
-        "description": "baked salt & pepper tofu, pickled daikon & carrots, cucumber, jalapeño, Thai basil, cilantro, sweet chili sauce, vegan mayo, on panini-pressed ciabatta",
-        "priceUSD": null,
-        "category": "Sandwiches"
-      },
-      {
-        "id": "chen-s-crispy-rice-salad",
-        "name": "Chen’s Crispy Rice Salad",
-        "description": "chicken OR tofu, rainbow carrots, watermelon radish, cashews, crispy rice, wontons, scallion, cilantro, romaine, kale, spinach, red & green cabbage, miso sesame dressing",
-        "priceUSD": null,
-        "category": "Salads"
-      },
-      {
-        "id": "golden-state-cobb",
-        "name": "Golden State Cobb",
-        "description": "applewood smoked bacon, avocado, hard-boiled egg, blue cheese, vine-ripened cherry tomatoes, pickled red onions, balsamic glaze, chives, romaine, kale, mixed greens, rustic red wine vinaigrette",
-        "priceUSD": null,
-        "category": "Salads"
-      },
-      {
-        "id": "baja-green-goddess",
-        "name": "Baja Green Goddess",
-        "description": "Impossible chorizo OR chicken adobado, roasted corn, black beans, jicama, avocado, grape tomatoes, red onions, Monterey jack, taco crunch, romaine, arugula, cabbage, cilantro, Baja goddess dressing",
-        "priceUSD": null,
-        "category": "Salads"
-      },
-      {
-        "id": "avocado-quinoa-superfood-ensalada",
-        "name": "Avocado & Quinoa Superfood Ensalada",
-        "description": "avocado, roasted corn, black beans, jicama, grape tomatoes, red onions, quinoa & millet, superfood krunchies, kale, romaine, cilantro, cotija, chipotle vinaigrette",
-        "priceUSD": null,
-        "category": "Salads"
-      },
-      {
-        "id": "thai-mango-salad",
-        "name": "Thai Mango Salad",
-        "description": "chicken OR tofu, mango, ramen noodles, pickled daikon & carrots, honey roasted almonds, napa cabbage, kale, romaine, baby spinach, carrots, bean sprouts, Thai basil, mint, cilantro, lime, crispy shallots, Thai almond dressing",
-        "priceUSD": null,
-        "category": "Salads"
-      },
-      {
-        "id": "the-modern-caesar",
-        "name": "The Modern Caesar",
-        "description": "avocado, grape tomato, red onion, parmesan, superfood krunchies, romaine, kale, baby spinach, cabbage, caesar dressing",
-        "priceUSD": null,
-        "category": "Salads"
-      },
-      {
-        "id": "tomato-basil-soup",
-        "name": "Tomato Basil Soup",
-        "description": "Classic tomato basil soup",
-        "priceUSD": null,
-        "category": "Deli Sides & Soups"
-      },
-      {
-        "id": "southern-potato-salad",
-        "name": "Southern Potato Salad",
-        "description": "creamy potato salad with whole grain mustard, B&B pickles, scallions, dill",
-        "priceUSD": null,
-        "category": "Deli Sides & Soups"
-      },
-      {
-        "id": "basil-pesto-shells",
-        "name": "Basil Pesto Shells",
-        "description": "pasta shells, basil pesto, sun dried tomatoes, arugula, feta cheese, parmesan",
-        "priceUSD": null,
-        "category": "Deli Sides & Soups"
-      },
-      {
-        "id": "spicy-curried-couscous",
-        "name": "Spicy Curried Couscous",
-        "description": "pearl couscous, roasted cauliflower & carrots, Mendo’s signature curry spice",
-        "priceUSD": null,
-        "category": "Deli Sides & Soups"
-      },
-      {
-        "id": "kale-apple-rainbow-salad",
-        "name": "Kale & Apple Rainbow Salad",
-        "description": "kale, granny smith apples, rainbow carrots, toasted coconut, candied pecans, dried cranberries, Thai basil vinaigrette",
-        "priceUSD": null,
-        "category": "Deli Sides & Soups"
+        "name": "“Not So Fried” Chicken",
+        "description": "chicken, Mendo’s krispies, mustard pickle slaw, tomatoes, pickled red onions, herb aioli, on toasted ciabatta with a side of golden BBQ sauce or mustard remoulade (900-1020 cal)",
+        "priceUSD": 15.95,
+        "category": "Sandwiches",
+        "nutrition": {
+          "calories": 960,
+          "proteinG": 48,
+          "carbsG": 82,
+          "fatG": 45,
+          "sodiumMg": 1430
+        }
       }
     ],
-    "dataSource": "firecrawl"
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://mendocinofarms.com/menus"
+    }
   },
   {
-    "id": "fast-fire-d-pizzas",
-    "name": "Fast Fire'd Pizzas",
+    "id": "chef-inspired-pizzeria",
+    "name": "Chef-Inspired Pizzeria",
     "description": "Chef-Inspired. Always Delicious. Try out our latest Featured Favorites.",
     "cuisine": [
       "Pizza",
+      "American",
       "Italian"
     ],
-    "priceTier": "Varies by item",
+    "priceTier": "$$",
     "location": {
-      "address": "123 Pizza St",
-      "city": "Pizza City",
+      "address": "515 Spectrum Center Dr",
+      "city": "Irvine",
       "state": "CA",
-      "postalCode": "90210",
-      "lat": 34.0522,
-      "lng": -118.2437
+      "postalCode": "92618",
+      "lat": 33.6498,
+      "lng": -117.7515
     },
     "hours": [
       {
-        "day": "Monday",
+        "day": "mon",
         "open": "11:00 AM",
         "close": "10:00 PM"
       },
       {
-        "day": "Tuesday",
+        "day": "tue",
         "open": "11:00 AM",
         "close": "10:00 PM"
       },
       {
-        "day": "Wednesday",
+        "day": "wed",
         "open": "11:00 AM",
         "close": "10:00 PM"
       },
       {
-        "day": "Thursday",
+        "day": "thu",
         "open": "11:00 AM",
         "close": "10:00 PM"
       },
       {
-        "day": "Friday",
+        "day": "fri",
         "open": "11:00 AM",
         "close": "11:00 PM"
       },
       {
-        "day": "Saturday",
-        "open": "12:00 PM",
+        "day": "sat",
+        "open": "11:00 AM",
         "close": "11:00 PM"
       },
       {
-        "day": "Sunday",
-        "open": "12:00 PM",
+        "day": "sun",
+        "open": "11:00 AM",
         "close": "10:00 PM"
       }
     ],
@@ -423,37 +395,111 @@
         "id": "sweet-heat",
         "name": "Sweet Heat",
         "description": "NEW Limited-Time Signature Pizza! Inspired by Marvel Television’s Daredevil: Born Again, this fearless pie brings the heat with our classic dough and spicy red sauce as the foundation. It’s stacked with double pepperoni, fresh mozzarella, and fire-roasted red peppers, then finished with a drizzle of Mike’s Hot Honey for a sweet-heat punch that hits fast and lingers strong.",
-        "priceUSD": null,
-        "category": "What's Hot"
+        "priceUSD": 12.99,
+        "category": "11-inch Pizzas",
+        "nutrition": {
+          "calories": 760,
+          "proteinG": 30,
+          "carbsG": 78,
+          "fatG": 36,
+          "sodiumMg": 1480
+        }
       },
       {
         "id": "carnivore",
         "name": "Carnivore",
-        "description": "Our Chef’s signature recipe includes a savory mix of pepperoni slices, julienned ham, and crumbled meatballs, paired with our house-made tomato-based sauce, mozzarella cheese, and finished with a Balsamic drizzle.",
-        "priceUSD": null,
-        "category": "What's Hot"
+        "description": "Our Chef’s signature recipe includes a savory mix of pepperoni slices, julienned ham and crumbled meatballs. The toppings are paired with our house made tomato-based sauce, mozzarella cheese, and finished with a Balsamic drizzle.",
+        "priceUSD": 13.99,
+        "category": "Large Pizzas",
+        "nutrition": {
+          "calories": 840,
+          "proteinG": 38,
+          "carbsG": 80,
+          "fatG": 40,
+          "sodiumMg": 1680
+        }
       },
       {
         "id": "one-large-1-top-pizza",
         "name": "One Large 1-Top Pizza",
-        "description": "Get one Large Pizza with your choice of sauce, cheese, and 1 topping. Online Only.",
-        "priceUSD": null,
-        "category": "Large Pizzas"
+        "description": "Get one Large Pizza with your choice of sauce, cheese and 1 topping. Online Only.",
+        "priceUSD": 10.99,
+        "category": "Standard Pizzas",
+        "nutrition": {
+          "calories": 620,
+          "proteinG": 22,
+          "carbsG": 78,
+          "fatG": 24,
+          "sodiumMg": 1020
+        }
+      },
+      {
+        "id": "sweet-heat-11-inch",
+        "name": "Sweet Heat (11-inch)",
+        "description": "NEW Limited-Time Signature Pizza! Inspired by Marvel Television’s Daredevil: Born Again, this fearless pie brings the heat with our classic dough and spicy red sauce as the foundation. It’s stacked with double pepperoni, fresh mozzarella, and fire-roasted red peppers, then finished with a drizzle of Mike’s Hot Honey for a sweet-heat punch that hits fast and lingers strong.",
+        "priceUSD": 9.99,
+        "category": "11-inch Pizzas",
+        "nutrition": {
+          "calories": 560,
+          "proteinG": 22,
+          "carbsG": 60,
+          "fatG": 26,
+          "sodiumMg": 1100
+        }
+      },
+      {
+        "id": "build-your-own-pizza-11-inch",
+        "name": "Build Your Own Pizza (11-inch)",
+        "description": "Choose any toppings",
+        "priceUSD": 8.99,
+        "category": "11-inch Pizzas",
+        "nutrition": {
+          "calories": 520,
+          "proteinG": 18,
+          "carbsG": 62,
+          "fatG": 22,
+          "sodiumMg": 960
+        }
       },
       {
         "id": "spicy-pepperoni-pizza",
         "name": "Spicy Pepperoni Pizza",
-        "description": "One of the most popular Signature Pizzas topped with double pepperoni, jalapeño with garlic, and drizzled with Mike’s Hot Honey.",
-        "priceUSD": null,
-        "category": "11-inch Pizzas"
+        "description": "One of the most popular Signature Pizzas by far is topped with double pepperoni, jalapeño with garlic and now drizzled with Mike’s Hot Honey.",
+        "priceUSD": 11.99,
+        "category": "11-inch Pizzas",
+        "nutrition": {
+          "calories": 660,
+          "proteinG": 26,
+          "carbsG": 62,
+          "fatG": 34,
+          "sodiumMg": 1400
+        }
+      },
+      {
+        "id": "blazed-bbq-11-inch",
+        "name": "Blazed BBQ (11-inch)",
+        "description": "The NEW Blaze BBQ Chicken pizza recipe features a base of tangy BBQ sauce, creamy mozzarella cheese, tender pieces of grilled chicken along with red onions and pickled jalapeno peppers. This delicious combination is topped with a drizzle of ranch dressing for extra flavor.",
+        "priceUSD": 10.99,
+        "category": "11-inch Pizzas",
+        "nutrition": {
+          "calories": 620,
+          "proteinG": 28,
+          "carbsG": 68,
+          "fatG": 26,
+          "sodiumMg": 1200
+        }
       }
     ],
-    "dataSource": "firecrawl"
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://blazepizza.com/menu"
+    }
   },
   {
     "id": "northern-cafe",
     "name": "Northern Cafe (頤豐園)",
-    "description": "A Chinese kitchen established in 2004, offering a diverse menu that features pancakes, noodles, dumplings, hot pots, and various traditional dishes.",
+    "description": "A Chinese kitchen established in 2004, offering a variety of Northern Chinese staples including pancakes, noodles, dumplings, and hot pots.",
     "cuisine": [
       "Chinese"
     ],
@@ -463,579 +509,2328 @@
       "city": "Irvine",
       "state": "CA",
       "postalCode": "92612",
-      "lat": 0,
-      "lng": 0
+      "lat": 33.6496,
+      "lng": -117.8401
     },
     "hours": [
       {
-        "day": "Monday",
-        "open": "11:00am",
-        "close": "9:30pm"
+        "day": "mon",
+        "open": "11:00 AM",
+        "close": "9:30 PM"
       },
       {
-        "day": "Tuesday",
-        "open": "11:00am",
-        "close": "9:30pm"
+        "day": "tue",
+        "open": "11:00 AM",
+        "close": "9:30 PM"
       },
       {
-        "day": "Wednesday",
-        "open": "11:00am",
-        "close": "9:30pm"
+        "day": "wed",
+        "open": "11:00 AM",
+        "close": "9:30 PM"
       },
       {
-        "day": "Thursday",
-        "open": "11:00am",
-        "close": "9:30pm"
+        "day": "thu",
+        "open": "11:00 AM",
+        "close": "9:30 PM"
       },
       {
-        "day": "Friday",
-        "open": "11:00am",
-        "close": "9:30pm"
+        "day": "fri",
+        "open": "11:00 AM",
+        "close": "9:30 PM"
       },
       {
-        "day": "Saturday",
-        "open": "11:00am",
-        "close": "9:30pm"
+        "day": "sat",
+        "open": "11:00 AM",
+        "close": "9:30 PM"
       },
       {
-        "day": "Sunday",
-        "open": "11:00am",
-        "close": "9:30pm"
+        "day": "sun",
+        "open": "11:00 AM",
+        "close": "9:30 PM"
       }
     ],
     "menu": [
       {
         "id": "beef-roll",
         "name": "Beef Roll (牛肉卷饼)",
-        "description": "A flavorful beef roll served rolled in a pancake.",
+        "description": "",
         "priceUSD": 13.99,
-        "category": "Pancake (手工饼面)"
+        "category": "Pancake",
+        "nutrition": {
+          "calories": 480,
+          "proteinG": 22,
+          "carbsG": 44,
+          "fatG": 24,
+          "sodiumMg": 820
+        }
       },
       {
         "id": "scallion-pancake",
         "name": "Scallion Pancake (葱油饼)",
-        "description": "Traditional Chinese pancake with scallions.",
+        "description": "",
         "priceUSD": 5.99,
-        "category": "Pancake (手工饼面)"
+        "category": "Pancake",
+        "nutrition": {
+          "calories": 300,
+          "proteinG": 6,
+          "carbsG": 42,
+          "fatG": 12,
+          "sodiumMg": 480
+        }
       },
       {
         "id": "ginseng-pancake",
         "name": "Ginseng Pancake (人参饼)",
-        "description": "Healthy pancake made with ginseng.",
+        "description": "",
         "priceUSD": 13.99,
-        "category": "Pancake (手工饼面)"
+        "category": "Pancake",
+        "nutrition": {
+          "calories": 460,
+          "proteinG": 18,
+          "carbsG": 48,
+          "fatG": 22,
+          "sodiumMg": 760
+        }
+      },
+      {
+        "id": "sandwich",
+        "name": "Sandwich (汉堡)",
+        "description": "",
+        "priceUSD": 6.99,
+        "category": "Pancake",
+        "nutrition": {
+          "calories": 380,
+          "proteinG": 16,
+          "carbsG": 42,
+          "fatG": 16,
+          "sodiumMg": 620
+        }
+      },
+      {
+        "id": "fried-pancake",
+        "name": "Fried Pancake (葱油饼(干))",
+        "description": "",
+        "priceUSD": 6.99,
+        "category": "Pancake",
+        "nutrition": {
+          "calories": 320,
+          "proteinG": 6,
+          "carbsG": 44,
+          "fatG": 14,
+          "sodiumMg": 500
+        }
+      },
+      {
+        "id": "sesame-pancake",
+        "name": "Sesame Pancake (芝麻烧饼)",
+        "description": "",
+        "priceUSD": 8.99,
+        "category": "Pancake",
+        "nutrition": {
+          "calories": 360,
+          "proteinG": 8,
+          "carbsG": 52,
+          "fatG": 14,
+          "sodiumMg": 440
+        }
       },
       {
         "id": "house-special-beef-noodle-soup",
         "name": "House Special Beef Noodle Soup (招牌牛肉面)",
-        "description": "Signature beef noodle soup with rich broth and tender beef.",
+        "description": "",
         "priceUSD": 15.99,
-        "category": "Noodle (家常面条)"
+        "category": "Noodle",
+        "nutrition": {
+          "calories": 620,
+          "proteinG": 36,
+          "carbsG": 70,
+          "fatG": 18,
+          "sodiumMg": 1480
+        }
+      },
+      {
+        "id": "beef-noodle-soup",
+        "name": "Beef Noodle Soup (清炖牛肉面)",
+        "description": "",
+        "priceUSD": 15.5,
+        "category": "Noodle",
+        "nutrition": {
+          "calories": 580,
+          "proteinG": 32,
+          "carbsG": 68,
+          "fatG": 16,
+          "sodiumMg": 1320
+        }
+      },
+      {
+        "id": "malan-noodle-soup",
+        "name": "Malan Noodle Soup (麻辣牛肉面)",
+        "description": "",
+        "priceUSD": 15.5,
+        "category": "Noodle",
+        "nutrition": {
+          "calories": 600,
+          "proteinG": 32,
+          "carbsG": 68,
+          "fatG": 18,
+          "sodiumMg": 1380
+        }
+      },
+      {
+        "id": "golden-soup-beef-noodle",
+        "name": "Golden Soup Beef Noodle (金汤肥牛面)",
+        "description": "",
+        "priceUSD": 15.5,
+        "category": "Noodle",
+        "nutrition": {
+          "calories": 600,
+          "proteinG": 34,
+          "carbsG": 66,
+          "fatG": 18,
+          "sodiumMg": 1340
+        }
+      },
+      {
+        "id": "chicken-noodle-soup",
+        "name": "Chicken Noodle Soup (番茄鸡蛋面)",
+        "description": "",
+        "priceUSD": 14.99,
+        "category": "Noodle",
+        "nutrition": {
+          "calories": 520,
+          "proteinG": 28,
+          "carbsG": 66,
+          "fatG": 14,
+          "sodiumMg": 1200
+        }
+      },
+      {
+        "id": "pork-intestine-noodle-soup",
+        "name": "Pork Intestine Noodle Soup (肥肠面)",
+        "description": "",
+        "priceUSD": 15.99,
+        "category": "Noodle",
+        "nutrition": {
+          "calories": 600,
+          "proteinG": 28,
+          "carbsG": 68,
+          "fatG": 20,
+          "sodiumMg": 1420
+        }
+      },
+      {
+        "id": "dan-dan-noodle",
+        "name": "Dan Dan Noodle (担担面)",
+        "description": "",
+        "priceUSD": 15.99,
+        "category": "Noodle",
+        "nutrition": {
+          "calories": 580,
+          "proteinG": 24,
+          "carbsG": 72,
+          "fatG": 22,
+          "sodiumMg": 1350
+        }
+      },
+      {
+        "id": "zhajiangmian",
+        "name": "Zhajiangmian (炸酱面)",
+        "description": "",
+        "priceUSD": 13.99,
+        "category": "Noodle",
+        "nutrition": {
+          "calories": 560,
+          "proteinG": 24,
+          "carbsG": 72,
+          "fatG": 18,
+          "sodiumMg": 1260
+        }
+      },
+      {
+        "id": "cold-noodle",
+        "name": "Cold Noodle (凉拌面)",
+        "description": "",
+        "priceUSD": 13.99,
+        "category": "Noodle",
+        "nutrition": {
+          "calories": 460,
+          "proteinG": 14,
+          "carbsG": 70,
+          "fatG": 14,
+          "sodiumMg": 1100
+        }
       },
       {
         "id": "yangzhou-fried-rice",
         "name": "Yangzhou Fried Rice (扬州炒饭)",
-        "description": "Classic Yangzhou style fried rice with mixed ingredients.",
+        "description": "",
         "priceUSD": 13.99,
-        "category": "Fried Rice or Noodle (特色主食)"
+        "category": "Fried Rice",
+        "nutrition": {
+          "calories": 540,
+          "proteinG": 16,
+          "carbsG": 78,
+          "fatG": 18,
+          "sodiumMg": 1080
+        }
+      },
+      {
+        "id": "fried-rice-w-chicken-shrimp-or-vegetable",
+        "name": "Fried Rice w/ Chicken, Shrimp, or Vegetable (鸡肉/虾仁/蔬菜炒饭)",
+        "description": "",
+        "priceUSD": 14.99,
+        "category": "Fried Rice",
+        "nutrition": {
+          "calories": 600,
+          "proteinG": 24,
+          "carbsG": 78,
+          "fatG": 20,
+          "sodiumMg": 1100
+        }
+      },
+      {
+        "id": "fried-rice-w-sausage",
+        "name": "Fried Rice w/ Sausage (香肠炒饭)",
+        "description": "",
+        "priceUSD": 11.99,
+        "category": "Fried Rice",
+        "nutrition": {
+          "calories": 580,
+          "proteinG": 16,
+          "carbsG": 78,
+          "fatG": 22,
+          "sodiumMg": 1060
+        }
+      },
+      {
+        "id": "shrimp-fried-rice",
+        "name": "Shrimp Fried Rice (虾仁炒饭)",
+        "description": "",
+        "priceUSD": 14.99,
+        "category": "Fried Rice",
+        "nutrition": {
+          "calories": 580,
+          "proteinG": 22,
+          "carbsG": 78,
+          "fatG": 18,
+          "sodiumMg": 1080
+        }
+      },
+      {
+        "id": "dry-fried-noodle",
+        "name": "Dry Fried Noodle (干炒牛河)",
+        "description": "",
+        "priceUSD": 13.99,
+        "category": "Fried Rice",
+        "nutrition": {
+          "calories": 560,
+          "proteinG": 20,
+          "carbsG": 74,
+          "fatG": 20,
+          "sodiumMg": 1140
+        }
+      },
+      {
+        "id": "da-zang-ma-stir-fried-noodle",
+        "name": "Da Zang Ma Stir-Fried Noodle (大藏面炒面)",
+        "description": "",
+        "priceUSD": 14.99,
+        "category": "Fried Rice",
+        "nutrition": {
+          "calories": 580,
+          "proteinG": 20,
+          "carbsG": 76,
+          "fatG": 20,
+          "sodiumMg": 1160
+        }
+      },
+      {
+        "id": "sichuan-stir-fried-noodle",
+        "name": "Sichuan Stir-Fried Noodle (四川炒面)",
+        "description": "",
+        "priceUSD": 14.99,
+        "category": "Fried Rice",
+        "nutrition": {
+          "calories": 580,
+          "proteinG": 20,
+          "carbsG": 76,
+          "fatG": 20,
+          "sodiumMg": 1200
+        }
       },
       {
         "id": "juicy-pork-xiaolongbao",
         "name": "Juicy Pork Xiaolongbao (鲜肉小笼包)",
-        "description": "Steamed dumplings filled with juicy pork.",
+        "description": "",
         "priceUSD": 12.99,
-        "category": "Handmade Dumpling (手工现包)"
+        "category": "Handmade Dumpling",
+        "nutrition": {
+          "calories": 340,
+          "proteinG": 18,
+          "carbsG": 36,
+          "fatG": 14,
+          "sodiumMg": 640
+        }
       },
       {
-        "id": "orange-chicken",
-        "name": "Orange Chicken (陈皮鸡)",
-        "description": "Crispy chicken tossed in a sweet orange sauce.",
-        "priceUSD": 15.99,
-        "category": "Stir Fry Dishes (风味小炒)"
+        "id": "pork-crab-xiaolongbao",
+        "name": "Pork & Crab Xiaolongbao (蟹粉小笼包)",
+        "description": "",
+        "priceUSD": 13.99,
+        "category": "Handmade Dumpling",
+        "nutrition": {
+          "calories": 360,
+          "proteinG": 18,
+          "carbsG": 36,
+          "fatG": 16,
+          "sodiumMg": 680
+        }
       },
       {
-        "id": "sichuan-mala-pot",
-        "name": "Sichuan Mala Pot (四川麻辣锅)",
-        "description": "Spicy Sichuan style hot pot for a bold experience.",
-        "priceUSD": 17.99,
-        "category": "Hot Pot (招牌小火锅)"
+        "id": "juicy-chicken-xiaolongbao",
+        "name": "Juicy Chicken Xiaolongbao (鸡肉小笼包)",
+        "description": "",
+        "priceUSD": 12.99,
+        "category": "Handmade Dumpling",
+        "nutrition": {
+          "calories": 320,
+          "proteinG": 18,
+          "carbsG": 36,
+          "fatG": 12,
+          "sodiumMg": 600
+        }
+      },
+      {
+        "id": "juicy-mushroom-xiaolongbao",
+        "name": "Juicy Mushroom Xiaolongbao (香菇小笼包)",
+        "description": "",
+        "priceUSD": 12.99,
+        "category": "Handmade Dumpling",
+        "nutrition": {
+          "calories": 280,
+          "proteinG": 10,
+          "carbsG": 38,
+          "fatG": 10,
+          "sodiumMg": 540
+        }
+      },
+      {
+        "id": "juicy-vegetable-xiaolongbao",
+        "name": "Juicy Vegetable Xiaolongbao (蔬菜小笼包)",
+        "description": "",
+        "priceUSD": 12.99,
+        "category": "Handmade Dumpling",
+        "nutrition": {
+          "calories": 260,
+          "proteinG": 8,
+          "carbsG": 38,
+          "fatG": 8,
+          "sodiumMg": 500
+        }
+      },
+      {
+        "id": "steamed-beef-dumpling",
+        "name": "Steamed Beef Dumpling (牛肉蒸饺)",
+        "description": "",
+        "priceUSD": 12.99,
+        "category": "Steamed Dumplings",
+        "nutrition": {
+          "calories": 300,
+          "proteinG": 16,
+          "carbsG": 32,
+          "fatG": 12,
+          "sodiumMg": 560
+        }
+      },
+      {
+        "id": "steamed-lamb-dumpling",
+        "name": "Steamed Lamb Dumpling (羊肉蒸饺)",
+        "description": "",
+        "priceUSD": 12.99,
+        "category": "Steamed Dumplings",
+        "nutrition": {
+          "calories": 320,
+          "proteinG": 16,
+          "carbsG": 32,
+          "fatG": 14,
+          "sodiumMg": 580
+        }
+      },
+      {
+        "id": "steamed-vegetable-dumpling",
+        "name": "Steamed Vegetable Dumpling (素蒸饺)",
+        "description": "",
+        "priceUSD": 12.99,
+        "category": "Steamed Dumplings",
+        "nutrition": {
+          "calories": 240,
+          "proteinG": 8,
+          "carbsG": 34,
+          "fatG": 8,
+          "sodiumMg": 480
+        }
+      },
+      {
+        "id": "pork-chive-boiled-pan-fried",
+        "name": "Pork & Chive Boiled/Pan Fried (猪肉韭菜饺)",
+        "description": "Boiled/Pan Fried",
+        "priceUSD": 11.99,
+        "category": "Boiled/Pan Fried Dumplings",
+        "nutrition": {
+          "calories": 320,
+          "proteinG": 14,
+          "carbsG": 34,
+          "fatG": 14,
+          "sodiumMg": 600
+        }
+      },
+      {
+        "id": "pork-cabbage-boiled-pan-fried",
+        "name": "Pork & Cabbage Boiled/Pan Fried (猪肉白菜饺)",
+        "description": "Boiled/Pan Fried",
+        "priceUSD": 11.99,
+        "category": "Boiled/Pan Fried Dumplings",
+        "nutrition": {
+          "calories": 300,
+          "proteinG": 14,
+          "carbsG": 34,
+          "fatG": 12,
+          "sodiumMg": 580
+        }
+      },
+      {
+        "id": "pork-leek-boiled-pan-fried",
+        "name": "Pork & Leek Boiled/Pan Fried (猪肉韭菜锅贴)",
+        "description": "Boiled/Pan Fried",
+        "priceUSD": 11.99,
+        "category": "Boiled/Pan Fried Dumplings",
+        "nutrition": {
+          "calories": 320,
+          "proteinG": 14,
+          "carbsG": 34,
+          "fatG": 14,
+          "sodiumMg": 620
+        }
+      },
+      {
+        "id": "chicken-boiled-pan-fried",
+        "name": "Chicken Boiled/Pan Fried (鸡肉锅贴)",
+        "description": "Boiled/Pan Fried",
+        "priceUSD": 11.99,
+        "category": "Boiled/Pan Fried Dumplings",
+        "nutrition": {
+          "calories": 280,
+          "proteinG": 14,
+          "carbsG": 32,
+          "fatG": 10,
+          "sodiumMg": 560
+        }
+      },
+      {
+        "id": "vegetable-boiled-pan-fried",
+        "name": "Vegetable Boiled/Pan Fried (素锅贴)",
+        "description": "Boiled/Pan Fried",
+        "priceUSD": 11.99,
+        "category": "Boiled/Pan Fried Dumplings",
+        "nutrition": {
+          "calories": 220,
+          "proteinG": 6,
+          "carbsG": 32,
+          "fatG": 8,
+          "sodiumMg": 500
+        }
+      },
+      {
+        "id": "pork-potstickers",
+        "name": "Pork Potstickers (猪肉锅烙)",
+        "description": "",
+        "priceUSD": 11.99,
+        "category": "Potstickers",
+        "nutrition": {
+          "calories": 340,
+          "proteinG": 14,
+          "carbsG": 36,
+          "fatG": 14,
+          "sodiumMg": 640
+        }
+      },
+      {
+        "id": "spicy-pork-wontons",
+        "name": "Spicy Pork Wontons (红油抄手)",
+        "description": "",
+        "priceUSD": 11.99,
+        "category": "Wontons",
+        "nutrition": {
+          "calories": 360,
+          "proteinG": 14,
+          "carbsG": 36,
+          "fatG": 16,
+          "sodiumMg": 760
+        }
+      },
+      {
+        "id": "chicken-wontons",
+        "name": "Chicken Wontons (鸡肉抄手)",
+        "description": "",
+        "priceUSD": 11.99,
+        "category": "Wontons",
+        "nutrition": {
+          "calories": 320,
+          "proteinG": 14,
+          "carbsG": 34,
+          "fatG": 12,
+          "sodiumMg": 680
+        }
+      },
+      {
+        "id": "chili-sauce-wontons",
+        "name": "Chili Sauce Wontons (干拌抄手)",
+        "description": "",
+        "priceUSD": 11.99,
+        "category": "Wontons",
+        "nutrition": {
+          "calories": 340,
+          "proteinG": 14,
+          "carbsG": 36,
+          "fatG": 14,
+          "sodiumMg": 700
+        }
+      },
+      {
+        "id": "wonton-soup",
+        "name": "Wonton Soup (馄饨汤)",
+        "description": "",
+        "priceUSD": 12.99,
+        "category": "Soup",
+        "nutrition": {
+          "calories": 280,
+          "proteinG": 12,
+          "carbsG": 34,
+          "fatG": 8,
+          "sodiumMg": 920
+        }
       },
       {
         "id": "hot-sour-soup",
         "name": "Hot & Sour Soup (酸辣汤)",
-        "description": "A spicy and tangy soup.",
+        "description": "",
         "priceUSD": 11.99,
-        "category": "Soup (汤品)"
+        "category": "Soup",
+        "nutrition": {
+          "calories": 180,
+          "proteinG": 8,
+          "carbsG": 20,
+          "fatG": 6,
+          "sodiumMg": 1100
+        }
       },
       {
         "id": "coke",
         "name": "Coke",
-        "description": "Classic cola drink.",
+        "description": "",
         "priceUSD": 3.5,
-        "category": "Beverages (饮品)"
+        "category": "Beverages",
+        "nutrition": {
+          "calories": 140,
+          "proteinG": 0,
+          "carbsG": 39,
+          "fatG": 0,
+          "sugarG": 39,
+          "sodiumMg": 45
+        }
+      },
+      {
+        "id": "sprite",
+        "name": "Sprite",
+        "description": "",
+        "priceUSD": 3.5,
+        "category": "Beverages",
+        "nutrition": {
+          "calories": 140,
+          "proteinG": 0,
+          "carbsG": 38,
+          "fatG": 0,
+          "sugarG": 38,
+          "sodiumMg": 65
+        }
+      },
+      {
+        "id": "4-seasons-oolong",
+        "name": "4 Seasons Oolong",
+        "description": "",
+        "priceUSD": 3.5,
+        "category": "Beverages",
+        "nutrition": {
+          "calories": 0,
+          "proteinG": 0,
+          "carbsG": 0,
+          "fatG": 0,
+          "sodiumMg": 5
+        }
+      },
+      {
+        "id": "chrysanthemum",
+        "name": "Chrysanthemum",
+        "description": "",
+        "priceUSD": 3.5,
+        "category": "Beverages",
+        "nutrition": {
+          "calories": 0,
+          "proteinG": 0,
+          "carbsG": 0,
+          "fatG": 0,
+          "sodiumMg": 5
+        }
+      },
+      {
+        "id": "sparkling-water",
+        "name": "Sparkling Water",
+        "description": "",
+        "priceUSD": 3.5,
+        "category": "Beverages",
+        "nutrition": {
+          "calories": 0,
+          "proteinG": 0,
+          "carbsG": 0,
+          "fatG": 0,
+          "sodiumMg": 10
+        }
+      },
+      {
+        "id": "seattle-green-tea",
+        "name": "Seattle Green Tea",
+        "description": "",
+        "priceUSD": 3.5,
+        "category": "Beverages",
+        "nutrition": {
+          "calories": 0,
+          "proteinG": 0,
+          "carbsG": 0,
+          "fatG": 0,
+          "sodiumMg": 5
+        }
+      },
+      {
+        "id": "seattle-iced-green-tea",
+        "name": "Seattle Iced Green Tea",
+        "description": "",
+        "priceUSD": 3.5,
+        "category": "Beverages",
+        "nutrition": {
+          "calories": 0,
+          "proteinG": 0,
+          "carbsG": 0,
+          "fatG": 0,
+          "sodiumMg": 5
+        }
+      },
+      {
+        "id": "tsingtao",
+        "name": "Tsingtao",
+        "description": "",
+        "priceUSD": 5.5,
+        "category": "Beer",
+        "nutrition": {
+          "calories": 145,
+          "proteinG": 1,
+          "carbsG": 11,
+          "fatG": 0,
+          "sodiumMg": 10
+        }
+      },
+      {
+        "id": "corona",
+        "name": "Corona",
+        "description": "",
+        "priceUSD": 8.5,
+        "category": "Beer",
+        "nutrition": {
+          "calories": 148,
+          "proteinG": 1,
+          "carbsG": 14,
+          "fatG": 0,
+          "sodiumMg": 14
+        }
+      },
+      {
+        "id": "asahi",
+        "name": "Asahi",
+        "description": "",
+        "priceUSD": 8.5,
+        "category": "Beer",
+        "nutrition": {
+          "calories": 145,
+          "proteinG": 1,
+          "carbsG": 12,
+          "fatG": 0,
+          "sodiumMg": 8
+        }
+      },
+      {
+        "id": "sapporo",
+        "name": "Sapporo",
+        "description": "",
+        "priceUSD": 8.5,
+        "category": "Beer",
+        "nutrition": {
+          "calories": 140,
+          "proteinG": 1,
+          "carbsG": 11,
+          "fatG": 0,
+          "sodiumMg": 10
+        }
+      },
+      {
+        "id": "coors-light",
+        "name": "Coors Light",
+        "description": "",
+        "priceUSD": 8.5,
+        "category": "Beer",
+        "nutrition": {
+          "calories": 102,
+          "proteinG": 1,
+          "carbsG": 5,
+          "fatG": 0,
+          "sodiumMg": 10
+        }
       },
       {
         "id": "steamed-custard",
         "name": "Steamed Custard (蒸蛋)",
-        "description": "Delicate steamed custard dessert.",
+        "description": "",
         "priceUSD": 5.99,
-        "category": "Dessert (精美甜品)"
+        "category": "Dessert",
+        "nutrition": {
+          "calories": 180,
+          "proteinG": 8,
+          "carbsG": 20,
+          "fatG": 8,
+          "sodiumMg": 120
+        }
+      },
+      {
+        "id": "steamed-roll",
+        "name": "Steamed Roll (蒸卷)",
+        "description": "",
+        "priceUSD": 5.99,
+        "category": "Dessert",
+        "nutrition": {
+          "calories": 200,
+          "proteinG": 6,
+          "carbsG": 34,
+          "fatG": 4,
+          "sodiumMg": 260
+        }
+      },
+      {
+        "id": "steamed-bbq",
+        "name": "Steamed BBQ (蒸叉烧)",
+        "description": "",
+        "priceUSD": 6.99,
+        "category": "Dessert",
+        "nutrition": {
+          "calories": 260,
+          "proteinG": 14,
+          "carbsG": 28,
+          "fatG": 10,
+          "sodiumMg": 480
+        }
+      },
+      {
+        "id": "sesame-ball",
+        "name": "Sesame Ball (芝麻球)",
+        "description": "",
+        "priceUSD": 6.99,
+        "category": "Dessert",
+        "nutrition": {
+          "calories": 220,
+          "proteinG": 4,
+          "carbsG": 34,
+          "fatG": 8,
+          "sodiumMg": 80
+        }
+      },
+      {
+        "id": "pineapple-bun",
+        "name": "Pineapple Bun (菠萝包)",
+        "description": "",
+        "priceUSD": 6.99,
+        "category": "Dessert",
+        "nutrition": {
+          "calories": 260,
+          "proteinG": 6,
+          "carbsG": 42,
+          "fatG": 8,
+          "sodiumMg": 200
+        }
+      },
+      {
+        "id": "crispy-donut",
+        "name": "Crispy Donut (甜甜圈)",
+        "description": "",
+        "priceUSD": 6.99,
+        "category": "Dessert",
+        "nutrition": {
+          "calories": 280,
+          "proteinG": 5,
+          "carbsG": 44,
+          "fatG": 10,
+          "sodiumMg": 200
+        }
+      },
+      {
+        "id": "taro-ball",
+        "name": "Taro Ball (芋泥球)",
+        "description": "",
+        "priceUSD": 6.99,
+        "category": "Dessert",
+        "nutrition": {
+          "calories": 240,
+          "proteinG": 4,
+          "carbsG": 38,
+          "fatG": 8,
+          "sodiumMg": 100
+        }
+      },
+      {
+        "id": "sweet-potato",
+        "name": "Sweet Potato (红薯)",
+        "description": "",
+        "priceUSD": 6.99,
+        "category": "Dessert",
+        "nutrition": {
+          "calories": 200,
+          "proteinG": 3,
+          "carbsG": 46,
+          "fatG": 0,
+          "fiberG": 4,
+          "sodiumMg": 50
+        }
+      },
+      {
+        "id": "steamed-mochi",
+        "name": "Steamed Mochi (蒸麻薯)",
+        "description": "",
+        "priceUSD": 5.99,
+        "category": "Dessert",
+        "nutrition": {
+          "calories": 180,
+          "proteinG": 3,
+          "carbsG": 36,
+          "fatG": 3,
+          "sodiumMg": 40
+        }
+      },
+      {
+        "id": "glutinous-rice",
+        "name": "Glutinous Rice (糯米饭)",
+        "description": "",
+        "priceUSD": 6.99,
+        "category": "Dessert",
+        "nutrition": {
+          "calories": 260,
+          "proteinG": 6,
+          "carbsG": 50,
+          "fatG": 4,
+          "sodiumMg": 120
+        }
+      },
+      {
+        "id": "steamed-pumpkin",
+        "name": "Steamed Pumpkin (蒸南瓜)",
+        "description": "",
+        "priceUSD": 6.99,
+        "category": "Dessert",
+        "nutrition": {
+          "calories": 80,
+          "proteinG": 2,
+          "carbsG": 18,
+          "fatG": 0,
+          "fiberG": 2,
+          "sodiumMg": 20
+        }
+      },
+      {
+        "id": "steamed-corn",
+        "name": "Steamed Corn (蒸玉米)",
+        "description": "",
+        "priceUSD": 6.99,
+        "category": "Dessert",
+        "nutrition": {
+          "calories": 130,
+          "proteinG": 4,
+          "carbsG": 28,
+          "fatG": 1,
+          "fiberG": 3,
+          "sodiumMg": 20
+        }
       }
     ],
-    "dataSource": "firecrawl"
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://northerncafeirvine.com/menu"
+    }
   },
   {
-    "id": "eureka",
-    "name": "Eureka!",
-    "description": "A vibrant dining destination that focuses on gourmet burgers, craft beers, and unique cocktails.",
+    "id": "gen-korean-bbq",
+    "name": "Gen Korean BBQ",
+    "description": "A contemporary Korean BBQ restaurant serving a variety of meats and side dishes.",
     "cuisine": [
-      "American",
-      "Gourmet Burgers",
-      "Craft Beer"
+      "Korean BBQ"
     ],
-    "priceTier": "Moderate",
+    "priceTier": "$$",
     "location": {
-      "address": "123 Foodie Lane",
+      "address": "640 Spectrum Center Dr",
       "city": "Irvine",
       "state": "CA",
-      "postalCode": "92612",
-      "lat": 33.6846,
-      "lng": -117.8265
+      "postalCode": "92618",
+      "lat": 33.651,
+      "lng": -117.7545
     },
     "hours": [
       {
-        "day": "Monday",
+        "day": "mon",
         "open": "11:00 AM",
         "close": "10:00 PM"
       },
       {
-        "day": "Tuesday",
+        "day": "tue",
         "open": "11:00 AM",
         "close": "10:00 PM"
       },
       {
-        "day": "Wednesday",
+        "day": "wed",
         "open": "11:00 AM",
         "close": "10:00 PM"
       },
       {
-        "day": "Thursday",
+        "day": "thu",
         "open": "11:00 AM",
         "close": "10:00 PM"
       },
       {
-        "day": "Friday",
+        "day": "fri",
         "open": "11:00 AM",
         "close": "11:00 PM"
       },
       {
-        "day": "Saturday",
-        "open": "10:00 AM",
+        "day": "sat",
+        "open": "11:00 AM",
         "close": "11:00 PM"
       },
       {
-        "day": "Sunday",
-        "open": "10:00 AM",
+        "day": "sun",
+        "open": "11:00 AM",
         "close": "10:00 PM"
       }
     ],
     "menu": [
       {
-        "id": "fresno-fig-burger",
-        "name": "Fresno Fig Burger",
-        "description": "With bacon, arugula, porter mustard.",
+        "id": "daechang",
+        "name": "Daechang",
+        "description": "large ox intestine marinated with a sweet teriyaki sauce",
+        "priceUSD": 17.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 380,
+          "proteinG": 22,
+          "carbsG": 8,
+          "fatG": 30,
+          "sodiumMg": 620
+        }
+      },
+      {
+        "id": "nook-gan-sal",
+        "name": "Nook Gan Sal",
+        "description": "marinated prime chuck roll",
+        "priceUSD": 19.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 420,
+          "proteinG": 32,
+          "carbsG": 4,
+          "fatG": 32,
+          "sodiumMg": 580
+        }
+      },
+      {
+        "id": "beef-bulgogi",
+        "name": "Beef Bulgogi",
+        "description": "marinated prime chuck roll",
+        "priceUSD": 18.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 400,
+          "proteinG": 30,
+          "carbsG": 12,
+          "fatG": 28,
+          "sodiumMg": 760
+        }
+      },
+      {
+        "id": "hawaiian-steak",
+        "name": "Hawaiian Steak",
+        "description": "sweet beef teriyaki with pineapple slices",
+        "priceUSD": 19.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 430,
+          "proteinG": 30,
+          "carbsG": 16,
+          "fatG": 30,
+          "sugarG": 10,
+          "sodiumMg": 700
+        }
+      },
+      {
+        "id": "k-gochujang-beef-belly",
+        "name": "K-Gochujang Beef Belly",
+        "description": "beef belly with a Korean spicy sauce",
+        "priceUSD": 18.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 460,
+          "proteinG": 22,
+          "carbsG": 10,
+          "fatG": 38,
+          "sodiumMg": 880
+        }
+      },
+      {
+        "id": "honey-soy-beef-belly",
+        "name": "Honey Soy Beef Belly",
+        "description": "beef belly with a sweet and savory sauce",
+        "priceUSD": 18.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 440,
+          "proteinG": 22,
+          "carbsG": 12,
+          "fatG": 36,
+          "sodiumMg": 820
+        }
+      },
+      {
+        "id": "woo-beasal",
+        "name": "Woo Beasal",
+        "description": "premium beef belly short plate",
+        "priceUSD": 21.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 500,
+          "proteinG": 24,
+          "carbsG": 4,
+          "fatG": 44,
+          "sodiumMg": 540
+        }
+      },
+      {
+        "id": "gen-signature-yangyum-galbi",
+        "name": "Gen Signature Yangyum Galbi",
+        "description": "marinated beef bone-in short rib",
+        "priceUSD": 22.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 560,
+          "proteinG": 34,
+          "carbsG": 14,
+          "fatG": 44,
+          "sodiumMg": 860
+        }
+      },
+      {
+        "id": "premium-chadol",
+        "name": "Premium Chadol",
+        "description": "premium angus brisket (thinly sliced)",
+        "priceUSD": 21.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 480,
+          "proteinG": 28,
+          "carbsG": 4,
+          "fatG": 42,
+          "sodiumMg": 500
+        }
+      },
+      {
+        "id": "gen-premium-steak",
+        "name": "Gen Premium Steak",
+        "description": "top sirloin culotte",
+        "priceUSD": 24.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 520,
+          "proteinG": 36,
+          "carbsG": 4,
+          "fatG": 42,
+          "sodiumMg": 480
+        }
+      },
+      {
+        "id": "carne-asada",
+        "name": "Carne Asada",
+        "description": "exclusive premium menu item",
+        "priceUSD": 27.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 540,
+          "proteinG": 38,
+          "carbsG": 4,
+          "fatG": 42,
+          "sodiumMg": 620
+        }
+      },
+      {
+        "id": "premium-marbling-center-cut-marinated-short-rib",
+        "name": "Premium Marbling Center Cut Marinated Short Rib",
+        "description": "exclusive premium menu item (pictured)",
+        "priceUSD": 27.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 580,
+          "proteinG": 36,
+          "carbsG": 8,
+          "fatG": 48,
+          "sodiumMg": 780
+        }
+      },
+      {
+        "id": "premium-wagyu",
+        "name": "Premium Wagyu",
+        "description": "exclusive premium menu item (pictured)",
+        "priceUSD": 34.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 640,
+          "proteinG": 34,
+          "carbsG": 4,
+          "fatG": 56,
+          "sodiumMg": 560
+        }
+      },
+      {
+        "id": "premium-marinated-long-bone-short-rib-steak",
+        "name": "Premium Marinated Long Bone Short Rib Steak",
+        "description": "exclusive premium menu item (pictured)",
+        "priceUSD": 29.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 620,
+          "proteinG": 38,
+          "carbsG": 10,
+          "fatG": 50,
+          "sodiumMg": 820
+        }
+      },
+      {
+        "id": "premium-ribeye",
+        "name": "Premium Ribeye",
+        "description": "exclusive premium menu item (pictured)",
+        "priceUSD": 32.99,
+        "category": "Beef",
+        "nutrition": {
+          "calories": 600,
+          "proteinG": 40,
+          "carbsG": 4,
+          "fatG": 48,
+          "sodiumMg": 540
+        }
+      },
+      {
+        "id": "cajun-samgyubsal",
+        "name": "Cajun Samgyubsal",
+        "description": "pork belly marinated with a bold & zesty sauce",
+        "priceUSD": 15.99,
+        "category": "Pork",
+        "nutrition": {
+          "calories": 440,
+          "proteinG": 18,
+          "carbsG": 8,
+          "fatG": 38,
+          "sodiumMg": 720
+        }
+      },
+      {
+        "id": "garlic-samgyubsal",
+        "name": "Garlic Samgyubsal",
+        "description": "pork belly marinated with a rich garlic sauce",
+        "priceUSD": 15.99,
+        "category": "Pork",
+        "nutrition": {
+          "calories": 440,
+          "proteinG": 18,
+          "carbsG": 6,
+          "fatG": 38,
+          "sodiumMg": 640
+        }
+      },
+      {
+        "id": "red-wine-samgyubsal",
+        "name": "Red Wine Samgyubsal",
+        "description": "marinated pork belly with red wine",
+        "priceUSD": 15.99,
+        "category": "Pork",
+        "nutrition": {
+          "calories": 430,
+          "proteinG": 18,
+          "carbsG": 8,
+          "fatG": 36,
+          "sodiumMg": 600
+        }
+      },
+      {
+        "id": "smoked-samgyubsal",
+        "name": "Smoked Samgyubsal",
+        "description": "marinated smoked pork belly",
+        "priceUSD": 15.99,
+        "category": "Pork",
+        "nutrition": {
+          "calories": 450,
+          "proteinG": 18,
+          "carbsG": 4,
+          "fatG": 40,
+          "sodiumMg": 580
+        }
+      },
+      {
+        "id": "spicy-samgyubsal",
+        "name": "Spicy Samgyubsal",
+        "description": "marinated spicy pork belly",
+        "priceUSD": 15.99,
+        "category": "Pork",
+        "nutrition": {
+          "calories": 440,
+          "proteinG": 18,
+          "carbsG": 8,
+          "fatG": 38,
+          "sodiumMg": 760
+        }
+      },
+      {
+        "id": "samgyubsal",
+        "name": "Samgyubsal",
+        "description": "premium pork belly",
+        "priceUSD": 14.99,
+        "category": "Pork",
+        "nutrition": {
+          "calories": 420,
+          "proteinG": 18,
+          "carbsG": 2,
+          "fatG": 38,
+          "sodiumMg": 460
+        }
+      },
+      {
+        "id": "hawaiian-bacon",
+        "name": "Hawaiian Bacon",
+        "description": "sweet bacon teriyaki with pineapple sauce",
         "priceUSD": 13.99,
-        "category": "Entree"
+        "category": "Pork",
+        "nutrition": {
+          "calories": 380,
+          "proteinG": 14,
+          "carbsG": 16,
+          "fatG": 30,
+          "sugarG": 10,
+          "sodiumMg": 680
+        }
       },
       {
-        "id": "classic-cheeseburger",
-        "name": "Classic Cheeseburger",
-        "description": "A juicy beef patty with cheese and lettuce.",
-        "priceUSD": 12.99,
-        "category": "Entree"
+        "id": "teriyaki-pork-chop",
+        "name": "Teriyaki Pork Chop",
+        "description": "pork loin marinated with sweet teriyaki sauce",
+        "priceUSD": 15.99,
+        "category": "Pork",
+        "nutrition": {
+          "calories": 420,
+          "proteinG": 24,
+          "carbsG": 12,
+          "fatG": 32,
+          "sodiumMg": 700
+        }
       },
       {
-        "id": "craft-beer-flight",
-        "name": "Craft Beer Flight",
-        "description": "A selection of four local craft beers.",
-        "priceUSD": 10.0,
-        "category": "Drinks"
+        "id": "hangjungsal",
+        "name": "Hangjungsal",
+        "description": "signature pork cheek",
+        "priceUSD": 16.99,
+        "category": "Pork",
+        "nutrition": {
+          "calories": 400,
+          "proteinG": 22,
+          "carbsG": 4,
+          "fatG": 34,
+          "sodiumMg": 520
+        }
       },
       {
-        "id": "chocolate-lava-cake",
-        "name": "Chocolate Lava Cake",
-        "description": "Warm chocolate cake with a molten center.",
-        "priceUSD": 7.5,
-        "category": "Dessert"
+        "id": "spicy-pork-bulgogi",
+        "name": "Spicy Pork Bulgogi",
+        "description": "marinated spicy pork (thinly sliced)",
+        "priceUSD": 14.99,
+        "category": "Pork",
+        "nutrition": {
+          "calories": 380,
+          "proteinG": 24,
+          "carbsG": 14,
+          "fatG": 26,
+          "sodiumMg": 820
+        }
+      },
+      {
+        "id": "pork-riblets-spicy",
+        "name": "Pork Riblets (Spicy)",
+        "description": "marinated spicy pork rib",
+        "priceUSD": 16.99,
+        "category": "Pork",
+        "nutrition": {
+          "calories": 460,
+          "proteinG": 26,
+          "carbsG": 12,
+          "fatG": 36,
+          "sodiumMg": 940
+        }
+      },
+      {
+        "id": "pork-riblets-korean-style",
+        "name": "Pork Riblets (Korean-Style)",
+        "description": "marinated pork rib",
+        "priceUSD": 16.99,
+        "category": "Pork",
+        "nutrition": {
+          "calories": 440,
+          "proteinG": 26,
+          "carbsG": 10,
+          "fatG": 34,
+          "sodiumMg": 820
+        }
+      },
+      {
+        "id": "al-pastor",
+        "name": "Al Pastor",
+        "description": "exclusive premium menu item",
+        "priceUSD": 24.99,
+        "category": "Pork",
+        "nutrition": {
+          "calories": 480,
+          "proteinG": 28,
+          "carbsG": 14,
+          "fatG": 36,
+          "sodiumMg": 760
+        }
+      },
+      {
+        "id": "garlic-chicken",
+        "name": "Garlic Chicken",
+        "description": "marinated with a rich garlic sauce",
+        "priceUSD": 13.99,
+        "category": "Chicken",
+        "nutrition": {
+          "calories": 340,
+          "proteinG": 32,
+          "carbsG": 8,
+          "fatG": 20,
+          "sodiumMg": 640
+        }
+      },
+      {
+        "id": "honey-chicken",
+        "name": "Honey Chicken",
+        "description": "marinated with a sweet & savory sauce",
+        "priceUSD": 13.99,
+        "category": "Chicken",
+        "nutrition": {
+          "calories": 360,
+          "proteinG": 30,
+          "carbsG": 16,
+          "fatG": 20,
+          "sugarG": 10,
+          "sodiumMg": 600
+        }
+      },
+      {
+        "id": "spicy-chicken",
+        "name": "Spicy Chicken",
+        "description": "marinated spicy Korean bbq chicken",
+        "priceUSD": 13.99,
+        "category": "Chicken",
+        "nutrition": {
+          "calories": 350,
+          "proteinG": 32,
+          "carbsG": 10,
+          "fatG": 20,
+          "sodiumMg": 800
+        }
+      },
+      {
+        "id": "cajun-chicken",
+        "name": "Cajun Chicken",
+        "description": "marinated with a bold & zesty sauce",
+        "priceUSD": 13.99,
+        "category": "Chicken",
+        "nutrition": {
+          "calories": 340,
+          "proteinG": 30,
+          "carbsG": 6,
+          "fatG": 20,
+          "sodiumMg": 720
+        }
+      },
+      {
+        "id": "pollo-asado",
+        "name": "Pollo Asado",
+        "description": "exclusive premium menu item",
+        "priceUSD": 22.99,
+        "category": "Chicken",
+        "nutrition": {
+          "calories": 400,
+          "proteinG": 36,
+          "carbsG": 8,
+          "fatG": 26,
+          "sodiumMg": 700
+        }
+      },
+      {
+        "id": "calamari-steak",
+        "name": "Calamari Steak",
+        "description": "calamari steak with green tea salt sprinkle",
+        "priceUSD": 17.99,
+        "category": "Seafood",
+        "nutrition": {
+          "calories": 280,
+          "proteinG": 24,
+          "carbsG": 10,
+          "fatG": 16,
+          "sodiumMg": 520
+        }
+      },
+      {
+        "id": "spicy-calamari-veggie-bowl",
+        "name": "Spicy Calamari Veggie Bowl",
+        "description": "spicy bbq calamari with assorted vegetables",
+        "priceUSD": 15.99,
+        "category": "Seafood",
+        "nutrition": {
+          "calories": 320,
+          "proteinG": 22,
+          "carbsG": 18,
+          "fatG": 18,
+          "sodiumMg": 860
+        }
+      },
+      {
+        "id": "spicy-calamari",
+        "name": "Spicy Calamari",
+        "description": "marinated spicy bbq calamari",
+        "priceUSD": 15.99,
+        "category": "Seafood",
+        "nutrition": {
+          "calories": 280,
+          "proteinG": 20,
+          "carbsG": 14,
+          "fatG": 16,
+          "sodiumMg": 740
+        }
+      },
+      {
+        "id": "shrimp",
+        "name": "Shrimp",
+        "description": "whole fresh non-marinated raw shrimp",
+        "priceUSD": 17.99,
+        "category": "Seafood",
+        "nutrition": {
+          "calories": 140,
+          "proteinG": 20,
+          "carbsG": 2,
+          "fatG": 6,
+          "sodiumMg": 360
+        }
+      },
+      {
+        "id": "cajun-shrimp",
+        "name": "Cajun Shrimp",
+        "description": "exclusive premium menu item",
+        "priceUSD": 22.99,
+        "category": "Seafood",
+        "nutrition": {
+          "calories": 200,
+          "proteinG": 22,
+          "carbsG": 4,
+          "fatG": 11,
+          "sodiumMg": 820
+        }
       }
     ],
-    "dataSource": "firecrawl"
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://www.genkoreanbbq.com/menu"
+    }
   },
   {
     "id": "silver-lake-ramen",
     "name": "Silver Lake Ramen",
-    "description": "Relaxed eatery specializing in ramen and other Japanese dishes with a cozy atmosphere.",
+    "description": "A restaurant specializing in a variety of ramen dishes and Japanese appetizers.",
     "cuisine": [
       "Japanese",
-      "Ramen",
-      "Asian"
+      "Ramen"
     ],
     "priceTier": "$$",
     "location": {
-      "address": "1234 Ramen St",
-      "city": "Los Angeles",
+      "address": "4649 Barranca Pkwy Suite 102",
+      "city": "Irvine",
       "state": "CA",
-      "postalCode": "90001",
-      "lat": 34.0522,
-      "lng": -118.2437
+      "postalCode": "92604",
+      "lat": 33.6672,
+      "lng": -117.8265
     },
-    "hours": [
-      {
-        "day": "Monday",
-        "open": "11:00 AM",
-        "close": "10:00 PM"
-      },
-      {
-        "day": "Tuesday",
-        "open": "11:00 AM",
-        "close": "10:00 PM"
-      },
-      {
-        "day": "Wednesday",
-        "open": "11:00 AM",
-        "close": "10:00 PM"
-      },
-      {
-        "day": "Thursday",
-        "open": "11:00 AM",
-        "close": "10:00 PM"
-      },
-      {
-        "day": "Friday",
-        "open": "11:00 AM",
-        "close": "11:00 PM"
-      },
-      {
-        "day": "Saturday",
-        "open": "12:00 PM",
-        "close": "11:00 PM"
-      },
-      {
-        "day": "Sunday",
-        "open": "12:00 PM",
-        "close": "10:00 PM"
-      }
-    ],
+    "hours": [],
     "menu": [
       {
         "id": "edamame",
         "name": "Edamame",
         "description": "Soy beans and truffle salt.",
         "priceUSD": 5.0,
-        "category": "Appetizers"
+        "category": "Appetizers",
+        "nutrition": {
+          "calories": 120,
+          "proteinG": 10,
+          "carbsG": 10,
+          "fatG": 5,
+          "fiberG": 4,
+          "sodiumMg": 380
+        }
       },
       {
         "id": "spicy-garlic-edamame",
         "name": "Spicy Garlic Edamame",
         "description": "Sauteed soybeans w/ fresh garlic, house made spicy sauce & sesame seeds.",
         "priceUSD": 7.0,
-        "category": "Appetizers"
+        "category": "Appetizers",
+        "nutrition": {
+          "calories": 160,
+          "proteinG": 11,
+          "carbsG": 12,
+          "fatG": 8,
+          "fiberG": 4,
+          "sodiumMg": 520
+        }
       },
       {
         "id": "creamy-broccolini",
         "name": "Creamy Broccolini",
-        "description": "Broccolini with creamy sesame sauce",
-        "priceUSD": 6.0,
-        "category": "Appetizers"
+        "description": "Broccolini with creamy sesame sauce.",
+        "priceUSD": 8.0,
+        "category": "Appetizers",
+        "nutrition": {
+          "calories": 180,
+          "proteinG": 5,
+          "carbsG": 14,
+          "fatG": 12,
+          "fiberG": 3,
+          "sodiumMg": 340
+        }
       },
       {
         "id": "fried-gyoza-6pc",
         "name": "Fried Gyoza (6pc)",
         "description": "A Bestseller! juicy pork dumplings.",
         "priceUSD": 8.0,
-        "category": "Appetizers"
+        "category": "Appetizers",
+        "nutrition": {
+          "calories": 300,
+          "proteinG": 14,
+          "carbsG": 30,
+          "fatG": 14,
+          "sodiumMg": 640
+        }
       },
       {
         "id": "grilled-gyoza-6pc",
         "name": "Grilled Gyoza (6pc)",
         "description": "A Bestseller! juicy pork dumplings.",
         "priceUSD": 8.0,
-        "category": "Appetizers"
+        "category": "Appetizers",
+        "nutrition": {
+          "calories": 260,
+          "proteinG": 14,
+          "carbsG": 26,
+          "fatG": 10,
+          "sodiumMg": 580
+        }
       },
       {
         "id": "impossible-bun",
         "name": "Impossible Bun",
-        "description": "Vegetarian. Panko fried impossible plant meat, spicy mustard, shredded cabbage and katsu sauce",
-        "priceUSD": 9.0,
-        "category": "Buns"
+        "description": "Vegetarian. Panko fried impossible plant meat, spicy mustard, shredded cabbage and katsu sauce.",
+        "priceUSD": 8.0,
+        "category": "Buns",
+        "nutrition": {
+          "calories": 320,
+          "proteinG": 18,
+          "carbsG": 36,
+          "fatG": 12,
+          "sodiumMg": 680
+        }
       },
       {
         "id": "spicy-chicken-bun",
         "name": "Spicy Chicken Bun",
-        "description": "Spicy Chicken Karaage, ghost pepper Kimchi, green onion and teriyaki sauce",
-        "priceUSD": 10.0,
-        "category": "Buns"
+        "description": "Spicy Chicken Karaage, ghost pepper Kimchi, green onion and teriyaki sauce.",
+        "priceUSD": 8.0,
+        "category": "Buns",
+        "nutrition": {
+          "calories": 340,
+          "proteinG": 20,
+          "carbsG": 36,
+          "fatG": 14,
+          "sodiumMg": 720
+        }
       },
       {
         "id": "pork-bun",
         "name": "Pork Bun",
         "description": "Marinated pork belly with pickled onion, sesame Aioli and green onion.",
-        "priceUSD": 9.0,
-        "category": "Buns"
+        "priceUSD": 8.0,
+        "category": "Buns",
+        "nutrition": {
+          "calories": 360,
+          "proteinG": 18,
+          "carbsG": 36,
+          "fatG": 16,
+          "sodiumMg": 640
+        }
       },
       {
         "id": "crispy-chicken-karaage",
         "name": "Crispy Chicken Karaage",
         "description": "Japanese style fried chicken and spicy Aioli sauce.",
-        "priceUSD": 11.0,
-        "category": "Appetizers"
+        "priceUSD": 9.0,
+        "category": "Appetizers",
+        "nutrition": {
+          "calories": 380,
+          "proteinG": 24,
+          "carbsG": 22,
+          "fatG": 22,
+          "sodiumMg": 760
+        }
       },
       {
         "id": "crispy-rice-with-spicy-tuna",
         "name": "Crispy Rice with Spicy Tuna",
         "description": "Spicy tuna, crispy rice, avocado, Jalapeños & eel sauce. served with ginger.",
-        "priceUSD": 12.0,
-        "category": "Appetizers"
+        "priceUSD": 10.0,
+        "category": "Appetizers",
+        "nutrition": {
+          "calories": 420,
+          "proteinG": 22,
+          "carbsG": 42,
+          "fatG": 18,
+          "sodiumMg": 680
+        }
       },
       {
         "id": "chicken-karaage-bowl",
         "name": "Chicken Karaage Bowl",
         "description": "Japanese style fried chicken, teriyaki sauce, spicy Aioli, green onion and red ginger over rice.",
-        "priceUSD": 14.0,
-        "category": "Bowls"
+        "priceUSD": 15.0,
+        "category": "Bowls",
+        "nutrition": {
+          "calories": 680,
+          "proteinG": 32,
+          "carbsG": 74,
+          "fatG": 26,
+          "sodiumMg": 1020
+        }
       },
       {
         "id": "spicy-tuna-bowl",
         "name": "Spicy Tuna Bowl",
         "description": "Spicy tuna, mixed greens, fried onion, onion dressing and avocado over rice.",
         "priceUSD": 15.0,
-        "category": "Bowls"
+        "category": "Bowls",
+        "nutrition": {
+          "calories": 620,
+          "proteinG": 30,
+          "carbsG": 72,
+          "fatG": 20,
+          "sodiumMg": 900
+        }
       },
       {
         "id": "soboro-bowl",
         "name": "Soboro Bowl",
         "description": "Ground chicken with scrambled egg, sesame seed, and green onion over rice.",
-        "priceUSD": 13.0,
-        "category": "Bowls"
+        "priceUSD": 15.0,
+        "category": "Bowls",
+        "nutrition": {
+          "calories": 580,
+          "proteinG": 28,
+          "carbsG": 74,
+          "fatG": 16,
+          "sodiumMg": 820
+        }
       },
       {
         "id": "pork-bowl",
         "name": "Pork Bowl",
         "description": "Spicy. Pork belly, pickled onion, green onion, fried jalapeno and soft boiled egg over rice.",
         "priceUSD": 15.0,
-        "category": "Bowls"
+        "category": "Bowls",
+        "nutrition": {
+          "calories": 700,
+          "proteinG": 30,
+          "carbsG": 72,
+          "fatG": 28,
+          "sodiumMg": 980
+        }
       },
       {
         "id": "curry-bowl",
         "name": "Curry Bowl",
         "description": "House made curry, mushrooms, pickled cucumbers, sesame seeds. Choice of Chicken karaage, Tofu, Impossible katsu.",
-        "priceUSD": 14.0,
-        "category": "Bowls"
+        "priceUSD": 15.0,
+        "category": "Bowls",
+        "nutrition": {
+          "calories": 640,
+          "proteinG": 24,
+          "carbsG": 80,
+          "fatG": 22,
+          "sodiumMg": 940
+        }
       },
       {
         "id": "the-blaze-ramen",
         "name": "The Blaze Ramen",
         "description": "Spicy creamy pork broth, bean sprouts, spinach, green onion, seaweed, and seasoned egg. Choice of Pork, Chicken, or Tofu. (Contains Dairy)",
-        "priceUSD": 13.0,
-        "category": "Ramen"
+        "priceUSD": 16.0,
+        "category": "Ramen",
+        "nutrition": {
+          "calories": 660,
+          "proteinG": 28,
+          "carbsG": 70,
+          "fatG": 28,
+          "sodiumMg": 1420
+        }
       },
       {
         "id": "the-shoyu-ramen",
         "name": "The Shoyu Ramen",
         "description": "Clear chicken broth with Shoyu, bamboo shoots, spinach, green onion, seaweed and seasoned egg. Choice of Pork, Chicken, or Tofu.",
-        "priceUSD": 12.0,
-        "category": "Ramen"
+        "priceUSD": 15.0,
+        "category": "Ramen",
+        "nutrition": {
+          "calories": 580,
+          "proteinG": 26,
+          "carbsG": 68,
+          "fatG": 20,
+          "sodiumMg": 1280
+        }
       },
       {
         "id": "the-shoyu-on-fire-ramen",
         "name": "The Shoyu on Fire Ramen",
         "description": "Spicy clear chicken broth with Shoyu, green onion, corn, seaweed, jalapeno, micro cilantro, lime and seasoned egg. Choice of Pork, Chicken, or Tofu.",
-        "priceUSD": 13.0,
-        "category": "Ramen"
+        "priceUSD": 16.0,
+        "category": "Ramen",
+        "nutrition": {
+          "calories": 600,
+          "proteinG": 26,
+          "carbsG": 70,
+          "fatG": 22,
+          "sodiumMg": 1380
+        }
       },
       {
         "id": "the-veggie-ramen",
         "name": "The Veggie Ramen",
         "description": "Vegetarian. Vegetable broth with miso base, bean sprouts, corn, mushroom, tofu, broccolini, baby greens, kale, red cabbage and avocado.",
-        "priceUSD": 11.0,
-        "category": "Ramen"
+        "priceUSD": 15.0,
+        "category": "Ramen",
+        "nutrition": {
+          "calories": 480,
+          "proteinG": 18,
+          "carbsG": 68,
+          "fatG": 16,
+          "fiberG": 6,
+          "sodiumMg": 1080
+        }
       },
       {
         "id": "the-classic-ramen",
         "name": "The Classic Ramen",
         "description": "Creamy pork broth, bean sprouts, spinach, green onion, seaweed, black garlic oil and seasoned egg. Choice of Pork, Chicken, or Tofu. (Contains Dairy)",
-        "priceUSD": 12.0,
-        "category": "Ramen"
+        "priceUSD": 15.0,
+        "category": "Ramen",
+        "nutrition": {
+          "calories": 640,
+          "proteinG": 28,
+          "carbsG": 68,
+          "fatG": 26,
+          "sodiumMg": 1360
+        }
       },
       {
         "id": "the-garlic-truffle-ramen",
         "name": "The Garlic Truffle Ramen",
-        "description": "A blend of creamy pork and vegetable broth, garlic, truffle oil, kale, mushrooms, black pepper, seaweed and seasoned egg. Choice of Pork, Chicken, or Tofu. Served with thick noodles. (Contains Dairy)",
-        "priceUSD": 14.0,
-        "category": "Ramen"
+        "description": "A blend of creamy pork and vegetable broth, garlic, truffle oil, kale, mushrooms, black pepper, seaweed and seasoned egg. Choice of Pork, Chicken, or Tofu . Served with thick noodles. (Contains Dairy)",
+        "priceUSD": 17.0,
+        "category": "Ramen",
+        "nutrition": {
+          "calories": 720,
+          "proteinG": 28,
+          "carbsG": 72,
+          "fatG": 32,
+          "sodiumMg": 1420
+        }
       },
       {
         "id": "the-spicy-veggie-ramen",
         "name": "The Spicy Veggie Ramen",
         "description": "Vegetarian. Vegetable stock with miso base, mixed greens, corn, tofu, mushroom, fried broccolini, avocado, bean sprouts, black pepper & chili oil.",
-        "priceUSD": 11.0,
-        "category": "Ramen"
+        "priceUSD": 16.0,
+        "category": "Ramen",
+        "nutrition": {
+          "calories": 500,
+          "proteinG": 18,
+          "carbsG": 70,
+          "fatG": 18,
+          "fiberG": 6,
+          "sodiumMg": 1120
+        }
       }
     ],
-    "dataSource": "firecrawl"
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://silverlakeramen.com/menu3.php"
+    }
   },
   {
-    "id": "saffron-and-rose-ice-cream",
-    "name": "Saffron and Rose Ice Cream",
-    "description": "Saffron and Rose is known for their premium Persian ice cream flavors, and they continue to create new and delicious products using the most flavorful and luxurious ingredients.",
+    "id": "yard-house-spectrum-center-dr",
+    "name": "Yard House - Spectrum Center Dr",
+    "description": "Welcome to Yard House - Spectrum Center Dr, where a vibrant mix of New American eats meets a lively bar atmosphere. Located in Irvine, CA, this dining hotspot is perfect for casual outings, family dinners, or late-night gatherings.",
     "cuisine": [
-      "Persian",
-      "Ice Cream"
+      "New American",
+      "Vegetarian",
+      "Vegan"
     ],
-    "priceTier": "$",
+    "priceTier": "$$$",
     "location": {
-      "address": "4523 Campus Dr",
+      "address": "620 Spectrum Center Dr",
       "city": "Irvine",
       "state": "CA",
-      "postalCode": "92612",
-      "lat": 33.648586,
-      "lng": -117.831698
+      "postalCode": "92618",
+      "lat": 33.6509,
+      "lng": -117.7543
     },
     "hours": [
       {
-        "day": "Monday",
-        "open": "12:00 PM",
-        "close": "10:00 PM"
+        "day": "mon",
+        "open": "11:00 AM",
+        "close": "12:00 AM"
       },
       {
-        "day": "Tuesday",
-        "open": "12:00 PM",
-        "close": "10:00 PM"
+        "day": "tue",
+        "open": "11:00 AM",
+        "close": "12:00 AM"
       },
       {
-        "day": "Wednesday",
-        "open": "12:00 PM",
-        "close": "10:00 PM"
+        "day": "wed",
+        "open": "11:00 AM",
+        "close": "12:00 AM"
       },
       {
-        "day": "Thursday",
-        "open": "12:00 PM",
-        "close": "10:00 PM"
+        "day": "thu",
+        "open": "11:00 AM",
+        "close": "12:00 AM"
       },
       {
-        "day": "Friday",
-        "open": "12:00 PM",
-        "close": "10:00 PM"
+        "day": "fri",
+        "open": "11:00 AM",
+        "close": "12:30 AM"
       },
       {
-        "day": "Saturday",
-        "open": "12:00 PM",
-        "close": "10:00 PM"
+        "day": "sat",
+        "open": "11:00 AM",
+        "close": "12:30 AM"
       },
       {
-        "day": "Sunday",
-        "open": "12:00 PM",
-        "close": "10:00 PM"
+        "day": "sun",
+        "open": "11:00 AM",
+        "close": "12:00 AM"
       }
     ],
     "menu": [
       {
-        "id": "saffron-pistachio-ice-cream",
-        "name": "Saffron Pistachio Ice Cream",
-        "description": "A love potion of Middle Eastern flavor, featuring a heavenly blend of Golden Saffron, rosewater, and toasted pistachio.",
-        "priceUSD": null,
-        "category": "Ice Cream"
+        "id": "four-cheese-spinach-dip",
+        "name": "Four Cheese Spinach Dip",
+        "description": "Creamy spinach dip loaded with four types of cheese, served warm.",
+        "priceUSD": 14.0,
+        "category": "Happy Hour Appetizers",
+        "nutrition": {
+          "calories": 760,
+          "proteinG": 28,
+          "carbsG": 52,
+          "fatG": 50,
+          "sodiumMg": 1280
+        }
       },
       {
-        "id": "faloodeh-persian-ice-cream",
-        "name": "Faloodeh Persian Ice Cream",
-        "description": "Chilled rosewater sorbet enriched with paper-thin rice noodles for a delicate crunch.",
-        "priceUSD": null,
-        "category": "Ice Cream"
+        "id": "miguel-s-queso-dip",
+        "name": "Miguel's Queso Dip",
+        "description": "Spicy queso dip served with tortilla chips.",
+        "priceUSD": 12.0,
+        "category": "Happy Hour Appetizers",
+        "nutrition": {
+          "calories": 620,
+          "proteinG": 20,
+          "carbsG": 48,
+          "fatG": 38,
+          "sodiumMg": 1140
+        }
       },
       {
-        "id": "white-rose-ice-cream",
-        "name": "White Rose Ice Cream",
-        "description": "Combines floral essence of white rose with rich heavy cream.",
-        "priceUSD": null,
-        "category": "Ice Cream"
+        "id": "poke-nachos",
+        "name": "Poke Nachos",
+        "description": "A delightful mix of poke on tortilla chips.",
+        "priceUSD": 16.0,
+        "category": "Happy Hour Appetizers",
+        "nutrition": {
+          "calories": 820,
+          "proteinG": 34,
+          "carbsG": 80,
+          "fatG": 42,
+          "sodiumMg": 1360
+        }
       },
       {
-        "id": "pink-rose-ice-cream",
-        "name": "Pink Rose Ice Cream",
-        "description": "A playful blend of rosewater and California cactus pear with creamy, candy sweetness.",
-        "priceUSD": null,
-        "category": "Ice Cream"
+        "id": "chicken-nachos",
+        "name": "Chicken Nachos",
+        "description": "Nachos topped with chicken and cheese.",
+        "priceUSD": 15.0,
+        "category": "Happy Hour Appetizers",
+        "nutrition": {
+          "calories": 880,
+          "proteinG": 40,
+          "carbsG": 76,
+          "fatG": 46,
+          "sodiumMg": 1480
+        }
       },
       {
-        "id": "almond-ice-cream",
-        "name": "Almond Ice Cream",
-        "description": "Organic whole almonds chopped and blended into the signature milk-base.",
-        "priceUSD": null,
-        "category": "Ice Cream"
+        "id": "chicken-lettuce-wraps",
+        "name": "Chicken Lettuce Wraps",
+        "description": "Crispy lettuce wraps filled with chicken and veggies.",
+        "priceUSD": 14.0,
+        "category": "Happy Hour Appetizers",
+        "nutrition": {
+          "calories": 480,
+          "proteinG": 32,
+          "carbsG": 36,
+          "fatG": 22,
+          "sodiumMg": 880
+        }
       },
       {
-        "id": "cucumber-ice-cream",
-        "name": "Cucumber Ice Cream",
-        "description": "Persian cucumber refreshes the velvety ice cream with an oasis of succulent flavor.",
-        "priceUSD": null,
-        "category": "Ice Cream"
+        "id": "hand-battered-chicken-tenders",
+        "name": "Hand-Battered Chicken Tenders",
+        "description": "Tender chicken pieces, hand-battered and fried.",
+        "priceUSD": 14.0,
+        "category": "Happy Hour Appetizers",
+        "nutrition": {
+          "calories": 680,
+          "proteinG": 36,
+          "carbsG": 52,
+          "fatG": 36,
+          "sodiumMg": 1180
+        }
       },
       {
-        "id": "taro-and-ube-ice-cream",
-        "name": "Taro and Ube Ice Cream",
-        "description": "A blend of organic Taro and Ube mixed into the signature milk-base.",
-        "priceUSD": null,
-        "category": "Ice Cream"
+        "id": "classic-sliders",
+        "name": "Classic Sliders",
+        "description": "Mini burgers served with your choice of toppings.",
+        "priceUSD": 14.0,
+        "category": "Happy Hour Appetizers",
+        "nutrition": {
+          "calories": 560,
+          "proteinG": 28,
+          "carbsG": 44,
+          "fatG": 30,
+          "sodiumMg": 940
+        }
       },
       {
-        "id": "coconut-ice-cream",
-        "name": "Coconut Ice Cream",
-        "description": "Organic coconut shaved and toasted, then blended into the signature milk-base.",
-        "priceUSD": null,
-        "category": "Ice Cream"
+        "id": "wisconsin-fried-cheese-curds",
+        "name": "Wisconsin Fried Cheese Curds",
+        "description": "Fried cheese curds served with marinara.",
+        "priceUSD": 12.0,
+        "category": "Happy Hour Appetizers",
+        "nutrition": {
+          "calories": 720,
+          "proteinG": 24,
+          "carbsG": 56,
+          "fatG": 44,
+          "sodiumMg": 1320
+        }
       },
       {
-        "id": "green-tea-ice-cream",
-        "name": "Green Tea Ice Cream",
-        "description": "Top quality green tea blended into the signature milk-base.",
-        "priceUSD": null,
-        "category": "Ice Cream"
+        "id": "crispy-brussels-sprouts",
+        "name": "Crispy Brussels Sprouts",
+        "description": "Fried Brussels sprouts seasoned to perfection.",
+        "priceUSD": 12.0,
+        "category": "Happy Hour Appetizers",
+        "nutrition": {
+          "calories": 380,
+          "proteinG": 10,
+          "carbsG": 40,
+          "fatG": 20,
+          "fiberG": 8,
+          "sodiumMg": 620
+        }
       },
       {
-        "id": "green-pistachio-ice-cream",
-        "name": "Green Pistachio Ice Cream",
-        "description": "Loaded with fresh pistachios in the signature milk-base.",
-        "priceUSD": null,
-        "category": "Ice Cream"
+        "id": "blackened-ahi-sashimi",
+        "name": "Blackened Ahi Sashimi",
+        "description": "Fresh ahi tuna with a blackened seasoning.",
+        "priceUSD": 17.0,
+        "category": "Happy Hour Appetizers",
+        "nutrition": {
+          "calories": 340,
+          "proteinG": 36,
+          "carbsG": 8,
+          "fatG": 18,
+          "sodiumMg": 760
+        }
       },
       {
-        "id": "vanilla-ice-cream",
-        "name": "Vanilla Ice Cream",
-        "description": "High quality French vanilla added to the signature milk-base.",
-        "priceUSD": null,
-        "category": "Ice Cream"
+        "id": "fried-calamari",
+        "name": "Fried Calamari",
+        "description": "Lightly breaded calamari fried to a golden crisp.",
+        "priceUSD": 14.0,
+        "category": "Happy Hour Appetizers",
+        "nutrition": {
+          "calories": 580,
+          "proteinG": 22,
+          "carbsG": 52,
+          "fatG": 32,
+          "sodiumMg": 980
+        }
       },
       {
-        "id": "ginger-ice-cream",
-        "name": "Ginger Ice Cream",
-        "description": "Organic ginger peeled and grated into the signature milk-base.",
-        "priceUSD": null,
-        "category": "Ice Cream"
+        "id": "boneless-wings",
+        "name": "Boneless Wings",
+        "description": "Tender boneless wings tossed in your favorite sauce.",
+        "priceUSD": 14.0,
+        "category": "Happy Hour Appetizers",
+        "nutrition": {
+          "calories": 640,
+          "proteinG": 36,
+          "carbsG": 44,
+          "fatG": 34,
+          "sodiumMg": 1200
+        }
+      },
+      {
+        "id": "gardein-boneless-wings",
+        "name": "Gardein - Boneless Wings",
+        "description": "Plant-based boneless wings served with dipping sauce.",
+        "priceUSD": 14.0,
+        "category": "Happy Hour Appetizers",
+        "nutrition": {
+          "calories": 480,
+          "proteinG": 24,
+          "carbsG": 44,
+          "fatG": 22,
+          "sodiumMg": 900
+        }
+      },
+      {
+        "id": "the-carnivore-pizza",
+        "name": "The Carnivore Pizza",
+        "description": "A meaty pizza topped with various meats.",
+        "priceUSD": 16.0,
+        "category": "Happy Hour Pizzas",
+        "nutrition": {
+          "calories": 840,
+          "proteinG": 38,
+          "carbsG": 72,
+          "fatG": 44,
+          "sodiumMg": 1560
+        }
+      },
+      {
+        "id": "three-cheese",
+        "name": "Three Cheese",
+        "description": "Cheese pizza topped with three different types of cheese.",
+        "priceUSD": 14.0,
+        "category": "Pizzas",
+        "nutrition": {
+          "calories": 700,
+          "proteinG": 28,
+          "carbsG": 70,
+          "fatG": 36,
+          "sodiumMg": 1100
+        }
+      },
+      {
+        "id": "margherita",
+        "name": "Margherita",
+        "description": "Classic Margherita pizza with fresh ingredients.",
+        "priceUSD": 15.0,
+        "category": "Pizzas",
+        "nutrition": {
+          "calories": 640,
+          "proteinG": 22,
+          "carbsG": 72,
+          "fatG": 30,
+          "sodiumMg": 980
+        }
+      },
+      {
+        "id": "loaded-pepperoni",
+        "name": "Loaded Pepperoni",
+        "description": "Pepperoni pizza loaded with cheese and toppings.",
+        "priceUSD": 16.0,
+        "category": "Pizzas",
+        "nutrition": {
+          "calories": 820,
+          "proteinG": 34,
+          "carbsG": 72,
+          "fatG": 42,
+          "sodiumMg": 1460
+        }
+      },
+      {
+        "id": "buffalo-chicken",
+        "name": "Buffalo Chicken",
+        "description": "Spicy buffalo chicken pizza with a tangy sauce.",
+        "priceUSD": 16.0,
+        "category": "Pizzas",
+        "nutrition": {
+          "calories": 780,
+          "proteinG": 36,
+          "carbsG": 70,
+          "fatG": 40,
+          "sodiumMg": 1520
+        }
+      },
+      {
+        "id": "truffled-mushroom",
+        "name": "Truffled Mushroom",
+        "description": "Pizza topped with mushrooms and truffle oil.",
+        "priceUSD": 16.0,
+        "category": "Pizzas",
+        "nutrition": {
+          "calories": 660,
+          "proteinG": 22,
+          "carbsG": 70,
+          "fatG": 34,
+          "sodiumMg": 1020
+        }
+      },
+      {
+        "id": "draft-beer",
+        "name": "Draft Beer",
+        "description": "Selection of draft beers on tap.",
+        "priceUSD": 8.0,
+        "category": "Drinks Specials",
+        "nutrition": {
+          "calories": 150,
+          "proteinG": 1,
+          "carbsG": 13,
+          "fatG": 0,
+          "sodiumMg": 14
+        }
+      },
+      {
+        "id": "wine",
+        "name": "Wine",
+        "description": "Various selections of wine.",
+        "priceUSD": 10.0,
+        "category": "Drinks Specials",
+        "nutrition": {
+          "calories": 120,
+          "proteinG": 0,
+          "carbsG": 4,
+          "fatG": 0,
+          "sodiumMg": 10
+        }
+      },
+      {
+        "id": "spirits",
+        "name": "Spirits",
+        "description": "Range of spirits available for cocktails.",
+        "priceUSD": 10.0,
+        "category": "Drinks Specials",
+        "nutrition": {
+          "calories": 100,
+          "proteinG": 0,
+          "carbsG": 0,
+          "fatG": 0,
+          "sodiumMg": 0
+        }
+      },
+      {
+        "id": "cocktails",
+        "name": "Cocktails",
+        "description": "Craft cocktails made to order.",
+        "priceUSD": 12.0,
+        "category": "Drinks Specials",
+        "nutrition": {
+          "calories": 220,
+          "proteinG": 0,
+          "carbsG": 28,
+          "fatG": 0,
+          "sugarG": 24,
+          "sodiumMg": 40
+        }
+      },
+      {
+        "id": "9oz-wine",
+        "name": "9oz Wine",
+        "description": "Served in a 9oz glass.",
+        "priceUSD": 11.0,
+        "category": "Drinks Specials",
+        "nutrition": {
+          "calories": 230,
+          "proteinG": 0,
+          "carbsG": 7,
+          "fatG": 0,
+          "sodiumMg": 15
+        }
+      },
+      {
+        "id": "half-yards",
+        "name": "Half Yards",
+        "description": "Half yard size drinks served in a unique glass.",
+        "priceUSD": 9.0,
+        "category": "Drinks Specials",
+        "nutrition": {
+          "calories": 200,
+          "proteinG": 1,
+          "carbsG": 18,
+          "fatG": 0,
+          "sodiumMg": 20
+        }
       }
     ],
-    "dataSource": "firecrawl"
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://yard-house-spectrum-center-dr.res-menu.com/menu"
+    }
   },
   {
     "id": "tender-greens",
     "name": "Tender Greens",
-    "description": "Tender Greens offers a farm-to-fork dining experience featuring seasonal ingredients and a variety of dishes including plates, salads, bowls, and more.",
+    "description": "Tender Greens serves seasonal, chef-crafted food with a commitment to quality and sustainability.",
     "cuisine": [
       "American",
-      "Mediterranean",
-      "California"
+      "Healthy"
     ],
-    "priceTier": "$",
+    "priceTier": "$$",
     "location": {
       "address": "4237 Campus Dr Suite B165",
       "city": "Irvine",
@@ -1046,37 +2841,37 @@
     },
     "hours": [
       {
-        "day": "Monday",
-        "open": "10:00 AM",
+        "day": "mon",
+        "open": "11:00 AM",
         "close": "9:00 PM"
       },
       {
-        "day": "Tuesday",
-        "open": "10:00 AM",
+        "day": "tue",
+        "open": "11:00 AM",
         "close": "9:00 PM"
       },
       {
-        "day": "Wednesday",
-        "open": "10:00 AM",
+        "day": "wed",
+        "open": "11:00 AM",
         "close": "9:00 PM"
       },
       {
-        "day": "Thursday",
-        "open": "10:00 AM",
+        "day": "thu",
+        "open": "11:00 AM",
         "close": "9:00 PM"
       },
       {
-        "day": "Friday",
-        "open": "10:00 AM",
-        "close": "9:00 PM"
+        "day": "fri",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
       },
       {
-        "day": "Saturday",
+        "day": "sat",
         "open": "10:00 AM",
-        "close": "9:00 PM"
+        "close": "10:00 PM"
       },
       {
-        "day": "Sunday",
+        "day": "sun",
         "open": "10:00 AM",
         "close": "9:00 PM"
       }
@@ -1085,158 +2880,1964 @@
       {
         "id": "salt-pepper-chicken",
         "name": "Salt & Pepper Chicken",
-        "description": "garlic & herb marinade",
-        "priceUSD": null,
-        "category": "Plates"
+        "description": "Garlic & herb marinade",
+        "priceUSD": 12.0,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 480,
+          "proteinG": 44,
+          "carbsG": 24,
+          "fatG": 22,
+          "sodiumMg": 820
+        }
       },
       {
         "id": "chipotle-bbq-chicken",
         "name": "Chipotle BBQ Chicken",
-        "description": "grilled with chipotle bbq",
-        "priceUSD": null,
-        "category": "Plates"
-      },
-      {
-        "id": "country-style-fried-chicken",
-        "name": "Country-Style Fried Chicken",
-        "description": "spiced buttermilk marinade; deep fried",
-        "priceUSD": null,
-        "category": "Plates"
-      },
-      {
-        "id": "falafel",
-        "name": "Falafel",
-        "description": "Crispy chickpea fritters; vegan and gluten-free",
-        "priceUSD": null,
-        "category": "Plates"
+        "description": "Grilled with chipotle BBQ",
+        "priceUSD": 12.0,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 520,
+          "proteinG": 46,
+          "carbsG": 28,
+          "fatG": 24,
+          "sodiumMg": 960
+        }
       },
       {
         "id": "grilled-salmon",
         "name": "Grilled Salmon",
-        "description": "grilled medium with sea salt & herb oil",
-        "priceUSD": null,
-        "category": "Plates"
-      },
-      {
-        "id": "grilled-steak",
-        "name": "Grilled Steak",
-        "description": "garlic & herb marinade; medium rare",
-        "priceUSD": null,
-        "category": "Plates"
-      },
-      {
-        "id": "seared-tuna",
-        "name": "Seared Tuna",
-        "description": "grilled rare with sea salt & herb oil",
-        "priceUSD": null,
-        "category": "Plates"
-      },
-      {
-        "id": "grilled-shrimp",
-        "name": "Grilled Shrimp",
-        "description": "grilled w/ sea salt & herbs",
-        "priceUSD": null,
-        "category": "Plates"
-      },
-      {
-        "id": "grilled-sea-bass",
-        "name": "Grilled Sea Bass",
-        "description": "grilled w/ sea salt & herbs",
-        "priceUSD": null,
-        "category": "Plates"
+        "description": "Grilled medium with sea salt & herb oil",
+        "priceUSD": 15.0,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 440,
+          "proteinG": 42,
+          "carbsG": 8,
+          "fatG": 26,
+          "sodiumMg": 620
+        }
       },
       {
         "id": "chipotle-bbq-chicken-salad",
         "name": "Chipotle BBQ Chicken Salad",
-        "description": "avocado, queso fresco, radish, green onions, crispy tortilla, cilantro, romaine, lime dressing",
-        "priceUSD": null,
-        "category": "Salads"
+        "description": "Avocado, queso fresco, crispy tortilla",
+        "priceUSD": 13.0,
+        "category": "Salads",
+        "nutrition": {
+          "calories": 560,
+          "proteinG": 38,
+          "carbsG": 36,
+          "fatG": 28,
+          "sodiumMg": 940
+        }
       },
       {
-        "id": "tuna-nicoise",
-        "name": "Tuna Nicoise",
-        "description": "cherry tomatoes, roasted fingerling potatoes, capers, french green beans, egg, black olives, baby greens, sherry vinaigrette",
-        "priceUSD": null,
-        "category": "Salads"
-      },
-      {
-        "id": "grilled-chicken-cobb",
-        "name": "Grilled Chicken Cobb",
-        "description": "blue cheese, bacon, egg, avocado, cherry tomatoes, romaine, tarragon dressing",
-        "priceUSD": null,
-        "category": "Salads"
-      },
-      {
-        "id": "mediterranean-steak",
-        "name": "Mediterranean Steak",
-        "description": "feta, cherry tomatoes, pickled cucumbers, sweet peppers, green olives, red gem lettuces, arugula, lemon vinaigrette",
-        "priceUSD": null,
-        "category": "Salads"
-      },
-      {
-        "id": "harvest-chicken",
-        "name": "Harvest Chicken",
-        "description": "Laura Chenel goat cheese, strawberries, seasonal citrus, almonds, roasted onions, herbs, baby lettuces, golden balsamic vinaigrette",
-        "priceUSD": null,
-        "category": "Salads"
-      },
-      {
-        "id": "italian-chop",
-        "name": "Italian Chop",
-        "description": "salami, mortadella, provolone, pecorino cheese, cherry tomatoes, sweet peppers, onions, herbs, pepperoncini, radicchio, red gem lettuce, roasted tomato vinaigrette",
-        "priceUSD": null,
-        "category": "Salads"
-      },
-      {
-        "id": "grilled-salmon-bowl",
-        "name": "Grilled Salmon Bowl",
-        "description": "panzanella salad with caramelized apples, seasonal squash, roasted tomato vinaigrette, and roasted Tokyo turnips, mushrooms, fingerling potatoes, olive oil labneh",
-        "priceUSD": null,
-        "category": "Bowls"
-      },
-      {
-        "id": "california-bowl-w-chipotle-bbq-chicken",
-        "name": "California Bowl w/ Chipotle BBQ Chicken",
-        "description": "roasted butternut squash salsa, cilantro lime brown rice, cabbage slaw, queso fresco, pepitas, lime crema",
-        "priceUSD": null,
-        "category": "Bowls"
-      },
-      {
-        "id": "fried-chicken-sandwich",
-        "name": "Fried Chicken Sandwich",
-        "description": "country-style fried chicken breast, cabbage slaw, pickles, spicy maple glaze, miso mayo, sesame bun",
-        "priceUSD": null,
-        "category": "Sandwiches"
-      },
-      {
-        "id": "chipotle-bbq-chicken-sandwich",
-        "name": "Chipotle BBQ Chicken Sandwich",
-        "description": "chipotle bbq chicken breast, spicy aioli, queso fresco, avocado, grilled Larder Bakery sourdough",
-        "priceUSD": null,
-        "category": "Sandwiches"
-      },
-      {
-        "id": "salted-caramel-cookie",
-        "name": "Salted Caramel Cookie",
-        "description": "",
-        "priceUSD": null,
-        "category": "Desserts"
+        "id": "chicken-pesto-sandwich",
+        "name": "Chicken Pesto Sandwich",
+        "description": "Chicken breast with pesto and provolone",
+        "priceUSD": 10.0,
+        "category": "Sandwiches",
+        "nutrition": {
+          "calories": 620,
+          "proteinG": 36,
+          "carbsG": 56,
+          "fatG": 26,
+          "sodiumMg": 980
+        }
       },
       {
         "id": "chocolate-chunk-cookie",
         "name": "Chocolate Chunk Cookie",
-        "description": "",
-        "priceUSD": null,
-        "category": "Desserts"
-      },
-      {
-        "id": "carrot-cupcake",
-        "name": "Carrot Cupcake",
-        "description": "",
-        "priceUSD": null,
-        "category": "Desserts"
+        "description": "Freshly baked cookie",
+        "priceUSD": 2.5,
+        "category": "Desserts",
+        "nutrition": {
+          "calories": 320,
+          "proteinG": 4,
+          "carbsG": 42,
+          "fatG": 16,
+          "sugarG": 26,
+          "sodiumMg": 180
+        }
       }
     ],
-    "dataSource": "firecrawl"
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://tendergreens.com/menus"
+    }
+  },
+  {
+    "id": "habit-burger-grill",
+    "name": "Habit Burger & Grill",
+    "description": "Fast-casual restaurant specializing in chargrilled burgers and sandwiches, salads, and shakes.",
+    "cuisine": [
+      "American",
+      "Fast Food"
+    ],
+    "priceTier": "$",
+    "location": {
+      "address": "4501 Campus Dr",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6487,
+      "lng": -117.832
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "10:30 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "tue",
+        "open": "10:30 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "wed",
+        "open": "10:30 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "thu",
+        "open": "10:30 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "fri",
+        "open": "10:30 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "sat",
+        "open": "10:30 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "sun",
+        "open": "10:30 AM",
+        "close": "10:00 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "charburger-meal",
+        "name": "Charburger Meal",
+        "description": "A meal featuring a classic charburger.",
+        "priceUSD": 9.99,
+        "category": "Meals",
+        "nutrition": {
+          "calories": 910,
+          "proteinG": 42,
+          "carbsG": 85,
+          "fatG": 44,
+          "sodiumMg": 1380
+        }
+      },
+      {
+        "id": "double-char-meal",
+        "name": "Double Char Meal",
+        "description": "Two patties of pure beef on a fresh bun.",
+        "priceUSD": 11.99,
+        "category": "Meals",
+        "nutrition": {
+          "calories": 1090,
+          "proteinG": 57,
+          "carbsG": 87,
+          "fatG": 58,
+          "sodiumMg": 1660
+        }
+      },
+      {
+        "id": "santa-barbara-char",
+        "name": "Santa Barbara Char",
+        "description": "A burger with avocado and special sauce.",
+        "priceUSD": 12.49,
+        "category": "Charburgers",
+        "nutrition": {
+          "calories": 580,
+          "proteinG": 31,
+          "carbsG": 42,
+          "fatG": 33,
+          "sodiumMg": 890
+        }
+      },
+      {
+        "id": "charburger-with-cheese",
+        "name": "Charburger with Cheese",
+        "description": "A charburger topped with cheese.",
+        "priceUSD": 10.49,
+        "category": "Charburgers",
+        "nutrition": {
+          "calories": 480,
+          "proteinG": 26,
+          "carbsG": 38,
+          "fatG": 25,
+          "sodiumMg": 870
+        }
+      },
+      {
+        "id": "bbq-bacon-char",
+        "name": "BBQ Bacon Char",
+        "description": "A BBQ charburger with crispy bacon.",
+        "priceUSD": 12.29,
+        "category": "Charburgers",
+        "nutrition": {
+          "calories": 590,
+          "proteinG": 33,
+          "carbsG": 45,
+          "fatG": 32,
+          "sodiumMg": 1090
+        }
+      },
+      {
+        "id": "grilled-chicken",
+        "name": "Grilled Chicken",
+        "description": "Tender grilled chicken breast on a bun.",
+        "priceUSD": 10.49,
+        "category": "Signature Sandwiches",
+        "nutrition": {
+          "calories": 360,
+          "proteinG": 34,
+          "carbsG": 36,
+          "fatG": 10,
+          "sodiumMg": 750
+        }
+      },
+      {
+        "id": "veggie-burger-with-cheese",
+        "name": "Veggie Burger with Cheese",
+        "description": "A delicious veggie burger topped with cheese.",
+        "priceUSD": 9.49,
+        "category": "Signature Sandwiches",
+        "nutrition": {
+          "calories": 480,
+          "proteinG": 20,
+          "carbsG": 52,
+          "fatG": 23,
+          "sodiumMg": 820
+        }
+      },
+      {
+        "id": "bbq-chicken-salad",
+        "name": "BBQ Chicken Salad",
+        "description": "A fresh salad with BBQ chicken.",
+        "priceUSD": 9.99,
+        "category": "Fresh Salads",
+        "nutrition": {
+          "calories": 340,
+          "proteinG": 28,
+          "carbsG": 26,
+          "fatG": 14,
+          "sodiumMg": 600
+        }
+      }
+    ],
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://www.habitburger.com/menu"
+    }
+  },
+  {
+    "id": "california-gogi-korean-grill",
+    "name": "California Gogi Korean Grill",
+    "description": "Savor the taste of Korean cuisine and enjoy the healthy menu at California Gogi Grill with every delicious bite of Asian food.",
+    "cuisine": [
+      "Korean",
+      "Asian"
+    ],
+    "priceTier": "$$",
+    "location": {
+      "address": "4237 Campus Dr Suite B157",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.650321,
+      "lng": -117.838109
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "10:30 AM",
+        "close": "09:30 PM"
+      },
+      {
+        "day": "tue",
+        "open": "10:30 AM",
+        "close": "09:30 PM"
+      },
+      {
+        "day": "wed",
+        "open": "10:30 AM",
+        "close": "09:30 PM"
+      },
+      {
+        "day": "thu",
+        "open": "10:30 AM",
+        "close": "09:30 PM"
+      },
+      {
+        "day": "fri",
+        "open": "10:30 AM",
+        "close": "09:30 PM"
+      },
+      {
+        "day": "sat",
+        "open": "10:30 AM",
+        "close": "09:30 PM"
+      },
+      {
+        "day": "sun",
+        "open": "10:30 AM",
+        "close": "09:30 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "stacked-bowl",
+        "name": "Stacked Bowl",
+        "description": "Choose from White Rice, Brown Rice, or a fresh Salad as part of our healthy menu at California Gogi Grill. Enjoy 2 choices of meat, glass noodles, and an array of 6 side dishes, all inspired by authentic Korean cuisine.",
+        "priceUSD": 14.45,
+        "category": "Food",
+        "nutrition": {
+          "calories": 780,
+          "proteinG": 44,
+          "carbsG": 82,
+          "fatG": 26,
+          "sodiumMg": 1180
+        }
+      },
+      {
+        "id": "bibimbap",
+        "name": "Bibimbap",
+        "description": "Choose between White Rice or Brown Rice as part of our healthy menu at California Gogi Grill. Enjoy your meal with a fresh Salad, one choice of meat, and six delicious side dishes.",
+        "priceUSD": 11.45,
+        "category": "Food",
+        "nutrition": {
+          "calories": 640,
+          "proteinG": 32,
+          "carbsG": 78,
+          "fatG": 20,
+          "sodiumMg": 980
+        }
+      },
+      {
+        "id": "bento",
+        "name": "Bento",
+        "description": "Choose between white rice or brown rice as part of our healthy menu at California Gogi Grill. Enjoy your selection with one choice of meat, glass noodles, and two side dishes.",
+        "priceUSD": 10.45,
+        "category": "Food",
+        "nutrition": {
+          "calories": 560,
+          "proteinG": 28,
+          "carbsG": 64,
+          "fatG": 18,
+          "sodiumMg": 860
+        }
+      },
+      {
+        "id": "bargain-bowl",
+        "name": "Bargain Bowl",
+        "description": "Choose from White Rice, Brown Rice, or a fresh Salad, all part of our healthy menu inspired by Korean cuisine. Enjoy 2 choices of meat.",
+        "priceUSD": 11.95,
+        "category": "Food",
+        "nutrition": {
+          "calories": 680,
+          "proteinG": 38,
+          "carbsG": 74,
+          "fatG": 22,
+          "sodiumMg": 1040
+        }
+      },
+      {
+        "id": "cutlet-curry",
+        "name": "Cutlet Curry",
+        "description": "Enjoy a delicious bed of rice topped with your choice of pork or chicken cutlet, accompanied by corn, edamame, and cheese, enhanced with flavorful Japanese curry.",
+        "priceUSD": 10.45,
+        "category": "Food",
+        "nutrition": {
+          "calories": 720,
+          "proteinG": 34,
+          "carbsG": 86,
+          "fatG": 26,
+          "sodiumMg": 1120
+        }
+      },
+      {
+        "id": "salmon-grill",
+        "name": "Salmon Grill",
+        "description": "Choose between white rice, brown rice, or a fresh salad with 4 side dishes.",
+        "priceUSD": 12.49,
+        "category": "Food",
+        "nutrition": {
+          "calories": 540,
+          "proteinG": 36,
+          "carbsG": 54,
+          "fatG": 18,
+          "sodiumMg": 760
+        }
+      },
+      {
+        "id": "k-pop",
+        "name": "K-Pop",
+        "description": "Enjoy a bed of white rice topped with kimchi, your choice of protein, and melted cheese.",
+        "priceUSD": 8.95,
+        "category": "Food",
+        "nutrition": {
+          "calories": 420,
+          "proteinG": 24,
+          "carbsG": 48,
+          "fatG": 14,
+          "sodiumMg": 720
+        }
+      },
+      {
+        "id": "special-drink",
+        "name": "Special Drink",
+        "description": "Enjoy a refreshing blend of Thai Tea, Guava, and Lychee.",
+        "priceUSD": 4.5,
+        "category": "Drink",
+        "nutrition": {
+          "calories": 180,
+          "proteinG": 0,
+          "carbsG": 44,
+          "fatG": 0,
+          "sugarG": 40,
+          "sodiumMg": 40
+        }
+      },
+      {
+        "id": "bottle-drink",
+        "name": "Bottle Drink",
+        "description": "Selection of beverages including Perrier, Green Tea, Oolong Tea, Boba Tea, and Coconut Water.",
+        "priceUSD": 4.0,
+        "category": "Drink",
+        "nutrition": {
+          "calories": 90,
+          "proteinG": 0,
+          "carbsG": 22,
+          "fatG": 0,
+          "sugarG": 20,
+          "sodiumMg": 30
+        }
+      },
+      {
+        "id": "lemonade",
+        "name": "Lemonade",
+        "description": "Refreshing flavors of original mango, peach, and strawberry.",
+        "priceUSD": 3.75,
+        "category": "Drink",
+        "nutrition": {
+          "calories": 140,
+          "proteinG": 0,
+          "carbsG": 36,
+          "fatG": 0,
+          "sugarG": 34,
+          "sodiumMg": 20
+        }
+      },
+      {
+        "id": "fontain-drinks-water-bottle",
+        "name": "Fontain Drinks & Water Bottle",
+        "description": "Various options available.",
+        "priceUSD": 2.75,
+        "category": "Drink",
+        "nutrition": {
+          "calories": 0,
+          "proteinG": 0,
+          "carbsG": 0,
+          "fatG": 0,
+          "sodiumMg": 10
+        }
+      }
+    ],
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://www.californiagogi.com/"
+    }
+  },
+  {
+    "id": "ky-sushi",
+    "name": "KY Sushi",
+    "description": "At KY Sushi, located on the UCI campus in Irvine, CA, we celebrate the art of sushi with a passionate commitment to quality and flavor. Our journey began with a vision to provide students and locals alike with fresh, delicious sushi in a welcoming environment.",
+    "cuisine": [
+      "Japanese",
+      "Sushi"
+    ],
+    "priceTier": "$",
+    "location": {
+      "address": "4527 Campus Dr",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6486,
+      "lng": -117.8317
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "11:30 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "tue",
+        "open": "11:30 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "wed",
+        "open": "11:30 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "thu",
+        "open": "11:30 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "fri",
+        "open": "11:30 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "sat",
+        "open": "11:30 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "sun",
+        "open": "11:30 AM",
+        "close": "11:00 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "california-roll",
+        "name": "California Roll",
+        "description": "Fresh sushi roll featuring cucumber and crab.",
+        "priceUSD": 7.99,
+        "category": "Roll",
+        "nutrition": {
+          "calories": 255,
+          "proteinG": 9,
+          "carbsG": 38,
+          "fatG": 7,
+          "sodiumMg": 490
+        }
+      },
+      {
+        "id": "takoyaki",
+        "name": "Takoyaki",
+        "description": "Japanese octopus balls, crispy on the outside and soft on the inside.",
+        "priceUSD": 6.99,
+        "category": "Appetizer",
+        "nutrition": {
+          "calories": 200,
+          "proteinG": 8,
+          "carbsG": 24,
+          "fatG": 8,
+          "sodiumMg": 360
+        }
+      },
+      {
+        "id": "shrimp-vegetable-tempura",
+        "name": "Shrimp & Vegetable Tempura",
+        "description": "Lightly battered and fried shrimp and vegetables.",
+        "priceUSD": 8.99,
+        "category": "Appetizer",
+        "nutrition": {
+          "calories": 320,
+          "proteinG": 12,
+          "carbsG": 40,
+          "fatG": 14,
+          "sodiumMg": 520
+        }
+      },
+      {
+        "id": "spider-roll",
+        "name": "Spider Roll",
+        "description": "Soft shell crab and avocado roll.",
+        "priceUSD": 12.99,
+        "category": "Roll",
+        "nutrition": {
+          "calories": 380,
+          "proteinG": 14,
+          "carbsG": 46,
+          "fatG": 16,
+          "sodiumMg": 640
+        }
+      },
+      {
+        "id": "crunch-roll",
+        "name": "Crunch Roll",
+        "description": "A roll with shrimp tempura and crunchy flakes.",
+        "priceUSD": 10.99,
+        "category": "Roll",
+        "nutrition": {
+          "calories": 340,
+          "proteinG": 12,
+          "carbsG": 44,
+          "fatG": 14,
+          "sodiumMg": 560
+        }
+      },
+      {
+        "id": "seaweed-salad",
+        "name": "Seaweed Salad",
+        "description": "A refreshing salad made with seaweed.",
+        "priceUSD": 5.99,
+        "category": "Salad",
+        "nutrition": {
+          "calories": 90,
+          "proteinG": 2,
+          "carbsG": 16,
+          "fatG": 2,
+          "fiberG": 2,
+          "sodiumMg": 420
+        }
+      },
+      {
+        "id": "eel-poke",
+        "name": "Eel Poke",
+        "description": "Delicious poke bowl featuring eel.",
+        "priceUSD": 14.99,
+        "category": "Poke",
+        "nutrition": {
+          "calories": 480,
+          "proteinG": 28,
+          "carbsG": 50,
+          "fatG": 18,
+          "sodiumMg": 880
+        }
+      },
+      {
+        "id": "play-boy-roll",
+        "name": "Play Boy Roll",
+        "description": "Special roll with a mix of flavors.",
+        "priceUSD": 12.99,
+        "category": "Roll",
+        "nutrition": {
+          "calories": 360,
+          "proteinG": 14,
+          "carbsG": 44,
+          "fatG": 14,
+          "sodiumMg": 580
+        }
+      }
+    ],
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://ky-sushi.res-menu.com/"
+    }
+  },
+  {
+    "id": "in-n-out-burger",
+    "name": "In-N-Out Burger",
+    "description": "A fast food chain known for its fresh ingredients and simple menu.",
+    "cuisine": [
+      "American",
+      "Fast Food"
+    ],
+    "priceTier": "$",
+    "location": {
+      "address": "4115 Campus Dr",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6501,
+      "lng": -117.8406
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "10:30 AM",
+        "close": "1:00 AM"
+      },
+      {
+        "day": "tue",
+        "open": "10:30 AM",
+        "close": "1:00 AM"
+      },
+      {
+        "day": "wed",
+        "open": "10:30 AM",
+        "close": "1:00 AM"
+      },
+      {
+        "day": "thu",
+        "open": "10:30 AM",
+        "close": "1:00 AM"
+      },
+      {
+        "day": "fri",
+        "open": "10:30 AM",
+        "close": "1:30 AM"
+      },
+      {
+        "day": "sat",
+        "open": "10:30 AM",
+        "close": "1:30 AM"
+      },
+      {
+        "day": "sun",
+        "open": "10:30 AM",
+        "close": "1:00 AM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "double-double",
+        "name": "Double-Double®",
+        "description": "Two beef patties with cheese, lettuce, tomato, and spread.",
+        "priceUSD": 6.7,
+        "category": "Burgers",
+        "nutrition": {
+          "calories": 670,
+          "proteinG": 37,
+          "carbsG": 39,
+          "fatG": 41,
+          "sodiumMg": 1440
+        }
+      },
+      {
+        "id": "cheeseburger",
+        "name": "Cheeseburger",
+        "description": "A single beef patty with cheese, lettuce, tomato, and spread.",
+        "priceUSD": 5.1,
+        "category": "Burgers",
+        "nutrition": {
+          "calories": 480,
+          "proteinG": 22,
+          "carbsG": 39,
+          "fatG": 27,
+          "sodiumMg": 1000
+        }
+      },
+      {
+        "id": "hamburger",
+        "name": "Hamburger",
+        "description": "A single beef patty with lettuce, tomato, and spread.",
+        "priceUSD": 4.45,
+        "category": "Burgers",
+        "nutrition": {
+          "calories": 390,
+          "proteinG": 16,
+          "carbsG": 39,
+          "fatG": 19,
+          "sodiumMg": 650
+        }
+      },
+      {
+        "id": "french-fries",
+        "name": "French Fries",
+        "description": "Freshly cut fries, cooked to perfection.",
+        "priceUSD": 2.85,
+        "category": "Sides",
+        "nutrition": {
+          "calories": 395,
+          "proteinG": 7,
+          "carbsG": 54,
+          "fatG": 18,
+          "sodiumMg": 245
+        }
+      },
+      {
+        "id": "beverages",
+        "name": "Beverages",
+        "description": "Soft drinks, milkshakes, and coffee.",
+        "priceUSD": 2.1,
+        "category": "Drinks",
+        "nutrition": {
+          "calories": 140,
+          "proteinG": 0,
+          "carbsG": 38,
+          "fatG": 0,
+          "sodiumMg": 30
+        }
+      },
+      {
+        "id": "shakes",
+        "name": "Shakes",
+        "description": "Thick shakes available in chocolate, vanilla, and strawberry.",
+        "priceUSD": 3.6,
+        "category": "Desserts",
+        "nutrition": {
+          "calories": 690,
+          "proteinG": 9,
+          "carbsG": 83,
+          "fatG": 36,
+          "sodiumMg": 280
+        }
+      }
+    ],
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://www.in-n-out.com/menu"
+    }
+  },
+  {
+    "id": "veggie-grill",
+    "name": "Veggie Grill",
+    "description": "Get ready to fuel your day with our Superfood Smoothies—crafted with all-organic fruits, veggies, herbs, and sweeteners. No ice, no fillers, just wholesome ingredients to keep your body and taste buds energized!",
+    "cuisine": [
+      "Vegetarian",
+      "Vegan"
+    ],
+    "priceTier": "$$",
+    "location": {
+      "address": "732 Spectrum Center Dr",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92618",
+      "lat": 33.6491,
+      "lng": -117.7542
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "10:00 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "tue",
+        "open": "10:00 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "wed",
+        "open": "10:00 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "thu",
+        "open": "10:00 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "fri",
+        "open": "10:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "sat",
+        "open": "10:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "sun",
+        "open": "10:00 AM",
+        "close": "9:00 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "organic-smoothies",
+        "name": "Organic Smoothies",
+        "description": "All smoothies are crafted with organic fruits, veggies, and sweeteners, no ice or fillers.",
+        "priceUSD": 8.95,
+        "category": "Beverages",
+        "nutrition": {
+          "calories": 280,
+          "proteinG": 6,
+          "carbsG": 58,
+          "fatG": 4,
+          "fiberG": 5,
+          "sodiumMg": 80
+        }
+      },
+      {
+        "id": "chik-n-tenders",
+        "name": "Chik’n Tenders",
+        "description": "Classic crispy or Buffalo style chik’n tenders. Served with your choice of dipping sauce.",
+        "priceUSD": 13.95,
+        "category": "Shareables",
+        "nutrition": {
+          "calories": 480,
+          "proteinG": 28,
+          "carbsG": 38,
+          "fatG": 22,
+          "sodiumMg": 900
+        }
+      },
+      {
+        "id": "crispy-cauliflower",
+        "name": "Crispy Cauliflower",
+        "description": "Tempura-battered organic cauliflower garnished with green onions. Served with your choice of dipping sauce.",
+        "priceUSD": 13.95,
+        "category": "Shareables",
+        "nutrition": {
+          "calories": 390,
+          "proteinG": 8,
+          "carbsG": 44,
+          "fatG": 20,
+          "fiberG": 4,
+          "sodiumMg": 680
+        }
+      },
+      {
+        "id": "truffle-mac-cheese",
+        "name": "Truffle Mac + Cheese",
+        "description": "Organic pasta in truffle cheese sauce with mushroom crisps, almond parmesan and toasted breadcrumbs.",
+        "priceUSD": 13.95,
+        "category": "Shareables",
+        "nutrition": {
+          "calories": 540,
+          "proteinG": 16,
+          "carbsG": 62,
+          "fatG": 26,
+          "sodiumMg": 760
+        }
+      },
+      {
+        "id": "homestyle-crispy-chik-n",
+        "name": "Homestyle Crispy Chik’n",
+        "description": "Crispy, homestyle chik’n filet sliced and topped with your choice of melted blue cheese, creamy peppercorn sauce, or chimichurri.",
+        "priceUSD": 14.95,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 460,
+          "proteinG": 30,
+          "carbsG": 36,
+          "fatG": 20,
+          "sodiumMg": 840
+        }
+      },
+      {
+        "id": "beyond-steak-filet",
+        "name": "Beyond Steak® Filet",
+        "description": "Classically seasoned and seared Beyond Steak® filet topped with your choice of melted blue cheese, creamy peppercorn sauce, or chimichurri.",
+        "priceUSD": 27.95,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 380,
+          "proteinG": 28,
+          "carbsG": 14,
+          "fatG": 24,
+          "sodiumMg": 760
+        }
+      },
+      {
+        "id": "junior-burger",
+        "name": "Junior Burger",
+        "description": "House-seasoned smash patty, dill pickles, lettuce, tomato and choice of sauce on a brioche bun.",
+        "priceUSD": 7.95,
+        "category": "Burgers",
+        "nutrition": {
+          "calories": 380,
+          "proteinG": 18,
+          "carbsG": 40,
+          "fatG": 16,
+          "sodiumMg": 620
+        }
+      },
+      {
+        "id": "crispy-chik-n-sandwich",
+        "name": "Crispy Chik’n Sandwich",
+        "description": "Crispy chik’n filet, dill pickles, lettuce, tomato and house-made lemon-herb mayo on a brioche bun.",
+        "priceUSD": 10.95,
+        "category": "Sandwiches",
+        "nutrition": {
+          "calories": 520,
+          "proteinG": 30,
+          "carbsG": 52,
+          "fatG": 22,
+          "sodiumMg": 860
+        }
+      },
+      {
+        "id": "buffalo-chik-n-salad",
+        "name": "Buffalo Chik’n Salad",
+        "description": "Crispy Buffalo chik'n or Buffalo tempeh with organic romaine lettuce, tossed with house-made ranch dressing.",
+        "priceUSD": 15.95,
+        "category": "Salads",
+        "nutrition": {
+          "calories": 420,
+          "proteinG": 24,
+          "carbsG": 32,
+          "fatG": 22,
+          "fiberG": 6,
+          "sodiumMg": 940
+        }
+      }
+    ],
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://www.veggiegrill.com/menus/"
+    }
+  },
+  {
+    "id": "wahoo-s-fish-taco",
+    "name": "Wahoo's Fish Taco",
+    "description": "A casual dining spot offering a fusion of Mexican, Brazilian, and Asian flavors, specializing in fish tacos and fresh ingredients.",
+    "cuisine": [
+      "Mexican",
+      "Brazilian",
+      "Asian"
+    ],
+    "priceTier": "$$",
+    "location": {
+      "address": "715 Spectrum Center Dr",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92618",
+      "lat": 33.6493,
+      "lng": -117.754
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "tue",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "wed",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "thu",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "fri",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "sat",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "sun",
+        "open": "11:00 AM",
+        "close": "9:00 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "fish-taco",
+        "name": "Fish Taco",
+        "description": "Fresh fish with cabbage and signature sauce",
+        "priceUSD": 3.5,
+        "category": "Tacos",
+        "nutrition": {
+          "calories": 200,
+          "proteinG": 12,
+          "carbsG": 22,
+          "fatG": 8,
+          "sodiumMg": 380
+        }
+      },
+      {
+        "id": "chicken-bowl",
+        "name": "Chicken Bowl",
+        "description": "Grilled chicken with rice and beans",
+        "priceUSD": 8.0,
+        "category": "Bowls",
+        "nutrition": {
+          "calories": 560,
+          "proteinG": 34,
+          "carbsG": 68,
+          "fatG": 14,
+          "sodiumMg": 940
+        }
+      },
+      {
+        "id": "shrimp-burrito",
+        "name": "Shrimp Burrito",
+        "description": "Shrimp wrapped in a large tortilla with rice",
+        "priceUSD": 10.0,
+        "category": "Burritos",
+        "nutrition": {
+          "calories": 700,
+          "proteinG": 32,
+          "carbsG": 88,
+          "fatG": 22,
+          "sodiumMg": 1260
+        }
+      }
+    ],
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://www.wahoos.com/food-menus/"
+    }
+  },
+  {
+    "id": "flame-broiler",
+    "name": "Flame Broiler",
+    "description": "Charbroiled. Limited Time Only. CHAR WINGS ARE BACK",
+    "cuisine": [
+      "Korean",
+      "Asian",
+      "Fast Food"
+    ],
+    "priceTier": "$",
+    "location": {
+      "address": "8689A Irvine Center Dr",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92618",
+      "lat": 33.6475,
+      "lng": -117.7519
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "10:30 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "tue",
+        "open": "10:30 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "wed",
+        "open": "10:30 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "thu",
+        "open": "10:30 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "fri",
+        "open": "10:30 AM",
+        "close": "9:30 PM"
+      },
+      {
+        "day": "sat",
+        "open": "10:30 AM",
+        "close": "9:30 PM"
+      },
+      {
+        "day": "sun",
+        "open": "10:30 AM",
+        "close": "9:00 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "3-pc-wings",
+        "name": "3-PC Wings",
+        "description": "Add three Char Wings to your meal with your flavor choice of Magic, Korean Spicy, and Original Hot.",
+        "priceUSD": 6.79,
+        "category": "Wings",
+        "nutrition": {
+          "calories": 220,
+          "proteinG": 22,
+          "carbsG": 4,
+          "fatG": 13,
+          "sodiumMg": 480
+        }
+      },
+      {
+        "id": "6-pc-wing-combo",
+        "name": "6-PC Wing Combo",
+        "description": "Six Char Wings with a refreshing drink and your choice of rice or a side salad.",
+        "priceUSD": 15.79,
+        "category": "Wings",
+        "nutrition": {
+          "calories": 640,
+          "proteinG": 45,
+          "carbsG": 60,
+          "fatG": 21,
+          "sodiumMg": 980
+        }
+      },
+      {
+        "id": "8-pc-wing-combo",
+        "name": "8-PC Wing Combo",
+        "description": "Eight Char Wings with a refreshing drink and your choice of rice or a side salad.",
+        "priceUSD": 18.79,
+        "category": "Wings",
+        "nutrition": {
+          "calories": 780,
+          "proteinG": 56,
+          "carbsG": 62,
+          "fatG": 26,
+          "sodiumMg": 1120
+        }
+      },
+      {
+        "id": "10-pc-wings",
+        "name": "10-PC Wings",
+        "description": "Get ten Char Wings to share - or just eat them yourself.",
+        "priceUSD": 15.99,
+        "category": "Wings",
+        "nutrition": {
+          "calories": 740,
+          "proteinG": 73,
+          "carbsG": 14,
+          "fatG": 43,
+          "sodiumMg": 1620
+        }
+      },
+      {
+        "id": "chicken-avocado-salad",
+        "name": "Chicken Avocado Salad",
+        "description": "450 Cals - 3 oz charbroiled chicken, avocado, romaine lettuce, shredded cabbage + carrots, green onions, brown rice.",
+        "priceUSD": 13.79,
+        "category": "Salad",
+        "nutrition": {
+          "calories": 450,
+          "proteinG": 28,
+          "carbsG": 42,
+          "fatG": 18,
+          "sodiumMg": 670
+        }
+      },
+      {
+        "id": "side-salad",
+        "name": "Side Salad",
+        "description": "110 Cals - Romaine lettuce, shredded cabbage + carrots, and our sweet sesame dressing.",
+        "priceUSD": 4.99,
+        "category": "Salad",
+        "nutrition": {
+          "calories": 110,
+          "proteinG": 2,
+          "carbsG": 11,
+          "fatG": 7,
+          "sodiumMg": 260
+        }
+      },
+      {
+        "id": "korean-spicy-chicken-bowl",
+        "name": "Korean Spicy Chicken Bowl",
+        "description": "NAE (No Antibiotics Ever) Dark Meat Chicken, brushed with our Simply Magic Sauce and charbroiled.",
+        "priceUSD": 12.59,
+        "category": "Bowl",
+        "nutrition": {
+          "calories": 540,
+          "proteinG": 33,
+          "carbsG": 58,
+          "fatG": 18,
+          "sodiumMg": 1050
+        }
+      },
+      {
+        "id": "korean-spicy-chicken-plate",
+        "name": "Korean Spicy Chicken Plate",
+        "description": "NAE (No Antibiotics Ever) Dark Meat Chicken, brushed with our Simply Magic Sauce and charbroiled.",
+        "priceUSD": 15.59,
+        "category": "Plate",
+        "nutrition": {
+          "calories": 700,
+          "proteinG": 44,
+          "carbsG": 72,
+          "fatG": 23,
+          "sodiumMg": 1280
+        }
+      },
+      {
+        "id": "mini-korean-spicy-chicken",
+        "name": "Mini Korean Spicy Chicken",
+        "description": "NAE (No Antibiotics Ever) Dark Meat Chicken, brushed with our Simply Magic Sauce and charbroiled.",
+        "priceUSD": 11.09,
+        "category": "Mini",
+        "nutrition": {
+          "calories": 410,
+          "proteinG": 25,
+          "carbsG": 44,
+          "fatG": 14,
+          "sodiumMg": 800
+        }
+      },
+      {
+        "id": "nae-chicken-bowl",
+        "name": "NAE Chicken Bowl",
+        "description": "NAE (No Antibiotics Ever) Dark Meat Chicken, brushed with our Simply Magic Sauce and charbroiled.",
+        "priceUSD": 12.49,
+        "category": "Bowl",
+        "nutrition": {
+          "calories": 510,
+          "proteinG": 32,
+          "carbsG": 55,
+          "fatG": 16,
+          "sodiumMg": 970
+        }
+      },
+      {
+        "id": "organic-tofu-bowl",
+        "name": "Organic Tofu Bowl",
+        "description": "Organic Tofu, brushed with our Simply Magic Sauce and charbroiled.",
+        "priceUSD": 13.09,
+        "category": "Bowl",
+        "nutrition": {
+          "calories": 460,
+          "proteinG": 18,
+          "carbsG": 58,
+          "fatG": 15,
+          "sodiumMg": 890
+        }
+      }
+    ],
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://flamebroilerusa.com/menu/81881"
+    }
+  },
+  {
+    "id": "kurasushi",
+    "name": "Kurasushi",
+    "description": "Kurasushi offers a delicious menu featuring a wide variety of sushi, noodles, and Japanese cuisine. It appeals to sushi lovers with its fresh ingredients and unique dishes.",
+    "cuisine": [
+      "Japanese",
+      "Sushi"
+    ],
+    "priceTier": "$$",
+    "location": {
+      "address": "2700 Alton Pkwy Suite 133",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92606",
+      "lat": 33.6742,
+      "lng": -117.8035
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "tue",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "wed",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "thu",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "fri",
+        "open": "11:00 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "sat",
+        "open": "11:00 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "sun",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "american-wagyu",
+        "name": "American Wagyu",
+        "description": "Tender and flavorful beef nigiri.",
+        "priceUSD": 6.0,
+        "category": "Nigiri",
+        "nutrition": {
+          "calories": 130,
+          "proteinG": 8,
+          "carbsG": 14,
+          "fatG": 5,
+          "sodiumMg": 120
+        }
+      },
+      {
+        "id": "bluefin-chutoro-1pc",
+        "name": "Bluefin Chutoro (1PC)",
+        "description": "Rich and buttery bluefin belly nigiri.",
+        "priceUSD": 7.5,
+        "category": "Nigiri",
+        "nutrition": {
+          "calories": 80,
+          "proteinG": 6,
+          "carbsG": 7,
+          "fatG": 4,
+          "sodiumMg": 70
+        }
+      },
+      {
+        "id": "charbroiled-mackerel",
+        "name": "Charbroiled Mackerel",
+        "description": "Deliciously grilled mackerel nigiri.",
+        "priceUSD": 5.0,
+        "category": "Nigiri",
+        "nutrition": {
+          "calories": 110,
+          "proteinG": 7,
+          "carbsG": 12,
+          "fatG": 4,
+          "sodiumMg": 180
+        }
+      },
+      {
+        "id": "conch",
+        "name": "Conch",
+        "description": "Chewy and savory nigiri made with conch.",
+        "priceUSD": 6.0,
+        "category": "Nigiri",
+        "nutrition": {
+          "calories": 90,
+          "proteinG": 7,
+          "carbsG": 12,
+          "fatG": 2,
+          "sodiumMg": 130
+        }
+      },
+      {
+        "id": "eel",
+        "name": "Eel",
+        "description": "Sweet and smoky eel nigiri.",
+        "priceUSD": 6.0,
+        "category": "Nigiri",
+        "nutrition": {
+          "calories": 140,
+          "proteinG": 8,
+          "carbsG": 14,
+          "fatG": 6,
+          "sodiumMg": 190
+        }
+      },
+      {
+        "id": "garlic-ponzu-salmon",
+        "name": "Garlic Ponzu Salmon",
+        "description": "Fresh salmon drizzled with garlic ponzu.",
+        "priceUSD": 6.5,
+        "category": "Nigiri",
+        "nutrition": {
+          "calories": 120,
+          "proteinG": 8,
+          "carbsG": 12,
+          "fatG": 5,
+          "sodiumMg": 200
+        }
+      },
+      {
+        "id": "garlic-skipjack-tuna",
+        "name": "Garlic Skipjack Tuna",
+        "description": "Marinated skipjack tuna with a garlic sauce.",
+        "priceUSD": 6.5,
+        "category": "Nigiri",
+        "nutrition": {
+          "calories": 100,
+          "proteinG": 8,
+          "carbsG": 12,
+          "fatG": 3,
+          "sodiumMg": 180
+        }
+      },
+      {
+        "id": "hokkaido-scallop",
+        "name": "Hokkaido Scallop",
+        "description": "Sweet scallop nigiri from Hokkaido.",
+        "priceUSD": 7.0,
+        "category": "Nigiri",
+        "nutrition": {
+          "calories": 110,
+          "proteinG": 8,
+          "carbsG": 13,
+          "fatG": 3,
+          "sodiumMg": 140
+        }
+      },
+      {
+        "id": "salmon-toro",
+        "name": "Salmon Toro",
+        "description": "High-quality salmon belly nigiri.",
+        "priceUSD": 6.5,
+        "category": "Nigiri",
+        "nutrition": {
+          "calories": 130,
+          "proteinG": 8,
+          "carbsG": 12,
+          "fatG": 6,
+          "sodiumMg": 110
+        }
+      },
+      {
+        "id": "sea-bream-with-yuzu-pepper",
+        "name": "Sea Bream with Yuzu Pepper",
+        "description": "Light and refreshing sea bream nigiri topped with yuzu.",
+        "priceUSD": 7.0,
+        "category": "Nigiri",
+        "nutrition": {
+          "calories": 100,
+          "proteinG": 8,
+          "carbsG": 12,
+          "fatG": 3,
+          "sodiumMg": 150
+        }
+      }
+    ],
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://kurasushi.com/menu/"
+    }
+  },
+  {
+    "id": "chipotle",
+    "name": "Chipotle",
+    "description": "Fast-casual restaurant chain known for its Mexican-inspired menu and customizable options.",
+    "cuisine": [
+      "Mexican",
+      "Fast Casual"
+    ],
+    "priceTier": "$$",
+    "location": {
+      "address": "4255 Campus Dr Suite D108",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.6499,
+      "lng": -117.8382
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "10:45 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "tue",
+        "open": "10:45 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "wed",
+        "open": "10:45 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "thu",
+        "open": "10:45 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "fri",
+        "open": "10:45 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "sat",
+        "open": "10:45 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "sun",
+        "open": "10:45 AM",
+        "close": "10:00 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "burrito",
+        "name": "Burrito",
+        "description": "A large flour tortilla filled with your choice of meat, beans, rice, and condiments.",
+        "priceUSD": 8.0,
+        "category": "Entree",
+        "nutrition": {
+          "calories": 870,
+          "proteinG": 35,
+          "carbsG": 97,
+          "fatG": 37,
+          "fiberG": 8,
+          "sodiumMg": 1720
+        }
+      },
+      {
+        "id": "tacos",
+        "name": "Tacos",
+        "description": "Three crispy or soft corn tortillas filled with your choice of meat, beans, and fresh toppings.",
+        "priceUSD": 8.5,
+        "category": "Entree",
+        "nutrition": {
+          "calories": 500,
+          "proteinG": 25,
+          "carbsG": 56,
+          "fatG": 20,
+          "fiberG": 5,
+          "sodiumMg": 1100
+        }
+      },
+      {
+        "id": "salad",
+        "name": "Salad",
+        "description": "A bowl of greens topped with your choice of meat, beans, and dressings.",
+        "priceUSD": 8.0,
+        "category": "Entree",
+        "nutrition": {
+          "calories": 345,
+          "proteinG": 22,
+          "carbsG": 35,
+          "fatG": 14,
+          "fiberG": 7,
+          "sodiumMg": 770
+        }
+      }
+    ],
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://www.chipotle.com/menu"
+    }
+  },
+  {
+    "id": "panda-express",
+    "name": "Panda Express",
+    "description": "Family Owned with Family Values",
+    "cuisine": [
+      "Chinese",
+      "American"
+    ],
+    "priceTier": "$",
+    "location": {
+      "address": "4235 Campus Dr",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92612",
+      "lat": 33.65,
+      "lng": -117.8385
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "10:00 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "tue",
+        "open": "10:00 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "wed",
+        "open": "10:00 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "thu",
+        "open": "10:00 AM",
+        "close": "9:00 PM"
+      },
+      {
+        "day": "fri",
+        "open": "10:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "sat",
+        "open": "10:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "sun",
+        "open": "10:00 AM",
+        "close": "9:00 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "balanced-protein-plates",
+        "name": "Balanced Protein Plates",
+        "description": "Pre-set Plates that Taste Good & Feel Good",
+        "priceUSD": 13.95,
+        "category": "Plates",
+        "nutrition": {
+          "calories": 590,
+          "proteinG": 41,
+          "carbsG": 52,
+          "fatG": 22,
+          "sodiumMg": 1150
+        }
+      },
+      {
+        "id": "bowl",
+        "name": "Bowl",
+        "description": "1 Side & 1 Entree",
+        "priceUSD": 9.9,
+        "category": "Bowl",
+        "nutrition": {
+          "calories": 730,
+          "proteinG": 26,
+          "carbsG": 88,
+          "fatG": 26,
+          "sodiumMg": 1100
+        }
+      },
+      {
+        "id": "plate",
+        "name": "Plate",
+        "description": "1 Side & 2 Entrees",
+        "priceUSD": 12.9,
+        "category": "Plate",
+        "nutrition": {
+          "calories": 960,
+          "proteinG": 36,
+          "carbsG": 110,
+          "fatG": 36,
+          "sodiumMg": 1440
+        }
+      },
+      {
+        "id": "bigger-plate",
+        "name": "Bigger Plate",
+        "description": "1 Side & 3 Entrees",
+        "priceUSD": 14.9,
+        "category": "Bigger Plate",
+        "nutrition": {
+          "calories": 1180,
+          "proteinG": 46,
+          "carbsG": 130,
+          "fatG": 46,
+          "sodiumMg": 1780
+        }
+      },
+      {
+        "id": "panda-bundles",
+        "name": "Panda Bundles",
+        "description": "Get a Bowl, Plate, or Bigger Plate with a Medium Fountain Drink",
+        "priceUSD": 13.9,
+        "category": "Bundles",
+        "nutrition": {
+          "calories": 960,
+          "proteinG": 36,
+          "carbsG": 110,
+          "fatG": 36,
+          "sodiumMg": 1440
+        }
+      },
+      {
+        "id": "panda-cub-meal",
+        "name": "Panda Cub Meal™",
+        "description": "1 Jr. Side, 1 Jr. Entree, Fruit Side & Bottled Water or Kid's Juice",
+        "priceUSD": 6.9,
+        "category": "Kids Meals",
+        "nutrition": {
+          "calories": 380,
+          "proteinG": 14,
+          "carbsG": 52,
+          "fatG": 12,
+          "sodiumMg": 620
+        }
+      },
+      {
+        "id": "5-person-family-meal",
+        "name": "5 Person Family Meal",
+        "description": "2 Large Sides & 3 Large Entrees",
+        "priceUSD": 49.9,
+        "category": "Family Meals",
+        "nutrition": {
+          "calories": 4200,
+          "proteinG": 160,
+          "carbsG": 490,
+          "fatG": 160,
+          "sodiumMg": 6400
+        }
+      },
+      {
+        "id": "appetizers-and-more",
+        "name": "Appetizers and More",
+        "description": "Something Extra with Your Meal",
+        "priceUSD": 2.95,
+        "category": "Appetizers",
+        "nutrition": {
+          "calories": 130,
+          "proteinG": 4,
+          "carbsG": 17,
+          "fatG": 6,
+          "sodiumMg": 310
+        }
+      },
+      {
+        "id": "a-la-carte",
+        "name": "A La Carte",
+        "description": "Individual Entrees & Sides",
+        "priceUSD": 5.9,
+        "category": "A La Carte",
+        "nutrition": {
+          "calories": 250,
+          "proteinG": 15,
+          "carbsG": 18,
+          "fatG": 13,
+          "sodiumMg": 560
+        }
+      },
+      {
+        "id": "drinks",
+        "name": "Drinks",
+        "description": "Add a Refreshing Beverage",
+        "priceUSD": 2.75,
+        "category": "Drinks",
+        "nutrition": {
+          "calories": 120,
+          "proteinG": 0,
+          "carbsG": 32,
+          "fatG": 0,
+          "sodiumMg": 30
+        }
+      },
+      {
+        "id": "catering",
+        "name": "Catering",
+        "description": "Large orders made easy— includes our catering exclusive Hot Orange Chicken",
+        "priceUSD": 99.99,
+        "category": "Catering",
+        "nutrition": {
+          "calories": 800,
+          "proteinG": 30,
+          "carbsG": 95,
+          "fatG": 30,
+          "sodiumMg": 1300
+        }
+      }
+    ],
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://www.pandaexpress.com/menu"
+    }
+  },
+  {
+    "id": "cucina-enoteca-irvine",
+    "name": "CUCINA enoteca Irvine",
+    "description": "CUCINA enoteca Irvine is known for combining the flavors of Italy with the organic freshness of Southern California. With CUCINA’s from-scratch menus — standouts include shareable portions of luxurious house made pasta + innovative pizza + cleverly crafted large plates + an elevated selection of antipasti + dolci.",
+    "cuisine": [
+      "Italian",
+      "California Cuisine"
+    ],
+    "priceTier": "$$$",
+    "location": {
+      "address": "532 Spectrum Center Dr",
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92618",
+      "lat": 33.6497,
+      "lng": -117.7516
+    },
+    "hours": [
+      {
+        "day": "mon",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "tue",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "wed",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "thu",
+        "open": "11:00 AM",
+        "close": "10:00 PM"
+      },
+      {
+        "day": "fri",
+        "open": "11:00 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "sat",
+        "open": "10:00 AM",
+        "close": "11:00 PM"
+      },
+      {
+        "day": "sun",
+        "open": "10:00 AM",
+        "close": "10:00 PM"
+      }
+    ],
+    "menu": [
+      {
+        "id": "pepperoni-pizza",
+        "name": "Pepperoni Pizza",
+        "description": "Classic pizza topped with pepperoni.",
+        "priceUSD": 15.0,
+        "category": "Pizza",
+        "nutrition": {
+          "calories": 680,
+          "proteinG": 28,
+          "carbsG": 72,
+          "fatG": 30,
+          "sodiumMg": 1240
+        }
+      },
+      {
+        "id": "rigatoni-bolognese",
+        "name": "Rigatoni Bolognese",
+        "description": "Rigatoni pasta with rich meat sauce.",
+        "priceUSD": 18.0,
+        "category": "Pasta",
+        "nutrition": {
+          "calories": 720,
+          "proteinG": 34,
+          "carbsG": 82,
+          "fatG": 28,
+          "sodiumMg": 980
+        }
+      },
+      {
+        "id": "charred-cauliflower",
+        "name": "Charred Cauliflower",
+        "description": "Roasted cauliflower with spices.",
+        "priceUSD": 10.0,
+        "category": "Appetizer",
+        "nutrition": {
+          "calories": 280,
+          "proteinG": 8,
+          "carbsG": 34,
+          "fatG": 14,
+          "fiberG": 6,
+          "sodiumMg": 540
+        }
+      },
+      {
+        "id": "chicken-fra-diavolo",
+        "name": "Chicken Fra Diavolo",
+        "description": "Spicy chicken dish with tomatoes.",
+        "priceUSD": 22.0,
+        "category": "Entree",
+        "nutrition": {
+          "calories": 580,
+          "proteinG": 44,
+          "carbsG": 28,
+          "fatG": 30,
+          "sodiumMg": 1060
+        }
+      }
+    ],
+    "dataSource": {
+      "name": "firecrawl",
+      "lastUpdatedISO": "2026-03-18T06:00:00Z",
+      "url": "https://www.urbankitchengroup.com/cucina-enoteca-irvine/menu/"
+    }
   }
 ]
