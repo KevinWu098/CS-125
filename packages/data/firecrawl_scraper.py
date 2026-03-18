@@ -148,7 +148,15 @@ def build_restaurant_entry(raw: Dict[str, Any]) -> Dict[str, Any]:
     description = raw.get("description") or ""
     cuisine = raw.get("cuisine") or []
     price_tier = raw.get("priceTier") or None
-    location = raw.get("location") or {}
+    raw_location = raw.get("location") or {}
+    location = {
+        "address": raw_location.get("address") or "Not Provided",
+        "city": raw_location.get("city") or "Not Provided",
+        "state": raw_location.get("state") or "Not Provided",
+        "postalCode": raw_location.get("postalCode") or "Not Provided",
+        "lat": raw_location.get("lat") if raw_location.get("lat") is not None else 0,
+        "lng": raw_location.get("lng") if raw_location.get("lng") is not None else 0,
+    }
     hours = raw.get("hours") or []
     menu_items = []
     for item in raw.get("menu", []) or []:
