@@ -1,0 +1,29 @@
+[
+  {
+    "userId": "asdf2",
+    "createdAtISO": "2026-03-13T03:52:09.701Z",
+    "lastLoginAtISO": "2026-03-13T03:53:49.700Z",
+    "loginCount": 1,
+    "ratings": {
+      "mendocino-farms": 4
+    },
+    "mealRatings": {}
+  },
+  {
+    "userId": "local-foodie",
+    "createdAtISO": "2026-03-18T04:37:17.220Z",
+    "lastLoginAtISO": "2026-03-18T05:29:27.468Z",
+    "loginCount": 50,
+    "ratings": {
+      "luna-grill": 4,
+      "tender-greens": 4,
+      "eureka": 4
+    },
+    "mealRatings": {
+      "luna-grill::gyro-meat-plate": 1,
+      "luna-grill::garlic-bonfire-shrimp-plate": 4,
+      "tender-greens::chipotle-bbq-chicken-salad": 4,
+      "eureka::craft-beer-flight": 4
+    }
+  }
+]

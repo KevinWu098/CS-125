@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Restaurant Search | Discover Local Eats",
-  description: "Find the best restaurants near you with personalized recommendations and smart filters",
+  title: "RestaurantSmart | Discover Local Eats",
+  description:
+    "Find the best restaurants near you with personalized recommendations and smart filters",
 };
 
 export default function RootLayout({
