@@ -2,6 +2,7 @@ import type { RestaurantSchema } from "@packages/types";
 
 import { KM_PER_MILE } from "./constants";
 import { DEFAULT_MAX_MEAL_PRICE, restaurantData, restaurantsById } from "./data";
+import { resolveMealNutrition, sumMealNutrition } from "./nutrition";
 import type {
   DietaryKey,
   RankedMeal,
@@ -171,6 +172,13 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
     existing.count += 1;
   });
 
+  const nutritionGoals = profile?.nutritionGoals ?? null;
+  const consumedNutrition = profile ? sumMealNutrition(profile.mealHistory) : null;
+  const remainingCalories =
+    nutritionGoals && consumedNutrition
+      ? Math.max(nutritionGoals.calories - consumedNutrition.calories, 0)
+      : null;
+
   const filtered = restaurantData
     .map<RankedRestaurant | null>((restaurant) => {
       const distanceKm = haversineDistanceKm(
@@ -276,11 +284,63 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
 
           const explicitMealNormalized = (explicitMealSignal + 1) / 2;
           const mealCategoryNormalized = (mealCategorySignal + 1) / 2;
+          const { nutrition: mealNutrition } = resolveMealNutrition(meal);
+
+          let nutritionGoalSignal = 0.55;
+          if (nutritionGoals) {
+            const targetCalories = Math.max(nutritionGoals.calories, 1);
+            const targetProteinCalories = Math.max(nutritionGoals.proteinG, 0) * 4;
+            const targetCarbCalories = Math.max(nutritionGoals.carbsG, 0) * 4;
+            const targetFatCalories = Math.max(nutritionGoals.fatG, 0) * 9;
+            const totalTargetMacroCalories =
+              targetProteinCalories + targetCarbCalories + targetFatCalories;
+
+            const targetProteinRatio =
+              totalTargetMacroCalories > 0 ? targetProteinCalories / totalTargetMacroCalories : 0.3;
+            const targetCarbRatio =
+              totalTargetMacroCalories > 0 ? targetCarbCalories / totalTargetMacroCalories : 0.45;
+            const targetFatRatio =
+              totalTargetMacroCalories > 0 ? targetFatCalories / totalTargetMacroCalories : 0.25;
+
+            const mealProteinCalories = Math.max(mealNutrition.proteinG, 0) * 4;
+            const mealCarbCalories = Math.max(mealNutrition.carbsG, 0) * 4;
+            const mealFatCalories = Math.max(mealNutrition.fatG, 0) * 9;
+            const totalMealMacroCalories = mealProteinCalories + mealCarbCalories + mealFatCalories;
+
+            const mealProteinRatio =
+              totalMealMacroCalories > 0 ? mealProteinCalories / totalMealMacroCalories : 0.3;
+            const mealCarbRatio =
+              totalMealMacroCalories > 0 ? mealCarbCalories / totalMealMacroCalories : 0.45;
+            const mealFatRatio =
+              totalMealMacroCalories > 0 ? mealFatCalories / totalMealMacroCalories : 0.25;
+
+            const macroRatioDistance =
+              (Math.abs(mealProteinRatio - targetProteinRatio) +
+                Math.abs(mealCarbRatio - targetCarbRatio) +
+                Math.abs(mealFatRatio - targetFatRatio)) /
+              3;
+            const macroRatioSignal = clamp(1 - macroRatioDistance * 2.2, 0, 1);
+
+            const calorieTarget =
+              remainingCalories !== null
+                ? Math.min(Math.max(remainingCalories, 200), targetCalories * 0.45)
+                : targetCalories * 0.32;
+            const calorieTolerance = Math.max(targetCalories * 0.25, 180);
+            const calorieSignal = clamp(
+              1 - Math.abs(mealNutrition.calories - calorieTarget) / calorieTolerance,
+              0,
+              1,
+            );
+
+            nutritionGoalSignal = macroRatioSignal * 0.55 + calorieSignal * 0.45;
+          }
+
           const mealScore =
-            explicitMealNormalized * 0.5 +
-            mealCategoryNormalized * 0.22 +
-            dietarySignal * 0.2 +
-            mealTextSignal * 0.08;
+            explicitMealNormalized * 0.43 +
+            mealCategoryNormalized * 0.2 +
+            dietarySignal * 0.17 +
+            mealTextSignal * 0.08 +
+            nutritionGoalSignal * 0.12;
 
           const mealReasons: string[] = [];
           if (existingMealRating) {
@@ -291,6 +351,18 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
           }
           if (selectedDietary.length > 0 && matchesAllSelectedDietary) {
             mealReasons.push("Fits your dietary filters.");
+          }
+          if (nutritionGoals && nutritionGoalSignal > 0.72) {
+            mealReasons.push("Aligned with your nutrition goals.");
+          }
+          if (
+            nutritionGoals &&
+            remainingCalories !== null &&
+            remainingCalories > 0 &&
+            remainingCalories < nutritionGoals.calories * 0.25 &&
+            mealNutrition.calories <= remainingCalories + 120
+          ) {
+            mealReasons.push("Fits your remaining calorie budget.");
           }
           if (mealReasons.length === 0 && mealQuery) {
             mealReasons.push(`Matches meal search for \"${mealSearchQuery.trim()}\".`);
@@ -385,6 +457,12 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
         recommendedMeals.some((meal) => meal.userMealRating !== null && meal.userMealRating >= 4)
       ) {
         personalReasons.push("You previously liked meals from this restaurant.");
+      }
+      if (
+        nutritionGoals &&
+        recommendedMeals.some((meal) => meal.reasons.includes("Aligned with your nutrition goals."))
+      ) {
+        personalReasons.push("Meals here align with your nutrition goals.");
       }
       if (personalReasons.length === 0 && personalSignal > 0.25) {
         personalReasons.push("Aligned with your saved cuisine preferences.");

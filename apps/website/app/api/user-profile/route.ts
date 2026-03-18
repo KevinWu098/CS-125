@@ -4,7 +4,14 @@ import path from "node:path";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
+import { DEFAULT_NUTRITION_GOALS } from "@/components/restaurant-smart/constants";
+import { restaurantsById } from "@/components/restaurant-smart/data";
+import { resolveMealNutrition } from "@/components/restaurant-smart/nutrition";
+import { normalizeNutritionGoals } from "@/components/restaurant-smart/utils";
+
 export const runtime = "nodejs";
+
+const MAX_MEAL_HISTORY_ITEMS = 200;
 
 const requestSchema = z.object({
   userId: z
@@ -15,10 +22,29 @@ const requestSchema = z.object({
     .regex(/^[a-zA-Z0-9_-]+$/, "User ID can only contain letters, numbers, _ and -"),
 });
 
-const ratingRequestSchema = requestSchema.extend({
-  restaurantId: z.string().trim().min(1).max(120),
-  mealId: z.string().trim().min(1).max(160).optional(),
-  rating: z.number().int().min(1).max(5),
+const nutritionGoalsSchema = z.object({
+  calories: z.number().int().min(800).max(6000),
+  proteinG: z.number().int().min(20).max(600),
+  carbsG: z.number().int().min(20).max(900),
+  fatG: z.number().int().min(10).max(300),
+});
+
+const mealNutritionSchema = z.object({
+  calories: z.number().min(0),
+  proteinG: z.number().min(0),
+  carbsG: z.number().min(0),
+  fatG: z.number().min(0),
+});
+
+const mealHistoryEntrySchema = z.object({
+  id: z.string().min(1),
+  restaurantId: z.string().min(1),
+  restaurantName: z.string().min(1),
+  mealId: z.string().min(1),
+  mealName: z.string().min(1),
+  loggedAtISO: z.string(),
+  nutrition: mealNutritionSchema,
+  nutritionEstimated: z.boolean(),
 });
 
 const userRecordSchema = z.object({
@@ -28,11 +54,53 @@ const userRecordSchema = z.object({
   loginCount: z.number().int().min(1),
   ratings: z.record(z.string(), z.number().int().min(1).max(5)).default({}),
   mealRatings: z.record(z.string(), z.number().int().min(1).max(5)).default({}),
+  nutritionGoals: nutritionGoalsSchema.default(DEFAULT_NUTRITION_GOALS),
+  mealHistory: z.array(mealHistoryEntrySchema).default([]),
 });
+
+const setRestaurantRatingSchema = requestSchema.extend({
+  action: z.literal("setRestaurantRating"),
+  restaurantId: z.string().trim().min(1).max(120),
+  rating: z.number().int().min(1).max(5),
+});
+
+const setMealRatingSchema = requestSchema.extend({
+  action: z.literal("setMealRating"),
+  restaurantId: z.string().trim().min(1).max(120),
+  mealId: z.string().trim().min(1).max(160),
+  rating: z.number().int().min(1).max(5),
+});
+
+const setNutritionGoalsSchema = requestSchema.extend({
+  action: z.literal("setNutritionGoals"),
+  nutritionGoals: nutritionGoalsSchema,
+});
+
+const logMealSchema = requestSchema.extend({
+  action: z.literal("logMeal"),
+  restaurantId: z.string().trim().min(1).max(120),
+  mealId: z.string().trim().min(1).max(160),
+  loggedAtISO: z.iso.datetime().optional(),
+});
+
+const legacyRatingSchema = requestSchema.extend({
+  restaurantId: z.string().trim().min(1).max(120),
+  mealId: z.string().trim().min(1).max(160).optional(),
+  rating: z.number().int().min(1).max(5),
+});
+
+const actionPatchSchema = z.discriminatedUnion("action", [
+  setRestaurantRatingSchema,
+  setMealRatingSchema,
+  setNutritionGoalsSchema,
+  logMealSchema,
+]);
 
 const usersFilePath = path.join(process.cwd(), "data", "users.json");
 
 type UserRecord = z.infer<typeof userRecordSchema>;
+type ActionPatchRequest = z.infer<typeof actionPatchSchema>;
+type LegacyRatingRequest = z.infer<typeof legacyRatingSchema>;
 
 const readUsers = async (): Promise<UserRecord[]> => {
   try {
@@ -45,7 +113,10 @@ const readUsers = async (): Promise<UserRecord[]> => {
     return parsed
       .map((entry) => userRecordSchema.safeParse(entry))
       .filter((entry): entry is { success: true; data: UserRecord } => entry.success)
-      .map((entry) => entry.data);
+      .map((entry) => ({
+        ...entry.data,
+        nutritionGoals: normalizeNutritionGoals(entry.data.nutritionGoals),
+      }));
   } catch {
     return [];
   }
@@ -55,6 +126,36 @@ const writeUsers = async (users: UserRecord[]): Promise<void> => {
   await fs.mkdir(path.dirname(usersFilePath), { recursive: true });
   await fs.writeFile(usersFilePath, `${JSON.stringify(users, null, 2)}\n`, "utf8");
 };
+
+function buildMealHistoryEntry(params: {
+  restaurantId: string;
+  mealId: string;
+  loggedAtISO?: string;
+}) {
+  const restaurant = restaurantsById.get(params.restaurantId);
+  if (!restaurant) {
+    return null;
+  }
+
+  const meal = restaurant.menu.find((menuItem) => menuItem.id === params.mealId);
+  if (!meal) {
+    return null;
+  }
+
+  const { nutrition, estimated } = resolveMealNutrition(meal);
+  const nowISO = params.loggedAtISO || new Date().toISOString();
+
+  return {
+    id: `meal-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+    restaurantId: restaurant.id,
+    restaurantName: restaurant.name,
+    mealId: meal.id,
+    mealName: meal.name,
+    loggedAtISO: nowISO,
+    nutrition,
+    nutritionEstimated: estimated,
+  };
+}
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -106,6 +207,7 @@ export async function POST(request: Request) {
     if (existing) {
       existing.lastLoginAtISO = nowISO;
       existing.loginCount += 1;
+      existing.nutritionGoals = normalizeNutritionGoals(existing.nutritionGoals);
       await writeUsers(users);
 
       return NextResponse.json({
@@ -121,6 +223,8 @@ export async function POST(request: Request) {
       loginCount: 1,
       ratings: {},
       mealRatings: {},
+      nutritionGoals: { ...DEFAULT_NUTRITION_GOALS },
+      mealHistory: [],
     };
 
     users.push(createdUser);
@@ -144,19 +248,36 @@ export async function POST(request: Request) {
 export async function PATCH(request: Request) {
   try {
     const payload = await request.json();
-    const parsed = ratingRequestSchema.safeParse(payload);
-    if (!parsed.success) {
+    const parsedAction = actionPatchSchema.safeParse(payload);
+    const parsedLegacy = legacyRatingSchema.safeParse(payload);
+    if (!parsedAction.success && !parsedLegacy.success) {
       return NextResponse.json(
         {
           error: "Invalid payload",
-          issues: parsed.error.issues.map((issue) => issue.message),
+          issues: [...parsedAction.error.issues, ...parsedLegacy.error.issues].map(
+            (issue) => issue.message,
+          ),
+        },
+        { status: 400 },
+      );
+    }
+
+    let parsedData: ActionPatchRequest | LegacyRatingRequest;
+    if (parsedAction.success) {
+      parsedData = parsedAction.data;
+    } else if (parsedLegacy.success) {
+      parsedData = parsedLegacy.data;
+    } else {
+      return NextResponse.json(
+        {
+          error: "Invalid payload",
         },
         { status: 400 },
       );
     }
 
     const users = await readUsers();
-    const user = users.find((entry) => entry.userId === parsed.data.userId);
+    const user = users.find((entry) => entry.userId === parsedData.userId);
     if (!user) {
       return NextResponse.json(
         {
@@ -166,12 +287,50 @@ export async function PATCH(request: Request) {
       );
     }
 
-    if (parsed.data.mealId) {
-      const mealKey = `${parsed.data.restaurantId}::${parsed.data.mealId}`;
-      user.mealRatings[mealKey] = parsed.data.rating;
+    if (!("action" in parsedData)) {
+      if (parsedData.mealId) {
+        const mealKey = `${parsedData.restaurantId}::${parsedData.mealId}`;
+        user.mealRatings[mealKey] = parsedData.rating;
+      } else {
+        user.ratings[parsedData.restaurantId] = parsedData.rating;
+      }
     } else {
-      user.ratings[parsed.data.restaurantId] = parsed.data.rating;
+      switch (parsedData.action) {
+        case "setRestaurantRating": {
+          user.ratings[parsedData.restaurantId] = parsedData.rating;
+          break;
+        }
+        case "setMealRating": {
+          const mealKey = `${parsedData.restaurantId}::${parsedData.mealId}`;
+          user.mealRatings[mealKey] = parsedData.rating;
+          break;
+        }
+        case "setNutritionGoals": {
+          user.nutritionGoals = normalizeNutritionGoals(parsedData.nutritionGoals);
+          break;
+        }
+        case "logMeal": {
+          const entry = buildMealHistoryEntry({
+            restaurantId: parsedData.restaurantId,
+            mealId: parsedData.mealId,
+            loggedAtISO: parsedData.loggedAtISO,
+          });
+
+          if (!entry) {
+            return NextResponse.json(
+              {
+                error: "Restaurant or meal not found",
+              },
+              { status: 404 },
+            );
+          }
+
+          user.mealHistory = [entry, ...user.mealHistory].slice(0, MAX_MEAL_HISTORY_ITEMS);
+          break;
+        }
+      }
     }
+
     user.lastLoginAtISO = new Date().toISOString();
     await writeUsers(users);
 
@@ -179,10 +338,10 @@ export async function PATCH(request: Request) {
       user,
     });
   } catch (error) {
-    console.error("Failed to update profile rating", error);
+    console.error("Failed to update profile", error);
     return NextResponse.json(
       {
-        error: "Failed to update profile rating",
+        error: "Failed to update profile",
       },
       { status: 500 },
     );

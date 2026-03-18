@@ -85,6 +85,22 @@ function normalizeMealCategory(value?: string): string | undefined {
   return withoutMandarin.length > 0 ? withoutMandarin : undefined;
 }
 
+function normalizeStringArray(values?: string[]): string[] | undefined {
+  if (!values || values.length === 0) {
+    return undefined;
+  }
+
+  const normalized = values
+    .map((value) => value.trim().toLowerCase())
+    .filter((value) => value.length > 0);
+
+  if (normalized.length === 0) {
+    return undefined;
+  }
+
+  return Array.from(new Set(normalized));
+}
+
 function normalizeRestaurants(rawRestaurants: RawRestaurant[]): RestaurantSchema[] {
   return rawRestaurants
     .map<RestaurantSchema | null>((restaurant) => {
@@ -135,6 +151,19 @@ function normalizeRestaurants(rawRestaurants: RawRestaurant[]): RestaurantSchema
               ? item.priceUSD
               : undefined,
           category: normalizeMealCategory(item.category),
+          tags: normalizeStringArray(item.tags),
+          allergens: normalizeStringArray(item.allergens),
+          nutrition: item.nutrition
+            ? {
+                calories: item.nutrition.calories,
+                proteinG: item.nutrition.proteinG,
+                carbsG: item.nutrition.carbsG,
+                fatG: item.nutrition.fatG,
+                fiberG: item.nutrition.fiberG,
+                sugarG: item.nutrition.sugarG,
+                sodiumMg: item.nutrition.sodiumMg,
+              }
+            : undefined,
         })) ?? [];
 
       return {
@@ -145,6 +174,18 @@ function normalizeRestaurants(rawRestaurants: RawRestaurant[]): RestaurantSchema
           .map((cuisine) => cuisine.trim().toLowerCase())
           .filter((cuisine) => cuisine.length > 0 && !EXCLUDED_CUISINES.has(cuisine)),
         priceTier: normalizePriceTier(restaurant.priceTier),
+        rating:
+          restaurant.rating &&
+          typeof restaurant.rating.average === "number" &&
+          Number.isFinite(restaurant.rating.average) &&
+          typeof restaurant.rating.count === "number" &&
+          Number.isFinite(restaurant.rating.count)
+            ? {
+                average: restaurant.rating.average,
+                count: restaurant.rating.count,
+                source: restaurant.rating.source?.trim() || undefined,
+              }
+            : undefined,
         location: {
           address: location.address?.trim() || "Address unavailable",
           city: location.city?.trim() || "Unknown",
@@ -154,6 +195,17 @@ function normalizeRestaurants(rawRestaurants: RawRestaurant[]): RestaurantSchema
           lng,
         },
         hours: normalizedHours.length > 0 ? normalizedHours : undefined,
+        dietarySupport: restaurant.dietarySupport
+          ? {
+              vegan: Boolean(restaurant.dietarySupport.vegan),
+              vegetarian: Boolean(restaurant.dietarySupport.vegetarian),
+              glutenFree: Boolean(restaurant.dietarySupport.glutenFree),
+              dairyFree: Boolean(restaurant.dietarySupport.dairyFree),
+              halal: Boolean(restaurant.dietarySupport.halal),
+              kosher: Boolean(restaurant.dietarySupport.kosher),
+              nutFree: Boolean(restaurant.dietarySupport.nutFree),
+            }
+          : undefined,
         menu: menu.length > 0 ? menu : [{ id: `${restaurant.id}-item-1`, name: "Menu item" }],
       };
     })

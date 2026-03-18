@@ -43,6 +43,13 @@ export const DEFAULT_LOCATION: UserLocation = {
   source: "default",
 };
 
+export const DEFAULT_NUTRITION_GOALS = {
+  calories: 2200,
+  proteinG: 140,
+  carbsG: 250,
+  fatG: 70,
+} as const;
+
 export const KM_PER_MILE = 1.60934;
 export const METERS_PER_MILE = 1609.34;
 export const DEFAULT_MAX_DISTANCE_MILES = 5;

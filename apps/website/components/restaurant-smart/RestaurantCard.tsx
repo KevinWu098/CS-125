@@ -2,6 +2,7 @@ import { Clock, MapPin, Star } from "lucide-react";
 import React from "react";
 
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 import type { RankedRestaurant, UserRecord } from "./types";
@@ -12,9 +13,9 @@ type RestaurantCardProps = {
   rank: number;
   profile: UserRecord | null;
   pendingRatingRestaurantId: string | null;
-  pendingMealRatingKey: string | null;
+  pendingLoggedMealKey: string | null;
   onRate: (restaurantId: string, rating: number) => void;
-  onRateMeal: (restaurantId: string, mealId: string, rating: number) => void;
+  onMarkMealHad: (restaurantId: string, mealId: string) => void;
 };
 
 function PriceTierDisplay({ tier }: { tier?: string }) {
@@ -68,9 +69,9 @@ export function RestaurantCard({
   rank,
   profile,
   pendingRatingRestaurantId,
-  pendingMealRatingKey,
+  pendingLoggedMealKey,
   onRate,
-  onRateMeal,
+  onMarkMealHad,
 }: RestaurantCardProps) {
   const { restaurant } = entry;
   const openStatus = getOpenStatus(restaurant.hours);
@@ -162,7 +163,7 @@ export function RestaurantCard({
             <div className="flex snap-x gap-3 overflow-x-auto pb-1">
               {entry.recommendedMeals.map((recommendedMeal) => {
                 const meal = recommendedMeal.meal;
-                const isSavingMeal = pendingMealRatingKey === recommendedMeal.mealKey;
+                const isLoggingMeal = pendingLoggedMealKey === recommendedMeal.mealKey;
 
                 return (
                   <div
@@ -182,8 +183,8 @@ export function RestaurantCard({
                       </span>
                       <span className="text-xs text-slate-500">
                         {recommendedMeal.userMealRating
-                          ? `Your ${recommendedMeal.userMealRating}/5`
-                          : "Not rated"}
+                          ? `Your rating ${recommendedMeal.userMealRating}/5`
+                          : "Rate in profile"}
                       </span>
                     </div>
 
@@ -194,11 +195,14 @@ export function RestaurantCard({
                     )}
 
                     <div className="mt-2 border-t border-slate-200 pt-2">
-                      <EditableStars
-                        value={recommendedMeal.userMealRating}
-                        onSelect={(rating) => onRateMeal(restaurant.id, meal.id, rating)}
-                        disabled={isSavingMeal}
-                      />
+                      <Button
+                        variant="outline"
+                        className="h-8 w-full text-xs"
+                        disabled={isLoggingMeal}
+                        onClick={() => onMarkMealHad(restaurant.id, meal.id)}
+                      >
+                        {isLoggingMeal ? "Adding..." : "Mark as had"}
+                      </Button>
                     </div>
                   </div>
                 );

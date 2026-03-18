@@ -7,13 +7,20 @@
     "ratings": {
       "mendocino-farms": 4
     },
-    "mealRatings": {}
+    "mealRatings": {},
+    "nutritionGoals": {
+      "calories": 2200,
+      "proteinG": 140,
+      "carbsG": 250,
+      "fatG": 70
+    },
+    "mealHistory": []
   },
   {
     "userId": "local-foodie",
     "createdAtISO": "2026-03-18T04:37:17.220Z",
-    "lastLoginAtISO": "2026-03-18T05:43:43.487Z",
-    "loginCount": 52,
+    "lastLoginAtISO": "2026-03-18T06:26:54.369Z",
+    "loginCount": 70,
     "ratings": {
       "luna-grill": 4,
       "tender-greens": 4,
@@ -24,6 +31,29 @@
       "luna-grill::garlic-bonfire-shrimp-plate": 4,
       "tender-greens::chipotle-bbq-chicken-salad": 4,
       "eureka::craft-beer-flight": 4
-    }
+    },
+    "nutritionGoals": {
+      "calories": 2200,
+      "proteinG": 140,
+      "carbsG": 250,
+      "fatG": 70
+    },
+    "mealHistory": [
+      {
+        "id": "meal-1773814947575-ezx9g1",
+        "restaurantId": "tender-greens",
+        "restaurantName": "Tender Greens",
+        "mealId": "chipotle-bbq-chicken-salad",
+        "mealName": "Chipotle BBQ Chicken Salad",
+        "loggedAtISO": "2026-03-18T06:22:27.575Z",
+        "nutrition": {
+          "calories": 480,
+          "proteinG": 30,
+          "carbsG": 54,
+          "fatG": 16
+        },
+        "nutritionEstimated": true
+      }
+    ]
   }
 ]

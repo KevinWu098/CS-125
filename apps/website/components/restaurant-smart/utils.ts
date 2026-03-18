@@ -1,13 +1,29 @@
 import type { RestaurantSchema } from "@packages/types";
 
-import { GLUTEN_FREE_KEYWORDS, VEGAN_KEYWORDS, VEGETARIAN_KEYWORDS } from "./constants";
-import type { DietaryKey, UserRecord } from "./types";
+import {
+  DEFAULT_NUTRITION_GOALS,
+  GLUTEN_FREE_KEYWORDS,
+  VEGAN_KEYWORDS,
+  VEGETARIAN_KEYWORDS,
+} from "./constants";
+import type { DietaryKey, NutritionGoals, UserRecord } from "./types";
+
+export function normalizeNutritionGoals(nutritionGoals?: Partial<NutritionGoals>): NutritionGoals {
+  return {
+    calories: nutritionGoals?.calories ?? DEFAULT_NUTRITION_GOALS.calories,
+    proteinG: nutritionGoals?.proteinG ?? DEFAULT_NUTRITION_GOALS.proteinG,
+    carbsG: nutritionGoals?.carbsG ?? DEFAULT_NUTRITION_GOALS.carbsG,
+    fatG: nutritionGoals?.fatG ?? DEFAULT_NUTRITION_GOALS.fatG,
+  };
+}
 
 export function normalizeProfileRecord(profile: UserRecord): UserRecord {
   return {
     ...profile,
     ratings: profile.ratings,
     mealRatings: profile.mealRatings,
+    nutritionGoals: normalizeNutritionGoals(profile.nutritionGoals),
+    mealHistory: profile.mealHistory,
   };
 }
 

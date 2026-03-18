@@ -6,6 +6,11 @@ export type RawRestaurant = {
   description?: string;
   cuisine?: string[];
   priceTier?: string;
+  rating?: {
+    average?: number;
+    count?: number;
+    source?: string;
+  };
   location?: {
     address?: string;
     city?: string;
@@ -19,12 +24,32 @@ export type RawRestaurant = {
     open?: string;
     close?: string;
   }>;
+  dietarySupport?: {
+    vegan?: boolean;
+    vegetarian?: boolean;
+    glutenFree?: boolean;
+    dairyFree?: boolean;
+    halal?: boolean;
+    kosher?: boolean;
+    nutFree?: boolean;
+  };
   menu?: Array<{
     id?: string;
     name?: string;
     description?: string;
     priceUSD?: number | null;
     category?: string;
+    tags?: string[];
+    allergens?: string[];
+    nutrition?: {
+      calories?: number;
+      proteinG?: number;
+      carbsG?: number;
+      fatG?: number;
+      fiberG?: number;
+      sugarG?: number;
+      sodiumMg?: number;
+    };
   }>;
 };
 
@@ -41,6 +66,31 @@ export type DietaryKey =
 
 export type SortKey = "recommended" | "distance" | "rating" | "price" | "name";
 
+export type NutritionGoals = {
+  calories: number;
+  proteinG: number;
+  carbsG: number;
+  fatG: number;
+};
+
+export type MealNutrition = {
+  calories: number;
+  proteinG: number;
+  carbsG: number;
+  fatG: number;
+};
+
+export type MealHistoryEntry = {
+  id: string;
+  restaurantId: string;
+  restaurantName: string;
+  mealId: string;
+  mealName: string;
+  loggedAtISO: string;
+  nutrition: MealNutrition;
+  nutritionEstimated: boolean;
+};
+
 export type UserRecord = {
   userId: string;
   createdAtISO: string;
@@ -48,6 +98,8 @@ export type UserRecord = {
   loginCount: number;
   ratings: Record<string, number>;
   mealRatings: Record<string, number>;
+  nutritionGoals: NutritionGoals;
+  mealHistory: MealHistoryEntry[];
 };
 
 export type UserLocation = {

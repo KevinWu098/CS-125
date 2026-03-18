@@ -2,8 +2,9 @@
 
 import "leaflet/dist/leaflet.css";
 
-import { LocateFixed, Search, TrendingUp, UserRound } from "lucide-react";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { LocateFixed, Search, TrendingUp } from "lucide-react";
+import Link from "next/link";
+import React, { useCallback, useEffect, useState } from "react";
 
 import {
   allDietary,
@@ -17,29 +18,30 @@ import {
   DEFAULT_MAX_MEAL_PRICE,
 } from "@/components/restaurant-smart/data";
 import { OpenStreetMapPanel } from "@/components/restaurant-smart/OpenStreetMapPanel";
-import { rankRestaurants } from "@/components/restaurant-smart/ranking";
 import { RestaurantCard } from "@/components/restaurant-smart/RestaurantCard";
 import type {
   DietaryKey,
+  RankedRestaurant,
   SortKey,
   UserLocation,
   UserRecord,
 } from "@/components/restaurant-smart/types";
 import { normalizeProfileRecord, toMealKey } from "@/components/restaurant-smart/utils";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Popover,
-  PopoverContent,
-  PopoverDescription,
-  PopoverHeader,
-  PopoverTitle,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import { Slider } from "@/components/ui/slider";
+
+type ProfileApiResponse = {
+  error?: string;
+  user?: UserRecord;
+};
+
+type SearchApiResponse = {
+  error?: string;
+  results?: RankedRestaurant[];
+};
 
 export default function SearchResultsPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -53,14 +55,14 @@ export default function SearchResultsPage() {
   const [maxDistanceMiles, setMaxDistanceMiles] = useState(DEFAULT_MAX_DISTANCE_MILES);
   const [sortBy, setSortBy] = useState<SortKey>("recommended");
 
-  const [userIdInput, setUserIdInput] = useState("local-foodie");
   const [profile, setProfile] = useState<UserRecord | null>(null);
-  const [profileStatus, setProfileStatus] = useState<"idle" | "loading" | "ready" | "error">(
-    "idle",
-  );
   const [profileError, setProfileError] = useState<string | null>(null);
   const [pendingRatingRestaurantId, setPendingRatingRestaurantId] = useState<string | null>(null);
-  const [pendingMealRatingKey, setPendingMealRatingKey] = useState<string | null>(null);
+  const [pendingLoggedMealKey, setPendingLoggedMealKey] = useState<string | null>(null);
+
+  const [rankedRestaurants, setRankedRestaurants] = useState<RankedRestaurant[]>([]);
+  const [isSearchLoading, setIsSearchLoading] = useState(false);
+  const [searchError, setSearchError] = useState<string | null>(null);
 
   const [userLocation, setUserLocation] = useState<UserLocation>(DEFAULT_LOCATION);
   const [latInput, setLatInput] = useState(DEFAULT_LOCATION.lat.toFixed(6));
@@ -78,14 +80,20 @@ export default function SearchResultsPage() {
     }
   }, []);
 
+  const getStoredUserId = useCallback(() => {
+    if (typeof window === "undefined") {
+      return "local-foodie";
+    }
+
+    return window.localStorage.getItem("restaurant.profile.userId") || "local-foodie";
+  }, []);
+
   const loadOrCreateProfile = useCallback(async (requestedUserId: string) => {
     const normalizedUserId = requestedUserId.trim().toLowerCase();
     if (!normalizedUserId) {
       setProfileError("User ID is required.");
       return null;
     }
-
-    setProfileStatus("loading");
     setProfileError(null);
 
     try {
@@ -97,26 +105,21 @@ export default function SearchResultsPage() {
         body: JSON.stringify({ userId: normalizedUserId }),
       });
 
-      const payload = (await response.json()) as {
-        error?: string;
-        user?: UserRecord;
-      };
+      const payload = (await response.json()) as ProfileApiResponse;
 
       if (!response.ok || !payload.user) {
         throw new Error(payload.error || "Unable to load profile");
       }
 
-      setProfile(normalizeProfileRecord(payload.user));
-      setProfileStatus("ready");
-      setUserIdInput(normalizedUserId);
+      const normalizedProfile = normalizeProfileRecord(payload.user);
+      setProfile(normalizedProfile);
 
       if (typeof window !== "undefined") {
         window.localStorage.setItem("restaurant.profile.userId", normalizedUserId);
       }
 
-      return payload.user;
+      return normalizedProfile;
     } catch (error) {
-      setProfileStatus("error");
       setProfileError(error instanceof Error ? error.message : "Unable to load profile");
       return null;
     }
@@ -127,78 +130,159 @@ export default function SearchResultsPage() {
       return;
     }
 
-    const savedUserId = window.localStorage.getItem("restaurant.profile.userId") || "local-foodie";
-    setUserIdInput(savedUserId);
+    const savedUserId = getStoredUserId();
     void loadOrCreateProfile(savedUserId);
 
     const savedLocation = window.localStorage.getItem("restaurant.location");
-    if (savedLocation) {
-      try {
-        const parsed = JSON.parse(savedLocation) as UserLocation;
-        if (Number.isFinite(parsed.lat) && Number.isFinite(parsed.lng)) {
-          syncStoredLocation(parsed);
-        }
-      } catch {
-        syncStoredLocation(DEFAULT_LOCATION);
-      }
+    if (!savedLocation) {
+      return;
     }
-  }, [loadOrCreateProfile, syncStoredLocation]);
 
-  const rankedRestaurants = useMemo(
-    () =>
-      rankRestaurants({
-        maxDistanceMiles,
-        maxMealPrice,
-        mealSearchQuery,
-        minRating,
-        priceRange,
-        profile,
-        searchQuery,
-        selectedCuisines,
-        selectedDietary,
-        selectedMealCategories,
-        sortBy,
-        userLocation,
-      }),
-    [
-      maxDistanceMiles,
-      maxMealPrice,
-      mealSearchQuery,
-      minRating,
-      priceRange,
-      profile,
-      searchQuery,
-      selectedCuisines,
-      selectedDietary,
-      selectedMealCategories,
-      sortBy,
-      userLocation,
-    ],
+    try {
+      const parsed = JSON.parse(savedLocation) as UserLocation;
+      if (Number.isFinite(parsed.lat) && Number.isFinite(parsed.lng)) {
+        syncStoredLocation(parsed);
+      }
+    } catch {
+      syncStoredLocation(DEFAULT_LOCATION);
+    }
+  }, [getStoredUserId, loadOrCreateProfile, syncStoredLocation]);
+
+  useEffect(() => {
+    const abortController = new AbortController();
+
+    const runSearch = async () => {
+      setIsSearchLoading(true);
+      setSearchError(null);
+
+      try {
+        const response = await fetch("/api/search", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          signal: abortController.signal,
+          body: JSON.stringify({
+            searchQuery,
+            mealSearchQuery,
+            selectedCuisines,
+            selectedMealCategories,
+            selectedDietary,
+            priceRange,
+            minRating,
+            maxDistanceMiles,
+            maxMealPrice,
+            sortBy,
+            userLocation,
+            profile,
+          }),
+        });
+
+        const payload = (await response.json()) as SearchApiResponse;
+        if (!response.ok) {
+          throw new Error(payload.error || "Search failed");
+        }
+
+        setRankedRestaurants(payload.results || []);
+      } catch (error) {
+        if (abortController.signal.aborted) {
+          return;
+        }
+        setSearchError(error instanceof Error ? error.message : "Search failed");
+        setRankedRestaurants([]);
+      } finally {
+        if (!abortController.signal.aborted) {
+          setIsSearchLoading(false);
+        }
+      }
+    };
+
+    void runSearch();
+
+    return () => {
+      abortController.abort();
+    };
+  }, [
+    maxDistanceMiles,
+    maxMealPrice,
+    mealSearchQuery,
+    minRating,
+    priceRange,
+    profile,
+    searchQuery,
+    selectedCuisines,
+    selectedDietary,
+    selectedMealCategories,
+    sortBy,
+    userLocation,
+  ]);
+
+  const updateProfile = useCallback(
+    async (patch: Record<string, unknown>): Promise<UserRecord | null> => {
+      let activeProfile = profile;
+      if (!activeProfile) {
+        activeProfile = await loadOrCreateProfile(getStoredUserId());
+      }
+      if (!activeProfile) {
+        return null;
+      }
+
+      setProfileError(null);
+
+      try {
+        const response = await fetch("/api/user-profile", {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId: activeProfile.userId,
+            ...patch,
+          }),
+        });
+
+        const payload = (await response.json()) as ProfileApiResponse;
+        if (!response.ok || !payload.user) {
+          throw new Error(payload.error || "Unable to update profile");
+        }
+
+        const normalizedProfile = normalizeProfileRecord(payload.user);
+        setProfile(normalizedProfile);
+        return normalizedProfile;
+      } catch (error) {
+        setProfileError(error instanceof Error ? error.message : "Unable to update profile");
+        return null;
+      }
+    },
+    [getStoredUserId, loadOrCreateProfile, profile],
   );
 
-  const activeFilterCount =
-    selectedCuisines.length +
-    selectedMealCategories.length +
-    selectedDietary.length +
-    (mealSearchQuery.trim() ? 1 : 0) +
-    (maxMealPrice < DEFAULT_MAX_MEAL_PRICE ? 1 : 0) +
-    (priceRange[0] !== 1 || priceRange[1] !== 4 ? 1 : 0) +
-    (minRating > 0 ? 1 : 0) +
-    (maxDistanceMiles !== DEFAULT_MAX_DISTANCE_MILES ? 1 : 0);
+  const handleRateRestaurant = useCallback(
+    async (restaurantId: string, rating: number) => {
+      setPendingRatingRestaurantId(restaurantId);
+      await updateProfile({
+        action: "setRestaurantRating",
+        restaurantId,
+        rating,
+      });
+      setPendingRatingRestaurantId(null);
+    },
+    [updateProfile],
+  );
 
-  const profileInitials = (profile?.userId || userIdInput || "U").slice(0, 2).toUpperCase();
-
-  const clearAllFilters = () => {
-    setSelectedCuisines([]);
-    setSelectedMealCategories([]);
-    setSelectedDietary([]);
-    setPriceRange([1, 4]);
-    setMaxMealPrice(DEFAULT_MAX_MEAL_PRICE);
-    setMinRating(0);
-    setMaxDistanceMiles(DEFAULT_MAX_DISTANCE_MILES);
-    setSearchQuery("");
-    setMealSearchQuery("");
-  };
+  const handleLogMeal = useCallback(
+    async (restaurantId: string, mealId: string) => {
+      const mealKey = toMealKey(restaurantId, mealId);
+      setPendingLoggedMealKey(mealKey);
+      await updateProfile({
+        action: "logMeal",
+        restaurantId,
+        mealId,
+      });
+      setPendingLoggedMealKey(null);
+    },
+    [updateProfile],
+  );
 
   const applyManualLocation = () => {
     const parsedLat = Number.parseFloat(latInput);
@@ -248,75 +332,27 @@ export default function SearchResultsPage() {
     );
   };
 
-  const updateProfileRating = useCallback(
-    async (ratingInput: { restaurantId: string; rating: number; mealId?: string }) => {
-      let activeProfile = profile;
+  const clearAllFilters = () => {
+    setSelectedCuisines([]);
+    setSelectedMealCategories([]);
+    setSelectedDietary([]);
+    setPriceRange([1, 4]);
+    setMaxMealPrice(DEFAULT_MAX_MEAL_PRICE);
+    setMinRating(0);
+    setMaxDistanceMiles(DEFAULT_MAX_DISTANCE_MILES);
+    setSearchQuery("");
+    setMealSearchQuery("");
+  };
 
-      if (!activeProfile) {
-        const loadedProfile = await loadOrCreateProfile(userIdInput || "local-foodie");
-        if (!loadedProfile) {
-          return;
-        }
-        activeProfile = loadedProfile;
-      }
-
-      if (ratingInput.mealId) {
-        setPendingMealRatingKey(toMealKey(ratingInput.restaurantId, ratingInput.mealId));
-      } else {
-        setPendingRatingRestaurantId(ratingInput.restaurantId);
-      }
-      setProfileError(null);
-
-      try {
-        const response = await fetch("/api/user-profile", {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            userId: activeProfile.userId,
-            restaurantId: ratingInput.restaurantId,
-            mealId: ratingInput.mealId,
-            rating: ratingInput.rating,
-          }),
-        });
-
-        const responseBody = (await response.json()) as {
-          error?: string;
-          user?: UserRecord;
-        };
-
-        if (!response.ok || !responseBody.user) {
-          throw new Error(responseBody.error || "Unable to save rating");
-        }
-
-        setProfile(normalizeProfileRecord(responseBody.user));
-      } catch (error) {
-        setProfileError(error instanceof Error ? error.message : "Unable to save rating");
-      } finally {
-        if (ratingInput.mealId) {
-          setPendingMealRatingKey(null);
-        } else {
-          setPendingRatingRestaurantId(null);
-        }
-      }
-    },
-    [loadOrCreateProfile, profile, userIdInput],
-  );
-
-  const handleRateRestaurant = useCallback(
-    async (restaurantId: string, rating: number) => {
-      await updateProfileRating({ restaurantId, rating });
-    },
-    [updateProfileRating],
-  );
-
-  const handleRateMeal = useCallback(
-    async (restaurantId: string, mealId: string, rating: number) => {
-      await updateProfileRating({ restaurantId, mealId, rating });
-    },
-    [updateProfileRating],
-  );
+  const activeFilterCount =
+    selectedCuisines.length +
+    selectedMealCategories.length +
+    selectedDietary.length +
+    (mealSearchQuery.trim() ? 1 : 0) +
+    (maxMealPrice < DEFAULT_MAX_MEAL_PRICE ? 1 : 0) +
+    (priceRange[0] !== 1 || priceRange[1] !== 4 ? 1 : 0) +
+    (minRating > 0 ? 1 : 0) +
+    (maxDistanceMiles !== DEFAULT_MAX_DISTANCE_MILES ? 1 : 0);
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_#fff7ed,_#f8fafc_50%,_#f1f5f9)]">
@@ -329,60 +365,31 @@ export default function SearchResultsPage() {
             <p className="mt-1 text-sm text-slate-600">Filter-first search with live map results</p>
           </div>
 
-          <Popover>
-            <PopoverTrigger asChild>
-              <button
-                type="button"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-2 py-1 text-sm shadow-sm transition hover:border-slate-300"
-              >
-                <Avatar size="sm">
-                  <AvatarFallback className="bg-slate-900 text-white">
-                    {profileInitials}
-                  </AvatarFallback>
-                </Avatar>
-                <span className="hidden pr-1 text-xs font-medium text-slate-700 sm:block">
-                  {profile?.userId || "Sign in"}
-                </span>
-              </button>
-            </PopoverTrigger>
-            <PopoverContent align="end" className="w-80 border-slate-200">
-              <PopoverHeader>
-                <div className="flex items-center gap-2">
-                  <UserRound className="size-4 text-slate-500" />
-                  <PopoverTitle>User Profile</PopoverTitle>
-                </div>
-                <PopoverDescription>
-                  Save ratings with a profile to personalize ranking.
-                </PopoverDescription>
-              </PopoverHeader>
-
-              <div className="mt-4 space-y-3">
-                <input
-                  value={userIdInput}
-                  onChange={(event) => setUserIdInput(event.target.value)}
-                  placeholder="your-user-id"
-                  className="h-10 w-full rounded-md border border-slate-300 px-3 text-sm transition outline-none focus:border-rose-500"
-                />
-                <Button
-                  onClick={() => void loadOrCreateProfile(userIdInput)}
-                  disabled={profileStatus === "loading"}
-                  className="h-10 w-full bg-slate-900 text-white hover:bg-slate-800"
-                >
-                  {profileStatus === "loading" ? "Loading..." : "Load profile"}
-                </Button>
-                <p className="text-xs text-slate-500">
-                  {profile
-                    ? `${Object.keys(profile.ratings).length} restaurant ratings • ${Object.keys(profile.mealRatings).length} meal ratings`
-                    : "No profile loaded yet."}
-                </p>
-                {profileError && <p className="text-xs text-rose-600">{profileError}</p>}
-              </div>
-            </PopoverContent>
-          </Popover>
+          <nav className="flex items-center gap-2 rounded-md border border-slate-200 bg-white p-1">
+            <Link
+              href="/"
+              className="rounded bg-slate-900 px-3 py-1.5 text-sm font-medium text-white transition"
+              aria-current="page"
+            >
+              Search
+            </Link>
+            <Link
+              href="/profile"
+              className="rounded px-3 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
+            >
+              Profile
+            </Link>
+          </nav>
         </div>
       </header>
 
       <main className="mx-auto max-w-[1500px] space-y-4 px-4 py-5 sm:px-6">
+        {profileError && (
+          <Card className="border-rose-200 bg-rose-50">
+            <CardContent className="p-3 text-sm text-rose-700">{profileError}</CardContent>
+          </Card>
+        )}
+
         <Card className="border-slate-200 bg-white shadow-sm">
           <CardContent className="space-y-5 p-4">
             <div className="flex items-center justify-between gap-3">
@@ -709,7 +716,14 @@ export default function SearchResultsPage() {
                       for <span className="font-medium text-slate-900">"{searchQuery}"</span>
                     </span>
                   )}
+                  {isSearchLoading && <span className="text-slate-400">Updating...</span>}
                 </div>
+
+                {searchError && (
+                  <div className="mb-4 rounded-md border border-rose-200 bg-rose-50 p-3 text-sm text-rose-700">
+                    {searchError}
+                  </div>
+                )}
 
                 {rankedRestaurants.length > 0 ? (
                   <div className="max-h-[calc(100vh-13rem)] space-y-4 overflow-y-auto pr-1">
@@ -720,12 +734,12 @@ export default function SearchResultsPage() {
                         rank={index + 1}
                         profile={profile}
                         pendingRatingRestaurantId={pendingRatingRestaurantId}
-                        pendingMealRatingKey={pendingMealRatingKey}
+                        pendingLoggedMealKey={pendingLoggedMealKey}
                         onRate={(restaurantId, rating) => {
                           void handleRateRestaurant(restaurantId, rating);
                         }}
-                        onRateMeal={(restaurantId, mealId, rating) => {
-                          void handleRateMeal(restaurantId, mealId, rating);
+                        onMarkMealHad={(restaurantId, mealId) => {
+                          void handleLogMeal(restaurantId, mealId);
                         }}
                       />
                     ))}
