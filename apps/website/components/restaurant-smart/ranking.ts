@@ -236,9 +236,6 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
         return null;
       }
 
-      const restaurantSupportsDietary =
-        selectedDietary.length === 0 ||
-        selectedDietary.every((dietary) => Boolean(restaurant.dietarySupport?.[dietary]));
       const hasMealFilters =
         selectedDietary.length > 0 ||
         selectedMealCategories.length > 0 ||
@@ -265,16 +262,12 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
           }
 
           const dietaryMatches = selectedDietary.filter((dietary) =>
-            mealDietaryMatch(meal, dietary, restaurant),
+            mealDietaryMatch(meal, dietary),
           );
           const matchesAllSelectedDietary =
             selectedDietary.length === 0 || dietaryMatches.length === selectedDietary.length;
 
-          if (
-            selectedDietary.length > 0 &&
-            !restaurantSupportsDietary &&
-            !matchesAllSelectedDietary
-          ) {
+          if (selectedDietary.length > 0 && !matchesAllSelectedDietary) {
             return null;
           }
 

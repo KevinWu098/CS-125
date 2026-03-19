@@ -98,6 +98,11 @@ const logMealSchema = requestSchema.extend({
   loggedAtISO: z.iso.datetime().optional(),
 });
 
+const removeMealHistoryEntrySchema = requestSchema.extend({
+  action: z.literal("removeMealHistoryEntry"),
+  entryId: z.string().trim().min(1),
+});
+
 const legacyRatingSchema = requestSchema.extend({
   restaurantId: z.string().trim().min(1).max(120),
   mealId: z.string().trim().min(1).max(160).optional(),
@@ -110,6 +115,7 @@ const actionPatchSchema = z.discriminatedUnion("action", [
   setNutritionGoalsSchema,
   setDietaryRestrictionsSchema,
   logMealSchema,
+  removeMealHistoryEntrySchema,
 ]);
 
 const usersFilePath = path.join(process.cwd(), "data", "users.json");
@@ -347,6 +353,30 @@ export async function PATCH(request: Request) {
           }
 
           user.mealHistory = [entry, ...user.mealHistory].slice(0, MAX_MEAL_HISTORY_ITEMS);
+          break;
+        }
+        case "removeMealHistoryEntry": {
+          const removedEntry = user.mealHistory.find((entry) => entry.id === parsedData.entryId);
+          if (!removedEntry) {
+            return NextResponse.json(
+              {
+                error: "Meal history entry not found",
+              },
+              { status: 404 },
+            );
+          }
+
+          user.mealHistory = user.mealHistory.filter((entry) => entry.id !== parsedData.entryId);
+
+          const mealKey = `${removedEntry.restaurantId}::${removedEntry.mealId}`;
+          const stillHasMealHistory = user.mealHistory.some(
+            (entry) =>
+              entry.restaurantId === removedEntry.restaurantId &&
+              entry.mealId === removedEntry.mealId,
+          );
+          if (!stillHasMealHistory) {
+            delete user.mealRatings[mealKey];
+          }
           break;
         }
       }

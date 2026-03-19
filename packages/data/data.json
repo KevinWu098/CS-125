@@ -66,6 +66,15 @@
           "carbsG": 52,
           "fatG": 22,
           "sodiumMg": 960
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -80,6 +89,15 @@
           "carbsG": 80,
           "fatG": 28,
           "sodiumMg": 820
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -94,6 +112,15 @@
           "carbsG": 48,
           "fatG": 28,
           "sodiumMg": 1040
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -108,6 +135,15 @@
           "carbsG": 50,
           "fatG": 30,
           "sodiumMg": 1080
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -122,6 +158,15 @@
           "carbsG": 44,
           "fatG": 24,
           "sodiumMg": 880
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -136,6 +181,15 @@
           "carbsG": 46,
           "fatG": 32,
           "sodiumMg": 1100
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -150,6 +204,15 @@
           "carbsG": 46,
           "fatG": 18,
           "sodiumMg": 920
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -164,6 +227,15 @@
           "carbsG": 48,
           "fatG": 30,
           "sodiumMg": 1020
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -178,6 +250,15 @@
           "carbsG": 46,
           "fatG": 28,
           "sodiumMg": 980
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -192,6 +273,15 @@
           "carbsG": 62,
           "fatG": 22,
           "sodiumMg": 760
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -206,6 +296,15 @@
           "carbsG": 44,
           "fatG": 18,
           "sodiumMg": 900
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       }
     ],
@@ -284,6 +383,15 @@
           "carbsG": 55,
           "fatG": 33,
           "sodiumMg": 1050
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -298,6 +406,15 @@
           "carbsG": 62,
           "fatG": 29,
           "sodiumMg": 1180
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -312,6 +429,15 @@
           "carbsG": 40,
           "fatG": 30,
           "sodiumMg": 760
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -326,6 +452,15 @@
           "carbsG": 82,
           "fatG": 45,
           "sodiumMg": 1430
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       }
     ],
@@ -403,6 +538,15 @@
           "carbsG": 78,
           "fatG": 36,
           "sodiumMg": 1480
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -417,6 +561,15 @@
           "carbsG": 80,
           "fatG": 40,
           "sodiumMg": 1680
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -431,6 +584,15 @@
           "carbsG": 78,
           "fatG": 24,
           "sodiumMg": 1020
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -445,6 +607,15 @@
           "carbsG": 60,
           "fatG": 26,
           "sodiumMg": 1100
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -459,6 +630,15 @@
           "carbsG": 62,
           "fatG": 22,
           "sodiumMg": 960
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -473,6 +653,15 @@
           "carbsG": 62,
           "fatG": 34,
           "sodiumMg": 1400
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -487,6 +676,15 @@
           "carbsG": 68,
           "fatG": 26,
           "sodiumMg": 1200
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       }
     ],
@@ -562,6 +760,15 @@
           "carbsG": 44,
           "fatG": 24,
           "sodiumMg": 820
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -576,6 +783,15 @@
           "carbsG": 42,
           "fatG": 12,
           "sodiumMg": 480
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -590,6 +806,15 @@
           "carbsG": 48,
           "fatG": 22,
           "sodiumMg": 760
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -604,6 +829,15 @@
           "carbsG": 42,
           "fatG": 16,
           "sodiumMg": 620
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -618,6 +852,15 @@
           "carbsG": 44,
           "fatG": 14,
           "sodiumMg": 500
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -632,6 +875,15 @@
           "carbsG": 52,
           "fatG": 14,
           "sodiumMg": 440
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -646,6 +898,15 @@
           "carbsG": 70,
           "fatG": 18,
           "sodiumMg": 1480
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -660,6 +921,15 @@
           "carbsG": 68,
           "fatG": 16,
           "sodiumMg": 1320
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -674,6 +944,15 @@
           "carbsG": 68,
           "fatG": 18,
           "sodiumMg": 1380
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -688,6 +967,15 @@
           "carbsG": 66,
           "fatG": 18,
           "sodiumMg": 1340
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -702,6 +990,15 @@
           "carbsG": 66,
           "fatG": 14,
           "sodiumMg": 1200
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -716,6 +1013,15 @@
           "carbsG": 68,
           "fatG": 20,
           "sodiumMg": 1420
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -730,6 +1036,15 @@
           "carbsG": 72,
           "fatG": 22,
           "sodiumMg": 1350
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -744,6 +1059,15 @@
           "carbsG": 72,
           "fatG": 18,
           "sodiumMg": 1260
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -758,6 +1082,15 @@
           "carbsG": 70,
           "fatG": 14,
           "sodiumMg": 1100
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -772,6 +1105,15 @@
           "carbsG": 78,
           "fatG": 18,
           "sodiumMg": 1080
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -786,6 +1128,15 @@
           "carbsG": 78,
           "fatG": 20,
           "sodiumMg": 1100
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -800,6 +1151,15 @@
           "carbsG": 78,
           "fatG": 22,
           "sodiumMg": 1060
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -814,6 +1174,15 @@
           "carbsG": 78,
           "fatG": 18,
           "sodiumMg": 1080
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -828,6 +1197,15 @@
           "carbsG": 74,
           "fatG": 20,
           "sodiumMg": 1140
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -842,6 +1220,15 @@
           "carbsG": 76,
           "fatG": 20,
           "sodiumMg": 1160
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -856,6 +1243,15 @@
           "carbsG": 76,
           "fatG": 20,
           "sodiumMg": 1200
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -870,6 +1266,15 @@
           "carbsG": 36,
           "fatG": 14,
           "sodiumMg": 640
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -884,6 +1289,15 @@
           "carbsG": 36,
           "fatG": 16,
           "sodiumMg": 680
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -898,6 +1312,15 @@
           "carbsG": 36,
           "fatG": 12,
           "sodiumMg": 600
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -912,6 +1335,15 @@
           "carbsG": 38,
           "fatG": 10,
           "sodiumMg": 540
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -926,6 +1358,15 @@
           "carbsG": 38,
           "fatG": 8,
           "sodiumMg": 500
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -940,6 +1381,15 @@
           "carbsG": 32,
           "fatG": 12,
           "sodiumMg": 560
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -954,6 +1404,15 @@
           "carbsG": 32,
           "fatG": 14,
           "sodiumMg": 580
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -968,6 +1427,15 @@
           "carbsG": 34,
           "fatG": 8,
           "sodiumMg": 480
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -982,6 +1450,15 @@
           "carbsG": 34,
           "fatG": 14,
           "sodiumMg": 600
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -996,6 +1473,15 @@
           "carbsG": 34,
           "fatG": 12,
           "sodiumMg": 580
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1010,6 +1496,15 @@
           "carbsG": 34,
           "fatG": 14,
           "sodiumMg": 620
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1024,6 +1519,15 @@
           "carbsG": 32,
           "fatG": 10,
           "sodiumMg": 560
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1038,6 +1542,15 @@
           "carbsG": 32,
           "fatG": 8,
           "sodiumMg": 500
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -1052,6 +1565,15 @@
           "carbsG": 36,
           "fatG": 14,
           "sodiumMg": 640
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1066,6 +1588,15 @@
           "carbsG": 36,
           "fatG": 16,
           "sodiumMg": 760
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1080,6 +1611,15 @@
           "carbsG": 34,
           "fatG": 12,
           "sodiumMg": 680
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1094,6 +1634,15 @@
           "carbsG": 36,
           "fatG": 14,
           "sodiumMg": 700
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1108,6 +1657,15 @@
           "carbsG": 34,
           "fatG": 8,
           "sodiumMg": 920
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1122,6 +1680,15 @@
           "carbsG": 20,
           "fatG": 6,
           "sodiumMg": 1100
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1137,6 +1704,15 @@
           "fatG": 0,
           "sugarG": 39,
           "sodiumMg": 45
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1152,6 +1728,15 @@
           "fatG": 0,
           "sugarG": 38,
           "sodiumMg": 65
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1166,6 +1751,15 @@
           "carbsG": 0,
           "fatG": 0,
           "sodiumMg": 5
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1180,6 +1774,15 @@
           "carbsG": 0,
           "fatG": 0,
           "sodiumMg": 5
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1194,6 +1797,15 @@
           "carbsG": 0,
           "fatG": 0,
           "sodiumMg": 10
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1208,6 +1820,15 @@
           "carbsG": 0,
           "fatG": 0,
           "sodiumMg": 5
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1222,6 +1843,15 @@
           "carbsG": 0,
           "fatG": 0,
           "sodiumMg": 5
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1236,6 +1866,15 @@
           "carbsG": 11,
           "fatG": 0,
           "sodiumMg": 10
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1250,6 +1889,15 @@
           "carbsG": 14,
           "fatG": 0,
           "sodiumMg": 14
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1264,6 +1912,15 @@
           "carbsG": 12,
           "fatG": 0,
           "sodiumMg": 8
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1278,6 +1935,15 @@
           "carbsG": 11,
           "fatG": 0,
           "sodiumMg": 10
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1292,6 +1958,15 @@
           "carbsG": 5,
           "fatG": 0,
           "sodiumMg": 10
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1306,6 +1981,15 @@
           "carbsG": 20,
           "fatG": 8,
           "sodiumMg": 120
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1320,6 +2004,15 @@
           "carbsG": 34,
           "fatG": 4,
           "sodiumMg": 260
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1334,6 +2027,15 @@
           "carbsG": 28,
           "fatG": 10,
           "sodiumMg": 480
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1348,6 +2050,15 @@
           "carbsG": 34,
           "fatG": 8,
           "sodiumMg": 80
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -1362,6 +2073,15 @@
           "carbsG": 42,
           "fatG": 8,
           "sodiumMg": 200
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1376,6 +2096,15 @@
           "carbsG": 44,
           "fatG": 10,
           "sodiumMg": 200
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1390,6 +2119,15 @@
           "carbsG": 38,
           "fatG": 8,
           "sodiumMg": 100
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -1405,6 +2143,15 @@
           "fatG": 0,
           "fiberG": 4,
           "sodiumMg": 50
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -1419,6 +2166,15 @@
           "carbsG": 36,
           "fatG": 3,
           "sodiumMg": 40
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1433,6 +2189,15 @@
           "carbsG": 50,
           "fatG": 4,
           "sodiumMg": 120
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -1448,6 +2213,15 @@
           "fatG": 0,
           "fiberG": 2,
           "sodiumMg": 20
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1463,6 +2237,15 @@
           "fatG": 1,
           "fiberG": 3,
           "sodiumMg": 20
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       }
     ],
@@ -1538,6 +2321,15 @@
           "carbsG": 8,
           "fatG": 30,
           "sodiumMg": 620
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1552,6 +2344,15 @@
           "carbsG": 4,
           "fatG": 32,
           "sodiumMg": 580
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1566,6 +2367,15 @@
           "carbsG": 12,
           "fatG": 28,
           "sodiumMg": 760
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1581,6 +2391,15 @@
           "fatG": 30,
           "sugarG": 10,
           "sodiumMg": 700
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1595,6 +2414,15 @@
           "carbsG": 10,
           "fatG": 38,
           "sodiumMg": 880
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1609,6 +2437,15 @@
           "carbsG": 12,
           "fatG": 36,
           "sodiumMg": 820
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1623,6 +2460,15 @@
           "carbsG": 4,
           "fatG": 44,
           "sodiumMg": 540
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -1637,6 +2483,15 @@
           "carbsG": 14,
           "fatG": 44,
           "sodiumMg": 860
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1651,6 +2506,15 @@
           "carbsG": 4,
           "fatG": 42,
           "sodiumMg": 500
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1665,6 +2529,15 @@
           "carbsG": 4,
           "fatG": 42,
           "sodiumMg": 480
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1679,6 +2552,15 @@
           "carbsG": 4,
           "fatG": 42,
           "sodiumMg": 620
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1693,6 +2575,15 @@
           "carbsG": 8,
           "fatG": 48,
           "sodiumMg": 780
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1707,6 +2598,15 @@
           "carbsG": 4,
           "fatG": 56,
           "sodiumMg": 560
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1721,6 +2621,15 @@
           "carbsG": 10,
           "fatG": 50,
           "sodiumMg": 820
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1735,6 +2644,15 @@
           "carbsG": 4,
           "fatG": 48,
           "sodiumMg": 540
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1749,6 +2667,15 @@
           "carbsG": 8,
           "fatG": 38,
           "sodiumMg": 720
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1763,6 +2690,15 @@
           "carbsG": 6,
           "fatG": 38,
           "sodiumMg": 640
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1777,6 +2713,15 @@
           "carbsG": 8,
           "fatG": 36,
           "sodiumMg": 600
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1791,6 +2736,15 @@
           "carbsG": 4,
           "fatG": 40,
           "sodiumMg": 580
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1805,6 +2759,15 @@
           "carbsG": 8,
           "fatG": 38,
           "sodiumMg": 760
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1819,6 +2782,15 @@
           "carbsG": 2,
           "fatG": 38,
           "sodiumMg": 460
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1834,6 +2806,15 @@
           "fatG": 30,
           "sugarG": 10,
           "sodiumMg": 680
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1848,6 +2829,15 @@
           "carbsG": 12,
           "fatG": 32,
           "sodiumMg": 700
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1862,6 +2852,15 @@
           "carbsG": 4,
           "fatG": 34,
           "sodiumMg": 520
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1876,6 +2875,15 @@
           "carbsG": 14,
           "fatG": 26,
           "sodiumMg": 820
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1890,6 +2898,15 @@
           "carbsG": 12,
           "fatG": 36,
           "sodiumMg": 940
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1904,6 +2921,15 @@
           "carbsG": 10,
           "fatG": 34,
           "sodiumMg": 820
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1918,6 +2944,15 @@
           "carbsG": 14,
           "fatG": 36,
           "sodiumMg": 760
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1932,6 +2967,15 @@
           "carbsG": 8,
           "fatG": 20,
           "sodiumMg": 640
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1947,6 +2991,15 @@
           "fatG": 20,
           "sugarG": 10,
           "sodiumMg": 600
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1961,6 +3014,15 @@
           "carbsG": 10,
           "fatG": 20,
           "sodiumMg": 800
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1975,6 +3037,15 @@
           "carbsG": 6,
           "fatG": 20,
           "sodiumMg": 720
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -1989,6 +3060,15 @@
           "carbsG": 8,
           "fatG": 26,
           "sodiumMg": 700
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -2003,6 +3083,15 @@
           "carbsG": 10,
           "fatG": 16,
           "sodiumMg": 520
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -2017,6 +3106,15 @@
           "carbsG": 18,
           "fatG": 18,
           "sodiumMg": 860
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -2031,6 +3129,15 @@
           "carbsG": 14,
           "fatG": 16,
           "sodiumMg": 740
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -2045,6 +3152,15 @@
           "carbsG": 2,
           "fatG": 6,
           "sodiumMg": 360
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -2059,6 +3175,15 @@
           "carbsG": 4,
           "fatG": 11,
           "sodiumMg": 820
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       }
     ],
@@ -2091,7 +3216,7 @@
         "id": "edamame",
         "name": "Edamame",
         "description": "Soy beans and truffle salt.",
-        "priceUSD": 5.0,
+        "priceUSD": 5,
         "category": "Appetizers",
         "nutrition": {
           "calories": 120,
@@ -2100,13 +3225,22 @@
           "fatG": 5,
           "fiberG": 4,
           "sodiumMg": 380
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "spicy-garlic-edamame",
         "name": "Spicy Garlic Edamame",
         "description": "Sauteed soybeans w/ fresh garlic, house made spicy sauce & sesame seeds.",
-        "priceUSD": 7.0,
+        "priceUSD": 7,
         "category": "Appetizers",
         "nutrition": {
           "calories": 160,
@@ -2115,13 +3249,22 @@
           "fatG": 8,
           "fiberG": 4,
           "sodiumMg": 520
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "creamy-broccolini",
         "name": "Creamy Broccolini",
         "description": "Broccolini with creamy sesame sauce.",
-        "priceUSD": 8.0,
+        "priceUSD": 8,
         "category": "Appetizers",
         "nutrition": {
           "calories": 180,
@@ -2130,13 +3273,22 @@
           "fatG": 12,
           "fiberG": 3,
           "sodiumMg": 340
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "fried-gyoza-6pc",
         "name": "Fried Gyoza (6pc)",
         "description": "A Bestseller! juicy pork dumplings.",
-        "priceUSD": 8.0,
+        "priceUSD": 8,
         "category": "Appetizers",
         "nutrition": {
           "calories": 300,
@@ -2144,13 +3296,22 @@
           "carbsG": 30,
           "fatG": 14,
           "sodiumMg": 640
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "grilled-gyoza-6pc",
         "name": "Grilled Gyoza (6pc)",
         "description": "A Bestseller! juicy pork dumplings.",
-        "priceUSD": 8.0,
+        "priceUSD": 8,
         "category": "Appetizers",
         "nutrition": {
           "calories": 260,
@@ -2158,13 +3319,22 @@
           "carbsG": 26,
           "fatG": 10,
           "sodiumMg": 580
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "impossible-bun",
         "name": "Impossible Bun",
         "description": "Vegetarian. Panko fried impossible plant meat, spicy mustard, shredded cabbage and katsu sauce.",
-        "priceUSD": 8.0,
+        "priceUSD": 8,
         "category": "Buns",
         "nutrition": {
           "calories": 320,
@@ -2172,13 +3342,22 @@
           "carbsG": 36,
           "fatG": 12,
           "sodiumMg": 680
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "spicy-chicken-bun",
         "name": "Spicy Chicken Bun",
         "description": "Spicy Chicken Karaage, ghost pepper Kimchi, green onion and teriyaki sauce.",
-        "priceUSD": 8.0,
+        "priceUSD": 8,
         "category": "Buns",
         "nutrition": {
           "calories": 340,
@@ -2186,13 +3365,22 @@
           "carbsG": 36,
           "fatG": 14,
           "sodiumMg": 720
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "pork-bun",
         "name": "Pork Bun",
         "description": "Marinated pork belly with pickled onion, sesame Aioli and green onion.",
-        "priceUSD": 8.0,
+        "priceUSD": 8,
         "category": "Buns",
         "nutrition": {
           "calories": 360,
@@ -2200,13 +3388,22 @@
           "carbsG": 36,
           "fatG": 16,
           "sodiumMg": 640
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "crispy-chicken-karaage",
         "name": "Crispy Chicken Karaage",
         "description": "Japanese style fried chicken and spicy Aioli sauce.",
-        "priceUSD": 9.0,
+        "priceUSD": 9,
         "category": "Appetizers",
         "nutrition": {
           "calories": 380,
@@ -2214,13 +3411,22 @@
           "carbsG": 22,
           "fatG": 22,
           "sodiumMg": 760
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "crispy-rice-with-spicy-tuna",
         "name": "Crispy Rice with Spicy Tuna",
         "description": "Spicy tuna, crispy rice, avocado, Jalapeños & eel sauce. served with ginger.",
-        "priceUSD": 10.0,
+        "priceUSD": 10,
         "category": "Appetizers",
         "nutrition": {
           "calories": 420,
@@ -2228,13 +3434,22 @@
           "carbsG": 42,
           "fatG": 18,
           "sodiumMg": 680
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "chicken-karaage-bowl",
         "name": "Chicken Karaage Bowl",
         "description": "Japanese style fried chicken, teriyaki sauce, spicy Aioli, green onion and red ginger over rice.",
-        "priceUSD": 15.0,
+        "priceUSD": 15,
         "category": "Bowls",
         "nutrition": {
           "calories": 680,
@@ -2242,13 +3457,22 @@
           "carbsG": 74,
           "fatG": 26,
           "sodiumMg": 1020
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "spicy-tuna-bowl",
         "name": "Spicy Tuna Bowl",
         "description": "Spicy tuna, mixed greens, fried onion, onion dressing and avocado over rice.",
-        "priceUSD": 15.0,
+        "priceUSD": 15,
         "category": "Bowls",
         "nutrition": {
           "calories": 620,
@@ -2256,13 +3480,22 @@
           "carbsG": 72,
           "fatG": 20,
           "sodiumMg": 900
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "soboro-bowl",
         "name": "Soboro Bowl",
         "description": "Ground chicken with scrambled egg, sesame seed, and green onion over rice.",
-        "priceUSD": 15.0,
+        "priceUSD": 15,
         "category": "Bowls",
         "nutrition": {
           "calories": 580,
@@ -2270,13 +3503,22 @@
           "carbsG": 74,
           "fatG": 16,
           "sodiumMg": 820
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "pork-bowl",
         "name": "Pork Bowl",
         "description": "Spicy. Pork belly, pickled onion, green onion, fried jalapeno and soft boiled egg over rice.",
-        "priceUSD": 15.0,
+        "priceUSD": 15,
         "category": "Bowls",
         "nutrition": {
           "calories": 700,
@@ -2284,13 +3526,22 @@
           "carbsG": 72,
           "fatG": 28,
           "sodiumMg": 980
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "curry-bowl",
         "name": "Curry Bowl",
         "description": "House made curry, mushrooms, pickled cucumbers, sesame seeds. Choice of Chicken karaage, Tofu, Impossible katsu.",
-        "priceUSD": 15.0,
+        "priceUSD": 15,
         "category": "Bowls",
         "nutrition": {
           "calories": 640,
@@ -2298,13 +3549,22 @@
           "carbsG": 80,
           "fatG": 22,
           "sodiumMg": 940
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "the-blaze-ramen",
         "name": "The Blaze Ramen",
         "description": "Spicy creamy pork broth, bean sprouts, spinach, green onion, seaweed, and seasoned egg. Choice of Pork, Chicken, or Tofu. (Contains Dairy)",
-        "priceUSD": 16.0,
+        "priceUSD": 16,
         "category": "Ramen",
         "nutrition": {
           "calories": 660,
@@ -2312,13 +3572,22 @@
           "carbsG": 70,
           "fatG": 28,
           "sodiumMg": 1420
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "the-shoyu-ramen",
         "name": "The Shoyu Ramen",
         "description": "Clear chicken broth with Shoyu, bamboo shoots, spinach, green onion, seaweed and seasoned egg. Choice of Pork, Chicken, or Tofu.",
-        "priceUSD": 15.0,
+        "priceUSD": 15,
         "category": "Ramen",
         "nutrition": {
           "calories": 580,
@@ -2326,13 +3595,22 @@
           "carbsG": 68,
           "fatG": 20,
           "sodiumMg": 1280
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "the-shoyu-on-fire-ramen",
         "name": "The Shoyu on Fire Ramen",
         "description": "Spicy clear chicken broth with Shoyu, green onion, corn, seaweed, jalapeno, micro cilantro, lime and seasoned egg. Choice of Pork, Chicken, or Tofu.",
-        "priceUSD": 16.0,
+        "priceUSD": 16,
         "category": "Ramen",
         "nutrition": {
           "calories": 600,
@@ -2340,13 +3618,22 @@
           "carbsG": 70,
           "fatG": 22,
           "sodiumMg": 1380
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "the-veggie-ramen",
         "name": "The Veggie Ramen",
         "description": "Vegetarian. Vegetable broth with miso base, bean sprouts, corn, mushroom, tofu, broccolini, baby greens, kale, red cabbage and avocado.",
-        "priceUSD": 15.0,
+        "priceUSD": 15,
         "category": "Ramen",
         "nutrition": {
           "calories": 480,
@@ -2355,13 +3642,22 @@
           "fatG": 16,
           "fiberG": 6,
           "sodiumMg": 1080
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "the-classic-ramen",
         "name": "The Classic Ramen",
         "description": "Creamy pork broth, bean sprouts, spinach, green onion, seaweed, black garlic oil and seasoned egg. Choice of Pork, Chicken, or Tofu. (Contains Dairy)",
-        "priceUSD": 15.0,
+        "priceUSD": 15,
         "category": "Ramen",
         "nutrition": {
           "calories": 640,
@@ -2369,13 +3665,22 @@
           "carbsG": 68,
           "fatG": 26,
           "sodiumMg": 1360
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "the-garlic-truffle-ramen",
         "name": "The Garlic Truffle Ramen",
         "description": "A blend of creamy pork and vegetable broth, garlic, truffle oil, kale, mushrooms, black pepper, seaweed and seasoned egg. Choice of Pork, Chicken, or Tofu . Served with thick noodles. (Contains Dairy)",
-        "priceUSD": 17.0,
+        "priceUSD": 17,
         "category": "Ramen",
         "nutrition": {
           "calories": 720,
@@ -2383,13 +3688,22 @@
           "carbsG": 72,
           "fatG": 32,
           "sodiumMg": 1420
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "the-spicy-veggie-ramen",
         "name": "The Spicy Veggie Ramen",
         "description": "Vegetarian. Vegetable stock with miso base, mixed greens, corn, tofu, mushroom, fried broccolini, avocado, bean sprouts, black pepper & chili oil.",
-        "priceUSD": 16.0,
+        "priceUSD": 16,
         "category": "Ramen",
         "nutrition": {
           "calories": 500,
@@ -2398,6 +3712,15 @@
           "fatG": 18,
           "fiberG": 6,
           "sodiumMg": 1120
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       }
     ],
@@ -2467,7 +3790,7 @@
         "id": "four-cheese-spinach-dip",
         "name": "Four Cheese Spinach Dip",
         "description": "Creamy spinach dip loaded with four types of cheese, served warm.",
-        "priceUSD": 14.0,
+        "priceUSD": 14,
         "category": "Happy Hour Appetizers",
         "nutrition": {
           "calories": 760,
@@ -2475,13 +3798,22 @@
           "carbsG": 52,
           "fatG": 50,
           "sodiumMg": 1280
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "miguel-s-queso-dip",
         "name": "Miguel's Queso Dip",
         "description": "Spicy queso dip served with tortilla chips.",
-        "priceUSD": 12.0,
+        "priceUSD": 12,
         "category": "Happy Hour Appetizers",
         "nutrition": {
           "calories": 620,
@@ -2489,13 +3821,22 @@
           "carbsG": 48,
           "fatG": 38,
           "sodiumMg": 1140
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "poke-nachos",
         "name": "Poke Nachos",
         "description": "A delightful mix of poke on tortilla chips.",
-        "priceUSD": 16.0,
+        "priceUSD": 16,
         "category": "Happy Hour Appetizers",
         "nutrition": {
           "calories": 820,
@@ -2503,13 +3844,22 @@
           "carbsG": 80,
           "fatG": 42,
           "sodiumMg": 1360
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "chicken-nachos",
         "name": "Chicken Nachos",
         "description": "Nachos topped with chicken and cheese.",
-        "priceUSD": 15.0,
+        "priceUSD": 15,
         "category": "Happy Hour Appetizers",
         "nutrition": {
           "calories": 880,
@@ -2517,13 +3867,22 @@
           "carbsG": 76,
           "fatG": 46,
           "sodiumMg": 1480
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "chicken-lettuce-wraps",
         "name": "Chicken Lettuce Wraps",
         "description": "Crispy lettuce wraps filled with chicken and veggies.",
-        "priceUSD": 14.0,
+        "priceUSD": 14,
         "category": "Happy Hour Appetizers",
         "nutrition": {
           "calories": 480,
@@ -2531,13 +3890,22 @@
           "carbsG": 36,
           "fatG": 22,
           "sodiumMg": 880
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "hand-battered-chicken-tenders",
         "name": "Hand-Battered Chicken Tenders",
         "description": "Tender chicken pieces, hand-battered and fried.",
-        "priceUSD": 14.0,
+        "priceUSD": 14,
         "category": "Happy Hour Appetizers",
         "nutrition": {
           "calories": 680,
@@ -2545,13 +3913,22 @@
           "carbsG": 52,
           "fatG": 36,
           "sodiumMg": 1180
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "classic-sliders",
         "name": "Classic Sliders",
         "description": "Mini burgers served with your choice of toppings.",
-        "priceUSD": 14.0,
+        "priceUSD": 14,
         "category": "Happy Hour Appetizers",
         "nutrition": {
           "calories": 560,
@@ -2559,13 +3936,22 @@
           "carbsG": 44,
           "fatG": 30,
           "sodiumMg": 940
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "wisconsin-fried-cheese-curds",
         "name": "Wisconsin Fried Cheese Curds",
         "description": "Fried cheese curds served with marinara.",
-        "priceUSD": 12.0,
+        "priceUSD": 12,
         "category": "Happy Hour Appetizers",
         "nutrition": {
           "calories": 720,
@@ -2573,13 +3959,22 @@
           "carbsG": 56,
           "fatG": 44,
           "sodiumMg": 1320
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "crispy-brussels-sprouts",
         "name": "Crispy Brussels Sprouts",
         "description": "Fried Brussels sprouts seasoned to perfection.",
-        "priceUSD": 12.0,
+        "priceUSD": 12,
         "category": "Happy Hour Appetizers",
         "nutrition": {
           "calories": 380,
@@ -2588,13 +3983,22 @@
           "fatG": 20,
           "fiberG": 8,
           "sodiumMg": 620
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "blackened-ahi-sashimi",
         "name": "Blackened Ahi Sashimi",
         "description": "Fresh ahi tuna with a blackened seasoning.",
-        "priceUSD": 17.0,
+        "priceUSD": 17,
         "category": "Happy Hour Appetizers",
         "nutrition": {
           "calories": 340,
@@ -2602,13 +4006,22 @@
           "carbsG": 8,
           "fatG": 18,
           "sodiumMg": 760
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "fried-calamari",
         "name": "Fried Calamari",
         "description": "Lightly breaded calamari fried to a golden crisp.",
-        "priceUSD": 14.0,
+        "priceUSD": 14,
         "category": "Happy Hour Appetizers",
         "nutrition": {
           "calories": 580,
@@ -2616,13 +4029,22 @@
           "carbsG": 52,
           "fatG": 32,
           "sodiumMg": 980
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "boneless-wings",
         "name": "Boneless Wings",
         "description": "Tender boneless wings tossed in your favorite sauce.",
-        "priceUSD": 14.0,
+        "priceUSD": 14,
         "category": "Happy Hour Appetizers",
         "nutrition": {
           "calories": 640,
@@ -2630,13 +4052,22 @@
           "carbsG": 44,
           "fatG": 34,
           "sodiumMg": 1200
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "gardein-boneless-wings",
         "name": "Gardein - Boneless Wings",
         "description": "Plant-based boneless wings served with dipping sauce.",
-        "priceUSD": 14.0,
+        "priceUSD": 14,
         "category": "Happy Hour Appetizers",
         "nutrition": {
           "calories": 480,
@@ -2644,13 +4075,22 @@
           "carbsG": 44,
           "fatG": 22,
           "sodiumMg": 900
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "the-carnivore-pizza",
         "name": "The Carnivore Pizza",
         "description": "A meaty pizza topped with various meats.",
-        "priceUSD": 16.0,
+        "priceUSD": 16,
         "category": "Happy Hour Pizzas",
         "nutrition": {
           "calories": 840,
@@ -2658,13 +4098,22 @@
           "carbsG": 72,
           "fatG": 44,
           "sodiumMg": 1560
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "three-cheese",
         "name": "Three Cheese",
         "description": "Cheese pizza topped with three different types of cheese.",
-        "priceUSD": 14.0,
+        "priceUSD": 14,
         "category": "Pizzas",
         "nutrition": {
           "calories": 700,
@@ -2672,13 +4121,22 @@
           "carbsG": 70,
           "fatG": 36,
           "sodiumMg": 1100
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "margherita",
         "name": "Margherita",
         "description": "Classic Margherita pizza with fresh ingredients.",
-        "priceUSD": 15.0,
+        "priceUSD": 15,
         "category": "Pizzas",
         "nutrition": {
           "calories": 640,
@@ -2686,13 +4144,22 @@
           "carbsG": 72,
           "fatG": 30,
           "sodiumMg": 980
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "loaded-pepperoni",
         "name": "Loaded Pepperoni",
         "description": "Pepperoni pizza loaded with cheese and toppings.",
-        "priceUSD": 16.0,
+        "priceUSD": 16,
         "category": "Pizzas",
         "nutrition": {
           "calories": 820,
@@ -2700,13 +4167,22 @@
           "carbsG": 72,
           "fatG": 42,
           "sodiumMg": 1460
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "buffalo-chicken",
         "name": "Buffalo Chicken",
         "description": "Spicy buffalo chicken pizza with a tangy sauce.",
-        "priceUSD": 16.0,
+        "priceUSD": 16,
         "category": "Pizzas",
         "nutrition": {
           "calories": 780,
@@ -2714,13 +4190,22 @@
           "carbsG": 70,
           "fatG": 40,
           "sodiumMg": 1520
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "truffled-mushroom",
         "name": "Truffled Mushroom",
         "description": "Pizza topped with mushrooms and truffle oil.",
-        "priceUSD": 16.0,
+        "priceUSD": 16,
         "category": "Pizzas",
         "nutrition": {
           "calories": 660,
@@ -2728,13 +4213,22 @@
           "carbsG": 70,
           "fatG": 34,
           "sodiumMg": 1020
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "draft-beer",
         "name": "Draft Beer",
         "description": "Selection of draft beers on tap.",
-        "priceUSD": 8.0,
+        "priceUSD": 8,
         "category": "Drinks Specials",
         "nutrition": {
           "calories": 150,
@@ -2742,13 +4236,22 @@
           "carbsG": 13,
           "fatG": 0,
           "sodiumMg": 14
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "wine",
         "name": "Wine",
         "description": "Various selections of wine.",
-        "priceUSD": 10.0,
+        "priceUSD": 10,
         "category": "Drinks Specials",
         "nutrition": {
           "calories": 120,
@@ -2756,13 +4259,22 @@
           "carbsG": 4,
           "fatG": 0,
           "sodiumMg": 10
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "spirits",
         "name": "Spirits",
         "description": "Range of spirits available for cocktails.",
-        "priceUSD": 10.0,
+        "priceUSD": 10,
         "category": "Drinks Specials",
         "nutrition": {
           "calories": 100,
@@ -2770,13 +4282,22 @@
           "carbsG": 0,
           "fatG": 0,
           "sodiumMg": 0
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "cocktails",
         "name": "Cocktails",
         "description": "Craft cocktails made to order.",
-        "priceUSD": 12.0,
+        "priceUSD": 12,
         "category": "Drinks Specials",
         "nutrition": {
           "calories": 220,
@@ -2785,13 +4306,22 @@
           "fatG": 0,
           "sugarG": 24,
           "sodiumMg": 40
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "9oz-wine",
         "name": "9oz Wine",
         "description": "Served in a 9oz glass.",
-        "priceUSD": 11.0,
+        "priceUSD": 11,
         "category": "Drinks Specials",
         "nutrition": {
           "calories": 230,
@@ -2799,13 +4329,22 @@
           "carbsG": 7,
           "fatG": 0,
           "sodiumMg": 15
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "half-yards",
         "name": "Half Yards",
         "description": "Half yard size drinks served in a unique glass.",
-        "priceUSD": 9.0,
+        "priceUSD": 9,
         "category": "Drinks Specials",
         "nutrition": {
           "calories": 200,
@@ -2813,6 +4352,15 @@
           "carbsG": 18,
           "fatG": 0,
           "sodiumMg": 20
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       }
     ],
@@ -2881,7 +4429,7 @@
         "id": "salt-pepper-chicken",
         "name": "Salt & Pepper Chicken",
         "description": "Garlic & herb marinade",
-        "priceUSD": 12.0,
+        "priceUSD": 12,
         "category": "Plates",
         "nutrition": {
           "calories": 480,
@@ -2889,13 +4437,22 @@
           "carbsG": 24,
           "fatG": 22,
           "sodiumMg": 820
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "chipotle-bbq-chicken",
         "name": "Chipotle BBQ Chicken",
         "description": "Grilled with chipotle BBQ",
-        "priceUSD": 12.0,
+        "priceUSD": 12,
         "category": "Plates",
         "nutrition": {
           "calories": 520,
@@ -2903,13 +4460,22 @@
           "carbsG": 28,
           "fatG": 24,
           "sodiumMg": 960
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "grilled-salmon",
         "name": "Grilled Salmon",
         "description": "Grilled medium with sea salt & herb oil",
-        "priceUSD": 15.0,
+        "priceUSD": 15,
         "category": "Plates",
         "nutrition": {
           "calories": 440,
@@ -2917,13 +4483,22 @@
           "carbsG": 8,
           "fatG": 26,
           "sodiumMg": 620
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "chipotle-bbq-chicken-salad",
         "name": "Chipotle BBQ Chicken Salad",
         "description": "Avocado, queso fresco, crispy tortilla",
-        "priceUSD": 13.0,
+        "priceUSD": 13,
         "category": "Salads",
         "nutrition": {
           "calories": 560,
@@ -2931,13 +4506,22 @@
           "carbsG": 36,
           "fatG": 28,
           "sodiumMg": 940
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "chicken-pesto-sandwich",
         "name": "Chicken Pesto Sandwich",
         "description": "Chicken breast with pesto and provolone",
-        "priceUSD": 10.0,
+        "priceUSD": 10,
         "category": "Sandwiches",
         "nutrition": {
           "calories": 620,
@@ -2945,6 +4529,15 @@
           "carbsG": 56,
           "fatG": 26,
           "sodiumMg": 980
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -2960,6 +4553,15 @@
           "fatG": 16,
           "sugarG": 26,
           "sodiumMg": 180
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       }
     ],
@@ -3036,6 +4638,15 @@
           "carbsG": 85,
           "fatG": 44,
           "sodiumMg": 1380
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3050,6 +4661,15 @@
           "carbsG": 87,
           "fatG": 58,
           "sodiumMg": 1660
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -3064,6 +4684,15 @@
           "carbsG": 42,
           "fatG": 33,
           "sodiumMg": 890
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3078,6 +4707,15 @@
           "carbsG": 38,
           "fatG": 25,
           "sodiumMg": 870
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3092,6 +4730,15 @@
           "carbsG": 45,
           "fatG": 32,
           "sodiumMg": 1090
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3106,6 +4753,15 @@
           "carbsG": 36,
           "fatG": 10,
           "sodiumMg": 750
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -3120,6 +4776,15 @@
           "carbsG": 52,
           "fatG": 23,
           "sodiumMg": 820
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3134,6 +4799,15 @@
           "carbsG": 26,
           "fatG": 14,
           "sodiumMg": 600
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       }
     ],
@@ -3210,6 +4884,15 @@
           "carbsG": 82,
           "fatG": 26,
           "sodiumMg": 1180
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3224,6 +4907,15 @@
           "carbsG": 78,
           "fatG": 20,
           "sodiumMg": 980
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3238,6 +4930,15 @@
           "carbsG": 64,
           "fatG": 18,
           "sodiumMg": 860
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3252,6 +4953,15 @@
           "carbsG": 74,
           "fatG": 22,
           "sodiumMg": 1040
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3266,6 +4976,15 @@
           "carbsG": 86,
           "fatG": 26,
           "sodiumMg": 1120
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -3280,6 +4999,15 @@
           "carbsG": 54,
           "fatG": 18,
           "sodiumMg": 760
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3294,6 +5022,15 @@
           "carbsG": 48,
           "fatG": 14,
           "sodiumMg": 720
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -3309,13 +5046,22 @@
           "fatG": 0,
           "sugarG": 40,
           "sodiumMg": 40
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "bottle-drink",
         "name": "Bottle Drink",
         "description": "Selection of beverages including Perrier, Green Tea, Oolong Tea, Boba Tea, and Coconut Water.",
-        "priceUSD": 4.0,
+        "priceUSD": 4,
         "category": "Drink",
         "nutrition": {
           "calories": 90,
@@ -3324,6 +5070,15 @@
           "fatG": 0,
           "sugarG": 20,
           "sodiumMg": 30
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -3339,6 +5094,15 @@
           "fatG": 0,
           "sugarG": 34,
           "sodiumMg": 20
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -3353,6 +5117,15 @@
           "carbsG": 0,
           "fatG": 0,
           "sodiumMg": 10
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       }
     ],
@@ -3429,6 +5202,15 @@
           "carbsG": 38,
           "fatG": 7,
           "sodiumMg": 490
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -3443,6 +5225,15 @@
           "carbsG": 24,
           "fatG": 8,
           "sodiumMg": 360
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -3457,6 +5248,15 @@
           "carbsG": 40,
           "fatG": 14,
           "sodiumMg": 520
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3471,6 +5271,15 @@
           "carbsG": 46,
           "fatG": 16,
           "sodiumMg": 640
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -3485,6 +5294,15 @@
           "carbsG": 44,
           "fatG": 14,
           "sodiumMg": 560
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3500,6 +5318,15 @@
           "fatG": 2,
           "fiberG": 2,
           "sodiumMg": 420
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3514,6 +5341,15 @@
           "carbsG": 50,
           "fatG": 18,
           "sodiumMg": 880
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3528,6 +5364,15 @@
           "carbsG": 44,
           "fatG": 14,
           "sodiumMg": 580
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       }
     ],
@@ -3604,6 +5449,15 @@
           "carbsG": 39,
           "fatG": 41,
           "sodiumMg": 1440
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -3618,6 +5472,15 @@
           "carbsG": 39,
           "fatG": 27,
           "sodiumMg": 1000
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3632,6 +5495,15 @@
           "carbsG": 39,
           "fatG": 19,
           "sodiumMg": 650
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3646,6 +5518,15 @@
           "carbsG": 54,
           "fatG": 18,
           "sodiumMg": 245
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3660,6 +5541,15 @@
           "carbsG": 38,
           "fatG": 0,
           "sodiumMg": 30
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -3674,6 +5564,15 @@
           "carbsG": 83,
           "fatG": 36,
           "sodiumMg": 280
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       }
     ],
@@ -3751,6 +5650,15 @@
           "fatG": 4,
           "fiberG": 5,
           "sodiumMg": 80
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3765,6 +5673,15 @@
           "carbsG": 38,
           "fatG": 22,
           "sodiumMg": 900
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3780,6 +5697,15 @@
           "fatG": 20,
           "fiberG": 4,
           "sodiumMg": 680
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3794,6 +5720,15 @@
           "carbsG": 62,
           "fatG": 26,
           "sodiumMg": 760
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -3808,6 +5743,15 @@
           "carbsG": 36,
           "fatG": 20,
           "sodiumMg": 840
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3822,6 +5766,15 @@
           "carbsG": 14,
           "fatG": 24,
           "sodiumMg": 760
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3836,6 +5789,15 @@
           "carbsG": 40,
           "fatG": 16,
           "sodiumMg": 620
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3850,6 +5812,15 @@
           "carbsG": 52,
           "fatG": 22,
           "sodiumMg": 860
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -3865,6 +5836,15 @@
           "fatG": 22,
           "fiberG": 6,
           "sodiumMg": 940
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       }
     ],
@@ -3942,13 +5922,22 @@
           "carbsG": 22,
           "fatG": 8,
           "sodiumMg": 380
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "chicken-bowl",
         "name": "Chicken Bowl",
         "description": "Grilled chicken with rice and beans",
-        "priceUSD": 8.0,
+        "priceUSD": 8,
         "category": "Bowls",
         "nutrition": {
           "calories": 560,
@@ -3956,13 +5945,22 @@
           "carbsG": 68,
           "fatG": 14,
           "sodiumMg": 940
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "shrimp-burrito",
         "name": "Shrimp Burrito",
         "description": "Shrimp wrapped in a large tortilla with rice",
-        "priceUSD": 10.0,
+        "priceUSD": 10,
         "category": "Burritos",
         "nutrition": {
           "calories": 700,
@@ -3970,6 +5968,15 @@
           "carbsG": 88,
           "fatG": 22,
           "sodiumMg": 1260
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       }
     ],
@@ -4047,6 +6054,15 @@
           "carbsG": 4,
           "fatG": 13,
           "sodiumMg": 480
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -4061,6 +6077,15 @@
           "carbsG": 60,
           "fatG": 21,
           "sodiumMg": 980
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -4075,6 +6100,15 @@
           "carbsG": 62,
           "fatG": 26,
           "sodiumMg": 1120
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -4089,6 +6123,15 @@
           "carbsG": 14,
           "fatG": 43,
           "sodiumMg": 1620
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -4103,6 +6146,15 @@
           "carbsG": 42,
           "fatG": 18,
           "sodiumMg": 670
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -4117,6 +6169,15 @@
           "carbsG": 11,
           "fatG": 7,
           "sodiumMg": 260
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -4131,6 +6192,15 @@
           "carbsG": 58,
           "fatG": 18,
           "sodiumMg": 1050
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -4145,6 +6215,15 @@
           "carbsG": 72,
           "fatG": 23,
           "sodiumMg": 1280
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -4159,6 +6238,15 @@
           "carbsG": 44,
           "fatG": 14,
           "sodiumMg": 800
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -4173,6 +6261,15 @@
           "carbsG": 55,
           "fatG": 16,
           "sodiumMg": 970
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -4187,6 +6284,15 @@
           "carbsG": 58,
           "fatG": 15,
           "sodiumMg": 890
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       }
     ],
@@ -4255,7 +6361,7 @@
         "id": "american-wagyu",
         "name": "American Wagyu",
         "description": "Tender and flavorful beef nigiri.",
-        "priceUSD": 6.0,
+        "priceUSD": 6,
         "category": "Nigiri",
         "nutrition": {
           "calories": 130,
@@ -4263,6 +6369,15 @@
           "carbsG": 14,
           "fatG": 5,
           "sodiumMg": 120
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -4277,13 +6392,22 @@
           "carbsG": 7,
           "fatG": 4,
           "sodiumMg": 70
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "charbroiled-mackerel",
         "name": "Charbroiled Mackerel",
         "description": "Deliciously grilled mackerel nigiri.",
-        "priceUSD": 5.0,
+        "priceUSD": 5,
         "category": "Nigiri",
         "nutrition": {
           "calories": 110,
@@ -4291,13 +6415,22 @@
           "carbsG": 12,
           "fatG": 4,
           "sodiumMg": 180
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "conch",
         "name": "Conch",
         "description": "Chewy and savory nigiri made with conch.",
-        "priceUSD": 6.0,
+        "priceUSD": 6,
         "category": "Nigiri",
         "nutrition": {
           "calories": 90,
@@ -4305,13 +6438,22 @@
           "carbsG": 12,
           "fatG": 2,
           "sodiumMg": 130
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "eel",
         "name": "Eel",
         "description": "Sweet and smoky eel nigiri.",
-        "priceUSD": 6.0,
+        "priceUSD": 6,
         "category": "Nigiri",
         "nutrition": {
           "calories": 140,
@@ -4319,6 +6461,15 @@
           "carbsG": 14,
           "fatG": 6,
           "sodiumMg": 190
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -4333,6 +6484,15 @@
           "carbsG": 12,
           "fatG": 5,
           "sodiumMg": 200
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -4347,13 +6507,22 @@
           "carbsG": 12,
           "fatG": 3,
           "sodiumMg": 180
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "hokkaido-scallop",
         "name": "Hokkaido Scallop",
         "description": "Sweet scallop nigiri from Hokkaido.",
-        "priceUSD": 7.0,
+        "priceUSD": 7,
         "category": "Nigiri",
         "nutrition": {
           "calories": 110,
@@ -4361,6 +6530,15 @@
           "carbsG": 13,
           "fatG": 3,
           "sodiumMg": 140
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -4375,13 +6553,22 @@
           "carbsG": 12,
           "fatG": 6,
           "sodiumMg": 110
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "sea-bream-with-yuzu-pepper",
         "name": "Sea Bream with Yuzu Pepper",
         "description": "Light and refreshing sea bream nigiri topped with yuzu.",
-        "priceUSD": 7.0,
+        "priceUSD": 7,
         "category": "Nigiri",
         "nutrition": {
           "calories": 100,
@@ -4389,6 +6576,15 @@
           "carbsG": 12,
           "fatG": 3,
           "sodiumMg": 150
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       }
     ],
@@ -4457,7 +6653,7 @@
         "id": "burrito",
         "name": "Burrito",
         "description": "A large flour tortilla filled with your choice of meat, beans, rice, and condiments.",
-        "priceUSD": 8.0,
+        "priceUSD": 8,
         "category": "Entree",
         "nutrition": {
           "calories": 870,
@@ -4466,6 +6662,15 @@
           "fatG": 37,
           "fiberG": 8,
           "sodiumMg": 1720
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": false,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
@@ -4481,13 +6686,22 @@
           "fatG": 20,
           "fiberG": 5,
           "sodiumMg": 1100
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "salad",
         "name": "Salad",
         "description": "A bowl of greens topped with your choice of meat, beans, and dressings.",
-        "priceUSD": 8.0,
+        "priceUSD": 8,
         "category": "Entree",
         "nutrition": {
           "calories": 345,
@@ -4496,6 +6710,15 @@
           "fatG": 14,
           "fiberG": 7,
           "sodiumMg": 770
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       }
     ],
@@ -4572,6 +6795,15 @@
           "carbsG": 52,
           "fatG": 22,
           "sodiumMg": 1150
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -4586,6 +6818,15 @@
           "carbsG": 88,
           "fatG": 26,
           "sodiumMg": 1100
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -4600,6 +6841,15 @@
           "carbsG": 110,
           "fatG": 36,
           "sodiumMg": 1440
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -4614,6 +6864,15 @@
           "carbsG": 130,
           "fatG": 46,
           "sodiumMg": 1780
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -4628,6 +6887,15 @@
           "carbsG": 110,
           "fatG": 36,
           "sodiumMg": 1440
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -4642,6 +6910,15 @@
           "carbsG": 52,
           "fatG": 12,
           "sodiumMg": 620
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -4656,6 +6933,15 @@
           "carbsG": 490,
           "fatG": 160,
           "sodiumMg": 6400
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -4670,6 +6956,15 @@
           "carbsG": 17,
           "fatG": 6,
           "sodiumMg": 310
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -4684,6 +6979,15 @@
           "carbsG": 18,
           "fatG": 13,
           "sodiumMg": 560
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -4698,6 +7002,15 @@
           "carbsG": 32,
           "fatG": 0,
           "sodiumMg": 30
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
@@ -4712,6 +7025,15 @@
           "carbsG": 95,
           "fatG": 30,
           "sodiumMg": 1300
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       }
     ],
@@ -4780,7 +7102,7 @@
         "id": "pepperoni-pizza",
         "name": "Pepperoni Pizza",
         "description": "Classic pizza topped with pepperoni.",
-        "priceUSD": 15.0,
+        "priceUSD": 15,
         "category": "Pizza",
         "nutrition": {
           "calories": 680,
@@ -4788,13 +7110,22 @@
           "carbsG": 72,
           "fatG": 30,
           "sodiumMg": 1240
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "rigatoni-bolognese",
         "name": "Rigatoni Bolognese",
         "description": "Rigatoni pasta with rich meat sauce.",
-        "priceUSD": 18.0,
+        "priceUSD": 18,
         "category": "Pasta",
         "nutrition": {
           "calories": 720,
@@ -4802,13 +7133,22 @@
           "carbsG": 82,
           "fatG": 28,
           "sodiumMg": 980
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       },
       {
         "id": "charred-cauliflower",
         "name": "Charred Cauliflower",
         "description": "Roasted cauliflower with spices.",
-        "priceUSD": 10.0,
+        "priceUSD": 10,
         "category": "Appetizer",
         "nutrition": {
           "calories": 280,
@@ -4817,13 +7157,22 @@
           "fatG": 14,
           "fiberG": 6,
           "sodiumMg": 540
+        },
+        "dietarySupport": {
+          "vegan": true,
+          "vegetarian": true,
+          "glutenFree": true,
+          "dairyFree": true,
+          "halal": false,
+          "kosher": false,
+          "nutFree": true
         }
       },
       {
         "id": "chicken-fra-diavolo",
         "name": "Chicken Fra Diavolo",
         "description": "Spicy chicken dish with tomatoes.",
-        "priceUSD": 22.0,
+        "priceUSD": 22,
         "category": "Entree",
         "nutrition": {
           "calories": 580,
@@ -4831,6 +7180,15 @@
           "carbsG": 28,
           "fatG": 30,
           "sodiumMg": 1060
+        },
+        "dietarySupport": {
+          "vegan": false,
+          "vegetarian": false,
+          "glutenFree": false,
+          "dairyFree": false,
+          "halal": false,
+          "kosher": false,
+          "nutFree": false
         }
       }
     ],

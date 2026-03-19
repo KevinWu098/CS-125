@@ -50,7 +50,7 @@ export default function SearchResultsPage() {
   const [maxMealPrice, setMaxMealPrice] = useState(DEFAULT_MAX_MEAL_PRICE);
   const [minRating, setMinRating] = useState(0);
   const [maxDistanceMiles, setMaxDistanceMiles] = useState(DEFAULT_MAX_DISTANCE_MILES);
-  const [sortBy, setSortBy] = useState<SortKey>("recommended");
+  const [sortBy, setSortBy] = useState<SortKey>("distance");
 
   const [profile, setProfile] = useState<UserRecord | null>(null);
   const [profileError, setProfileError] = useState<string | null>(null);
@@ -77,12 +77,12 @@ export default function SearchResultsPage() {
     }
   }, []);
 
-  const getStoredUserId = useCallback(() => {
+  const getStoredUserId = useCallback((): string | null => {
     if (typeof window === "undefined") {
-      return "local-foodie";
+      return null;
     }
 
-    return window.localStorage.getItem("restaurant.profile.userId") || "local-foodie";
+    return window.localStorage.getItem("restaurant.profile.userId");
   }, []);
 
   const loadOrCreateProfile = useCallback(async (requestedUserId: string) => {
@@ -128,7 +128,9 @@ export default function SearchResultsPage() {
     }
 
     const savedUserId = getStoredUserId();
-    void loadOrCreateProfile(savedUserId);
+    if (savedUserId) {
+      void loadOrCreateProfile(savedUserId);
+    }
 
     const savedLocation = window.localStorage.getItem("restaurant.location");
     if (!savedLocation) {
@@ -144,6 +146,18 @@ export default function SearchResultsPage() {
       syncStoredLocation(DEFAULT_LOCATION);
     }
   }, [getStoredUserId, loadOrCreateProfile, syncStoredLocation]);
+
+  useEffect(() => {
+    if (!profile && sortBy === "recommended") {
+      setSortBy("distance");
+    }
+  }, [profile, sortBy]);
+
+  const hasProfile = profile !== null;
+  const visibleSortOptions: SortKey[] = hasProfile
+    ? ["recommended", "distance", "rating", "price", "name"]
+    : ["distance", "rating", "price", "name"];
+  const effectiveSortBy = hasProfile ? sortBy : sortBy === "recommended" ? "distance" : sortBy;
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -168,7 +182,7 @@ export default function SearchResultsPage() {
             minRating,
             maxDistanceMiles,
             maxMealPrice,
-            sortBy,
+            sortBy: effectiveSortBy,
             userLocation,
             profile,
           }),
@@ -210,15 +224,13 @@ export default function SearchResultsPage() {
     selectedMealCategories,
     sortBy,
     userLocation,
+    effectiveSortBy,
   ]);
 
   const updateProfile = useCallback(
     async (patch: Record<string, unknown>): Promise<UserRecord | null> => {
-      let activeProfile = profile;
-      if (!activeProfile) {
-        activeProfile = await loadOrCreateProfile(getStoredUserId());
-      }
-      if (!activeProfile) {
+      if (!profile) {
+        setProfileError("Log in on the Profile page to save ratings and meal history.");
         return null;
       }
 
@@ -231,7 +243,7 @@ export default function SearchResultsPage() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            userId: activeProfile.userId,
+            userId: profile.userId,
             ...patch,
           }),
         });
@@ -249,11 +261,14 @@ export default function SearchResultsPage() {
         return null;
       }
     },
-    [getStoredUserId, loadOrCreateProfile, profile],
+    [profile],
   );
 
   const handleRateRestaurant = useCallback(
     async (restaurantId: string, rating: number) => {
+      if (!profile) {
+        return;
+      }
       setPendingRatingRestaurantId(restaurantId);
       await updateProfile({
         action: "setRestaurantRating",
@@ -262,11 +277,14 @@ export default function SearchResultsPage() {
       });
       setPendingRatingRestaurantId(null);
     },
-    [updateProfile],
+    [profile, updateProfile],
   );
 
   const handleLogMeal = useCallback(
     async (restaurantId: string, mealId: string) => {
+      if (!profile) {
+        return;
+      }
       const mealKey = toMealKey(restaurantId, mealId);
       setPendingLoggedMealKey(mealKey);
       await updateProfile({
@@ -276,7 +294,7 @@ export default function SearchResultsPage() {
       });
       setPendingLoggedMealKey(null);
     },
-    [updateProfile],
+    [profile, updateProfile],
   );
 
   const applyManualLocation = () => {
@@ -386,14 +404,36 @@ export default function SearchResultsPage() {
           </Card>
         )}
 
+        {!hasProfile && (
+          <Card className="border-amber-200 bg-amber-50">
+            <CardContent className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-semibold text-amber-900">Browsing without a profile</p>
+                <p className="text-xs text-amber-800">
+                  Log in on the Profile page to enable recommended sorting, nutrition fit,
+                  restaurant ratings, and meal tracking.
+                </p>
+              </div>
+              <Button
+                asChild
+                variant="outline"
+                className="border-amber-300 bg-white text-amber-900"
+              >
+                <Link href="/profile">Log in</Link>
+              </Button>
+            </CardContent>
+          </Card>
+        )}
+
         <Card className="border-slate-200 bg-white shadow-sm">
           <CardContent className="space-y-5 p-4">
             <div className="flex items-center justify-between gap-3">
               <div>
                 <p className="text-sm font-semibold text-slate-900">Filters</p>
                 <p className="text-xs text-slate-500">
-                  Top controls affect both the map and the results list below. Dietary restrictions
-                  are applied from your profile.
+                  {hasProfile
+                    ? "Top controls affect both the map and the results list below. Dietary restrictions are applied from your profile."
+                    : "Top controls affect both the map and the results list below. Log in to unlock profile-based recommendations."}
                 </p>
               </div>
               <div className="flex items-center gap-2">
@@ -419,13 +459,13 @@ export default function SearchResultsPage() {
               </div>
 
               <div className="flex flex-wrap rounded-md border border-slate-200 bg-white p-1">
-                {(["recommended", "distance", "rating", "price", "name"] as const).map((option) => (
+                {visibleSortOptions.map((option) => (
                   <button
                     key={option}
                     type="button"
                     onClick={() => setSortBy(option)}
                     className={`rounded px-2.5 py-1.5 text-xs font-medium transition sm:text-sm ${
-                      sortBy === option
+                      effectiveSortBy === option
                         ? "bg-slate-900 text-white"
                         : "text-slate-500 hover:bg-slate-100 hover:text-slate-900"
                     }`}

@@ -203,6 +203,8 @@ export async function POST(request: Request) {
     const normalizedPriceRange: [number, number] = [Math.min(left, right), Math.max(left, right)];
 
     const profile = parsed.data.profile ? normalizeProfileRecord(parsed.data.profile) : null;
+    const effectiveSortBy =
+      profile || parsed.data.sortBy !== "recommended" ? parsed.data.sortBy : "distance";
     const effectiveDietary =
       parsed.data.selectedDietary.length > 0
         ? parsed.data.selectedDietary
@@ -217,7 +219,7 @@ export async function POST(request: Request) {
 
     const indexResults = searchIndex(index, combinedQuery, {
       limit: Math.max(200, Object.keys(index.documents).length),
-      sort: mapSort(parsed.data.sortBy),
+      sort: mapSort(effectiveSortBy),
       filters: {
         cuisines:
           parsed.data.selectedCuisines.length > 0 ? parsed.data.selectedCuisines : undefined,
@@ -254,7 +256,7 @@ export async function POST(request: Request) {
       minRating: parsed.data.minRating,
       maxDistanceMiles: parsed.data.maxDistanceMiles,
       maxMealPrice: parsed.data.maxMealPrice,
-      sortBy: parsed.data.sortBy,
+      sortBy: effectiveSortBy,
       userLocation: parsed.data.userLocation,
       profile,
       candidateRestaurantIds,

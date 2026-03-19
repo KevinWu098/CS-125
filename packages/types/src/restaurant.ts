@@ -1,3 +1,33 @@
+export type DietarySupport = {
+  vegan: boolean;
+  vegetarian: boolean;
+  glutenFree: boolean;
+  dairyFree: boolean;
+  halal: boolean;
+  kosher: boolean;
+  nutFree: boolean;
+};
+
+export type MenuItemSchema = {
+  id: string;
+  name: string;
+  description?: string;
+  priceUSD?: number;
+  category?: string;
+  tags?: string[];
+  allergens?: string[];
+  dietarySupport: DietarySupport;
+  nutrition?: {
+    calories?: number;
+    proteinG?: number;
+    carbsG?: number;
+    fatG?: number;
+    fiberG?: number;
+    sugarG?: number;
+    sodiumMg?: number;
+  };
+};
+
 export type RestaurantSchema = {
   id: string;
   name: string;
@@ -27,33 +57,7 @@ export type RestaurantSchema = {
     open: string;
     close: string;
   }>;
-  dietarySupport?: {
-    vegan?: boolean;
-    vegetarian?: boolean;
-    glutenFree?: boolean;
-    dairyFree?: boolean;
-    halal?: boolean;
-    kosher?: boolean;
-    nutFree?: boolean;
-  };
-  menu: Array<{
-    id: string;
-    name: string;
-    description?: string;
-    priceUSD?: number;
-    category?: string;
-    tags?: string[];
-    allergens?: string[];
-    nutrition?: {
-      calories?: number;
-      proteinG?: number;
-      carbsG?: number;
-      fatG?: number;
-      fiberG?: number;
-      sugarG?: number;
-      sodiumMg?: number;
-    };
-  }>;
+  menu: MenuItemSchema[];
   dataSource?: {
     name: string;
     lastUpdatedISO: string;

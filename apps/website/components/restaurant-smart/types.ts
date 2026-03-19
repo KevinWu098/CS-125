@@ -1,4 +1,4 @@
-import type { RestaurantSchema } from "@packages/types";
+import type { DietarySupport, RestaurantSchema } from "@packages/types";
 
 export type RawRestaurant = {
   id?: string;
@@ -24,15 +24,6 @@ export type RawRestaurant = {
     open?: string;
     close?: string;
   }>;
-  dietarySupport?: {
-    vegan?: boolean;
-    vegetarian?: boolean;
-    glutenFree?: boolean;
-    dairyFree?: boolean;
-    halal?: boolean;
-    kosher?: boolean;
-    nutFree?: boolean;
-  };
   menu?: Array<{
     id?: string;
     name?: string;
@@ -41,6 +32,7 @@ export type RawRestaurant = {
     category?: string;
     tags?: string[];
     allergens?: string[];
+    dietarySupport?: Partial<DietarySupport>;
     nutrition?: {
       calories?: number;
       proteinG?: number;

@@ -1,6 +1,6 @@
 "use client";
 
-import { Flame, Star, Target, Utensils } from "lucide-react";
+import { Flame, LogOut, Star, Target, Trash2, Utensils } from "lucide-react";
 import Link from "next/link";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
@@ -190,11 +190,15 @@ function MealHistoryItem({
   mealRating,
   onRate,
   isSaving,
+  onRemove,
+  isRemoving,
 }: {
   entry: MealHistoryEntry;
   mealRating: number | null;
   onRate: (rating: number) => void;
   isSaving: boolean;
+  onRemove: () => void;
+  isRemoving: boolean;
 }) {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
@@ -203,7 +207,20 @@ function MealHistoryItem({
           <p className="text-sm font-semibold text-slate-900">{entry.mealName}</p>
           <p className="text-xs text-slate-500">{entry.restaurantName}</p>
         </div>
-        <p className="text-[11px] text-slate-500">{formatLoggedAt(entry.loggedAtISO)}</p>
+        <div className="flex items-center gap-2">
+          <p className="text-[11px] text-slate-500">{formatLoggedAt(entry.loggedAtISO)}</p>
+          <Button
+            type="button"
+            variant="outline"
+            size="xs"
+            className="border-rose-200 text-rose-700 hover:border-rose-300 hover:bg-rose-50 hover:text-rose-800"
+            disabled={isRemoving || isSaving}
+            onClick={onRemove}
+          >
+            <Trash2 className="size-3.5" />
+            {isRemoving ? "Removing..." : "Remove"}
+          </Button>
+        </div>
       </div>
 
       <div className="mt-3 grid grid-cols-2 gap-2 text-xs text-slate-600 sm:grid-cols-4">
@@ -247,7 +264,7 @@ function MealHistoryItem({
 }
 
 export default function ProfilePage() {
-  const [userIdInput, setUserIdInput] = useState("local-foodie");
+  const [userIdInput, setUserIdInput] = useState("");
   const [profile, setProfile] = useState<UserRecord | null>(null);
   const [status, setStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
@@ -257,6 +274,9 @@ export default function ProfilePage() {
   const [dietaryDraft, setDietaryDraft] = useState<DietaryKey[]>([]);
   const [isSavingDietary, setIsSavingDietary] = useState(false);
   const [pendingMealRatingKey, setPendingMealRatingKey] = useState<string | null>(null);
+  const [pendingRemovedMealHistoryEntryId, setPendingRemovedMealHistoryEntryId] = useState<
+    string | null
+  >(null);
 
   const loadOrCreateProfile = useCallback(async (requestedUserId: string) => {
     const normalizedUserId = requestedUserId.trim().toLowerCase();
@@ -306,10 +326,32 @@ export default function ProfilePage() {
       return;
     }
 
-    const savedUserId = window.localStorage.getItem("restaurant.profile.userId") || "local-foodie";
+    const savedUserId = window.localStorage.getItem("restaurant.profile.userId");
+    if (!savedUserId) {
+      setStatus("idle");
+      setProfile(null);
+      setUserIdInput("");
+      return;
+    }
+
     setUserIdInput(savedUserId);
     void loadOrCreateProfile(savedUserId);
   }, [loadOrCreateProfile]);
+
+  const handleLogout = useCallback(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.removeItem("restaurant.profile.userId");
+    }
+
+    setProfile(null);
+    setUserIdInput("");
+    setGoalDraft(DEFAULT_NUTRITION_GOALS);
+    setDietaryDraft([]);
+    setPendingMealRatingKey(null);
+    setPendingRemovedMealHistoryEntryId(null);
+    setError(null);
+    setStatus("idle");
+  }, []);
 
   const consumedNutrition = useMemo(
     () => sumMealNutrition(profile?.mealHistory || []),
@@ -335,11 +377,7 @@ export default function ProfilePage() {
 
   const updateProfile = useCallback(
     async (payload: Record<string, unknown>) => {
-      let activeProfile = profile;
-      if (!activeProfile) {
-        activeProfile = await loadOrCreateProfile(userIdInput || "local-foodie");
-      }
-      if (!activeProfile) {
+      if (!profile) {
         return null;
       }
 
@@ -352,7 +390,7 @@ export default function ProfilePage() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            userId: activeProfile.userId,
+            userId: profile.userId,
             ...payload,
           }),
         });
@@ -370,7 +408,7 @@ export default function ProfilePage() {
         return null;
       }
     },
-    [loadOrCreateProfile, profile, userIdInput],
+    [profile],
   );
 
   const saveGoals = async () => {
@@ -409,6 +447,15 @@ export default function ProfilePage() {
     setPendingMealRatingKey(null);
   };
 
+  const handleRemoveMealHistoryEntry = async (entryId: string) => {
+    setPendingRemovedMealHistoryEntryId(entryId);
+    await updateProfile({
+      action: "removeMealHistoryEntry",
+      entryId,
+    });
+    setPendingRemovedMealHistoryEntryId(null);
+  };
+
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_#f0fdf4,_#f8fafc_50%,_#ecfeff)]">
       <header className="border-b border-slate-200/80 bg-white/90 backdrop-blur">
@@ -444,12 +491,16 @@ export default function ProfilePage() {
           <CardContent className="space-y-4 p-4">
             <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto]">
               <div>
-                <p className="text-sm font-semibold text-slate-900">Profile</p>
+                <p className="text-sm font-semibold text-slate-900">
+                  {profile ? "Profile" : "Log in to your profile"}
+                </p>
                 <p className="text-xs text-slate-500">
-                  Enter your user ID here to load your saved preferences, goals, and history.
+                  {profile
+                    ? "Enter your user ID here to switch profiles or reload your saved data."
+                    : "Enter a user ID to load or create your saved preferences, goals, and meal history."}
                 </p>
               </div>
-              <div className="flex w-full gap-2 sm:w-auto">
+              <div className="flex w-full flex-wrap gap-2 sm:w-auto sm:flex-nowrap">
                 <input
                   value={userIdInput}
                   onChange={(event) => setUserIdInput(event.target.value)}
@@ -461,24 +512,46 @@ export default function ProfilePage() {
                   disabled={status === "loading"}
                   onClick={() => void loadOrCreateProfile(userIdInput)}
                 >
-                  {status === "loading" ? "Loading..." : "Load"}
+                  {status === "loading" ? "Loading..." : profile ? "Switch" : "Log in"}
                 </Button>
+                {profile && (
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="h-10 border-slate-300 text-slate-700 hover:bg-slate-100"
+                    disabled={status === "loading"}
+                    onClick={handleLogout}
+                  >
+                    <LogOut className="size-4" />
+                    Log out
+                  </Button>
+                )}
               </div>
             </div>
 
-            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-              {profileStats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2"
-                >
-                  <p className="text-[11px] font-semibold tracking-wide text-slate-500 uppercase">
-                    {stat.label}
-                  </p>
-                  <p className="mt-1 text-lg font-semibold text-slate-900">{stat.value}</p>
-                </div>
-              ))}
-            </div>
+            {profile ? (
+              <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                {profileStats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2"
+                  >
+                    <p className="text-[11px] font-semibold tracking-wide text-slate-500 uppercase">
+                      {stat.label}
+                    </p>
+                    <p className="mt-1 text-lg font-semibold text-slate-900">{stat.value}</p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 p-5 text-center">
+                <p className="text-lg font-semibold text-slate-900">You are not logged in</p>
+                <p className="mt-1 text-sm text-slate-500">
+                  Log in to access saved dietary restrictions, nutrition goals, ratings, and meal
+                  history.
+                </p>
+              </div>
+            )}
           </CardContent>
         </Card>
 
@@ -488,180 +561,188 @@ export default function ProfilePage() {
           </Card>
         )}
 
-        <section className="grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
-          <Card className="border-slate-200 bg-white shadow-sm">
-            <CardContent className="space-y-4 p-5">
-              <div className="flex items-center gap-2">
-                <Target className="size-4 text-emerald-600" />
-                <p className="text-sm font-semibold text-slate-900">Daily Nutrition Goals</p>
-              </div>
+        {profile && (
+          <>
+            <section className="grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
+              <Card className="border-slate-200 bg-white shadow-sm">
+                <CardContent className="space-y-4 p-5">
+                  <div className="flex items-center gap-2">
+                    <Target className="size-4 text-emerald-600" />
+                    <p className="text-sm font-semibold text-slate-900">Daily Nutrition Goals</p>
+                  </div>
 
-              <div className="grid gap-3 sm:grid-cols-2">
-                {GOAL_FIELDS.map((field) => (
-                  <label key={field.key} className="space-y-1.5">
-                    <span className="text-xs font-semibold tracking-wide text-slate-500 uppercase">
-                      {field.label}
-                    </span>
-                    <div className="flex items-center gap-2">
-                      <input
-                        type="number"
-                        min={field.min}
-                        max={field.max}
-                        step={field.step}
-                        value={goalDraft[field.key]}
-                        onChange={(event) => {
-                          const parsed = Number.parseInt(event.target.value, 10);
-                          if (!Number.isFinite(parsed)) {
-                            return;
-                          }
-                          setGoalDraft((previous) => ({
-                            ...previous,
-                            [field.key]: Math.min(field.max, Math.max(field.min, parsed)),
-                          }));
-                        }}
-                        className="h-10 w-full rounded-md border border-slate-300 px-3 text-sm outline-none focus:border-emerald-500"
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {GOAL_FIELDS.map((field) => (
+                      <label key={field.key} className="space-y-1.5">
+                        <span className="text-xs font-semibold tracking-wide text-slate-500 uppercase">
+                          {field.label}
+                        </span>
+                        <div className="flex items-center gap-2">
+                          <input
+                            type="number"
+                            min={field.min}
+                            max={field.max}
+                            step={field.step}
+                            value={goalDraft[field.key]}
+                            onChange={(event) => {
+                              const parsed = Number.parseInt(event.target.value, 10);
+                              if (!Number.isFinite(parsed)) {
+                                return;
+                              }
+                              setGoalDraft((previous) => ({
+                                ...previous,
+                                [field.key]: Math.min(field.max, Math.max(field.min, parsed)),
+                              }));
+                            }}
+                            className="h-10 w-full rounded-md border border-slate-300 px-3 text-sm outline-none focus:border-emerald-500"
+                          />
+                          <span className="w-10 text-xs text-slate-500">{field.suffix}</span>
+                        </div>
+                      </label>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between border-t border-slate-200 pt-4">
+                    <p className="text-xs text-slate-500">
+                      Goals are applied to ranking when finding restaurants and meals.
+                    </p>
+                    <Button
+                      className="bg-emerald-600 text-white hover:bg-emerald-500"
+                      disabled={isSavingGoals}
+                      onClick={() => void saveGoals()}
+                    >
+                      {isSavingGoals ? "Saving..." : "Save goals"}
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-slate-200 bg-white shadow-sm">
+                <CardContent className="space-y-4 p-5">
+                  <div className="flex items-center gap-2">
+                    <Flame className="size-4 text-orange-500" />
+                    <p className="text-sm font-semibold text-slate-900">Progress Rings</p>
+                  </div>
+
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {GOAL_FIELDS.map((field) => (
+                      <GoalRing
+                        key={`ring-${field.key}`}
+                        label={field.label}
+                        consumed={consumedNutrition[field.key]}
+                        target={goalDraft[field.key]}
+                        color={field.color}
+                        suffix={field.suffix}
                       />
-                      <span className="w-10 text-xs text-slate-500">{field.suffix}</span>
-                    </div>
-                  </label>
-                ))}
-              </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </section>
 
-              <div className="flex items-center justify-between border-t border-slate-200 pt-4">
+            <Card className="border-slate-200 bg-white shadow-sm">
+              <CardContent className="space-y-4 p-5">
+                <div className="flex items-center gap-2">
+                  <Target className="size-4 text-emerald-600" />
+                  <p className="text-sm font-semibold text-slate-900">Dietary Restrictions</p>
+                </div>
+
                 <p className="text-xs text-slate-500">
-                  Goals are applied to ranking when finding restaurants and meals.
+                  These restrictions now apply automatically on the Search page.
                 </p>
-                <Button
-                  className="bg-emerald-600 text-white hover:bg-emerald-500"
-                  disabled={isSavingGoals}
-                  onClick={() => void saveGoals()}
-                >
-                  {isSavingGoals ? "Saving..." : "Save goals"}
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
 
-          <Card className="border-slate-200 bg-white shadow-sm">
-            <CardContent className="space-y-4 p-5">
-              <div className="flex items-center gap-2">
-                <Flame className="size-4 text-orange-500" />
-                <p className="text-sm font-semibold text-slate-900">Progress Rings</p>
-              </div>
+                <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                  {allDietary.map((dietary) => (
+                    <label
+                      key={`profile-dietary-${dietary}`}
+                      className="flex cursor-pointer items-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-3 py-2"
+                    >
+                      <Checkbox
+                        checked={dietaryDraft.includes(dietary)}
+                        onCheckedChange={(checked) => {
+                          setDietaryDraft((previous) =>
+                            checked
+                              ? [...new Set([...previous, dietary])]
+                              : previous.filter((entry) => entry !== dietary),
+                          );
+                        }}
+                      />
+                      <span className="text-sm text-slate-700">{dietaryLabels[dietary]}</span>
+                    </label>
+                  ))}
+                </div>
 
-              <div className="grid gap-3 sm:grid-cols-2">
-                {GOAL_FIELDS.map((field) => (
-                  <GoalRing
-                    key={`ring-${field.key}`}
-                    label={field.label}
-                    consumed={consumedNutrition[field.key]}
-                    target={goalDraft[field.key]}
-                    color={field.color}
-                    suffix={field.suffix}
-                  />
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </section>
+                <div className="flex items-center justify-between border-t border-slate-200 pt-4">
+                  <p className="text-xs text-slate-500">
+                    Saved restrictions are used as hard filters during search ranking.
+                  </p>
+                  <Button
+                    className="bg-emerald-600 text-white hover:bg-emerald-500"
+                    disabled={isSavingDietary}
+                    onClick={() => void saveDietaryRestrictions()}
+                  >
+                    {isSavingDietary ? "Saving..." : "Save dietary restrictions"}
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
 
-        <Card className="border-slate-200 bg-white shadow-sm">
-          <CardContent className="space-y-4 p-5">
-            <div className="flex items-center gap-2">
-              <Target className="size-4 text-emerald-600" />
-              <p className="text-sm font-semibold text-slate-900">Dietary Restrictions</p>
-            </div>
+            <Card className="border-slate-200 bg-white shadow-sm">
+              <CardContent className="p-5">
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <div>
+                    <p className="flex items-center gap-2 text-sm font-semibold text-slate-900">
+                      <Utensils className="size-4 text-emerald-600" />
+                      Meals You Have Had
+                    </p>
+                    <p className="text-xs text-slate-500">
+                      Rate meals here. These ratings directly influence your future search results.
+                    </p>
+                  </div>
+                  <Badge variant="secondary" className="bg-slate-100 text-slate-700">
+                    {profile.mealHistory.length} logged
+                  </Badge>
+                </div>
 
-            <p className="text-xs text-slate-500">
-              These restrictions now apply automatically on the Search page.
-            </p>
+                {profile.mealHistory.length ? (
+                  <div className="max-h-[55vh] space-y-3 overflow-y-auto pr-1">
+                    {profile.mealHistory.map((entry) => {
+                      const mealKey = toMealKey(entry.restaurantId, entry.mealId);
+                      const mealRating = profile.mealRatings[mealKey] || null;
+                      const isSaving = pendingMealRatingKey === mealKey;
 
-            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-              {allDietary.map((dietary) => (
-                <label
-                  key={`profile-dietary-${dietary}`}
-                  className="flex cursor-pointer items-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-3 py-2"
-                >
-                  <Checkbox
-                    checked={dietaryDraft.includes(dietary)}
-                    onCheckedChange={(checked) => {
-                      setDietaryDraft((previous) =>
-                        checked
-                          ? [...new Set([...previous, dietary])]
-                          : previous.filter((entry) => entry !== dietary),
+                      return (
+                        <MealHistoryItem
+                          key={entry.id}
+                          entry={entry}
+                          mealRating={mealRating}
+                          isSaving={isSaving}
+                          isRemoving={pendingRemovedMealHistoryEntryId === entry.id}
+                          onRate={(rating) => {
+                            void handleRateMeal(entry.restaurantId, entry.mealId, rating);
+                          }}
+                          onRemove={() => {
+                            void handleRemoveMealHistoryEntry(entry.id);
+                          }}
+                        />
                       );
-                    }}
-                  />
-                  <span className="text-sm text-slate-700">{dietaryLabels[dietary]}</span>
-                </label>
-              ))}
-            </div>
-
-            <div className="flex items-center justify-between border-t border-slate-200 pt-4">
-              <p className="text-xs text-slate-500">
-                Saved restrictions are used as hard filters during search ranking.
-              </p>
-              <Button
-                className="bg-emerald-600 text-white hover:bg-emerald-500"
-                disabled={isSavingDietary}
-                onClick={() => void saveDietaryRestrictions()}
-              >
-                {isSavingDietary ? "Saving..." : "Save dietary restrictions"}
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="border-slate-200 bg-white shadow-sm">
-          <CardContent className="p-5">
-            <div className="mb-4 flex items-center justify-between gap-3">
-              <div>
-                <p className="flex items-center gap-2 text-sm font-semibold text-slate-900">
-                  <Utensils className="size-4 text-emerald-600" />
-                  Meals You Have Had
-                </p>
-                <p className="text-xs text-slate-500">
-                  Rate meals here. These ratings directly influence your future search results.
-                </p>
-              </div>
-              <Badge variant="secondary" className="bg-slate-100 text-slate-700">
-                {profile?.mealHistory.length || 0} logged
-              </Badge>
-            </div>
-
-            {profile?.mealHistory.length ? (
-              <div className="max-h-[55vh] space-y-3 overflow-y-auto pr-1">
-                {profile.mealHistory.map((entry) => {
-                  const mealKey = toMealKey(entry.restaurantId, entry.mealId);
-                  const mealRating = profile.mealRatings[mealKey] || null;
-                  const isSaving = pendingMealRatingKey === mealKey;
-
-                  return (
-                    <MealHistoryItem
-                      key={entry.id}
-                      entry={entry}
-                      mealRating={mealRating}
-                      isSaving={isSaving}
-                      onRate={(rating) => {
-                        void handleRateMeal(entry.restaurantId, entry.mealId, rating);
-                      }}
-                    />
-                  );
-                })}
-              </div>
-            ) : (
-              <div className="rounded-xl border border-dashed border-slate-300 py-10 text-center">
-                <p className="text-lg font-semibold text-slate-900">No meals logged yet</p>
-                <p className="mt-1 text-sm text-slate-500">
-                  On the search page, click "Mark as had" on a recommended meal.
-                </p>
-                <Button asChild variant="outline" className="mt-4">
-                  <Link href="/">Go to search</Link>
-                </Button>
-              </div>
-            )}
-          </CardContent>
-        </Card>
+                    })}
+                  </div>
+                ) : (
+                  <div className="rounded-xl border border-dashed border-slate-300 py-10 text-center">
+                    <p className="text-lg font-semibold text-slate-900">No meals logged yet</p>
+                    <p className="mt-1 text-sm text-slate-500">
+                      On the search page, click "Mark as had" on a recommended meal.
+                    </p>
+                    <Button asChild variant="outline" className="mt-4">
+                      <Link href="/">Go to search</Link>
+                    </Button>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </>
+        )}
       </main>
     </div>
   );

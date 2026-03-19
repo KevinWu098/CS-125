@@ -125,6 +125,7 @@ const buildSearchDocument = (restaurant: RestaurantSchema): SearchDocument => {
     priceUSD: item.priceUSD,
     tags: normalizeValues(item.tags),
     allergens: normalizeValues(item.allergens),
+    dietarySupport: item.dietarySupport,
     nutrition: {
       calories: item.nutrition?.calories,
       proteinG: item.nutrition?.proteinG,
@@ -169,17 +170,25 @@ const buildSearchDocument = (restaurant: RestaurantSchema): SearchDocument => {
 const buildDietarySupport = (
   restaurant: RestaurantSchema,
 ): Record<keyof DietarySupport, boolean> => {
-  const source = restaurant.dietarySupport ?? {};
-
-  return {
-    vegan: source.vegan ?? false,
-    vegetarian: source.vegetarian ?? false,
-    glutenFree: source.glutenFree ?? false,
-    dairyFree: source.dairyFree ?? false,
-    halal: source.halal ?? false,
-    kosher: source.kosher ?? false,
-    nutFree: source.nutFree ?? false,
+  const support: Record<keyof DietarySupport, boolean> = {
+    vegan: false,
+    vegetarian: false,
+    glutenFree: false,
+    dairyFree: false,
+    halal: false,
+    kosher: false,
+    nutFree: false,
   };
+
+  for (const item of restaurant.menu) {
+    for (const key of DIETARY_KEYS) {
+      if (item.dietarySupport[key]) {
+        support[key] = true;
+      }
+    }
+  }
+
+  return support;
 };
 
 const buildPriceRange = (values: Array<number | undefined>) => {

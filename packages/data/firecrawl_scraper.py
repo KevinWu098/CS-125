@@ -136,18 +136,6 @@ def extract_restaurant_data(app: Firecrawl, url: str) -> Dict[str, Any]:
                     },
                 },
             },
-            "dietarySupport": {
-                "type": "object",
-                "properties": {
-                    "vegan": {"type": "boolean"},
-                    "vegetarian": {"type": "boolean"},
-                    "glutenFree": {"type": "boolean"},
-                    "dairyFree": {"type": "boolean"},
-                    "halal": {"type": "boolean"},
-                    "kosher": {"type": "boolean"},
-                    "nutFree": {"type": "boolean"},
-                },
-            },
             "menu": {
                 "type": "array",
                 "items": {
@@ -159,6 +147,18 @@ def extract_restaurant_data(app: Firecrawl, url: str) -> Dict[str, Any]:
                         "category": {"type": "string"},
                         "tags": {"type": "array", "items": {"type": "string"}},
                         "allergens": {"type": "array", "items": {"type": "string"}},
+                        "dietarySupport": {
+                            "type": "object",
+                            "properties": {
+                                "vegan": {"type": "boolean"},
+                                "vegetarian": {"type": "boolean"},
+                                "glutenFree": {"type": "boolean"},
+                                "dairyFree": {"type": "boolean"},
+                                "halal": {"type": "boolean"},
+                                "kosher": {"type": "boolean"},
+                                "nutFree": {"type": "boolean"},
+                            },
+                        },
                         "nutrition": {
                             "type": "object",
                             "properties": {
@@ -184,9 +184,10 @@ def extract_restaurant_data(app: Firecrawl, url: str) -> Dict[str, Any]:
         "description, cuisine types, price tier ($, $$, $$$ or $$$$), star rating "
         "(average score and review count if shown), full address (street, city, state, "
         "postal code), latitude and longitude if available, hours of operation for each "
-        "day of the week, dietary support flags (vegan/vegetarian/gluten-free/dairy-free/"
-        "halal/kosher/nut-free menus if offered), and a complete list of menu items. "
+        "day of the week, and a complete list of menu items. "
         "For every menu item extract: name, description, price in USD, category, "
+        "dietary support flags (vegan/vegetarian/gluten-free/dairy-free/halal/"
+        "kosher/nut-free when the menu copy supports it), "
         "relevant tags (e.g. 'vegan', 'spicy', 'gluten-free', 'popular', 'new'), "
         "allergens (e.g. 'dairy', 'gluten', 'nuts', 'shellfish', 'soy', 'eggs'), and "
         "nutrition facts (calories, protein in grams, carbs in grams, fat in grams, "
@@ -243,13 +244,19 @@ def build_restaurant_entry(
         if raw_rating.get("source"):
             rating["source"] = raw_rating["source"]
 
-    # ── dietarySupport (optional) ─────────────────────────────────────────
-    raw_diet = raw.get("dietarySupport") or {}
-    dietary_keys = ("vegan", "vegetarian", "glutenFree", "dairyFree",
-                    "halal", "kosher", "nutFree")
-    dietary: Dict[str, bool] = {
-        k: bool(raw_diet[k]) for k in dietary_keys if raw_diet.get(k) is not None
-    }
+    dietary_keys = (
+        "vegan",
+        "vegetarian",
+        "glutenFree",
+        "dairyFree",
+        "halal",
+        "kosher",
+        "nutFree",
+    )
+
+    def normalize_dietary_support(raw_diet: Any) -> Dict[str, bool]:
+        source = raw_diet if isinstance(raw_diet, dict) else {}
+        return {key: bool(source.get(key)) for key in dietary_keys}
 
     # ── menu items ────────────────────────────────────────────────────────
     menu_items = []
@@ -272,6 +279,7 @@ def build_restaurant_entry(
             menu_entry["tags"] = [t for t in item["tags"] if t]
         if item.get("allergens"):
             menu_entry["allergens"] = [a for a in item["allergens"] if a]
+        menu_entry["dietarySupport"] = normalize_dietary_support(item.get("dietarySupport"))
         # nutrition — only include the sub-object if at least one field is present
         raw_nutrition = item.get("nutrition") or {}
         nutrition_keys = ("calories", "proteinG", "carbsG", "fatG",
@@ -304,8 +312,6 @@ def build_restaurant_entry(
         entry["priceTier"] = price_tier
     if rating:
         entry["rating"] = rating
-    if dietary:
-        entry["dietarySupport"] = dietary
     if hours:
         entry["hours"] = hours
     return entry

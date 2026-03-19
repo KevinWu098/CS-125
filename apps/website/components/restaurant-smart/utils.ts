@@ -1,11 +1,6 @@
 import type { RestaurantSchema } from "@packages/types";
 
-import {
-  DEFAULT_NUTRITION_GOALS,
-  GLUTEN_FREE_KEYWORDS,
-  VEGAN_KEYWORDS,
-  VEGETARIAN_KEYWORDS,
-} from "./constants";
+import { DEFAULT_NUTRITION_GOALS } from "./constants";
 import type { DietaryKey, NutritionGoals, UserRecord } from "./types";
 
 const DIETARY_KEYS: DietaryKey[] = [
@@ -150,23 +145,8 @@ export function splitMealKey(mealKey: string): {
 export function mealDietaryMatch(
   meal: RestaurantSchema["menu"][number],
   dietary: DietaryKey,
-  restaurant: RestaurantSchema,
 ): boolean {
-  if (restaurant.dietarySupport?.[dietary]) {
-    return true;
-  }
-
-  const mealText = `${meal.name} ${meal.description || ""}`.toLowerCase();
-  switch (dietary) {
-    case "vegan":
-      return VEGAN_KEYWORDS.some((keyword) => mealText.includes(keyword));
-    case "vegetarian":
-      return VEGETARIAN_KEYWORDS.some((keyword) => mealText.includes(keyword));
-    case "glutenFree":
-      return GLUTEN_FREE_KEYWORDS.some((keyword) => mealText.includes(keyword));
-    default:
-      return false;
-  }
+  return meal.dietarySupport[dietary];
 }
 
 export function priceLevel(priceTier?: string): number {

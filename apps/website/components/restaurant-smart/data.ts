@@ -1,5 +1,5 @@
 import rawRestaurantData from "@packages/data";
-import type { RestaurantSchema } from "@packages/types";
+import type { DietarySupport, RestaurantSchema } from "@packages/types";
 
 import { dayLookup, EXCLUDED_CUISINES } from "./constants";
 import type { NormalizedDay, RawRestaurant } from "./types";
@@ -116,6 +116,18 @@ function normalizeNumericValue(value: unknown): number | undefined {
   return undefined;
 }
 
+function normalizeDietarySupport(value?: Partial<DietarySupport>): DietarySupport {
+  return {
+    vegan: Boolean(value?.vegan),
+    vegetarian: Boolean(value?.vegetarian),
+    glutenFree: Boolean(value?.glutenFree),
+    dairyFree: Boolean(value?.dairyFree),
+    halal: Boolean(value?.halal),
+    kosher: Boolean(value?.kosher),
+    nutFree: Boolean(value?.nutFree),
+  };
+}
+
 function hasValidCoordinates(lat: number, lng: number): boolean {
   const inRange = Math.abs(lat) <= 90 && Math.abs(lng) <= 180;
   const notZeroOrigin = Math.abs(lat) > 1e-9 || Math.abs(lng) > 1e-9;
@@ -195,6 +207,7 @@ function normalizeRestaurants(rawRestaurants: RawRestaurant[]): RestaurantSchema
             category: normalizeMealCategory(item.category),
             tags: normalizeStringArray(item.tags),
             allergens: normalizeStringArray(item.allergens),
+            dietarySupport: normalizeDietarySupport(item.dietarySupport),
             nutrition: hasNutritionValues ? normalizedNutrition : undefined,
           };
         }) ?? [];
@@ -228,18 +241,16 @@ function normalizeRestaurants(rawRestaurants: RawRestaurant[]): RestaurantSchema
           lng,
         },
         hours: normalizedHours.length > 0 ? normalizedHours : undefined,
-        dietarySupport: restaurant.dietarySupport
-          ? {
-              vegan: Boolean(restaurant.dietarySupport.vegan),
-              vegetarian: Boolean(restaurant.dietarySupport.vegetarian),
-              glutenFree: Boolean(restaurant.dietarySupport.glutenFree),
-              dairyFree: Boolean(restaurant.dietarySupport.dairyFree),
-              halal: Boolean(restaurant.dietarySupport.halal),
-              kosher: Boolean(restaurant.dietarySupport.kosher),
-              nutFree: Boolean(restaurant.dietarySupport.nutFree),
-            }
-          : undefined,
-        menu: menu.length > 0 ? menu : [{ id: `${restaurant.id}-item-1`, name: "Menu item" }],
+        menu:
+          menu.length > 0
+            ? menu
+            : [
+                {
+                  id: `${restaurant.id}-item-1`,
+                  name: "Menu item",
+                  dietarySupport: normalizeDietarySupport(),
+                },
+              ],
       };
     })
     .filter((restaurant): restaurant is RestaurantSchema => restaurant !== null);

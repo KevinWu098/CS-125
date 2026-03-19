@@ -1,1 +1,1 @@
-export type { RestaurantSchema } from "./restaurant";
+export type { DietarySupport, MenuItemSchema, RestaurantSchema } from "./restaurant";

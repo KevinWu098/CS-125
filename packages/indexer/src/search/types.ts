@@ -1,13 +1,13 @@
 export type PriceTier = "$" | "$$" | "$$$" | "$$$$";
 
 export type DietarySupport = {
-  vegan?: boolean;
-  vegetarian?: boolean;
-  glutenFree?: boolean;
-  dairyFree?: boolean;
-  halal?: boolean;
-  kosher?: boolean;
-  nutFree?: boolean;
+  vegan: boolean;
+  vegetarian: boolean;
+  glutenFree: boolean;
+  dairyFree: boolean;
+  halal: boolean;
+  kosher: boolean;
+  nutFree: boolean;
 };
 
 export type NutritionKey =
@@ -43,6 +43,7 @@ export type MenuItemSnapshot = {
   priceUSD?: number;
   tags: string[];
   allergens: string[];
+  dietarySupport: DietarySupport;
   nutrition: Partial<Record<NutritionKey, number>>;
 };
 

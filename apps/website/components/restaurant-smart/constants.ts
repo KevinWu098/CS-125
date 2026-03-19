@@ -12,10 +12,6 @@ export const dayLookup: Record<string, NormalizedDay> = {
 
 export const EXCLUDED_CUISINES = new Set(["vegan", "vegetarian"]);
 
-export const VEGAN_KEYWORDS = ["vegan", "falafel", "veggie", "vegetable", "plant", "tofu", "salad"];
-export const VEGETARIAN_KEYWORDS = ["vegetarian", "veggie", "cheese", "egg", "falafel", "salad"];
-export const GLUTEN_FREE_KEYWORDS = ["gluten free", "gluten-free", "gf", "salad", "bowl"];
-
 export const allDietary: DietaryKey[] = [
   "vegan",
   "vegetarian",
