@@ -485,7 +485,7 @@ export default function SearchResultsPage() {
                 <legend className="mb-2 text-xs font-semibold tracking-wide text-slate-500 uppercase">
                   Cuisine
                 </legend>
-                <div className="min-h-56 space-y-2 pr-1">
+                <div className="h-[17rem] space-y-2 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-3 pr-2">
                   {allCuisines.map((cuisine) => (
                     <label key={cuisine} className="flex cursor-pointer items-center gap-2">
                       <Checkbox
