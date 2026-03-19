@@ -6664,7 +6664,7 @@
           "sodiumMg": 1720
         },
         "dietarySupport": {
-          "vegan": true,
+          "vegan": false,
           "vegetarian": true,
           "glutenFree": false,
           "dairyFree": true,
@@ -6688,7 +6688,7 @@
           "sodiumMg": 1100
         },
         "dietarySupport": {
-          "vegan": true,
+          "vegan": false,
           "vegetarian": true,
           "glutenFree": true,
           "dairyFree": true,
@@ -6733,8 +6733,7 @@
     "name": "Panda Express",
     "description": "Family Owned with Family Values",
     "cuisine": [
-      "Chinese",
-      "American"
+      "Chinese"
     ],
     "priceTier": "$",
     "location": {

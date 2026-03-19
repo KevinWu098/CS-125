@@ -37,6 +37,13 @@ type RankRestaurantsOptions = {
   candidateRestaurantIds?: string[];
 };
 
+type RemainingNutritionSnapshot = {
+  calories: number;
+  proteinG: number;
+  carbsG: number;
+  fatG: number;
+};
+
 function buildCuisineSignals(profile: UserRecord | null): Record<string, number> {
   if (!profile) {
     return {};
@@ -72,6 +79,64 @@ function buildCuisineSignals(profile: UserRecord | null): Record<string, number>
   });
 
   return result;
+}
+
+function scoreRemainingTarget({
+  mealAmount,
+  remainingAmount,
+  targetAmount,
+  minTarget,
+  overshootPenaltyWeight,
+  extraPenaltyWeight,
+}: {
+  mealAmount: number;
+  remainingAmount: number;
+  targetAmount: number;
+  minTarget: number;
+  overshootPenaltyWeight: number;
+  extraPenaltyWeight: number;
+}): number {
+  const safeTarget = Math.max(targetAmount, minTarget);
+
+  if (remainingAmount <= 0) {
+    const extraTolerance = Math.max(safeTarget * 0.75, minTarget);
+    const extraPenalty = clamp(mealAmount / extraTolerance, 0, 1);
+    return clamp(0.55 - extraPenalty * extraPenaltyWeight, 0.28, 0.55);
+  }
+
+  const coverage = clamp(mealAmount / safeTarget, 0, 1);
+  const overshootStart = safeTarget * 1.18;
+  const overshoot = Math.max(mealAmount - overshootStart, 0);
+  const overshootTolerance = Math.max(safeTarget * 0.9, minTarget);
+  const overshootPenalty = clamp(overshoot / overshootTolerance, 0, 1);
+
+  return clamp(0.28 + coverage * 0.72 - overshootPenalty * overshootPenaltyWeight, 0, 1);
+}
+
+function scoreRemainingCalories(
+  mealCalories: number,
+  remainingCalories: number,
+  targetCalories: number,
+): number {
+  const safeTargetCalories = Math.max(targetCalories, 180);
+
+  if (remainingCalories <= 0) {
+    const extraPenalty = clamp(mealCalories / Math.max(safeTargetCalories * 0.7, 180), 0, 1);
+    return clamp(0.52 - extraPenalty * 0.38, 0.3, 0.52);
+  }
+
+  const coverage = clamp(mealCalories / safeTargetCalories, 0, 1);
+  const overshootStart = safeTargetCalories * 1.15;
+  const overshoot = Math.max(mealCalories - overshootStart, 0);
+  const overshootTolerance = Math.max(safeTargetCalories * 0.8, 140);
+  const overshootPenalty = clamp(overshoot / overshootTolerance, 0, 1);
+
+  return clamp(0.32 + coverage * 0.68 - overshootPenalty * 0.42, 0, 1);
+}
+
+function estimateRemainingMealSlots(remainingCalories: number, dailyGoalCalories: number): number {
+  const slotCalories = Math.max(dailyGoalCalories * 0.27, 425);
+  return clamp(remainingCalories / slotCalories, 1, 4);
 }
 
 export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaurant[] {
@@ -177,9 +242,19 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
 
   const nutritionGoals = profile?.nutritionGoals ?? null;
   const consumedNutrition = profile ? sumMealNutrition(profile.mealHistory) : null;
-  const remainingCalories =
+  const remainingNutrition: RemainingNutritionSnapshot | null =
     nutritionGoals && consumedNutrition
-      ? Math.max(nutritionGoals.calories - consumedNutrition.calories, 0)
+      ? {
+          calories: nutritionGoals.calories - consumedNutrition.calories,
+          proteinG: nutritionGoals.proteinG - consumedNutrition.proteinG,
+          carbsG: nutritionGoals.carbsG - consumedNutrition.carbsG,
+          fatG: nutritionGoals.fatG - consumedNutrition.fatG,
+        }
+      : null;
+  const remainingCalories = remainingNutrition ? remainingNutrition.calories : null;
+  const remainingMealSlots =
+    nutritionGoals && remainingCalories !== null
+      ? estimateRemainingMealSlots(Math.max(remainingCalories, 0), nutritionGoals.calories)
       : null;
 
   const sourceRestaurants =
@@ -284,11 +359,19 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
           const dietarySignal =
             selectedDietary.length > 0 ? dietaryMatches.length / selectedDietary.length : 0.6;
           const mealTextSignal = mealQuery ? 1 : 0.6;
+          const sugarG = typeof meal.nutrition?.sugarG === "number" ? meal.nutrition.sugarG : null;
+          const dessertLike =
+            mealCategory === "desserts" ||
+            /cookie|brownie|cake|cheesecake|ice cream|gelato|sorbet|milkshake|shake|sundae|churro|donut|dessert/.test(
+              mealText,
+            );
 
           const explicitMealNormalized = (explicitMealSignal + 1) / 2;
           const mealCategoryNormalized = (mealCategorySignal + 1) / 2;
           const { nutrition: mealNutrition, estimated: nutritionEstimated } =
             resolveMealNutrition(meal);
+          const fatCalorieShare =
+            mealNutrition.calories > 0 ? (mealNutrition.fatG * 9) / mealNutrition.calories : 0;
 
           let nutritionGoalSignal = 0.55;
           let macroRatioSignal = 0.55;
@@ -299,18 +382,40 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
           let fatGoalSignal = 0.55;
           if (nutritionGoals) {
             const targetCalories = Math.max(nutritionGoals.calories, 1);
-            const targetProteinCalories = Math.max(nutritionGoals.proteinG, 0) * 4;
-            const targetCarbCalories = Math.max(nutritionGoals.carbsG, 0) * 4;
-            const targetFatCalories = Math.max(nutritionGoals.fatG, 0) * 9;
-            const totalTargetMacroCalories =
-              targetProteinCalories + targetCarbCalories + targetFatCalories;
+            const dailyProteinCalories = Math.max(nutritionGoals.proteinG, 0) * 4;
+            const dailyCarbCalories = Math.max(nutritionGoals.carbsG, 0) * 4;
+            const dailyFatCalories = Math.max(nutritionGoals.fatG, 0) * 9;
+            const totalDailyMacroCalories =
+              dailyProteinCalories + dailyCarbCalories + dailyFatCalories;
+
+            const remainingProtein = remainingNutrition?.proteinG ?? nutritionGoals.proteinG;
+            const remainingCarbs = remainingNutrition?.carbsG ?? nutritionGoals.carbsG;
+            const remainingFat = remainingNutrition?.fatG ?? nutritionGoals.fatG;
+            const remainingProteinCalories = Math.max(remainingProtein, 0) * 4;
+            const remainingCarbCalories = Math.max(remainingCarbs, 0) * 4;
+            const remainingFatCalories = Math.max(remainingFat, 0) * 9;
+            const totalRemainingMacroCalories =
+              remainingProteinCalories + remainingCarbCalories + remainingFatCalories;
+
+            const fallbackProteinRatio =
+              totalDailyMacroCalories > 0 ? dailyProteinCalories / totalDailyMacroCalories : 0.3;
+            const fallbackCarbRatio =
+              totalDailyMacroCalories > 0 ? dailyCarbCalories / totalDailyMacroCalories : 0.45;
+            const fallbackFatRatio =
+              totalDailyMacroCalories > 0 ? dailyFatCalories / totalDailyMacroCalories : 0.25;
 
             const targetProteinRatio =
-              totalTargetMacroCalories > 0 ? targetProteinCalories / totalTargetMacroCalories : 0.3;
+              totalRemainingMacroCalories > 0
+                ? remainingProteinCalories / totalRemainingMacroCalories
+                : fallbackProteinRatio;
             const targetCarbRatio =
-              totalTargetMacroCalories > 0 ? targetCarbCalories / totalTargetMacroCalories : 0.45;
+              totalRemainingMacroCalories > 0
+                ? remainingCarbCalories / totalRemainingMacroCalories
+                : fallbackCarbRatio;
             const targetFatRatio =
-              totalTargetMacroCalories > 0 ? targetFatCalories / totalTargetMacroCalories : 0.25;
+              totalRemainingMacroCalories > 0
+                ? remainingFatCalories / totalRemainingMacroCalories
+                : fallbackFatRatio;
 
             const mealProteinCalories = Math.max(mealNutrition.proteinG, 0) * 4;
             const mealCarbCalories = Math.max(mealNutrition.carbsG, 0) * 4;
@@ -324,9 +429,25 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
 
             const lowCarbBias = clamp((0.3 - targetCarbRatio) / 0.18, 0, 1);
             const highProteinBias = clamp((targetProteinRatio - 0.3) / 0.2, 0, 1);
+            const mealSlots = remainingMealSlots ?? 1;
+            const proteinTargetPerMeal =
+              remainingProtein > 0 ? Math.max(18, remainingProtein / mealSlots) : 0;
+            const carbTargetPerMeal =
+              remainingCarbs > 0 ? Math.max(18, remainingCarbs / mealSlots) : 0;
+            const fatTargetPerMeal = remainingFat > 0 ? Math.max(8, remainingFat / mealSlots) : 0;
+            const calorieTargetPerMeal =
+              remainingCalories !== null && remainingCalories > 0
+                ? clamp(remainingCalories / mealSlots, 220, targetCalories * 0.42)
+                : clamp(targetCalories * 0.22, 220, targetCalories * 0.42);
 
-            const proteinTargetPerMeal = Math.max(18, nutritionGoals.proteinG * 0.22);
-            proteinGoalSignal = clamp(mealNutrition.proteinG / proteinTargetPerMeal, 0, 1);
+            proteinGoalSignal = scoreRemainingTarget({
+              mealAmount: mealNutrition.proteinG,
+              remainingAmount: remainingProtein,
+              targetAmount: proteinTargetPerMeal,
+              minTarget: 12,
+              overshootPenaltyWeight: 0.12,
+              extraPenaltyWeight: 0.12,
+            });
 
             const proteinPer100Calories =
               mealNutrition.calories > 0
@@ -334,21 +455,34 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
                 : 0;
             proteinDensitySignal = clamp((proteinPer100Calories - 3.5) / 5.5, 0, 1);
 
-            const carbTargetPerMeal = Math.max(8, nutritionGoals.carbsG * 0.24);
-            const carbOver = Math.max(mealNutrition.carbsG - carbTargetPerMeal, 0);
-            const carbTolerance = Math.max(carbTargetPerMeal * (0.65 + lowCarbBias * 0.2), 10);
-            const carbAbsoluteSignal = clamp(1 - carbOver / carbTolerance, 0, 1);
+            const carbNeedSignal = scoreRemainingTarget({
+              mealAmount: mealNutrition.carbsG,
+              remainingAmount: remainingCarbs,
+              targetAmount: carbTargetPerMeal,
+              minTarget: 10,
+              overshootPenaltyWeight: 0.26 + lowCarbBias * 0.08,
+              extraPenaltyWeight: 0.2,
+            });
             const carbRatioOver = Math.max(mealCarbRatio - targetCarbRatio, 0);
-            const carbRatioSignal = clamp(1 - carbRatioOver / 0.2, 0, 1);
-            carbGoalSignal = clamp(carbAbsoluteSignal * 0.6 + carbRatioSignal * 0.4, 0, 1);
+            const carbRatioSignal = clamp(1 - carbRatioOver / 0.18, 0, 1);
+            carbGoalSignal = clamp(carbNeedSignal * 0.72 + carbRatioSignal * 0.28, 0, 1);
 
-            const fatRatioOver = Math.max(mealFatRatio - (targetFatRatio + 0.08), 0);
-            fatGoalSignal = clamp(1 - fatRatioOver / 0.35, 0, 1);
+            const fatNeedSignal = scoreRemainingTarget({
+              mealAmount: mealNutrition.fatG,
+              remainingAmount: remainingFat,
+              targetAmount: fatTargetPerMeal,
+              minTarget: 6,
+              overshootPenaltyWeight: 0.28,
+              extraPenaltyWeight: 0.22,
+            });
+            const fatRatioOver = Math.max(mealFatRatio - (targetFatRatio + 0.05), 0);
+            const fatRatioSignal = clamp(1 - fatRatioOver / 0.28, 0, 1);
+            fatGoalSignal = clamp(fatNeedSignal * 0.74 + fatRatioSignal * 0.26, 0, 1);
 
-            const proteinWeight = 0.36 + highProteinBias * 0.12;
-            const carbWeight = 0.28 + lowCarbBias * 0.16;
-            const fatWeight = 0.12;
-            const densityWeight = 0.16 + highProteinBias * 0.08;
+            const proteinWeight = 0.4 + highProteinBias * 0.12;
+            const carbWeight = 0.26 + lowCarbBias * 0.12;
+            const fatWeight = 0.2;
+            const densityWeight = 0.14 + highProteinBias * 0.06;
             const macroWeightTotal = proteinWeight + carbWeight + fatWeight + densityWeight;
 
             macroRatioSignal = clamp(
@@ -361,87 +495,114 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
               1,
             );
 
-            const calorieTarget =
-              remainingCalories !== null
-                ? Math.min(Math.max(remainingCalories, 220), targetCalories * 0.38)
-                : clamp(targetCalories * 0.24, 320, 680);
-            const calorieTolerance = Math.max(targetCalories * 0.22, 160);
-            calorieSignal = clamp(
-              1 - Math.abs(mealNutrition.calories - calorieTarget) / calorieTolerance,
-              0,
-              1,
+            calorieSignal = scoreRemainingCalories(
+              mealNutrition.calories,
+              remainingCalories ?? nutritionGoals.calories,
+              calorieTargetPerMeal,
             );
 
-            nutritionGoalSignal = clamp(macroRatioSignal * 0.82 + calorieSignal * 0.18, 0, 1);
+            nutritionGoalSignal = clamp(macroRatioSignal * 0.72 + calorieSignal * 0.28, 0, 1);
+          }
+
+          if (dessertLike) {
+            const sugarPenalty =
+              sugarG !== null
+                ? clamp((sugarG - 16) / 20, 0, 1)
+                : mealNutrition.carbsG > 28
+                  ? 0.5
+                  : 0.2;
+            const lowProteinPenalty = clamp((12 - mealNutrition.proteinG) / 12, 0, 1);
+            const fatHeavyPenalty = clamp((fatCalorieShare - 0.34) / 0.22, 0, 1);
+            const indulgencePenalty =
+              0.12 + sugarPenalty * 0.18 + lowProteinPenalty * 0.14 + fatHeavyPenalty * 0.08;
+
+            nutritionGoalSignal = clamp(nutritionGoalSignal - indulgencePenalty, 0, 1);
           }
 
           const mealScore =
-            explicitMealNormalized * 0.34 +
-            mealCategoryNormalized * 0.17 +
-            dietarySignal * 0.14 +
-            mealTextSignal * 0.07 +
-            nutritionGoalSignal * 0.28;
+            explicitMealNormalized * 0.24 +
+            mealCategoryNormalized * 0.13 +
+            dietarySignal * 0.12 +
+            mealTextSignal * 0.06 +
+            nutritionGoalSignal * 0.45;
 
           const nutritionFitPros: string[] = [];
           const nutritionFitCons: string[] = [];
-          const proteinCalorieShare =
-            mealNutrition.calories > 0 ? (mealNutrition.proteinG * 4) / mealNutrition.calories : 0;
-          const fatCalorieShare =
-            mealNutrition.calories > 0 ? (mealNutrition.fatG * 9) / mealNutrition.calories : 0;
           const caloriesPerProteinGram =
             mealNutrition.proteinG > 0
               ? mealNutrition.calories / mealNutrition.proteinG
               : Number.POSITIVE_INFINITY;
 
           if (nutritionGoals) {
-            if (calorieSignal >= 0.72) {
-              nutritionFitPros.push("Calories land in range for your current goal.");
-            } else if (mealNutrition.calories > nutritionGoals.calories * 0.45) {
-              nutritionFitCons.push("Calories are high for one meal in your daily target.");
-            } else if (mealNutrition.calories < Math.max(nutritionGoals.calories * 0.14, 150)) {
-              nutritionFitCons.push("Calories may be too low for your target intake.");
+            if (remainingCalories !== null && remainingCalories <= 0) {
+              if (mealNutrition.calories <= Math.max(nutritionGoals.calories * 0.08, 180)) {
+                nutritionFitPros.push("Keeps calories low after you already hit your goal.");
+              } else {
+                nutritionFitCons.push("Adds calories after you already hit your goal today.");
+              }
+            } else if (calorieSignal >= 0.72) {
+              nutritionFitPros.push("Fits your remaining calorie budget today.");
+            } else if (
+              remainingCalories !== null &&
+              mealNutrition.calories > remainingCalories + 120
+            ) {
+              nutritionFitCons.push("Likely exceeds your remaining calories today.");
+            } else if (mealNutrition.calories < Math.max(nutritionGoals.calories * 0.1, 150)) {
+              nutritionFitCons.push("May not cover enough of what you still need today.");
             }
 
-            if (proteinGoalSignal >= 0.74 && proteinDensitySignal >= 0.7) {
-              nutritionFitPros.push("Strong protein fit for your goal and calories.");
-            } else if (proteinGoalSignal <= 0.45 || proteinCalorieShare < 0.17) {
-              nutritionFitCons.push("Protein is low for your target.");
+            const remainingProtein = remainingNutrition?.proteinG ?? nutritionGoals.proteinG;
+            if (remainingProtein > 0 && proteinGoalSignal >= 0.72 && proteinDensitySignal >= 0.68) {
+              nutritionFitPros.push("Helps close your remaining protein target today.");
+            } else if (remainingProtein > 0 && proteinGoalSignal <= 0.45) {
+              nutritionFitCons.push("Adds limited protein toward what you still need today.");
             }
 
-            if (carbGoalSignal >= 0.74) {
-              nutritionFitPros.push("Carbs are in a strong range for your goal.");
-            } else if (carbGoalSignal <= 0.45) {
-              nutritionFitCons.push("Carbs are high for your goal range.");
+            const remainingCarbs = remainingNutrition?.carbsG ?? nutritionGoals.carbsG;
+            if (remainingCarbs > 0 && carbGoalSignal >= 0.74) {
+              nutritionFitPros.push("Uses your remaining carb budget well.");
+            } else if (remainingCarbs <= 0 && mealNutrition.carbsG > 10) {
+              nutritionFitCons.push("Adds carbs beyond what you need today.");
+            } else if (remainingCarbs > 0 && carbGoalSignal <= 0.45) {
+              nutritionFitCons.push("Uses too much of your remaining carb budget.");
+            }
+
+            const remainingFat = remainingNutrition?.fatG ?? nutritionGoals.fatG;
+            if (remainingFat > 0 && fatGoalSignal >= 0.72) {
+              nutritionFitPros.push("Fits your remaining fat budget well.");
+            } else if (remainingFat <= 0 && mealNutrition.fatG > 6) {
+              nutritionFitCons.push("Adds fat beyond what you need today.");
+            } else if (fatGoalSignal <= 0.4 || fatCalorieShare > 0.5) {
+              nutritionFitCons.push("Macro balance is less aligned with what you have left today.");
+            }
+
+            if (dessertLike) {
+              nutritionFitCons.push("Dessert-style meal is a weaker overall nutrition fit.");
             }
 
             if (macroRatioSignal >= 0.75) {
-              nutritionFitPros.push("Overall macro profile aligns well with your target.");
-            } else if (fatGoalSignal <= 0.4 || fatCalorieShare > 0.5) {
-              nutritionFitCons.push("Macro balance is less aligned with your target.");
+              nutritionFitPros.push("Macro balance matches what you still need today.");
             }
 
-            if (
-              mealNutrition.proteinG >= Math.max(20, nutritionGoals.proteinG * 0.18) &&
-              caloriesPerProteinGram <= 28
-            ) {
-              nutritionFitPros.push("Good protein density for the calories.");
-            } else if (mealNutrition.proteinG < Math.max(14, nutritionGoals.proteinG * 0.1)) {
-              nutritionFitCons.push("Adds limited protein toward your daily goal.");
-            }
-
-            if (remainingCalories !== null && remainingCalories > 0) {
-              if (mealNutrition.calories <= remainingCalories + 120) {
-                nutritionFitPros.push("Fits your remaining calorie budget today.");
-              } else {
-                nutritionFitCons.push("Likely exceeds your remaining calories today.");
+            if (remainingProtein > 0) {
+              if (
+                mealNutrition.proteinG >= Math.max(20, nutritionGoals.proteinG * 0.18) &&
+                caloriesPerProteinGram <= 28
+              ) {
+                nutritionFitPros.push("Good protein density for the calories.");
+              } else if (
+                mealNutrition.proteinG < Math.max(14, nutritionGoals.proteinG * 0.1) &&
+                !nutritionFitCons.includes("Adds limited protein toward what you still need today.")
+              ) {
+                nutritionFitCons.push("Adds limited protein toward what you still need today.");
               }
             }
 
             if (nutritionFitPros.length === 0 && nutritionGoalSignal >= 0.65) {
-              nutritionFitPros.push("Overall nutrition fit is solid for your goals.");
+              nutritionFitPros.push("Overall fit is solid for what you have left today.");
             }
             if (nutritionFitCons.length === 0 && nutritionGoalSignal <= 0.5) {
-              nutritionFitCons.push("Overall fit is weaker for your current goals.");
+              nutritionFitCons.push("Overall fit is weaker for what you have left today.");
             }
           } else {
             if (mealNutrition.proteinG >= 24 && caloriesPerProteinGram <= 30) {
@@ -520,8 +681,12 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
 
       const mealSignal =
         recommendedMeals.length > 0
-          ? recommendedMeals.slice(0, 3).reduce((sum, meal) => sum + meal.score, 0) /
-            Math.min(recommendedMeals.length, 3)
+          ? recommendedMeals.slice(0, 3).reduce((sum, meal) => {
+              const mealContribution = nutritionGoals
+                ? meal.nutritionFitScore * 0.7 + meal.score * 0.3
+                : meal.score;
+              return sum + mealContribution;
+            }, 0) / Math.min(recommendedMeals.length, 3)
           : 0.45;
 
       const explicitUserSignal = profile?.ratings[restaurant.id]
@@ -534,6 +699,10 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
         explicitUserSignal !== 0 ? explicitUserSignal * 0.7 + cuisineSignal * 0.3 : cuisineSignal;
 
       const normalizedPersonalSignal = (personalSignal + 1) / 2;
+      const normalizedCuisineSignal = clamp((cuisineSignal + 1) / 2, 0, 1);
+      const cuisineAffinityBoost =
+        explicitUserSignal === 0 ? clamp(normalizedCuisineSignal - 0.5, 0, 0.5) * 0.16 : 0;
+      const explicitRestaurantBoost = explicitUserSignal * 0.12;
       const qualitySignal = (restaurant.rating?.average || 0) / 5;
       const distanceSignal = hasDistanceFilter
         ? clamp(1 - distanceKm / Math.max(maxDistanceMiles * KM_PER_MILE, 0.1), 0, 1)
@@ -544,7 +713,9 @@ export function rankRestaurants(options: RankRestaurantsOptions): RankedRestaura
         textSignal * 0.22 +
         distanceSignal * 0.17 +
         normalizedPersonalSignal * 0.18 +
-        mealSignal * 0.14;
+        mealSignal * 0.14 +
+        cuisineAffinityBoost +
+        explicitRestaurantBoost;
 
       const personalReasons: string[] = [];
       if (profile?.ratings[restaurant.id]) {

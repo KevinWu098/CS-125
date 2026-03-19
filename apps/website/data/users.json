@@ -1,18 +1,1 @@
-[
-  {
-    "userId": "local-foodie-3",
-    "createdAtISO": "2026-03-18T23:54:49.878Z",
-    "lastLoginAtISO": "2026-03-19T00:10:20.247Z",
-    "loginCount": 10,
-    "ratings": {},
-    "mealRatings": {},
-    "dietaryRestrictions": [],
-    "nutritionGoals": {
-      "calories": 2200,
-      "proteinG": 140,
-      "carbsG": 250,
-      "fatG": 70
-    },
-    "mealHistory": []
-  }
-]
+[]

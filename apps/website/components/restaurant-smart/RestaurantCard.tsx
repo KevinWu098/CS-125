@@ -1,4 +1,4 @@
-import { CircleCheckBig, CircleX, Clock, MapPin, Star } from "lucide-react";
+import { CircleCheckBig, CircleX, MapPin, Star } from "lucide-react";
 import React from "react";
 
 import { Badge } from "@/components/ui/badge";
@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 import type { RankedRestaurant, UserRecord } from "./types";
-import { formatDistance, getOpenStatus } from "./utils";
+import { formatDistance } from "./utils";
 
 type RestaurantCardProps = {
   entry: RankedRestaurant;
@@ -79,7 +79,7 @@ function nutritionFitTone(score: number): string {
 }
 
 function nutritionFitBadgeClasses(score: number): string {
-  if (score >= 0.75) {
+  if (score >= 0.7) {
     return "border-emerald-200 bg-emerald-100 text-emerald-800";
   }
   if (score >= 0.3) {
@@ -98,7 +98,6 @@ export function RestaurantCard({
   onMarkMealHad,
 }: RestaurantCardProps) {
   const { restaurant } = entry;
-  const openStatus = getOpenStatus(restaurant.hours);
   const userRating = profile?.ratings[restaurant.id] ?? null;
   const isSaving = pendingRatingRestaurantId === restaurant.id;
   const hasProfile = profile !== null;
@@ -169,14 +168,6 @@ export function RestaurantCard({
             <MapPin className="size-4 text-slate-500" />
             <span>{formatDistance(entry.distanceKm)}</span>
             <span className="text-slate-400">{restaurant.location.city}</span>
-          </div>
-
-          <div
-            className={`flex items-center gap-1.5 ${openStatus.isOpen ? "text-emerald-700" : "text-rose-700"}`}
-          >
-            <Clock className="size-4" />
-            <span className="font-medium">{openStatus.isOpen ? "Open" : "Closed"}</span>
-            <span className="text-slate-500">{openStatus.nextChange}</span>
           </div>
         </div>
 
